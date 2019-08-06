@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Welcome to XUNXUN’S BLOG!  Github GoldMinerXun. CSDN GoldMinerXun’s CSDN">
+<meta name="description" content="字符串的排列题目描述 按字典序输出一个字符串的全排列输入一个字符串,长度不超过9(可能有字符重复),字符只包括大小写字母。  要深入理解递归，自身调用自身，分而治之。  本篇采用的递归全排列方法 递归首先应该想到，当字符串长度为1 时，其全排列就是其自身。 字符串长度大于1时，将字符串分割成第一个字符和剩余字符，剩余字符全排列后，再将第一个字符与后面的字符逐个交换。 值得注意的地方是，每次交换后都">
 <meta name="keywords" content="blog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="欢迎来到浔浔的傻瓜式博客">
-<meta property="og:url" content="http://yoursite.com/2019/08/06/hello-world/index.html">
+<meta property="og:title" content="GoldMiner Xun">
+<meta property="og:url" content="http://yoursite.com/2019/08/06/剑指offer JavaScript版 (27)/index.html">
 <meta property="og:site_name" content="GoldMiner Xun">
-<meta property="og:description" content="Welcome to XUNXUN’S BLOG!  Github GoldMinerXun. CSDN GoldMinerXun’s CSDN">
+<meta property="og:description" content="字符串的排列题目描述 按字典序输出一个字符串的全排列输入一个字符串,长度不超过9(可能有字符重复),字符只包括大小写字母。  要深入理解递归，自身调用自身，分而治之。  本篇采用的递归全排列方法 递归首先应该想到，当字符串长度为1 时，其全排列就是其自身。 字符串长度大于1时，将字符串分割成第一个字符和剩余字符，剩余字符全排列后，再将第一个字符与后面的字符逐个交换。 值得注意的地方是，每次交换后都">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-06T10:02:10.158Z">
+<meta property="og:updated_time" content="2019-08-06T13:37:20.535Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="欢迎来到浔浔的傻瓜式博客">
-<meta name="twitter:description" content="Welcome to XUNXUN’S BLOG!  Github GoldMinerXun. CSDN GoldMinerXun’s CSDN">
+<meta name="twitter:title" content="GoldMiner Xun">
+<meta name="twitter:description" content="字符串的排列题目描述 按字典序输出一个字符串的全排列输入一个字符串,长度不超过9(可能有字符重复),字符只包括大小写字母。  要深入理解递归，自身调用自身，分而治之。  本篇采用的递归全排列方法 递归首先应该想到，当字符串长度为1 时，其全排列就是其自身。 字符串长度大于1时，将字符串分割成第一个字符和剩余字符，剩余字符全排列后，再将第一个字符与后面的字符逐个交换。 值得注意的地方是，每次交换后都">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/06/hello-world/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/06/剑指offer JavaScript版 (27)/">
 
 
 
 
 
-  <title>欢迎来到浔浔的傻瓜式博客 | GoldMiner Xun</title>
+  <title> | GoldMiner Xun</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/06/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/06/剑指offer JavaScript版 (27)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xun Zhong">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">欢迎来到浔浔的傻瓜式博客</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -262,7 +262,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-06T16:51:15+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-06T21:37:13+08:00">
                 2019-08-06
               </time>
             
@@ -300,9 +300,18 @@
       
 
       
-        <p>Welcome to <a href="https://goldminerxun.github.io/" target="_blank" rel="noopener">XUNXUN’S BLOG</a>! </p>
-<p>Github <a href="https://github.com/GoldMinerXun" target="_blank" rel="noopener">GoldMinerXun</a>.</p>
-<p>CSDN <a href="https://blog.csdn.net/Damp_XUN" target="_blank" rel="noopener">GoldMinerXun’s CSDN</a></p>
+        <h3 id="字符串的排列"><a href="#字符串的排列" class="headerlink" title="字符串的排列"></a>字符串的排列</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+<p>按字典序输出一个字符串的全排列<br>输入一个字符串,长度不超过9(可能有字符重复),字符只包括大小写字母。</p>
+</blockquote>
+<p>要深入理解递归，自身调用自身，分而治之。</p>
+<ul>
+<li>本篇采用的递归全排列方法</li>
+<li>递归首先应该想到，当字符串长度为1 时，其全排列就是其自身。</li>
+<li>字符串长度大于1时，将字符串分割成第一个字符和剩余字符，剩余字符全排列后，再将第一个字符与后面的字符逐个交换。</li>
+<li>值得注意的地方是，每次交换后都应将第一个字符换回原来的位置，以便下一次交换。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Permutation</span>(<span class="params">str</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">let</span> res=[];</span><br><span class="line">    <span class="keyword">if</span>(str.length&lt;=<span class="number">0</span>)<span class="keyword">return</span> res;</span><br><span class="line">    <span class="keyword">var</span> arr=str.split(<span class="string">''</span>);</span><br><span class="line">    res=permutation(arr,<span class="number">0</span>,res);</span><br><span class="line">    res=[...new <span class="built_in">Set</span>(res)];</span><br><span class="line">    res.sort();</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">permutation</span>(<span class="params">arr,index,res</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(arr.length===index)&#123;</span><br><span class="line">        <span class="keyword">var</span> s=<span class="string">''</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">            s+=arr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        res.push(s);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=index;i&lt;arr.length;i++)&#123;</span><br><span class="line">        [arr[index],arr[i]]=[arr[i],arr[index]];</span><br><span class="line">        permutation(arr,index+<span class="number">1</span>,res);</span><br><span class="line">        [arr[index],arr[i]]=[arr[i],arr[index]];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -327,13 +336,17 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/08/06/剑指offer JavaScript版（28）/" rel="next" title>
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/08/06/JavaScript 语法盲点/" rel="prev" title>
+              <a href="/2019/08/06/剑指offer JavaScript版 (26)/" rel="prev" title>
                  <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -387,8 +400,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -430,6 +452,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串的排列"><span class="nav-number">1.</span> <span class="nav-text">字符串的排列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题目描述"><span class="nav-number">1.1.</span> <span class="nav-text">题目描述</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

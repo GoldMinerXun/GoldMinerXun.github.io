@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Welcome to XUNXUN’S BLOG!  Github GoldMinerXun. CSDN GoldMinerXun’s CSDN">
+<meta name="description" content="二叉查找树的后序遍历序列题目描述 输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。如果是则输出Yes,否则输出No。假设输入的数组的任意两个数字都互不相同。  后序遍历是指先左后右最后根，所以序列的最后是根节点。  由此可推出先找到根节点 满足左子树小于根节点，右子树大于根节点 递归比较每一个节点即可  12345678910111213141516171819function V">
 <meta name="keywords" content="blog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="欢迎来到浔浔的傻瓜式博客">
-<meta property="og:url" content="http://yoursite.com/2019/08/06/hello-world/index.html">
+<meta property="og:title" content="GoldMiner Xun">
+<meta property="og:url" content="http://yoursite.com/2019/08/06/剑指offer JavaScript版 (23)/index.html">
 <meta property="og:site_name" content="GoldMiner Xun">
-<meta property="og:description" content="Welcome to XUNXUN’S BLOG!  Github GoldMinerXun. CSDN GoldMinerXun’s CSDN">
+<meta property="og:description" content="二叉查找树的后序遍历序列题目描述 输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。如果是则输出Yes,否则输出No。假设输入的数组的任意两个数字都互不相同。  后序遍历是指先左后右最后根，所以序列的最后是根节点。  由此可推出先找到根节点 满足左子树小于根节点，右子树大于根节点 递归比较每一个节点即可  12345678910111213141516171819function V">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-06T10:02:10.158Z">
+<meta property="og:updated_time" content="2019-08-06T13:37:42.464Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="欢迎来到浔浔的傻瓜式博客">
-<meta name="twitter:description" content="Welcome to XUNXUN’S BLOG!  Github GoldMinerXun. CSDN GoldMinerXun’s CSDN">
+<meta name="twitter:title" content="GoldMiner Xun">
+<meta name="twitter:description" content="二叉查找树的后序遍历序列题目描述 输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。如果是则输出Yes,否则输出No。假设输入的数组的任意两个数字都互不相同。  后序遍历是指先左后右最后根，所以序列的最后是根节点。  由此可推出先找到根节点 满足左子树小于根节点，右子树大于根节点 递归比较每一个节点即可  12345678910111213141516171819function V">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/06/hello-world/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/06/剑指offer JavaScript版 (23)/">
 
 
 
 
 
-  <title>欢迎来到浔浔的傻瓜式博客 | GoldMiner Xun</title>
+  <title> | GoldMiner Xun</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/06/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/06/剑指offer JavaScript版 (23)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xun Zhong">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">欢迎来到浔浔的傻瓜式博客</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -262,7 +262,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-06T16:51:15+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-06T21:37:39+08:00">
                 2019-08-06
               </time>
             
@@ -300,9 +300,17 @@
       
 
       
-        <p>Welcome to <a href="https://goldminerxun.github.io/" target="_blank" rel="noopener">XUNXUN’S BLOG</a>! </p>
-<p>Github <a href="https://github.com/GoldMinerXun" target="_blank" rel="noopener">GoldMinerXun</a>.</p>
-<p>CSDN <a href="https://blog.csdn.net/Damp_XUN" target="_blank" rel="noopener">GoldMinerXun’s CSDN</a></p>
+        <h3 id="二叉查找树的后序遍历序列"><a href="#二叉查找树的后序遍历序列" class="headerlink" title="二叉查找树的后序遍历序列"></a>二叉查找树的后序遍历序列</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+<p>输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。如果是则输出Yes,否则输出No。假设输入的数组的任意两个数字都互不相同。</p>
+</blockquote>
+<p>后序遍历是指先左后右最后根，所以序列的最后是根节点。</p>
+<ul>
+<li>由此可推出先找到根节点</li>
+<li>满足左子树小于根节点，右子树大于根节点</li>
+<li>递归比较每一个节点即可</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">VerifySquenceOfBST</span>(<span class="params">sequence</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(!sequence.length)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> judge(sequence,<span class="number">0</span>,sequence.length<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">judge</span>(<span class="params">a,l,r</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &gt;= r) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">     <span class="keyword">let</span> i = r;</span><br><span class="line">     <span class="comment">///找到左子树查找到右子树的位置i</span></span><br><span class="line">    <span class="keyword">while</span> (a[i - <span class="number">1</span>] &gt; a[r] &amp;&amp; i &gt; l) i--;</span><br><span class="line">    <span class="comment">///左子树需要全部小于根节点</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = i - <span class="number">1</span>; j &gt;= l; j--)&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[j]&gt;a[r])<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">///满足根节点后需要继续看第二层的根节点是否也满足以上，也就是递归</span></span><br><span class="line">    <span class="keyword">return</span> judge(a,l,i<span class="number">-1</span>)&amp;&amp;judge(a,i,r<span class="number">-1</span>);</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -327,13 +335,17 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/08/06/剑指offer JavaScript版 (24)/" rel="next" title>
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/08/06/JavaScript 语法盲点/" rel="prev" title>
+              <a href="/2019/08/06/剑指offer JavaScript版 (21)/" rel="prev" title>
                  <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -387,8 +399,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -430,6 +451,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#二叉查找树的后序遍历序列"><span class="nav-number">1.</span> <span class="nav-text">二叉查找树的后序遍历序列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题目描述"><span class="nav-number">1.1.</span> <span class="nav-text">题目描述</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
