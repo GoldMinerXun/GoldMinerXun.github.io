@@ -336,15 +336,18 @@
       
         
           
-            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
-<p>输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字，例如，如果输入如下4 X 4矩阵： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 则依次打印出数字1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10.</p>
-</blockquote>
-<p>tips：此处注意concat不改变原数组，结果需要保存起来</p>
-<p>本题用的使模拟魔方旋转矩阵</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// [</span></span><br><span class="line"><span class="comment">//  [1,2,3,4],</span></span><br><span class="line"><span class="comment">//  [5,6,7,8],</span></span><br><span class="line"><span class="comment">//  [9,10,11,12],</span></span><br><span class="line"><span class="comment">//  [13,14,15,16]</span></span><br><span class="line"><span class="comment">// ]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printMatrix</span>(<span class="params">matrix</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(!matrix)<span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">var</span> res=[];</span><br><span class="line">    res=res.concat(matrix.shift());</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(matrix.length)&#123;</span><br><span class="line">        matrix=nizhi(matrix);</span><br><span class="line">        res=res.concat(matrix.shift());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          题目描述
+输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字，例如，如果输入如下4 X 4矩阵： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 则依次打印出数字1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10.
 
-
-          
+tips：此处注
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/06/剑指offer JavaScript版 (19)/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -484,13 +487,18 @@
       
         
           
-            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
-<p>定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> stack=[];</span><br><span class="line"><span class="keyword">var</span> minstack=[];</span><br><span class="line"><span class="keyword">var</span> minele=<span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">push</span>(<span class="params">node</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(minele!==<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(node&lt;minele)&#123;</span><br><span class="line">            minele=node;</span><br><span class="line">        &#125;</span><br><span class="line">        stack.push(node);</span><br><span class="line">        minstack.push(minele);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        minele=node;</span><br><span class="line">        stack.push(node);</span><br><span class="line">        minstack.push(minele);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pop</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    stack.pop();</span><br><span class="line">    minstack.pop();</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">top</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> stack[stack.length<span class="number">-1</span>];</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">min</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> minstack[minstack.length<span class="number">-1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          题目描述
+定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。
 
-
-          
+12345678910111213141516171819202122232425262728293031323334353637var stack=[];var minstack=[
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/06/剑指offer JavaScript版 (20)/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -630,13 +638,16 @@
       
         
           
-            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
-<p>输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否可能为该栈的弹出顺序。假设压入栈的所有数字均不相等。例如序列1,2,3,4,5是某栈的压入顺序，序列4,5,3,2,1是该压栈序列对应的一个弹出序列，但4,3,5,1,2就不可能是该压栈序列的弹出序列。（注意：这两个序列的长度是相等的）</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">IsPopOrder</span>(<span class="params">pushV, popV</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> res=[]</span><br><span class="line">    <span class="keyword">var</span> flag=<span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">while</span>(pushV.length)&#123;</span><br><span class="line">        res.push(pushV.pop())</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(res.length)&#123;</span><br><span class="line">        <span class="keyword">var</span> resv=res.shift();</span><br><span class="line">        <span class="keyword">var</span> popv=popV.shift();</span><br><span class="line">        <span class="keyword">if</span>(resv==popv)&#123;</span><br><span class="line">            flag=<span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-          
+          题目描述
+输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否可能为该栈的弹出顺序。假设压入栈的所有数字均不相等。例如序列1,2,3,4,5是某栈的压入顺序，序列4,5,3,2,1是该压栈序列对应的一个弹出序列，但4,3,5,1,2就不可能是该压栈序列的弹出序列。（注意：这两个序列的长
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/06/剑指offer JavaScript版 (21)/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -776,19 +787,24 @@
       
         
           
-            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
-<p>输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。如果是则输出Yes,否则输出No。假设输入的数组的任意两个数字都互不相同。</p>
-</blockquote>
-<p>后序遍历是指先左后右最后根，所以序列的最后是根节点。</p>
-<ul>
-<li>由此可推出先找到根节点</li>
-<li>满足左子树小于根节点，右子树大于根节点</li>
-<li>递归比较每一个节点即可</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">VerifySquenceOfBST</span>(<span class="params">sequence</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(!sequence.length)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> judge(sequence,<span class="number">0</span>,sequence.length<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">judge</span>(<span class="params">a,l,r</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &gt;= r) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">     <span class="keyword">let</span> i = r;</span><br><span class="line">     <span class="comment">///找到左子树查找到右子树的位置i</span></span><br><span class="line">    <span class="keyword">while</span> (a[i - <span class="number">1</span>] &gt; a[r] &amp;&amp; i &gt; l) i--;</span><br><span class="line">    <span class="comment">///左子树需要全部小于根节点</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = i - <span class="number">1</span>; j &gt;= l; j--)&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[j]&gt;a[r])<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">///满足根节点后需要继续看第二层的根节点是否也满足以上，也就是递归</span></span><br><span class="line">    <span class="keyword">return</span> judge(a,l,i<span class="number">-1</span>)&amp;&amp;judge(a,i,r<span class="number">-1</span>);</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          题目描述
+输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。如果是则输出Yes,否则输出No。假设输入的数组的任意两个数字都互不相同。
 
+后序遍历是指先左后右最后根，所以序列的最后是根节点。
 
-          
+由此可推出先找到根节点
+满足左子树小于根节点，右子树大于根节点
+递归比较每一个节点即可
+
+1
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/06/剑指offer JavaScript版 (23)/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -928,14 +944,18 @@
       
         
           
-            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
-<p>输入一颗二叉树的根节点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。(注意: 在返回值的list中，数组长度大的数组靠前)</p>
-</blockquote>
-<p>这个过程就是深度遍历的过程，用期望值减去走过的上一个节点，检查结果是否为0，若为0，则退出，反之继续遍历。每一次都是先检查左节点，再检查右节点，若左节点符合，先深度遍历左节点，之后遍历右节点。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindPath</span>(<span class="params">root, expectNumber</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> list=[],listAll=[];</span><br><span class="line">    <span class="keyword">return</span> find(root,expectNumber,list,listAll);</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">find</span>(<span class="params">root,expectNumber,list,listAll</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root==<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> listAll;</span><br><span class="line">    &#125;</span><br><span class="line">    list.push(root.val);</span><br><span class="line">    <span class="keyword">const</span> x=expectNumber-root.val;</span><br><span class="line">    <span class="keyword">if</span>(root.left==<span class="literal">null</span>&amp;&amp;root.right==<span class="literal">null</span>&amp;&amp;x==<span class="number">0</span>)&#123;</span><br><span class="line">        listAll.push(<span class="built_in">Array</span>.of(...list));</span><br><span class="line">    &#125;</span><br><span class="line">    find(root.left,x,list,listAll);</span><br><span class="line">    find(root.right,x,list,listAll);</span><br><span class="line">    list.pop();</span><br><span class="line">    <span class="keyword">return</span> listAll;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          题目描述
+输入一颗二叉树的根节点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。(注意: 在返回值的list中，数组长度大的数组靠前)
 
-
-          
+这个过程就是深度遍历的过程，用期望值减去走过的上一个节点，检查结果是否为0，若为0，
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/06/剑指offer JavaScript版 (24)/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1075,13 +1095,16 @@
       
         
           
-            <ul>
-<li>先复制链表，通过map保存对应的新链表节点和原链表节点，然后复制random链表指针。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">RandomListNode</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.label = x;</span><br><span class="line">    <span class="keyword">this</span>.next = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">this</span>.random = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Clone</span>(<span class="params">pHead</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(pHead==<span class="literal">null</span>)<span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">const</span> m=<span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">    <span class="keyword">let</span> p=pHead;</span><br><span class="line">    <span class="keyword">let</span> p2=<span class="keyword">new</span> RandomListNode(pHead.label);</span><br><span class="line">    <span class="keyword">const</span> pHead2=p2;</span><br><span class="line">    map.set(p,p2)</span><br><span class="line">    <span class="keyword">while</span>(p)&#123;</span><br><span class="line">        <span class="keyword">if</span>(p.next)p2.next=<span class="keyword">new</span> RandomListNode(p.next.label);</span><br><span class="line">        <span class="keyword">else</span> p2.next=<span class="literal">null</span>;</span><br><span class="line">        p=p.next;</span><br><span class="line">        p2=p2.next;</span><br><span class="line">        m.set(p,p2)</span><br><span class="line">    &#125;</span><br><span class="line">    p=pHead;</span><br><span class="line">    p2=pHead2;</span><br><span class="line">    <span class="keyword">while</span>(p!==<span class="literal">null</span>)&#123;</span><br><span class="line">        p2.random=m.get(p.random);</span><br><span class="line">        p=p.next;</span><br><span class="line">        p2=p2.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pHead2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-
           
+先复制链表，通过map保存对应的新链表节点和原链表节点，然后复制random链表指针。123456789101112131415161718192021222324252627282930function RandomListNode(x)&#123;    this.label = x;    
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/06/剑指offer JavaScript版 (25)/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1221,16 +1244,19 @@
       
         
           
-            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
-<p>输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的双向链表。要求不能创建任何新的结点，只能调整树中结点指针的指向。</p>
-</blockquote>
-<ul>
-<li>转换结点，并将pLast指针朝中序遍历（即排序方向）移动。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Convert</span>(<span class="params">pRootOfTree</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(pRootOfTree===<span class="literal">null</span>)<span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">let</span> pLast=<span class="literal">null</span>;</span><br><span class="line">    pLast=ConvertNode(pRootOfTree,pLast);</span><br><span class="line">    <span class="keyword">let</span> pHead=pLast;</span><br><span class="line">    <span class="keyword">while</span>(pHead&amp;&amp;pHead.left)&#123;</span><br><span class="line">        pHead=pHead.left;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pHead;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ConvertNode</span>(<span class="params">pNode,pLast</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pNode===<span class="literal">null</span>)<span class="keyword">return</span> ;</span><br><span class="line">    <span class="keyword">if</span>(pNode.left)&#123;</span><br><span class="line">        pLast=ConvertNode(pNode.left,pLast);</span><br><span class="line">    &#125;</span><br><span class="line">    pNode.left=pLast;</span><br><span class="line">    <span class="keyword">if</span>(pLast)&#123;</span><br><span class="line">        pLast.right=pNode;</span><br><span class="line">    &#125;</span><br><span class="line">    pLast=pNode;</span><br><span class="line">    <span class="keyword">if</span>(pNode.right)&#123;</span><br><span class="line">        pLast=ConvertNode(pNode.right,pLast);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pLast;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          题目描述
+输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的双向链表。要求不能创建任何新的结点，只能调整树中结点指针的指向。
 
-</li>
-</ul>
 
-          
+转换结点，并将pLast指针朝中序遍历（即排序方向）移动。123456789101112131415161718192021222324252627function Co
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/06/剑指offer JavaScript版 (26)/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1370,20 +1396,22 @@
       
         
           
-            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
-<p>按字典序输出一个字符串的全排列<br>输入一个字符串,长度不超过9(可能有字符重复),字符只包括大小写字母。</p>
-</blockquote>
-<p>要深入理解递归，自身调用自身，分而治之。</p>
-<ul>
-<li>本篇采用的递归全排列方法</li>
-<li>递归首先应该想到，当字符串长度为1 时，其全排列就是其自身。</li>
-<li>字符串长度大于1时，将字符串分割成第一个字符和剩余字符，剩余字符全排列后，再将第一个字符与后面的字符逐个交换。</li>
-<li>值得注意的地方是，每次交换后都应将第一个字符换回原来的位置，以便下一次交换。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Permutation</span>(<span class="params">str</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">let</span> res=[];</span><br><span class="line">    <span class="keyword">if</span>(str.length&lt;=<span class="number">0</span>)<span class="keyword">return</span> res;</span><br><span class="line">    <span class="keyword">var</span> arr=str.split(<span class="string">''</span>);</span><br><span class="line">    res=permutation(arr,<span class="number">0</span>,res);</span><br><span class="line">    res=[...new <span class="built_in">Set</span>(res)];</span><br><span class="line">    res.sort();</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">permutation</span>(<span class="params">arr,index,res</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(arr.length===index)&#123;</span><br><span class="line">        <span class="keyword">var</span> s=<span class="string">''</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">            s+=arr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        res.push(s);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=index;i&lt;arr.length;i++)&#123;</span><br><span class="line">        [arr[index],arr[i]]=[arr[i],arr[index]];</span><br><span class="line">        permutation(arr,index+<span class="number">1</span>,res);</span><br><span class="line">        [arr[index],arr[i]]=[arr[i],arr[index]];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          题目描述
+按字典序输出一个字符串的全排列输入一个字符串,长度不超过9(可能有字符重复),字符只包括大小写字母。
 
+要深入理解递归，自身调用自身，分而治之。
 
-          
+本篇采用的递归全排列方法
+递归首先应该想到，当字符串长度为1 时，其全排列就是其自身。
+字符串长度大于1时，将字符串分割成第一个字符和剩余字符
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/06/剑指offer JavaScript版 (27)/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1523,17 +1551,19 @@
       
         
           
-            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
-<p>数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。例如输入一个长度为9的数组{1,2,3,2,2,2,5,4,2}。由于数字2在数组中出现了5次，超过数组长度的一半，因此输出2。如果不存在则输出0。</p>
-</blockquote>
-<ul>
-<li>数组中只有两种情况，是这个数字，不是这个数字，且若数字存在，则一定比其余数字出现次数的和大1或者更多，所以设置一个变量times初值为1，除了这个数字以外，其他数字一定会将times减到0，最终这个数字一定会出现。（如果存在的话）</li>
-<li>找到这个出现次数最多的数字，不一定是超过数组长度一半的数字，所以需要再统计该数字出现的次数。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MoreThanHalfNum_Solution</span>(<span class="params">numbers</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">let</span> res=numbers[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">let</span> times=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;numbers.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(times===<span class="number">0</span>)&#123;</span><br><span class="line">            res=numbers[i]</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(numbers[i]===res)&#123;</span><br><span class="line">            times++;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            times--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!countword(numbers,res))&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">       &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">countword</span>(<span class="params">number,res</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> time=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;number.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(number[i]===res)</span><br><span class="line">            &#123;</span><br><span class="line">                time++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">if</span>(time*<span class="number">2</span>&lt;=number.length)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          题目描述
+数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。例如输入一个长度为9的数组{1,2,3,2,2,2,5,4,2}。由于数字2在数组中出现了5次，超过数组长度的一半，因此输出2。如果不存在则输出0。
 
 
-          
+数组中只有两种情况，是这个数字，不是这个数字，且若数字存在，则一定比其余数
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/06/剑指offer JavaScript版（28）/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1673,18 +1703,23 @@
       
         
           
-            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
-<p>输入n个整数，找出其中最小的K个数。</p>
-</blockquote>
-<ul>
-<li>基于快排思想的寻找第K大的数。</li>
-<li>快排每一趟可以将a[0]在数组中的位置找到，且其位置左侧均为小于a[0]的数，右侧均为大于a[0]的数</li>
-<li>所以只要找到第K大的数，其左侧则为最小的K个数。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GetLeastNumbers_Solution</span>(<span class="params">input, k</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">const</span> left=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> right=input.length<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">if</span>(k&lt;<span class="number">1</span>||input.length===<span class="number">0</span>||k&gt;input.length) <span class="keyword">return</span> [];</span><br><span class="line">    <span class="keyword">let</span> key=partition(input,left,right);</span><br><span class="line">    <span class="keyword">while</span>(key !== k - <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(key &gt; k- <span class="number">1</span>)&#123;</span><br><span class="line">            key=partition(input,left,key<span class="number">-1</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            key=partition(input,key+<span class="number">1</span>,right);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> res=input.slice(<span class="number">0</span>,key+<span class="number">1</span>);</span><br><span class="line">    res.sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>a-b);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">partition</span>(<span class="params">arr,left,right</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> key=arr[left];</span><br><span class="line">    <span class="keyword">while</span>(left&lt;right)&#123;</span><br><span class="line">        <span class="keyword">while</span>(key&lt;=arr[right]&amp;&amp;left&lt;right)&#123;</span><br><span class="line">            right--;</span><br><span class="line">        &#125;</span><br><span class="line">        [arr[left],arr[right]]=[arr[right],arr[left]];</span><br><span class="line">        <span class="keyword">while</span>(key&gt;=arr[left]&amp;&amp;left&lt;right)&#123;</span><br><span class="line">            left++;</span><br><span class="line">        &#125;</span><br><span class="line">        [arr[left],arr[right]]=[arr[right],arr[left]];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          题目描述
+输入n个整数，找出其中最小的K个数。
 
 
-          
+基于快排思想的寻找第K大的数。
+快排每一趟可以将a[0]在数组中的位置找到，且其位置左侧均为小于a[0]的数，右侧均为大于a[0]的数
+所以只要找到第K大的数，其左侧则为最小的K个数。
+
+123456789101112131415161718192
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/06/剑指offer JavaScript版 (29)/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
