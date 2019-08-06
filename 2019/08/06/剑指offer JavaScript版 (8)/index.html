@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="跳台阶题目描述 一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。  1234567891011function jumpFloor(number)&amp;#123;    // write code here    var n1=1;    var n2=2;    while(--number)&amp;#123;        n2+=n">
+<meta name="description" content="题目描述 一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。  1234567891011function jumpFloor(number)&amp;#123;    // write code here    var n1=1;    var n2=2;    while(--number)&amp;#123;        n2+=n1;">
 <meta name="keywords" content="blog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GoldMiner Xun">
+<meta property="og:title" content="跳台阶">
 <meta property="og:url" content="http://yoursite.com/2019/08/06/剑指offer JavaScript版 (8)/index.html">
 <meta property="og:site_name" content="GoldMiner Xun">
-<meta property="og:description" content="跳台阶题目描述 一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。  1234567891011function jumpFloor(number)&amp;#123;    // write code here    var n1=1;    var n2=2;    while(--number)&amp;#123;        n2+=n">
+<meta property="og:description" content="题目描述 一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。  1234567891011function jumpFloor(number)&amp;#123;    // write code here    var n1=1;    var n2=2;    while(--number)&amp;#123;        n2+=n1;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-06T13:38:55.811Z">
+<meta property="og:updated_time" content="2019-08-06T13:53:24.566Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GoldMiner Xun">
-<meta name="twitter:description" content="跳台阶题目描述 一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。  1234567891011function jumpFloor(number)&amp;#123;    // write code here    var n1=1;    var n2=2;    while(--number)&amp;#123;        n2+=n">
+<meta name="twitter:title" content="跳台阶">
+<meta name="twitter:description" content="题目描述 一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。  1234567891011function jumpFloor(number)&amp;#123;    // write code here    var n1=1;    var n2=2;    while(--number)&amp;#123;        n2+=n1;">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title> | GoldMiner Xun</title>
+  <title>跳台阶 | GoldMiner Xun</title>
   
 
 
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">跳台阶</h1>
         
 
         <div class="post-meta">
@@ -300,7 +300,7 @@
       
 
       
-        <h3 id="跳台阶"><a href="#跳台阶" class="headerlink" title="跳台阶"></a>跳台阶</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+        <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
 <p>一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jumpFloor</span>(<span class="params">number</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> n1=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> n2=<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span>(--number)&#123;</span><br><span class="line">        n2+=n1;</span><br><span class="line">        n1=n2-n1;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> n1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -329,8 +329,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/06/剑指offer JavaScript版 (9)/" rel="next" title>
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2019/08/06/剑指offer JavaScript版 (9)/" rel="next" title="变态跳台阶">
+                <i class="fa fa-chevron-left"></i> 变态跳台阶
               </a>
             
           </div>
@@ -339,8 +339,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/08/06/剑指offer JavaScript版 (7)/" rel="prev" title>
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/08/06/剑指offer JavaScript版 (7)/" rel="prev" title="斐波那契数列">
+                斐波那契数列 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -455,7 +455,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#跳台阶"><span class="nav-number">1.</span> <span class="nav-text">跳台阶</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题目描述"><span class="nav-number">1.1.</span> <span class="nav-text">题目描述</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li></ol></div>
             
 
           </div>

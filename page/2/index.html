@@ -252,7 +252,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/06/剑指offer JavaScript版 (8)/" itemprop="url">Untitled</a></h1>
+                <a class="post-title-link" href="/2019/08/06/剑指offer JavaScript版 (8)/" itemprop="url">跳台阶</a></h1>
         
 
         <div class="post-meta">
@@ -304,7 +304,7 @@
       
         
           
-            <h3 id="跳台阶"><a href="#跳台阶" class="headerlink" title="跳台阶"></a>跳台阶</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
 <p>一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jumpFloor</span>(<span class="params">number</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> n1=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> n2=<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span>(--number)&#123;</span><br><span class="line">        n2+=n1;</span><br><span class="line">        n1=n2-n1;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> n1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -376,7 +376,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/06/剑指offer JavaScript版 (9)/" itemprop="url">Untitled</a></h1>
+                <a class="post-title-link" href="/2019/08/06/剑指offer JavaScript版 (9)/" itemprop="url">变态跳台阶</a></h1>
         
 
         <div class="post-meta">
@@ -428,7 +428,7 @@
       
         
           
-            <h3 id="变态跳台阶"><a href="#变态跳台阶" class="headerlink" title="变态跳台阶"></a>变态跳台阶</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
 <p>一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。</p>
 </blockquote>
 <p>根据跳台阶的解法，jump(n)=jump(n-1)+jump(n-2)<br>此处可跳台阶为1~n，所以jump(n)=jump(n-1)+jump(n-2)+…+jump(1)<br>由数学推算得：<br>jump(n)=jump(n-1)+jump(n-2)+…+jump(1)—————–[1]<br>jump(n-1)=jump(n-2)+jump(n-3)+…+jump(1)————–[2]<br>[1]-[2]==&gt;  jump(n)=2* jump(n-1)</p>
@@ -502,7 +502,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/06/剑指offer JavaScript版 (10)/" itemprop="url">Untitled</a></h1>
+                <a class="post-title-link" href="/2019/08/06/剑指offer JavaScript版 (10)/" itemprop="url">矩形覆盖</a></h1>
         
 
         <div class="post-meta">
@@ -554,7 +554,7 @@
       
         
           
-            <h3 id="矩形覆盖"><a href="#矩形覆盖" class="headerlink" title="矩形覆盖"></a>矩形覆盖</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
 <p>我们可以用2<em>1的小矩形横着或者竖着去覆盖更大的矩形。请问用n个2</em>1的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？</p>
 </blockquote>
 <p>找规律发现其原理和斐波那契数列相符</p>
@@ -627,7 +627,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/06/剑指offer JavaScript版(12)/" itemprop="url">Untitled</a></h1>
+                <a class="post-title-link" href="/2019/08/06/剑指offer JavaScript版(12)/" itemprop="url">数值的整数次方</a></h1>
         
 
         <div class="post-meta">
@@ -679,7 +679,7 @@
       
         
           
-            <h3 id="数值的整数次方"><a href="#数值的整数次方" class="headerlink" title="数值的整数次方"></a>数值的整数次方</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
 <p>给定一个double类型的浮点数base和int类型的整数exponent。求base的exponent次方。</p>
 </blockquote>
 <p>快速幂原理</p>
@@ -752,7 +752,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/06/剑指offer JavaScript版 (13)/" itemprop="url">Untitled</a></h1>
+                <a class="post-title-link" href="/2019/08/06/剑指offer JavaScript版 (13)/" itemprop="url">调整数组顺序使奇数位于偶数前面</a></h1>
         
 
         <div class="post-meta">
@@ -804,7 +804,7 @@
       
         
           
-            <h3 id="调整数组顺序使奇数位于偶数前面"><a href="#调整数组顺序使奇数位于偶数前面" class="headerlink" title="调整数组顺序使奇数位于偶数前面"></a>调整数组顺序使奇数位于偶数前面</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
 <p>输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有的奇数位于数组的前半部分，所有的偶数位于数组的后半部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变。</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reOrderArray</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> odd=[]</span><br><span class="line">    <span class="keyword">var</span> even=[]</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(array[i]%<span class="number">2</span>)&#123;</span><br><span class="line">            odd.push(array[i])</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            even.push(array[i])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> res=odd.concat(even)</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -876,7 +876,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/06/剑指offer JavaScript版 (14)/" itemprop="url">Untitled</a></h1>
+                <a class="post-title-link" href="/2019/08/06/剑指offer JavaScript版 (14)/" itemprop="url">链表中倒数第K个节点</a></h1>
         
 
         <div class="post-meta">
@@ -928,7 +928,7 @@
       
         
           
-            <h3 id="链表中倒数第K个节点"><a href="#链表中倒数第K个节点" class="headerlink" title="链表中倒数第K个节点"></a>链表中倒数第K个节点</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
 <p>输入一个链表，输出该链表中倒数第k个结点。</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindKthToTail</span>(<span class="params">head, k</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(head===<span class="literal">null</span>||k&lt;<span class="number">0</span>) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">var</span> node1=head;</span><br><span class="line">    <span class="keyword">var</span> node2=head;</span><br><span class="line">    <span class="keyword">while</span>(--k)&#123;</span><br><span class="line">        <span class="keyword">if</span>(node1.next===<span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            node1=node1.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(node1.next!==<span class="literal">null</span>)&#123;</span><br><span class="line">        node1=node1.next;</span><br><span class="line">        node2=node2.next;</span><br><span class="line">    &#125;</span><br><span class="line">   <span class="keyword">return</span> node2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1000,7 +1000,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/06/剑指offer JavaScript版 (15)/" itemprop="url">Untitled</a></h1>
+                <a class="post-title-link" href="/2019/08/06/剑指offer JavaScript版 (15)/" itemprop="url">反转链表</a></h1>
         
 
         <div class="post-meta">
@@ -1052,7 +1052,7 @@
       
         
           
-            <h3 id="反转链表"><a href="#反转链表" class="headerlink" title="反转链表"></a>反转链表</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
 <p>输入一个链表，反转链表后，输出新链表的表头。</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ReverseList</span>(<span class="params">pHead</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> pNode=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">var</span> pNext=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">while</span>(pHead!==<span class="literal">null</span>)&#123;</span><br><span class="line">        pNext=pHead.next;</span><br><span class="line">        pHead.next=pNode;</span><br><span class="line">        pNode=pHead;</span><br><span class="line">        pHead=pNext;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pNode;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1124,7 +1124,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/06/剑指offer JavaScript版 (16)/" itemprop="url">Untitled</a></h1>
+                <a class="post-title-link" href="/2019/08/06/剑指offer JavaScript版 (16)/" itemprop="url">合并两个排序的链表</a></h1>
         
 
         <div class="post-meta">
@@ -1176,7 +1176,7 @@
       
         
           
-            <h3 id="合并两个排序的链表"><a href="#合并两个排序的链表" class="headerlink" title="合并两个排序的链表"></a>合并两个排序的链表</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
 <p>输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。</p>
 </blockquote>
 <p>递归做法</p>
@@ -1249,7 +1249,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/06/剑指offer JavaScript版 (17)/" itemprop="url">Untitled</a></h1>
+                <a class="post-title-link" href="/2019/08/06/剑指offer JavaScript版 (17)/" itemprop="url">树的子结构</a></h1>
         
 
         <div class="post-meta">
@@ -1301,7 +1301,7 @@
       
         
           
-            <h3 id="树的子结构"><a href="#树的子结构" class="headerlink" title="树的子结构"></a>树的子结构</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
 <p>输入两棵二叉树A，B，判断B是不是A的子结构。（ps：我们约定空树不是任意一个树的子结构）</p>
 </blockquote>
 <p>重复两步，采用递归</p>
@@ -1378,7 +1378,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/06/剑指offer JavaScript版 (18)/" itemprop="url">Untitled</a></h1>
+                <a class="post-title-link" href="/2019/08/06/剑指offer JavaScript版 (18)/" itemprop="url">二叉树的镜像</a></h1>
         
 
         <div class="post-meta">
@@ -1430,7 +1430,7 @@
       
         
           
-            <h3 id="二叉树的镜像"><a href="#二叉树的镜像" class="headerlink" title="二叉树的镜像"></a>二叉树的镜像</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+            <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
 <p>操作给定的二叉树，将其变换为源二叉树的镜像。</p>
 </blockquote>
 <p>递归。。。</p>
