@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="题目描述 用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。  代码 1234567891011121314151617const inStack = []const outStack = []//123456//入栈【123456】先出6，先入1//入队【123456】先出1，后出6//用栈模拟队列，那么出队列相当于用入的栈一个一个出栈进入出的栈，functio">
+<meta name="description" content="题目描述 用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。  代码 const inStack = []const outStack = []//123456//入栈【123456】先出6，先入1//入队【123456】先出1，后出6//用栈模拟队列，那么出队列相当于用入的栈一个一个出栈进入出的栈，function push(node) &amp;#123;    in">
 <meta name="keywords" content="blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用两个栈实现队列">
 <meta property="og:url" content="http://yoursite.com/2019/08/06/剑指offer JavaScript版 (5)/index.html">
 <meta property="og:site_name" content="GoldMiner Xun">
-<meta property="og:description" content="题目描述 用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。  代码 1234567891011121314151617const inStack = []const outStack = []//123456//入栈【123456】先出6，先入1//入队【123456】先出1，后出6//用栈模拟队列，那么出队列相当于用入的栈一个一个出栈进入出的栈，functio">
+<meta property="og:description" content="题目描述 用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。  代码 const inStack = []const outStack = []//123456//入栈【123456】先出6，先入1//入队【123456】先出1，后出6//用栈模拟队列，那么出队列相当于用入的栈一个一个出栈进入出的栈，function push(node) &amp;#123;    in">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190729173004148.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RhbXBfWFVO,size_16,color_FFFFFF,t_70">
 <meta property="og:updated_time" content="2019-08-06T14:35:58.326Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用两个栈实现队列">
-<meta name="twitter:description" content="题目描述 用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。  代码 1234567891011121314151617const inStack = []const outStack = []//123456//入栈【123456】先出6，先入1//入队【123456】先出1，后出6//用栈模拟队列，那么出队列相当于用入的栈一个一个出栈进入出的栈，functio">
+<meta name="twitter:description" content="题目描述 用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。  代码 const inStack = []const outStack = []//123456//入栈【123456】先出6，先入1//入队【123456】先出1，后出6//用栈模拟队列，那么出队列相当于用入的栈一个一个出栈进入出的栈，function push(node) &amp;#123;    in">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190729173004148.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RhbXBfWFVO,size_16,color_FFFFFF,t_70">
 
 
@@ -338,7 +338,7 @@
 <p>用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。</p>
 </blockquote>
 <p><img src="https://img-blog.csdnimg.cn/20190729173004148.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RhbXBfWFVO,size_16,color_FFFFFF,t_70" alt="思路"><br>代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> inStack = []</span><br><span class="line"><span class="keyword">const</span> outStack = []</span><br><span class="line"><span class="comment">//123456</span></span><br><span class="line"><span class="comment">//入栈【123456】先出6，先入1</span></span><br><span class="line"><span class="comment">//入队【123456】先出1，后出6</span></span><br><span class="line"><span class="comment">//用栈模拟队列，那么出队列相当于用入的栈一个一个出栈进入出的栈，</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">push</span>(<span class="params">node</span>) </span>&#123;</span><br><span class="line">    inStack.push(node)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pop</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!outStack.length)&#123;</span><br><span class="line">        <span class="keyword">while</span>(inStack.length)&#123;</span><br><span class="line">            outStack.push(inStack.pop())</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> outStack.pop()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> inStack = []</span><br><span class="line"><span class="keyword">const</span> outStack = []</span><br><span class="line"><span class="comment">//123456</span></span><br><span class="line"><span class="comment">//入栈【123456】先出6，先入1</span></span><br><span class="line"><span class="comment">//入队【123456】先出1，后出6</span></span><br><span class="line"><span class="comment">//用栈模拟队列，那么出队列相当于用入的栈一个一个出栈进入出的栈，</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">push</span>(<span class="params">node</span>) </span>&#123;</span><br><span class="line">    inStack.push(node)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pop</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!outStack.length)&#123;</span><br><span class="line">        <span class="keyword">while</span>(inStack.length)&#123;</span><br><span class="line">            outStack.push(inStack.pop())</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> outStack.pop()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       

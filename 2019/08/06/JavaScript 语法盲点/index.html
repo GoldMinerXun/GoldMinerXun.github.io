@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="2019.8.2更新 对象赋值  在对象/数组中直接提取属性/值  1234var [b]=[1,2,3]//b=1var &amp;#123;a&amp;#125;=&amp;#123;a:1&amp;#125;//a=1  引用类型 12345var f=[1,2,3]//f=[1,2,3,4]var ff=fff.push(5)//f=[1,2,3,4,5]  ES6 扩展运算符（…）  1  解构赋值  用于从一个对象取">
+<meta name="description" content="2019.8.2更新 对象赋值  在对象/数组中直接提取属性/值  var [b]=[1,2,3]//b=1var &amp;#123;a&amp;#125;=&amp;#123;a:1&amp;#125;//a=1  引用类型 var f=[1,2,3]//f=[1,2,3,4]var ff=fff.push(5)//f=[1,2,3,4,5]  ES6 扩展运算符（…）  1  解构赋值  用于从一个对象取值，将目标对象所有">
 <meta name="keywords" content="blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript语法盲点">
 <meta property="og:url" content="http://yoursite.com/2019/08/06/JavaScript 语法盲点/index.html">
 <meta property="og:site_name" content="GoldMiner Xun">
-<meta property="og:description" content="2019.8.2更新 对象赋值  在对象/数组中直接提取属性/值  1234var [b]=[1,2,3]//b=1var &amp;#123;a&amp;#125;=&amp;#123;a:1&amp;#125;//a=1  引用类型 12345var f=[1,2,3]//f=[1,2,3,4]var ff=fff.push(5)//f=[1,2,3,4,5]  ES6 扩展运算符（…）  1  解构赋值  用于从一个对象取">
+<meta property="og:description" content="2019.8.2更新 对象赋值  在对象/数组中直接提取属性/值  var [b]=[1,2,3]//b=1var &amp;#123;a&amp;#125;=&amp;#123;a:1&amp;#125;//a=1  引用类型 var f=[1,2,3]//f=[1,2,3,4]var ff=fff.push(5)//f=[1,2,3,4,5]  ES6 扩展运算符（…）  1  解构赋值  用于从一个对象取值，将目标对象所有">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-08-06T14:40:36.163Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript语法盲点">
-<meta name="twitter:description" content="2019.8.2更新 对象赋值  在对象/数组中直接提取属性/值  1234var [b]=[1,2,3]//b=1var &amp;#123;a&amp;#125;=&amp;#123;a:1&amp;#125;//a=1  引用类型 12345var f=[1,2,3]//f=[1,2,3,4]var ff=fff.push(5)//f=[1,2,3,4,5]  ES6 扩展运算符（…）  1  解构赋值  用于从一个对象取">
+<meta name="twitter:description" content="2019.8.2更新 对象赋值  在对象/数组中直接提取属性/值  var [b]=[1,2,3]//b=1var &amp;#123;a&amp;#125;=&amp;#123;a:1&amp;#125;//a=1  引用类型 var f=[1,2,3]//f=[1,2,3,4]var ff=fff.push(5)//f=[1,2,3,4,5]  ES6 扩展运算符（…）  1  解构赋值  用于从一个对象取值，将目标对象所有">
 
 
 
@@ -337,10 +337,10 @@
 <blockquote>
 <p>在对象/数组中直接提取属性/值</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> [b]=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="comment">//b=1</span></span><br><span class="line"><span class="keyword">var</span> &#123;a&#125;=&#123;<span class="attr">a</span>:<span class="number">1</span>&#125;</span><br><span class="line"><span class="comment">//a=1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> [b]=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="comment">//b=1</span></span><br><span class="line"><span class="keyword">var</span> &#123;a&#125;=&#123;<span class="attr">a</span>:<span class="number">1</span>&#125;</span><br><span class="line"><span class="comment">//a=1</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>引用类型</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="comment">//f=[1,2,3,4]</span></span><br><span class="line"><span class="keyword">var</span> ff=f</span><br><span class="line">ff.push(<span class="number">5</span>)</span><br><span class="line"><span class="comment">//f=[1,2,3,4,5]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> f=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="comment">//f=[1,2,3,4]</span></span><br><span class="line"><span class="keyword">var</span> ff=f</span><br><span class="line">ff.push(<span class="number">5</span>)</span><br><span class="line"><span class="comment">//f=[1,2,3,4,5]</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>ES6 扩展运算符（…）</p>
 </li>
@@ -348,7 +348,7 @@
 <blockquote>
 <p>用于从一个对象取值，将目标对象所有可遍历的属性，且尚未读取的属性，分配到指定对象上。</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//example1</span></span><br><span class="line"><span class="keyword">var</span> &#123;a,b,...c&#125;=&#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>,<span class="attr">cc</span>:<span class="number">3</span>,<span class="attr">dd</span>:<span class="number">4</span>&#125;</span><br><span class="line"><span class="comment">//a=1</span></span><br><span class="line"><span class="comment">//b=2</span></span><br><span class="line"><span class="comment">//c=&#123;cc:3,dd:4&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//example1</span></span><br><span class="line"><span class="keyword">var</span> &#123;a,b,...c&#125;=&#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>,<span class="attr">cc</span>:<span class="number">3</span>,<span class="attr">dd</span>:<span class="number">4</span>&#125;</span><br><span class="line"><span class="comment">//a=1</span></span><br><span class="line"><span class="comment">//b=2</span></span><br><span class="line"><span class="comment">//c=&#123;cc:3,dd:4&#125;</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
@@ -359,7 +359,7 @@
 <blockquote>
 <p>对象的扩展运算符（…）用于取出参数对象的所有可遍历属性，拷贝到当前对象之中。</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1=&#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>,<span class="attr">c</span>:<span class="number">4</span>&#125;</span><br><span class="line"><span class="keyword">var</span> obj2=&#123;<span class="attr">a</span>:<span class="number">2</span>,<span class="attr">b</span>:<span class="number">4</span>&#125;</span><br><span class="line"><span class="keyword">var</span> obj=&#123;...obj1,...obj2&#125;</span><br><span class="line"><span class="comment">//obj=&#123;a:2,b:4,c:6&#125;</span></span><br><span class="line"><span class="comment">//会出现覆盖现象</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1=&#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>,<span class="attr">c</span>:<span class="number">4</span>&#125;</span><br><span class="line"><span class="keyword">var</span> obj2=&#123;<span class="attr">a</span>:<span class="number">2</span>,<span class="attr">b</span>:<span class="number">4</span>&#125;</span><br><span class="line"><span class="keyword">var</span> obj=&#123;...obj1,...obj2&#125;</span><br><span class="line"><span class="comment">//obj=&#123;a:2,b:4,c:6&#125;</span></span><br><span class="line"><span class="comment">//会出现覆盖现象</span></span><br></pre></td></tr></table></figure>
 
 <ol start="4">
 <li>深拷贝与浅拷贝/复制</li>
@@ -371,7 +371,7 @@
 <ol start="5">
 <li>Array.of()与Array()</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a=<span class="built_in">Array</span>.of(<span class="number">1</span>)</span><br><span class="line"><span class="comment">//a=[1]</span></span><br><span class="line"><span class="keyword">var</span> b=<span class="built_in">Array</span>(<span class="number">1</span>)</span><br><span class="line"><span class="comment">//b=[empty*3]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a=<span class="built_in">Array</span>.of(<span class="number">1</span>)</span><br><span class="line"><span class="comment">//a=[1]</span></span><br><span class="line"><span class="keyword">var</span> b=<span class="built_in">Array</span>(<span class="number">1</span>)</span><br><span class="line"><span class="comment">//b=[empty*3]</span></span><br></pre></td></tr></table></figure>
 
 <h5 id="2019-8-3-更新"><a href="#2019-8-3-更新" class="headerlink" title="2019.8.3 更新"></a>2019.8.3 更新</h5><ol start="6">
 <li>Map<br>Map相当于Object，但比Object更好用，区别在于Map可以设置的键值可以为函数。<blockquote>

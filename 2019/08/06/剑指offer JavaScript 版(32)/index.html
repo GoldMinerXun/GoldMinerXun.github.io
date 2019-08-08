@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="题目描述 输入一个正整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。   将数字拼接成一个数，需要数字越大越排在低位，越小的数字排在高位，所以需要321的1排在尽量高的位置。  123456789101112function PrintMinNumber(numbers)&amp;#123;    // write code here    numbers.sort(fu">
+<meta name="description" content="题目描述 输入一个正整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。   将数字拼接成一个数，需要数字越大越排在低位，越小的数字排在高位，所以需要321的1排在尽量高的位置。  function PrintMinNumber(numbers)&amp;#123;    // write code here    numbers.sort(function(s1,s2)&amp;#">
 <meta name="keywords" content="blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="把数组排成最小的数">
 <meta property="og:url" content="http://yoursite.com/2019/08/06/剑指offer JavaScript 版(32)/index.html">
 <meta property="og:site_name" content="GoldMiner Xun">
-<meta property="og:description" content="题目描述 输入一个正整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。   将数字拼接成一个数，需要数字越大越排在低位，越小的数字排在高位，所以需要321的1排在尽量高的位置。  123456789101112function PrintMinNumber(numbers)&amp;#123;    // write code here    numbers.sort(fu">
+<meta property="og:description" content="题目描述 输入一个正整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。   将数字拼接成一个数，需要数字越大越排在低位，越小的数字排在高位，所以需要321的1排在尽量高的位置。  function PrintMinNumber(numbers)&amp;#123;    // write code here    numbers.sort(function(s1,s2)&amp;#">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-08-06T14:36:41.378Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="把数组排成最小的数">
-<meta name="twitter:description" content="题目描述 输入一个正整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。   将数字拼接成一个数，需要数字越大越排在低位，越小的数字排在高位，所以需要321的1排在尽量高的位置。  123456789101112function PrintMinNumber(numbers)&amp;#123;    // write code here    numbers.sort(fu">
+<meta name="twitter:description" content="题目描述 输入一个正整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。   将数字拼接成一个数，需要数字越大越排在低位，越小的数字排在高位，所以需要321的1排在尽量高的位置。  function PrintMinNumber(numbers)&amp;#123;    // write code here    numbers.sort(function(s1,s2)&amp;#">
 
 
 
@@ -338,7 +338,7 @@
 <ul>
 <li>将数字拼接成一个数，需要数字越大越排在低位，越小的数字排在高位，所以需要321的1排在尽量高的位置。</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">PrintMinNumber</span>(<span class="params">numbers</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    numbers.sort(<span class="function"><span class="keyword">function</span>(<span class="params">s1,s2</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">const</span> n1=<span class="string">`<span class="subst">$&#123;s1&#125;</span><span class="subst">$&#123;s2&#125;</span>`</span></span><br><span class="line">        <span class="keyword">const</span> n2=<span class="string">`<span class="subst">$&#123;s2&#125;</span><span class="subst">$&#123;s1&#125;</span>`</span></span><br><span class="line">        <span class="keyword">return</span> n1&gt;n2</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">let</span> min=<span class="string">''</span></span><br><span class="line">    numbers.forEach(<span class="function">(<span class="params">i</span>)=&gt;</span>min+=i);</span><br><span class="line">    <span class="keyword">return</span> min;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">PrintMinNumber</span>(<span class="params">numbers</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    numbers.sort(<span class="function"><span class="keyword">function</span>(<span class="params">s1,s2</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">const</span> n1=<span class="string">`<span class="subst">$&#123;s1&#125;</span><span class="subst">$&#123;s2&#125;</span>`</span></span><br><span class="line">        <span class="keyword">const</span> n2=<span class="string">`<span class="subst">$&#123;s2&#125;</span><span class="subst">$&#123;s1&#125;</span>`</span></span><br><span class="line">        <span class="keyword">return</span> n1&gt;n2</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">let</span> min=<span class="string">''</span></span><br><span class="line">    numbers.forEach(<span class="function">(<span class="params">i</span>)=&gt;</span>min+=i);</span><br><span class="line">    <span class="keyword">return</span> min;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       

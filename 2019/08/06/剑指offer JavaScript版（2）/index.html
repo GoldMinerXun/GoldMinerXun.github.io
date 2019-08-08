@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="题目描述 请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。  代码 12345678910// 替换空格// 请实现一个函数，将一个字符串中的每个空格替换成“%20”。// 例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。function">
+<meta name="description" content="题目描述 请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。  代码 // 替换空格// 请实现一个函数，将一个字符串中的每个空格替换成“%20”。// 例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。function replaceSpa">
 <meta name="keywords" content="blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="替换空格">
 <meta property="og:url" content="http://yoursite.com/2019/08/06/剑指offer JavaScript版（2）/index.html">
 <meta property="og:site_name" content="GoldMiner Xun">
-<meta property="og:description" content="题目描述 请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。  代码 12345678910// 替换空格// 请实现一个函数，将一个字符串中的每个空格替换成“%20”。// 例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。function">
+<meta property="og:description" content="题目描述 请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。  代码 // 替换空格// 请实现一个函数，将一个字符串中的每个空格替换成“%20”。// 例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。function replaceSpa">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-08-06T14:39:19.284Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="替换空格">
-<meta name="twitter:description" content="题目描述 请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。  代码 12345678910// 替换空格// 请实现一个函数，将一个字符串中的每个空格替换成“%20”。// 例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。function">
+<meta name="twitter:description" content="题目描述 请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。  代码 // 替换空格// 请实现一个函数，将一个字符串中的每个空格替换成“%20”。// 例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。function replaceSpa">
 
 
 
@@ -336,7 +336,7 @@
 <p>请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。</p>
 </blockquote>
 <p>代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 替换空格</span></span><br><span class="line"><span class="comment">// 请实现一个函数，将一个字符串中的每个空格替换成“%20”。</span></span><br><span class="line"><span class="comment">// 例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">replaceSpace</span>(<span class="params">string</span>) </span>&#123; </span><br><span class="line">    <span class="keyword">var</span> result=string.replace(<span class="regexp">/ /g</span>,<span class="string">'%20'</span>)</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(replaceSpace(<span class="string">'we are happy'</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 替换空格</span></span><br><span class="line"><span class="comment">// 请实现一个函数，将一个字符串中的每个空格替换成“%20”。</span></span><br><span class="line"><span class="comment">// 例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">replaceSpace</span>(<span class="params">string</span>) </span>&#123; </span><br><span class="line">    <span class="keyword">var</span> result=string.replace(<span class="regexp">/ /g</span>,<span class="string">'%20'</span>)</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(replaceSpace(<span class="string">'we are happy'</span>))</span><br></pre></td></tr></table></figure>
 
 
       

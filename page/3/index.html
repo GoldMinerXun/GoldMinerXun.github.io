@@ -340,7 +340,7 @@
 操作给定的二叉树，将其变换为源二叉树的镜像。
 
 递归。。。
-123456789function Mirror(root)&#123;    // write code here    if(root===null)return;    Mirror(root.left);    Mirro
+function Mirror(root)&#123;    // write code here    if(root===null)return;    Mirror(root.left);    Mirror(root.ri
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -642,7 +642,7 @@ tips：此处注
           题目描述
 定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。
 
-12345678910111213141516171819202122232425262728293031323334353637var stack=[];var minstack=[
+var stack=[];var minstack=[];var minele=null;function push(node)&#123;    // write code here
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -948,7 +948,7 @@ tips：此处注
 满足左子树小于根节点，右子树大于根节点
 递归比较每一个节点即可
 
-1
+f
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1248,7 +1248,7 @@ tips：此处注
         
           
           
-先复制链表，通过map保存对应的新链表节点和原链表节点，然后复制random链表指针。123456789101112131415161718192021222324252627282930function RandomListNode(x)&#123;    this.label = x;    
+先复制链表，通过map保存对应的新链表节点和原链表节点，然后复制random链表指针。function RandomListNode(x)&#123;    this.label = x;    this.next = null;    this.random = null;&#125;funct
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1400,7 +1400,7 @@ tips：此处注
 输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的双向链表。要求不能创建任何新的结点，只能调整树中结点指针的指向。
 
 
-转换结点，并将pLast指针朝中序遍历（即排序方向）移动。123456789101112131415161718192021222324252627function Co
+转换结点，并将pLast指针朝中序遍历（即排序方向）移动。function Convert(pRootOfTree)&#123;    // write code her
           ...
           <!--noindex-->
           <div class="post-button text-center">

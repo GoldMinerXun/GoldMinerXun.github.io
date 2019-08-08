@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="题目描述 输入一个链表，反转链表后，输出新链表的表头。  12345678910111213function ReverseList(pHead)&amp;#123;    // write code here    var pNode=null;    var pNext=null;    while(pHead!==null)&amp;#123;        pNext=pHead.next;">
+<meta name="description" content="题目描述 输入一个链表，反转链表后，输出新链表的表头。  function ReverseList(pHead)&amp;#123;    // write code here    var pNode=null;    var pNext=null;    while(pHead!==null)&amp;#123;        pNext=pHead.next;        pHead.next=pNode">
 <meta name="keywords" content="blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="反转链表">
 <meta property="og:url" content="http://yoursite.com/2019/08/06/剑指offer JavaScript版 (15)/index.html">
 <meta property="og:site_name" content="GoldMiner Xun">
-<meta property="og:description" content="题目描述 输入一个链表，反转链表后，输出新链表的表头。  12345678910111213function ReverseList(pHead)&amp;#123;    // write code here    var pNode=null;    var pNext=null;    while(pHead!==null)&amp;#123;        pNext=pHead.next;">
+<meta property="og:description" content="题目描述 输入一个链表，反转链表后，输出新链表的表头。  function ReverseList(pHead)&amp;#123;    // write code here    var pNode=null;    var pNext=null;    while(pHead!==null)&amp;#123;        pNext=pHead.next;        pHead.next=pNode">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-08-06T14:38:06.374Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="反转链表">
-<meta name="twitter:description" content="题目描述 输入一个链表，反转链表后，输出新链表的表头。  12345678910111213function ReverseList(pHead)&amp;#123;    // write code here    var pNode=null;    var pNext=null;    while(pHead!==null)&amp;#123;        pNext=pHead.next;">
+<meta name="twitter:description" content="题目描述 输入一个链表，反转链表后，输出新链表的表头。  function ReverseList(pHead)&amp;#123;    // write code here    var pNode=null;    var pNext=null;    while(pHead!==null)&amp;#123;        pNext=pHead.next;        pHead.next=pNode">
 
 
 
@@ -335,7 +335,7 @@
         <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
 <p>输入一个链表，反转链表后，输出新链表的表头。</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ReverseList</span>(<span class="params">pHead</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> pNode=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">var</span> pNext=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">while</span>(pHead!==<span class="literal">null</span>)&#123;</span><br><span class="line">        pNext=pHead.next;</span><br><span class="line">        pHead.next=pNode;</span><br><span class="line">        pNode=pHead;</span><br><span class="line">        pHead=pNext;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pNode;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ReverseList</span>(<span class="params">pHead</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> pNode=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">var</span> pNext=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">while</span>(pHead!==<span class="literal">null</span>)&#123;</span><br><span class="line">        pNext=pHead.next;</span><br><span class="line">        pHead.next=pNode;</span><br><span class="line">        pNode=pHead;</span><br><span class="line">        pHead=pNext;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pNode;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       

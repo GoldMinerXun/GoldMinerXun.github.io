@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="题目描述 求出1-13的整数中1出现的次数,并算出100-1300的整数中1出现的次数？为此他特别数了一下1~13中包含1的数字有1、10、11、12、13因此共出现6次,但是对于后面问题他就没辙了。求出任意非负整数区间中1出现的次数（从1 到 n 中1出现的次数）。  12345678910111213141516function NumberOf1Between1AndN_Solution(n">
+<meta name="description" content="题目描述 求出1-13的整数中1出现的次数,并算出100-1300的整数中1出现的次数？为此他特别数了一下1~13中包含1的数字有1、10、11、12、13因此共出现6次,但是对于后面问题他就没辙了。求出任意非负整数区间中1出现的次数（从1 到 n 中1出现的次数）。  function NumberOf1Between1AndN_Solution(n)&amp;#123;    // write cod">
 <meta name="keywords" content="blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="整数中1出现的次数">
 <meta property="og:url" content="http://yoursite.com/2019/08/06/剑指offer JavaScript版 (31)/index.html">
 <meta property="og:site_name" content="GoldMiner Xun">
-<meta property="og:description" content="题目描述 求出1-13的整数中1出现的次数,并算出100-1300的整数中1出现的次数？为此他特别数了一下1~13中包含1的数字有1、10、11、12、13因此共出现6次,但是对于后面问题他就没辙了。求出任意非负整数区间中1出现的次数（从1 到 n 中1出现的次数）。  12345678910111213141516function NumberOf1Between1AndN_Solution(n">
+<meta property="og:description" content="题目描述 求出1-13的整数中1出现的次数,并算出100-1300的整数中1出现的次数？为此他特别数了一下1~13中包含1的数字有1、10、11、12、13因此共出现6次,但是对于后面问题他就没辙了。求出任意非负整数区间中1出现的次数（从1 到 n 中1出现的次数）。  function NumberOf1Between1AndN_Solution(n)&amp;#123;    // write cod">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-08-06T14:39:14.647Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="整数中1出现的次数">
-<meta name="twitter:description" content="题目描述 求出1-13的整数中1出现的次数,并算出100-1300的整数中1出现的次数？为此他特别数了一下1~13中包含1的数字有1、10、11、12、13因此共出现6次,但是对于后面问题他就没辙了。求出任意非负整数区间中1出现的次数（从1 到 n 中1出现的次数）。  12345678910111213141516function NumberOf1Between1AndN_Solution(n">
+<meta name="twitter:description" content="题目描述 求出1-13的整数中1出现的次数,并算出100-1300的整数中1出现的次数？为此他特别数了一下1~13中包含1的数字有1、10、11、12、13因此共出现6次,但是对于后面问题他就没辙了。求出任意非负整数区间中1出现的次数（从1 到 n 中1出现的次数）。  function NumberOf1Between1AndN_Solution(n)&amp;#123;    // write cod">
 
 
 
@@ -335,7 +335,7 @@
         <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><blockquote>
 <p>求出1-13的整数中1出现的次数,并算出100-1300的整数中1出现的次数？为此他特别数了一下1~13中包含1的数字有1、10、11、12、13因此共出现6次,但是对于后面问题他就没辙了。求出任意非负整数区间中1出现的次数（从1 到 n 中1出现的次数）。</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">NumberOf1Between1AndN_Solution</span>(<span class="params">n</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> time=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        <span class="keyword">let</span> tmp=n;</span><br><span class="line">        <span class="keyword">while</span>(tmp)&#123;</span><br><span class="line">            <span class="keyword">if</span>(tmp%<span class="number">10</span>==<span class="number">1</span>)&#123;</span><br><span class="line">                time++;</span><br><span class="line">            &#125;</span><br><span class="line">            tmp=<span class="built_in">parseInt</span>(tmp/<span class="number">10</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        n--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> time;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">NumberOf1Between1AndN_Solution</span>(<span class="params">n</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> time=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        <span class="keyword">let</span> tmp=n;</span><br><span class="line">        <span class="keyword">while</span>(tmp)&#123;</span><br><span class="line">            <span class="keyword">if</span>(tmp%<span class="number">10</span>==<span class="number">1</span>)&#123;</span><br><span class="line">                time++;</span><br><span class="line">            &#125;</span><br><span class="line">            tmp=<span class="built_in">parseInt</span>(tmp/<span class="number">10</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        n--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> time;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
