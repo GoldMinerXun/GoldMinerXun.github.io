@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="php+wamp+mysql安装wamp，要注意apache和mysql的启动，若图标呈红色或者橙色，则需要去服务里面启动这两个服务。">
+<meta name="description" content="解决办法经常碰到wammp标志为橙色，一种情况是MSSQLSERVER占用，如果在服务中停止该服务之后依然橙色无法启动，则需要在cmd中找到是哪个进程占用使用命令 netstat -ano  查看80端口是被谁占用，到任务管理器中找到，发现是system占用，但一般情况system并不会占用。然后继续查找 netsh http show servicestate  发现请求队列中有控制器进程，再到">
 <meta name="keywords" content="blog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PHP环境部署">
-<meta property="og:url" content="http://yoursite.com/2019/08/07/wamp/index.html">
+<meta property="og:title" content="把数组排成最小的数">
+<meta property="og:url" content="http://yoursite.com/2019/09/15/wammp启动不了wammpapache怎么办/index.html">
 <meta property="og:site_name" content="GoldMiner Xun">
-<meta property="og:description" content="php+wamp+mysql安装wamp，要注意apache和mysql的启动，若图标呈红色或者橙色，则需要去服务里面启动这两个服务。">
+<meta property="og:description" content="解决办法经常碰到wammp标志为橙色，一种情况是MSSQLSERVER占用，如果在服务中停止该服务之后依然橙色无法启动，则需要在cmd中找到是哪个进程占用使用命令 netstat -ano  查看80端口是被谁占用，到任务管理器中找到，发现是system占用，但一般情况system并不会占用。然后继续查找 netsh http show servicestate  发现请求队列中有控制器进程，再到">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-07T11:13:35.770Z">
+<meta property="og:updated_time" content="2019-09-15T10:56:50.931Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PHP环境部署">
-<meta name="twitter:description" content="php+wamp+mysql安装wamp，要注意apache和mysql的启动，若图标呈红色或者橙色，则需要去服务里面启动这两个服务。">
+<meta name="twitter:title" content="把数组排成最小的数">
+<meta name="twitter:description" content="解决办法经常碰到wammp标志为橙色，一种情况是MSSQLSERVER占用，如果在服务中停止该服务之后依然橙色无法启动，则需要在cmd中找到是哪个进程占用使用命令 netstat -ano  查看80端口是被谁占用，到任务管理器中找到，发现是system占用，但一般情况system并不会占用。然后继续查找 netsh http show servicestate  发现请求队列中有控制器进程，再到">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/08/07/wamp/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/15/wammp启动不了wammpapache怎么办/">
 
 
 
 
 
-  <title>PHP环境部署 | GoldMiner Xun</title>
+  <title>把数组排成最小的数 | GoldMiner Xun</title>
   
 
 
@@ -243,7 +243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/07/wamp/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/15/wammp启动不了wammpapache怎么办/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xun Zhong">
@@ -260,7 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">PHP环境部署</h1>
+          <h1 class="post-title" itemprop="name headline">把数组排成最小的数</h1>
         
 
         <div class="post-meta">
@@ -272,8 +272,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-07T19:11:22+08:00">
-                2019-08-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-15T18:50:38+08:00">
+                2019-09-15
               </time>
             
 
@@ -337,7 +337,13 @@
       
 
       
-        <h1 id="php-wamp-mysql"><a href="#php-wamp-mysql" class="headerlink" title="php+wamp+mysql"></a>php+wamp+mysql</h1><p>安装wamp，要注意apache和mysql的启动，若图标呈红色或者橙色，则需要去服务里面启动这两个服务。</p>
+        <h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>经常碰到wammp标志为橙色，一种情况是MSSQLSERVER占用，如果在服务中停止该服务之后依然橙色无法启动，<br>则需要在cmd中找到是哪个进程占用<br>使用命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">netstat -ano</span><br></pre></td></tr></table></figure>
+
+<p>查看80端口是被谁占用，到任务管理器中找到，发现是system占用，但一般情况system并不会占用。<br>然后继续查找</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">netsh http show servicestate</span><br></pre></td></tr></table></figure>
+
+<p>发现请求队列中有控制器进程，再到任务管理器中结束该PID的进程，再启动apache，则成功。</p>
 
       
     </div>
@@ -362,8 +368,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/06/HTML+CSS+JS写一个棋盘（幻影围棋1.0版）/" rel="next" title="幻影围棋网页版初级实现">
-                <i class="fa fa-chevron-left"></i> 幻影围棋网页版初级实现
+              <a href="/2019/08/07/wamp/" rel="next" title="PHP环境部署">
+                <i class="fa fa-chevron-left"></i> PHP环境部署
               </a>
             
           </div>
@@ -371,10 +377,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/15/wammp启动不了wammpapache怎么办/" rel="prev" title="把数组排成最小的数">
-                把数组排成最小的数 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -513,7 +515,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#php-wamp-mysql"><span class="nav-number">1.</span> <span class="nav-text">php+wamp+mysql</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#解决办法"><span class="nav-number">1.</span> <span class="nav-text">解决办法</span></a></li></ol></div>
             
 
           </div>
