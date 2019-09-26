@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="解决办法经常碰到wammp标志为橙色，一种情况是MSSQLSERVER占用，如果在服务中停止该服务之后依然橙色无法启动，则需要在cmd中找到是哪个进程占用使用命令 netstat -ano  查看80端口是被谁占用，到任务管理器中找到，发现是system占用，但一般情况system并不会占用。然后继续查找 netsh http show servicestate  发现请求队列中有控制器进程，再到">
+<meta name="description" content="linux centos启动mongodb失败，首先需要看mongodb文件夹里面的mongod.log，查看日志，日志里面会有错误原因。本次错误的原因是权限问题。修改权限即可。 在mongo目录下使用命令 找一下mongo在哪 (find / -name “mongo”)chown mongod -R mongochgrp mongod -R mongo    之后重启mongo服务就行">
 <meta name="keywords" content="blog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="wammp启动不了apache怎么办？">
-<meta property="og:url" content="http://yoursite.com/2019/09/15/wammp启动不了wammpapache怎么办/index.html">
+<meta property="og:title" content="最近看到和遇到的一些问题">
+<meta property="og:url" content="http://yoursite.com/2019/09/26/最近思考/index.html">
 <meta property="og:site_name" content="GoldMiner Xun">
-<meta property="og:description" content="解决办法经常碰到wammp标志为橙色，一种情况是MSSQLSERVER占用，如果在服务中停止该服务之后依然橙色无法启动，则需要在cmd中找到是哪个进程占用使用命令 netstat -ano  查看80端口是被谁占用，到任务管理器中找到，发现是system占用，但一般情况system并不会占用。然后继续查找 netsh http show servicestate  发现请求队列中有控制器进程，再到">
+<meta property="og:description" content="linux centos启动mongodb失败，首先需要看mongodb文件夹里面的mongod.log，查看日志，日志里面会有错误原因。本次错误的原因是权限问题。修改权限即可。 在mongo目录下使用命令 找一下mongo在哪 (find / -name “mongo”)chown mongod -R mongochgrp mongod -R mongo    之后重启mongo服务就行">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-15T10:59:10.785Z">
+<meta property="og:updated_time" content="2019-09-26T12:27:02.451Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wammp启动不了apache怎么办？">
-<meta name="twitter:description" content="解决办法经常碰到wammp标志为橙色，一种情况是MSSQLSERVER占用，如果在服务中停止该服务之后依然橙色无法启动，则需要在cmd中找到是哪个进程占用使用命令 netstat -ano  查看80端口是被谁占用，到任务管理器中找到，发现是system占用，但一般情况system并不会占用。然后继续查找 netsh http show servicestate  发现请求队列中有控制器进程，再到">
+<meta name="twitter:title" content="最近看到和遇到的一些问题">
+<meta name="twitter:description" content="linux centos启动mongodb失败，首先需要看mongodb文件夹里面的mongod.log，查看日志，日志里面会有错误原因。本次错误的原因是权限问题。修改权限即可。 在mongo目录下使用命令 找一下mongo在哪 (find / -name “mongo”)chown mongod -R mongochgrp mongod -R mongo    之后重启mongo服务就行">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/09/15/wammp启动不了wammpapache怎么办/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/26/最近思考/">
 
 
 
 
 
-  <title>wammp启动不了apache怎么办？ | GoldMiner Xun</title>
+  <title>最近看到和遇到的一些问题 | GoldMiner Xun</title>
   
 
 
@@ -243,7 +243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/15/wammp启动不了wammpapache怎么办/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/26/最近思考/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xun Zhong">
@@ -260,7 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">wammp启动不了apache怎么办？</h1>
+          <h1 class="post-title" itemprop="name headline">最近看到和遇到的一些问题</h1>
         
 
         <div class="post-meta">
@@ -272,8 +272,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-15T18:50:38+08:00">
-                2019-09-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-26T20:16:23+08:00">
+                2019-09-26
               </time>
             
 
@@ -337,13 +337,23 @@
       
 
       
-        <h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>经常碰到wammp标志为橙色，一种情况是MSSQLSERVER占用，如果在服务中停止该服务之后依然橙色无法启动，<br>则需要在cmd中找到是哪个进程占用<br>使用命令</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">netstat -ano</span><br></pre></td></tr></table></figure>
-
-<p>查看80端口是被谁占用，到任务管理器中找到，发现是system占用，但一般情况system并不会占用。<br>然后继续查找</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">netsh http show servicestate</span><br></pre></td></tr></table></figure>
-
-<p>发现请求队列中有控制器进程，再到任务管理器中结束该PID的进程，再启动apache，则成功。</p>
+        <ol>
+<li>linux centos启动mongodb失败，首先需要看mongodb文件夹里面的mongod.log，查看日志，日志里面会有错误原因。本次错误的原因是权限问题。修改权限即可。<blockquote>
+<p>在mongo目录下使用命令 找一下mongo在哪 (find / -name “mongo”)<br>chown mongod -R mongo<br>chgrp mongod -R mongo</p>
+</blockquote>
+</li>
+</ol>
+<p>之后重启mongo服务就行</p>
+<hr>
+<ol start="2">
+<li>cluster模块需要监听server.js(也就是项目运行端口);cluster本身运行在另一个端口。</li>
+</ol>
+<hr>
+<ol start="3">
+<li>vscode insider内测版可以连接linux服务器真的太棒了！</li>
+</ol>
+<hr>
+<p>continuing….</p>
 
       
     </div>
@@ -368,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/07/wamp/" rel="next" title="PHP环境部署">
-                <i class="fa fa-chevron-left"></i> PHP环境部署
+              <a href="/2019/09/15/子串模糊匹配/" rel="next" title="子串模糊匹配">
+                <i class="fa fa-chevron-left"></i> 子串模糊匹配
               </a>
             
           </div>
@@ -377,10 +387,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/15/子串模糊匹配/" rel="prev" title="子串模糊匹配">
-                子串模糊匹配 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -432,17 +438,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -509,22 +506,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#解决办法"><span class="nav-number">1.</span> <span class="nav-text">解决办法</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
