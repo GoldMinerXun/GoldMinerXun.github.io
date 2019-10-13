@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="TCP的三次握手和三次挥手发送方(client) 接收方(server) TCP三次握手是建立连接的过程。第一次握手：Client问Server：你在吗？第二次握手：Server回应Client：我在！第三次握手：Client告诉Server：东西给你！ 为什么三次握手就够了？第一次握手如果成功，Server就知道自己可以收到Client发送的东西。第二次握手如果成功过，Client就知道Serv">
+<meta name="description" content="TCP的三次握手和三次挥手发送方(client) 接收方(server)TCP三次握手是建立连接的过程。第一次握手：Client问Server：你在吗？第二次握手：Server回应Client：我在！第三次握手：Client告诉Server：东西给你！  为什么三次握手就够了？第一次握手如果成功，Server就知道自己可以收到Client发送的东西。第二次握手如果成功过，Client就知道Serv">
 <meta name="keywords" content="blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TCP的那些事儿">
 <meta property="og:url" content="http://yoursite.com/2019/10/13/TCP/index.html">
 <meta property="og:site_name" content="GoldMiner Xun">
-<meta property="og:description" content="TCP的三次握手和三次挥手发送方(client) 接收方(server) TCP三次握手是建立连接的过程。第一次握手：Client问Server：你在吗？第二次握手：Server回应Client：我在！第三次握手：Client告诉Server：东西给你！ 为什么三次握手就够了？第一次握手如果成功，Server就知道自己可以收到Client发送的东西。第二次握手如果成功过，Client就知道Serv">
+<meta property="og:description" content="TCP的三次握手和三次挥手发送方(client) 接收方(server)TCP三次握手是建立连接的过程。第一次握手：Client问Server：你在吗？第二次握手：Server回应Client：我在！第三次握手：Client告诉Server：东西给你！  为什么三次握手就够了？第一次握手如果成功，Server就知道自己可以收到Client发送的东西。第二次握手如果成功过，Client就知道Serv">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-13T10:02:53.308Z">
+<meta property="og:updated_time" content="2019-10-13T10:05:56.223Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP的那些事儿">
-<meta name="twitter:description" content="TCP的三次握手和三次挥手发送方(client) 接收方(server) TCP三次握手是建立连接的过程。第一次握手：Client问Server：你在吗？第二次握手：Server回应Client：我在！第三次握手：Client告诉Server：东西给你！ 为什么三次握手就够了？第一次握手如果成功，Server就知道自己可以收到Client发送的东西。第二次握手如果成功过，Client就知道Serv">
+<meta name="twitter:description" content="TCP的三次握手和三次挥手发送方(client) 接收方(server)TCP三次握手是建立连接的过程。第一次握手：Client问Server：你在吗？第二次握手：Server回应Client：我在！第三次握手：Client告诉Server：东西给你！  为什么三次握手就够了？第一次握手如果成功，Server就知道自己可以收到Client发送的东西。第二次握手如果成功过，Client就知道Serv">
 
 
 
@@ -337,11 +337,14 @@
       
 
       
-        <h4 id="TCP的三次握手和三次挥手"><a href="#TCP的三次握手和三次挥手" class="headerlink" title="TCP的三次握手和三次挥手"></a>TCP的三次握手和三次挥手</h4><p>发送方(client) 接收方(server)</p>
-<p>TCP三次握手是建立连接的过程。<br>第一次握手：Client问Server：你在吗？<br>第二次握手：Server回应Client：我在！<br>第三次握手：Client告诉Server：东西给你！</p>
+        <h2 id="TCP的三次握手和三次挥手"><a href="#TCP的三次握手和三次挥手" class="headerlink" title="TCP的三次握手和三次挥手"></a>TCP的三次握手和三次挥手</h2><h3 id="发送方-client-接收方-server"><a href="#发送方-client-接收方-server" class="headerlink" title="发送方(client) 接收方(server)"></a>发送方(client) 接收方(server)</h3><h4 id="TCP三次握手是建立连接的过程。"><a href="#TCP三次握手是建立连接的过程。" class="headerlink" title="TCP三次握手是建立连接的过程。"></a>TCP三次握手是建立连接的过程。</h4><p>第一次握手：Client问Server：你在吗？<br>第二次握手：Server回应Client：我在！<br>第三次握手：Client告诉Server：东西给你！</p>
+<blockquote>
 <p>为什么三次握手就够了？<br>第一次握手如果成功，Server就知道自己可以收到Client发送的东西。<br>第二次握手如果成功过，Client就知道Server可以接收自己的东西并且自己可以得到Server的回应。<br>第三次握手就是双方都确定了状态后，保证数据准确送达后，真正的交付数据。</p>
-<p>TCP四次挥手是断开连接的过程。<br>第一次挥手：Client问Server：我要关闭连接了，你要是有数据还没发完，你就回个ACK=1，我等你发第二次确认关闭。<br>第二次挥手：Server回Client：好，我还没发完，ACK=1。<br>Client开始等待…<br>第三次挥手：Server回Client：我发完啦，你关闭连接吧。<br>第四次挥手：Client回Server：好，我关闭连接啦！<br>然而Client并不相信网络，所以等待一个时延，希望Server能在这个时间内收到最后关闭的回应。</p>
-<p>为什么最后还需要等待时延？<br>因为Client怕对方收不到，可以在该时延内重传ACK。</p>
+</blockquote>
+<h4 id="TCP四次挥手是断开连接的过程。"><a href="#TCP四次挥手是断开连接的过程。" class="headerlink" title="TCP四次挥手是断开连接的过程。"></a>TCP四次挥手是断开连接的过程。</h4><p>第一次挥手：Client问Server：我要关闭连接了，你要是有数据还没发完，你就回个ACK=1，我等你发第二次确认关闭。<br>第二次挥手：Server回Client：好，我还没发完，ACK=1。<br>Client开始等待…<br>第三次挥手：Server回Client：我发完啦，你关闭连接吧。<br>第四次挥手：Client回Server：好，我关闭连接啦！<br>然而Client并不相信网络，所以等待一个时延，希望Server能在这个时间内收到最后关闭的回应。</p>
+<blockquote>
+<p>什么最后还需要等待时延？<br>因为Client怕对方收不到，可以在该时延内重传ACK。</p>
+</blockquote>
 
       
     </div>
@@ -513,7 +516,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP的三次握手和三次挥手"><span class="nav-number">1.</span> <span class="nav-text">TCP的三次握手和三次挥手</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP的三次握手和三次挥手"><span class="nav-number">1.</span> <span class="nav-text">TCP的三次握手和三次挥手</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#发送方-client-接收方-server"><span class="nav-number">1.1.</span> <span class="nav-text">发送方(client) 接收方(server)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP三次握手是建立连接的过程。"><span class="nav-number">1.1.1.</span> <span class="nav-text">TCP三次握手是建立连接的过程。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP四次挥手是断开连接的过程。"><span class="nav-number">1.1.2.</span> <span class="nav-text">TCP四次挥手是断开连接的过程。</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
