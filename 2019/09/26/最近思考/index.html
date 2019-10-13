@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="linux centos启动mongodb失败，首先需要看mongodb文件夹里面的mongod.log，查看日志，日志里面会有错误原因。本次错误的原因是权限问题。修改权限即可。 在mongo目录下使用命令 找一下mongo在哪 (find / -name “mongo”)chown mongod -R mongochgrp mongod -R mongo    之后重启mongo服务就行">
+<meta name="description" content="linux centos启动mongodb失败，首先需要看mongodb文件夹里面的mongod.log，查看日志，日志里面会有错误原因。本次错误的原因是权限问题。修改权限即可。 在mongo目录下使用命令 找一下mongo在哪 (find / -name “mongo”)chown mongod -R mongochgrp mongod -R mongo之后重启mongo服务就行      c">
 <meta name="keywords" content="blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="最近看到和遇到的一些问题">
 <meta property="og:url" content="http://yoursite.com/2019/09/26/最近思考/index.html">
 <meta property="og:site_name" content="GoldMiner Xun">
-<meta property="og:description" content="linux centos启动mongodb失败，首先需要看mongodb文件夹里面的mongod.log，查看日志，日志里面会有错误原因。本次错误的原因是权限问题。修改权限即可。 在mongo目录下使用命令 找一下mongo在哪 (find / -name “mongo”)chown mongod -R mongochgrp mongod -R mongo    之后重启mongo服务就行">
+<meta property="og:description" content="linux centos启动mongodb失败，首先需要看mongodb文件夹里面的mongod.log，查看日志，日志里面会有错误原因。本次错误的原因是权限问题。修改权限即可。 在mongo目录下使用命令 找一下mongo在哪 (find / -name “mongo”)chown mongod -R mongochgrp mongod -R mongo之后重启mongo服务就行      c">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-26T12:27:02.451Z">
+<meta property="og:updated_time" content="2019-09-26T12:36:43.460Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="最近看到和遇到的一些问题">
-<meta name="twitter:description" content="linux centos启动mongodb失败，首先需要看mongodb文件夹里面的mongod.log，查看日志，日志里面会有错误原因。本次错误的原因是权限问题。修改权限即可。 在mongo目录下使用命令 找一下mongo在哪 (find / -name “mongo”)chown mongod -R mongochgrp mongod -R mongo    之后重启mongo服务就行">
+<meta name="twitter:description" content="linux centos启动mongodb失败，首先需要看mongodb文件夹里面的mongod.log，查看日志，日志里面会有错误原因。本次错误的原因是权限问题。修改权限即可。 在mongo目录下使用命令 找一下mongo在哪 (find / -name “mongo”)chown mongod -R mongochgrp mongod -R mongo之后重启mongo服务就行      c">
 
 
 
@@ -339,11 +339,10 @@
       
         <ol>
 <li>linux centos启动mongodb失败，首先需要看mongodb文件夹里面的mongod.log，查看日志，日志里面会有错误原因。本次错误的原因是权限问题。修改权限即可。<blockquote>
-<p>在mongo目录下使用命令 找一下mongo在哪 (find / -name “mongo”)<br>chown mongod -R mongo<br>chgrp mongod -R mongo</p>
+<p>在mongo目录下使用命令 找一下mongo在哪 (find / -name “mongo”)<br>chown mongod -R mongo<br>chgrp mongod -R mongo<br>之后重启mongo服务就行</p>
 </blockquote>
 </li>
 </ol>
-<p>之后重启mongo服务就行</p>
 <hr>
 <ol start="2">
 <li>cluster模块需要监听server.js(也就是项目运行端口);cluster本身运行在另一个端口。</li>
@@ -387,6 +386,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/13/TCP/" rel="prev" title="TCP的那些事儿">
+                TCP的那些事儿 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -454,7 +457,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -465,7 +468,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
