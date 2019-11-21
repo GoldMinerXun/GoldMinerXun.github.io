@@ -1,0 +1,2255 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;page&#x2F;2&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/page/2/"/>
+
+
+
+
+
+  <title>Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+            Schedule
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" target="_blank" rel="noopener" class="popup-trigger">
+          
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/03/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%20JavaScript%E7%89%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/03/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%20JavaScript%E7%89%88/" itemprop="url">二叉树后序遍历</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-03T18:20:22+08:00">
+                2019-10-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>题目描述：<br>代码实现二叉树的后续遍历。要求：1、不可以用递归；2、不可以用栈；3、自定义树节点的结构；4、给出测试用例；5、语言不限；<br>注意：你的方法的输入为根节点</p>
+<p>输入描述：<br>第一行一个正整数n(1&lt;=n&lt;=100)，表示二叉树有n个结点。<br>接下来n行，第i行两个整数li,ri (0&lt;=li,ri&lt;=n) ，分别表示第i个结点的左儿子和右儿子，为0代表空。<br>保证根为1，保证输入为合法二叉树。</p>
+<p>输出描述：<br>输出一行。输出n个数，代表后序遍历的结点的顺序，相邻两个数之间用一个空格相隔。</p>
+<hr>
+<p>大致思路如下，关于输入输出处理，在我另一篇关于二叉树的博客里有写：<br><a href="https://blog.csdn.net/Damp_XUN/article/details/100640372" target="_blank" rel="noopener">非递归实现二叉树遍历</a></p>
+<p>因为不能用栈，所以对节点做调整，加入父节点属性。<br>现在有父节点，我们再来看后序遍历的顺序。首先父节点，然后向左寻找，找到左节点，然后回到该节点的上一个节点，再找其右节点，再回到该节点的上一个节点。<br>那么起码要知道，上一节点是谁。并且实时调整上一节点。<br>所以假设，我们设置一个当前节点指针pCur，一个上一节点指针pLast。<br>每一次结束，当前指针一定是指向父节点，上一节点指针一定是指向当前指针的上一个位置。<br>所以存在两者情况，要么，上一节点指针指向当前指针的左节点，要么指向右节点。<br>所以简化成最简单的情况，</p>
+<ol>
+<li>pLast == pCur.left </li>
+<li>pLast == pCur.right</li>
+</ol>
+<p>第一种情况，由于当前while循环寻找到的一定是叶节点，则左节点一定为空，如果同时右节点存在，那么说明存在左子树，需要遍历右子树，并判断右子树是否存在左节点，这时就是重复寻找。如果不存在右子树，则直接输出当前指针指向的节点，然后回退父节点，输出父节点，回退父节点后，不需要再遍历左节点，因为左节点此时为空，所以下一轮寻找会直接判断右节点为空，即不存在右子树，输出当前节点并回退父节点。</p>
+<p>第二种情况，说明当前遍历到右节点，则一定是右子树遍历完毕遍历到右叶子节点，所以输出，并回退父节点。</p>
+<p>讲的有点混乱，我还是要再琢磨一下怎么更好的阐述。。。</p>
+<p>总之就是对于一个节点，其是否有左子树，如果有左子树，则继续沿左子树方向找到左叶子节点；如果没有左子树，看是否有右子树，有右子树，则继续将右子树当作一个二叉树进行遍历；<br>如果有左叶子节点就输出左叶子节点，然后看有没有右子树，如果有则继续将右子数当作二叉树遍历；<br>如果只有右叶子节点，则输出右叶子节点；<br>然后回退，输出父节点。<br>如何判断叶子节点，则需要每次寻找子树后，如果存在子树，则需要继续沿左一直找到左叶子节点，或一直找右叶子节点。如果没有右子树或左子树，则可以输出。<br>所以本解法在没有左节点，只有右叶子节点时continue，没有继续内部while循环找叶子节点。只有在判断有子树的情况下，没有continue；</p>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> node = <span class="function"><span class="keyword">function</span> (<span class="params">val</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.parent = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">this</span>.left = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">this</span>.right = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">this</span>.val = val;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr = [[<span class="number">3</span>, <span class="number">2</span>], [<span class="number">0</span>, <span class="number">5</span>], [<span class="number">0</span>, <span class="number">4</span>], [<span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>]];</span><br><span class="line"><span class="keyword">var</span> initTree2 = <span class="function"><span class="keyword">function</span> (<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> pRoot = <span class="keyword">new</span> node(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">var</span> queue = [];</span><br><span class="line">    queue.push(pRoot);</span><br><span class="line">    <span class="keyword">while</span> (queue.length != <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> pCur = queue.shift();</span><br><span class="line">        <span class="built_in">console</span>.log(pCur.val)</span><br><span class="line">        <span class="keyword">var</span> i = pCur.val - <span class="number">1</span>;</span><br><span class="line">        pCur.left =<span class="keyword">new</span> node(arr[i][<span class="number">0</span>]);</span><br><span class="line">        pCur.left.parent=pCur;</span><br><span class="line">        pCur.right = <span class="keyword">new</span> node(arr[i][<span class="number">1</span>]);</span><br><span class="line">        pCur.right.parent=pCur;</span><br><span class="line">        <span class="keyword">if</span> (pCur.left.val != <span class="number">0</span>) &#123;</span><br><span class="line">           </span><br><span class="line">            queue.push(pCur.left)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (pCur.right.val != <span class="number">0</span>) &#123;</span><br><span class="line">            </span><br><span class="line">            queue.push(pCur.right);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pRoot;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> pRoot2=initTree2(arr);</span><br><span class="line"><span class="built_in">console</span>.log(pRoot2)</span><br><span class="line"><span class="keyword">var</span> postOrder = <span class="function"><span class="keyword">function</span> (<span class="params">pRoot</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> pCur=pRoot;</span><br><span class="line">    <span class="keyword">var</span> pLast=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">while</span>(pCur)&#123;</span><br><span class="line">    <span class="comment">//    console.log(1)</span></span><br><span class="line">       <span class="keyword">if</span>(pCur.left==pLast)&#123;</span><br><span class="line">            <span class="keyword">if</span>(pCur.right.val!=<span class="number">0</span>)&#123;</span><br><span class="line">                pCur=pCur.right;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                pLast=pCur;</span><br><span class="line">                <span class="built_in">console</span>.log(pCur.val);</span><br><span class="line">                pCur=pCur.parent;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">       &#125;<span class="keyword">else</span> <span class="keyword">if</span>(pCur.right==pLast)&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(pCur.val)</span><br><span class="line">            pLast=pCur;</span><br><span class="line">            pCur=pCur.parent;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">while</span>(pCur.left!=<span class="literal">null</span>)&#123;</span><br><span class="line">           pCur=pCur.left</span><br><span class="line">       &#125;</span><br><span class="line">       pLast=pCur;</span><br><span class="line">       pCur=pCur.parent;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">postOrder(pRoot2);</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/23/%E4%BF%AE%E6%94%B9this%E6%8C%87%E5%90%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/23/%E4%BF%AE%E6%94%B9this%E6%8C%87%E5%90%91/" itemprop="url">修改this指向</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-23T18:30:22+08:00">
+                2019-09-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在 javascript之 this 关键字详解 文章中，谈及了如下内容，做一个简单的回顾：</p>
+<p>1.this对象的涵义就是指向当前对象中的属性和方法。</p>
+<p>2.this指向的可变性。当在全局作用域时，this指向全局；当在某个对象中使用this时，this指向该对象；当把某个对象的方法赋值给另外一个对象时，this会指向后一个对象。</p>
+<p>3.this的使用场合有：在全局环境中使用；在构造函数中使用，在对象的方法中使用。</p>
+<p>4.this的使用注意点，最重要的一点就是要避免多层嵌套使用this对象。</p>
+<p>对this关键字有了稍稍了解便知道，this对象指向会经常改变的，这会造成一些意想不到的影响。JavaScript提供了call、apply、bind这三个方法，来切换/固定this的指向。</p>
+<p>以下内容会分为如下小节：</p>
+<p>1.call/apply/bind方法的来源</p>
+<p>2.Function.prototype.call()</p>
+<p>3.Function.prototype.apply()</p>
+<p>　　3.1：找出数组中的最大数</p>
+<p>　　3.2：将数组的空元素变为undefined</p>
+<p>　　3.3：转换类似数组的对象</p>
+<p>4.Function.prototype.bind()</p>
+<p>5.绑定回调函数的对象</p>
+<p>6.call，apply，bind方法的联系和区别</p>
+<p>1.call/apply/bind方法的来源</p>
+<p>　　首先，在使用call，apply，bind方法时，我们有必要知道这三个方法究竟是来自哪里？为什么可以使用的到这三个方法？</p>
+<p>　　call，apply，bind这三个方法其实都是继承自Function.prototype中的，属于实例方法。</p>
+<p>1     console.log(Function.prototype.hasOwnProperty(‘call’)) //true<br>2     console.log(Function.prototype.hasOwnProperty(‘apply’)) //true<br>3     console.log(Function.prototype.hasOwnProperty(‘bind’)) //true<br>　　上面代码中，都返回了true，表明三种方法都是继承自Function.prototype的。当然，普通的对象，函数，数组都继承了Function.prototype对象中的三个方法，所以这三个方法都可以在对象，数组，函数中使用。</p>
+<p>　　关于继承的概念，会在以后与大家分享。</p>
+<p>2.Function.prototype.call()</p>
+<p>　　函数实例的call方法，可以指定该函数内部this的指向（即函数执行时所在的作用域），然后在所指定的作用域中，调用该函数。并且会立即执行该函数。</p>
+<p>　　看个例子来好好理解这段话。</p>
+<p>复制代码<br>复制代码<br>　　上面代码中，a函数中的this关键字，如果指向全局对象，返回结果为456。可以看到，如果call方法没有参数，或者参数为null或undefined或者this，则等同于指向全局对象。如果使用call方法将this关键字指向keith对象，也就是将该函数执行时所在的作用域为keith对象，返回结果为123。</p>
+<p>　　call()方法可以传递两个参数。第一个参数是指定函数内部中this的指向（也就是函数执行时所在的作用域），第二个参数是函数调用时需要传递的参数。</p>
+<p>1     function keith(a, b) {<br>2         console.log(a + b);<br>3     }<br>4<br>5     keith.call(null, 1, 2); //3<br>　　第一个参数是必须的，可以是null，undefined，this，但是不能为空。设置为null，undefined，this表明函数keith此时处于全局作用域。第二个参数中必须一个个添加。而在apply中必须以数组的形式添加。</p>
+<p>　　call方法的一个应用是调用对象的原生方法。也可以用于将类数组对象转换为数组。</p>
+<p>复制代码<br>复制代码<br> 1     var obj = {};<br> 2     console.log(obj.hasOwnProperty(‘toString’)); //false<br> 3<br> 4     obj.hasOwnProperty = function() {<br> 5         return true;<br> 6     }<br> 7<br> 8     console.log(obj.hasOwnProperty(‘toString’)); //true<br> 9<br>10     console.log(Object.prototype.hasOwnProperty.call(obj, ‘toString’)); //false<br>复制代码<br>复制代码<br>　　上面代码中，hasOwnProperty是obj对象继承的方法，如果这个方法一旦被覆盖，就不会得到正确结果。call方法可以解决这个方法，它将hasOwnProperty方法的原始定义放到obj对象上执行，这样无论obj上有没有同名方法，都不会影响结果。要注意的是，hasOwnProperty是Object.prototype原生对象的方法，而call是继承自Function.prototype的方法。</p>
+<p>　　</p>
+<p>3.Function.prototype.apply()</p>
+<p>　　apply方法的作用与call方法类似，也是改变this指向（函数执行时所在的作用域），然后在指定的作用域中，调用该函数。同时也会立即执行该函数。唯一的区别就是，它接收一个数组作为函数执行时的参数。</p>
+<p>　　apply方法的第一个参数也是this所要指向的那个对象，如果设为null或undefined或者this，则等同于指定全局对象。第二个参数则是一个数组，该数组的所有成员依次作为参数，在调用时传入原函数。原函数的参数，在call方法中必须一个个添加，但是在apply方法中，必须以数组形式添加。</p>
+<p>　　看一下call，apply的细微差别。</p>
+<p>复制代码<br>复制代码<br>1     function keith(a, b) {<br>2         console.log(a + b);<br>3     }<br>4<br>5     keith.call(null, 2, 3); //5<br>6     keith.apply(null, [2, 3]); //5<br>复制代码<br>复制代码<br>　　上面代码中，第一个参数为null，指向全局作用域；第二个参数传入的形式稍稍不同。</p>
+<p>　　apply方法有以下应用。</p>
+<p>　　3.1：找出数组中的最大数</p>
+<p>1     var a = [2, 4, 5, 7, 8, 10];<br>2<br>3     console.log(Math.max.apply(null, a)); //10<br>4     console.log(Math.max.call(null,2, 4, 5, 7, 8, 10)); //10<br>　　Javascript中是没有提供找出数组中最大值的方法的，结合使用继承自Function.prototype的apply和Math.max方法，就可以返回数组的最大值。</p>
+<p>　　</p>
+<p>　　3.2：将数组的空元素变为undefined</p>
+<p>　　通过apply方法，利用Array构造函数将数组的空元素变成undefined。</p>
+<p>1 console.log(Array.apply(null, [1, , 3])); // [1, undefined, 3]<br>　　空元素与undefined的差别在于，数组的forEach方法会跳过空元素，但是不会跳过undefined和null。因此，遍历内部元素的时候，会得到不同的结果。</p>
+<p>复制代码<br>复制代码<br>    var a = [1, , 3];<br>    a.forEach(function(index) {<br>        console.log(index); //1,3 ，跳过了空元素。<br>    })</p>
+<pre><code>Array.apply(null,a).forEach(function(index){
+    console.log(index);    ////1,undefined,3  ，将空元素设置为undefined
+})</code></pre><p>复制代码<br>复制代码</p>
+<p>　　3.3：转换类似数组的对象</p>
+<p>　　另外，利用数组对象的slice方法，可以将一个类似数组的对象（比如arguments对象）转为真正的数组。当然，slice方法的一个重要应用，就是将类似数组的对象转为真正的数组。call和apply都可以实现该应用。</p>
+<p>1     console.log(Array.prototype.slice.apply({0:1,length:1}));    //[1]<br>2     console.log(Array.prototype.slice.call({0:1,length:1}));    //[1]<br>3     console.log(Array.prototype.slice.apply({0:1,length:2}));    //[1,undefined]<br>4     console.log(Array.prototype.slice.call({0:1,length:2}));    //[1,undefined]<br>1     function keith(a,b,c){<br>2         return arguments;<br>3     }<br>4<br>5     console.log(Array.prototype.slice.call(keith(2,3,4)));    //[2,3,4]<br>　　上面代码的call，apply方法的参数都是对象，但是返回结果都是数组，这就起到了将对象转成数组的目的。从上面代码可以看到，这个方法起作用的前提是，被处理的对象必须有length属性，以及相对应的数字键。</p>
+<p>　　</p>
+<p>4.Function.prototype.bind()</p>
+<p>　　bind方法用于指定函数内部的this指向（执行时所在的作用域），然后返回一个新函数。bind方法并非立即执行一个函数。</p>
+<p>复制代码<br>复制代码<br> 1     var keith = {<br> 2         a: 1,<br> 3         count: function() {<br> 4             console.log(this.a++);<br> 5         }<br> 6     };<br> 7<br> 8     keith.count(); //1<br> 9     keith.count(); //2<br>10     keith.count(); //3<br>复制代码<br>复制代码<br>　　上面代码中，如果this.a指向keith对象内部的a属性，如果这个方法赋值给另外一个变量，调用时就会出错。</p>
+<p>复制代码<br>复制代码<br>1     var keith = {<br>2         a: 1,<br>3         count: function() {<br>4             console.log(this.a++);<br>5         }<br>6     };<br>7<br>8     var f = keith.count;<br>9     f(); //NaN<br>复制代码<br>复制代码<br>　　上面代码中，如果把count方法赋值给f变量，那么this对象指向不再是keith对象了，而是window对象。而window.a默认为undefined，进行递增运算之后undefined++就等于NaN。</p>
+<p>　　为了解决这个问题，可以使用bind方法，将keith对象里的this绑定到keith对象上，或者是直接调用。</p>
+<p>1     var f = keith.count.bind(keith);<br>2     f(); //1<br>3     f(); //2<br>4     f(); //3<br>1     keith.count.bind(keith)() //1<br>2     keith.count.bind(keith)() //2<br>3     keith.count.bind(keith)() //3<br>　　当然，this也可以绑定到其他对象上。</p>
+<p>复制代码<br>复制代码<br>1     var obj = {<br>2         a: 100<br>3     };<br>4     var f = keith.count.bind(obj);<br>5     f(); //100<br>6     f(); //101<br>7     f(); //102<br>复制代码<br>复制代码<br>　　同样，我们也可以给bind方法传递参数，第一个参数如果为null或者undefined或者this，会将函数内部的this对象指向全局环境；第二个为调用时需要的参数，并且传递参数的形式与call方法相同。</p>
+<p>复制代码<br>复制代码<br>1     function keith(a, b) {<br>2         return a + b;<br>3     }<br>4     console.log(keith.apply(null,[1,4])); //5<br>5     console.log(keith.call(null,1,4)); //5<br>6     console.log(keith.bind(null, 1, 4)); //keith()<br>7     console.log(keith.bind(null, 1, 4)()); //5<br>复制代码<br>复制代码<br>　　上面代码中，可以看出call，apply，bind三者的区别：call和apply方法都是在调用之后立即执行的。而bind调用之后是返回原函数，需要再调用一次才行，有点像闭包的味道，如果对闭包概念不熟悉，可以浏览这两篇文章：javascript–函数参数与闭包–详解，javascript中重要概念-闭包-深入理解。</p>
+<p>5.绑定回调函数的对象</p>
+<p>　　在这篇文章javascript之 this 关键字详解中，有谈及到如果在回掉函数中使用this对象，那么this对象是会指向DOM对象，也就是button对象。如果要解决回调函数中this指向问题，可以用如下方法。</p>
+<p>复制代码<br>复制代码<br> 1     var o = {<br> 2         f: function() {<br> 3             console.log(this === o);<br> 4         }<br> 5     }<br> 6<br> 7     $(‘#button’).on(‘click’, function() {<br> 8         o.f.apply(o);<br> 9         //或者 o.f.call(o);<br>10         //或者 o.f.bind(o)();<br>11     });<br>复制代码<br>复制代码<br>　　点击按钮以后，控制台将会显示true。由于apply方法（或者call方法）不仅绑定函数执行时所在的对象，还会立即执行函数（而bind方法不会立即执行，注意区别），因此不得不把绑定语句写在一个函数体内。</p>
+<p>6.call，apply，bind方法的联系和区别</p>
+<p>　　其实用于指定函数内部的this指向的问题，这三个方法都差不多，只是存在形式上的差别。读者可以将以上的例子用三种方法尝试用三种方法实现。</p>
+<p>　　总结一下call，apply，bind方法：</p>
+<p>　　a：第一个参数都是指定函数内部中this的指向（函数执行时所在的作用域），然后根据指定的作用域，调用该函数。</p>
+<p>　　b：都可以在函数调用时传递参数。call，bind方法需要直接传入，而apply方法需要以数组的形式传入。</p>
+<p>　　c：call，apply方法是在调用之后立即执行函数，而bind方法没有立即执行，需要将函数再执行一遍。有点闭包的味道。</p>
+<p>　　d：改变this对象的指向问题不仅有call，apply，bind方法，也可以使用that变量来固定this的指向。如有疑问，请访问 javascript之 this 关键字详解 </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/19/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(17)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/19/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(17)/" itemprop="url">树的子结构</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-19T11:10:22+08:00">
+                2019-09-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="树的子结构"><a href="#树的子结构" class="headerlink" title="树的子结构"></a>树的子结构</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+<p>输入两棵二叉树A，B，判断B是不是A的子结构。（ps：我们约定空树不是任意一个树的子结构）</p>
+</blockquote>
+<p>重复两步，采用递归</p>
+<ol>
+<li>根节点是否相同</li>
+<li>相同检查剩余节点</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">HasSubtree</span>(<span class="params">pRoot1, pRoot2</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">let</span> res=<span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(pRoot1===<span class="literal">null</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(pRoot2===<span class="literal">null</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(pRoot1.val==pRoot2.val) res=tree1hastree2(pRoot1,pRoot2)</span><br><span class="line">    <span class="keyword">if</span>(!res)res=HasSubtree(pRoot1.left,pRoot2)</span><br><span class="line">    <span class="keyword">if</span>(!res)res=HasSubtree(pRoot1.right,pRoot2)</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tree1hastree2</span>(<span class="params">pRoot1,pRoot2</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pRoot2===<span class="literal">null</span>)<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(pRoot1===<span class="literal">null</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(pRoot1.val!==pRoot2.val)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> tree1hastree2(pRoot1.left,pRoot2.left)&amp;&amp;tree1hastree2(pRoot1.right,pRoot2.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/18/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(9)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/18/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(9)/" itemprop="url">变态跳台阶</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-18T18:10:22+08:00">
+                2019-09-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="变态跳台阶"><a href="#变态跳台阶" class="headerlink" title="变态跳台阶"></a>变态跳台阶</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+<p>一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。</p>
+</blockquote>
+<p>根据跳台阶的解法，jump(n)=jump(n-1)+jump(n-2)<br>此处可跳台阶为1~n，所以jump(n)=jump(n-1)+jump(n-2)+…+jump(1)<br>由数学推算得：<br>jump(n)=jump(n-1)+jump(n-2)+…+jump(1)—————–[1]<br>jump(n-1)=jump(n-2)+jump(n-3)+…+jump(1)————–[2]<br>[1]-[2]==&gt;  jump(n)=2* jump(n-1)</p>
+<p>jump(1)=1<br>jump(2)=2<em>1<br>jump(3)=2</em>2<em>1<br>jump(4)=2</em>2<em>2</em>1<br>…<br>jump(n)=2^(n-1)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jumpFloorII</span>(<span class="params">number</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> i=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(--number)&#123;</span><br><span class="line">        i*=<span class="number">2</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/17/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(25)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/17/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(25)/" itemprop="url">复杂链表的复制</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-17T12:30:22+08:00">
+                2019-09-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="复杂链表的复制"><a href="#复杂链表的复制" class="headerlink" title="复杂链表的复制"></a>复杂链表的复制</h3><ul>
+<li>先复制链表，通过map保存对应的新链表节点和原链表节点，然后复制random链表指针。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">RandomListNode</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.label = x;</span><br><span class="line">    <span class="keyword">this</span>.next = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">this</span>.random = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Clone</span>(<span class="params">pHead</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(pHead==<span class="literal">null</span>)<span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">const</span> m=<span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">    <span class="keyword">let</span> p=pHead;</span><br><span class="line">    <span class="keyword">let</span> p2=<span class="keyword">new</span> RandomListNode(pHead.label);</span><br><span class="line">    <span class="keyword">const</span> pHead2=p2;</span><br><span class="line">    map.set(p,p2)</span><br><span class="line">    <span class="keyword">while</span>(p)&#123;</span><br><span class="line">        <span class="keyword">if</span>(p.next)p2.next=<span class="keyword">new</span> RandomListNode(p.next.label);</span><br><span class="line">        <span class="keyword">else</span> p2.next=<span class="literal">null</span>;</span><br><span class="line">        p=p.next;</span><br><span class="line">        p2=p2.next;</span><br><span class="line">        m.set(p,p2)</span><br><span class="line">    &#125;</span><br><span class="line">    p=pHead;</span><br><span class="line">    p2=pHead2;</span><br><span class="line">    <span class="keyword">while</span>(p!==<span class="literal">null</span>)&#123;</span><br><span class="line">        p2.random=m.get(p.random);</span><br><span class="line">        p=p.next;</span><br><span class="line">        p2=p2.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pHead2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(52)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(52)/" itemprop="url">正则表达式匹配</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-13T18:30:22+08:00">
+                2019-09-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="正则表达式匹配"><a href="#正则表达式匹配" class="headerlink" title="正则表达式匹配"></a>正则表达式匹配</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>请实现一个函数用来匹配包括’.’和’<em>‘的正则表达式。模式中的字符’.’表示任意一个字符，而’</em>‘表示它前面的字符可以出现任意次（包含0次）。 在本题中，匹配是指字符串的所有字符匹配整个模式。例如，字符串”aaa”与模式”a.a”和”ab<em>ac</em>a”匹配，但是与”aa.a”和”ab*a”均不匹配</p>
+</blockquote>
+<ul>
+<li>第二个字符为”*”<ul>
+<li>第一个字符为”.”或为等于s此时的字符</li>
+<li>第一个字符不为”.”且第一个字符也不匹配s此时的字符</li>
+</ul>
+</li>
+<li>第二个字符不为”*”<ul>
+<li>第一个字符为”.”或第一个字符匹配s此时的字符</li>
+</ul>
+</li>
+</ul>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">match</span>(<span class="params">s, pattern</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(s==<span class="literal">null</span>||pattern==<span class="literal">null</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> matchrecursive(s,<span class="number">0</span>,pattern,<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">matchrecursive</span>(<span class="params">str,istr,pattern,ipattern</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(str.length==istr&amp;&amp;pattern.length==ipattern)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(str.length!=istr&amp;&amp;pattern.length==ipattern)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(pattern[ipattern+<span class="number">1</span>]==<span class="string">'*'</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(pattern[ipattern]==<span class="string">'.'</span>&amp;&amp;istr!=str.length||pattern[ipattern]==str[istr])&#123;</span><br><span class="line">            <span class="keyword">return</span> (</span><br><span class="line">                matchrecursive(str,istr+<span class="number">1</span>,pattern,ipattern+<span class="number">2</span>)||</span><br><span class="line">                matchrecursive(str,istr+<span class="number">1</span>,pattern,ipattern)||</span><br><span class="line">                matchrecursive(str,istr,pattern,ipattern+<span class="number">2</span>)</span><br><span class="line">            )</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> matchrecursive(str,istr,pattern,ipattern+<span class="number">2</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(pattern[ipattern]==<span class="string">'.'</span>&amp;&amp;istr!=str.length||pattern[ipattern]==str[istr])&#123;</span><br><span class="line">        <span class="keyword">return</span> matchrecursive(str,istr+<span class="number">1</span>,pattern,ipattern+<span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/13/%E5%89%91%E6%8C%87offerJavaScript%E7%89%88%20(45)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/13/%E5%89%91%E6%8C%87offerJavaScript%E7%89%88%20(45)/" itemprop="url">扑克牌顺子</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-13T18:30:22+08:00">
+                2019-09-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="扑克牌顺子"><a href="#扑克牌顺子" class="headerlink" title="扑克牌顺子"></a>扑克牌顺子</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>红心A,黑桃3,小王,大王,方片5”,“Oh My God!”不是顺子…..LL不高兴了,他想了想,决定大\小 王可以看成任何数字,并且A看作1,J为11,Q为12,K为13。上面的5张牌就可以变成“1,2,3,4,5”(大小王分别看作2和4),“So Lucky!”。LL决定去买体育彩票啦。 现在,要求你使用这幅牌模拟上面的过程,然后告诉我们LL的运气如何， 如果牌能组成顺子就输出true，否则就输出false。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">IsContinuous</span>(<span class="params">numbers</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(numbers.length==<span class="number">0</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    numbers.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;<span class="keyword">return</span> a-b&#125;);</span><br><span class="line">    <span class="keyword">let</span> interval=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> zero=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;numbers.length<span class="number">-1</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(numbers[i]!=<span class="number">0</span>)&#123;</span><br><span class="line">            interval+=(numbers[i+<span class="number">1</span>]-numbers[i]<span class="number">-1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(numbers[i]==<span class="number">0</span>)&#123;</span><br><span class="line">            zero++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(interval&gt;zero||interval&lt;<span class="number">0</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/13/github+hexo+next%20%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/13/github+hexo+next%20%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/" itemprop="url">Hexo + GitHub Pages + NexT在win10个人博客</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-13T18:30:22+08:00">
+                2019-09-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>踩了很多坑，找到一个大佬写的教程，但是还是有坑。</li>
+<li>要注意目录，千万别乱npm</li>
+<li>在仓库里面添加ssh时要记得给写权限 ，allow write access</li>
+<li>注意在yml文件里面改配置，还有仓库的地址是:不是/</li>
+<li>每次修改完任何文件，需要以下操作才能发布到GitHub上<blockquote>
+<p>hexo g<br>hexo d<br>hexo clean<br>hexo d -g</p>
+</blockquote>
+</li>
+</ul>
+<p>分享大佬链接，按照大佬的顺序来，别踩坑，踩就是一小时<br><a href="https://blog.csdn.net/qq_34229391/article/details/82251852" target="_blank" rel="noopener">Hexo + GitHub Pages + NexT在win10上搭建个性化个人博客</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/13/JavaScript%E5%8E%9F%E5%9E%8B%E9%93%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/13/JavaScript%E5%8E%9F%E5%9E%8B%E9%93%BE/" itemprop="url">JavaScript原型链</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-13T18:30:22+08:00">
+                2019-09-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="什么是原型链"><a href="#什么是原型链" class="headerlink" title="什么是原型链"></a>什么是原型链</h3><p>在js中，只有一种结构，对象。</p>
+<p>每个实例对象都有自己的私有属性：__ proto __，这个属性是只有实例可以访问得到的，这个属性指向它的构造函数的原型对象，这个原型对象还有它的原型对象，直至其原型对象为null，null没有原型对象，这个链式关系就终止了。这就是原型链。</p>
+<h3 id="Prototype和proto"><a href="#Prototype和proto" class="headerlink" title="Prototype和proto"></a>Prototype和<strong>proto</strong></h3><p>通过prototype定义的属性，会向上定义。定义到它的原型对象上去。<br>通过<strong>proto</strong>定义的属性，会变成其私有属性，不被原型读取；</p>
+<p>当查看某个对象是否有某属性时，需要通过原型链逐级向上读取。</p>
+<h3 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h3><p>构造器就是指向这个实例对象的构造函数。</p>
+<blockquote>
+<p>constructor 和 instanceof<br>两者在于一个时找构造器，一个是判断构造函数的prototype属性是否出现在某个对象的原型链上</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(41)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(41)/" itemprop="url">和为S的连续正整数序列</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-13T18:10:22+08:00">
+                2019-09-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="和为S的连续正整数序列"><a href="#和为S的连续正整数序列" class="headerlink" title="和为S的连续正整数序列"></a>和为S的连续正整数序列</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><ul>
+<li><p>输出所有和为S的连续正数序列。序列内按照从小至大的顺序，序列间按照开始数字从小到大的顺序</p>
+</li>
+<li><p>由求和公式得 (i+1)<em>(2</em>a+i)/2=sum;我们只需要找出对应的a和i</p>
+</li>
+<li><p>若只有两个数，则最大的为折半的数，比如s=89，两个数字组成的序列为 44，45</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindContinuousSequence</span>(<span class="params">sum</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="comment">//(i+1)*(2*a+i)=2*sum;</span></span><br><span class="line">    <span class="keyword">let</span> i=<span class="number">1</span>,a=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> res=[];</span><br><span class="line">    <span class="keyword">let</span> half=sum&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(half--)&#123;</span><br><span class="line">        a++;</span><br><span class="line">        i=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>((i+<span class="number">1</span>)*(<span class="number">2</span>*a+i)&lt;<span class="number">2</span>*sum)&#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>((i+<span class="number">1</span>)*(<span class="number">2</span>*a+i)==<span class="number">2</span>*sum)&#123;</span><br><span class="line">            <span class="keyword">const</span> tmp=[]</span><br><span class="line">            tmp.push(i);</span><br><span class="line">            tmp.push(a);</span><br><span class="line">            res.push(tmp);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> reslist=[]</span><br><span class="line">    <span class="keyword">let</span> temp=[]</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt; res.length;j++)&#123;</span><br><span class="line">        <span class="keyword">var</span> a1=res[j][<span class="number">1</span>]</span><br><span class="line">        temp=[]</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> k=<span class="number">0</span>;k&lt;=res[j][<span class="number">0</span>];k++)&#123;</span><br><span class="line">            temp.push(a1);</span><br><span class="line">            a1++;</span><br><span class="line">        &#125;</span><br><span class="line">        reslist.push(temp)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> reslist</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/">&lt;i class=&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/">&lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">82</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/GoldMinerXun" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="178977641@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/zchunqing" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
