@@ -351,21 +351,15 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/11/21/hello-world/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -483,14 +477,18 @@
       
         
           
-            <h3 id="二叉树中和为某一值的路径"><a href="#二叉树中和为某一值的路径" class="headerlink" title="二叉树中和为某一值的路径"></a>二叉树中和为某一值的路径</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>输入一颗二叉树的根节点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。(注意: 在返回值的list中，数组长度大的数组靠前)</p>
-</blockquote>
-<p>这个过程就是深度遍历的过程，用期望值减去走过的上一个节点，检查结果是否为0，若为0，则退出，反之继续遍历。每一次都是先检查左节点，再检查右节点，若左节点符合，先深度遍历左节点，之后遍历右节点。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindPath</span>(<span class="params">root, expectNumber</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> list=[],listAll=[];</span><br><span class="line">    <span class="keyword">return</span> find(root,expectNumber,list,listAll);</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">find</span>(<span class="params">root,expectNumber,list,listAll</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root==<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> listAll;</span><br><span class="line">    &#125;</span><br><span class="line">    list.push(root.val);</span><br><span class="line">    <span class="keyword">const</span> x=expectNumber-root.val;</span><br><span class="line">    <span class="keyword">if</span>(root.left==<span class="literal">null</span>&amp;&amp;root.right==<span class="literal">null</span>&amp;&amp;x==<span class="number">0</span>)&#123;</span><br><span class="line">        listAll.push(<span class="built_in">Array</span>.of(...list));</span><br><span class="line">    &#125;</span><br><span class="line">    find(root.left,x,list,listAll);</span><br><span class="line">    find(root.right,x,list,listAll);</span><br><span class="line">    list.pop();</span><br><span class="line">    <span class="keyword">return</span> listAll;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          二叉树中和为某一值的路径题目描述
+输入一颗二叉树的根节点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。(注意: 在返回值的list中，数组长度大的数组靠前)
 
-
-          
+这个过程就是深度遍历的过程，用期望值减去走过的上一个节点，检
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/10/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(24)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -608,49 +606,16 @@
       
         
           
-            <p>考点：二叉树遍历，二叉树建立，多行输入，数组。<br>题目描述：<br>已知两颗二叉树，将它们合并成一颗二叉树。合并规则是：都存在的结点，就将结点值加起来，否则空的位置就由另一个树的结点来代替。例如：<br>两颗二叉树是:<br>Tree 1 ：<br>     1<br>    / \<br>   3   2<br>  /<br> 5   </p>
-<p>Tree 2：<br>   2<br>  / <br> 1   3<br>  \   <br>   4   7</p>
-<p>合并后的树为：<br>    3<br>   / <br>  4   5<br> / \    <br>5  4    7</p>
-<p>输入描述：</p>
-<blockquote>
-<p>第一行输入整数n，m。(分别表示树1和树2的节点数,1&lt;=n，m&lt;=100)<br>接下来n行，第i行三个整数l,r,v, (0&lt;=l,r&lt;=n , 0&lt;=v&lt;=100) ,表示第一棵树的第i个结点的左儿子编号，右儿子编号和权值。<br>接下来m行，第i行三个整数l,r,v, (0&lt;=l,r&lt;=n , 0&lt;=v&lt;=100) ,表示第二棵树的第i个结点的左儿子编号，右儿子编号和权值。<br>（对于左右儿子，如果编号为0表示空。保证如果儿子不为空，则儿子编号大于父亲编号。）</p>
-</blockquote>
-<p>输出描述：</p>
-<blockquote>
-<p>输出合并后树按层遍历的各结点权值，相邻权值之间以一个空格相间。</p>
-</blockquote>
-<p>本题在牛客网的瓜子二手车编程题中出现，首先需要控制输入，输入是由第一行的两个数字决定接下来输入的行数。所以需要首先js的多行输入。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> readline=<span class="built_in">require</span>(<span class="string">'readline'</span>)</span><br><span class="line"><span class="keyword">const</span> r1=readline.createInterface(&#123;</span><br><span class="line">	input:process.stdin,</span><br><span class="line">	output:process.stdout</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">var</span> linesArrayIndex=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> linesArray=[];</span><br><span class="line"><span class="keyword">var</span> resultArray=[];</span><br><span class="line">r1.on(<span class="string">'line'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">line</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(linesArrayIndex==<span class="number">0</span>)&#123;</span><br><span class="line">		<span class="keyword">var</span> length=line.split(<span class="string">' '</span>);</span><br><span class="line">		<span class="keyword">var</span> n1=length[<span class="number">0</span>];</span><br><span class="line">		<span class="keyword">var</span> n2=length[<span class="number">1</span>];</span><br><span class="line">		linesArray[linesArrayIndex]=n1+n2;</span><br><span class="line">		<span class="comment">//首行加入输入流队列，并表示接下来的输入行数。</span></span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		linesArray[linesArrayIndex]=line;</span><br><span class="line">		resultArray.push(line);</span><br><span class="line">	&#125;</span><br><span class="line">	linesArrayIndex++;</span><br><span class="line">	<span class="keyword">if</span>(resultArray.length==n1+n2)&#123;</span><br><span class="line">		<span class="comment">///之后对结果数组进行的操作</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>此时得到的输入数组是</p>
-<blockquote>
-<p>[‘2 3 1’,’4 0 3’,’0 0 2’,’0 0 5’,’2 3 2’,’0 4 1’,’0 5 3’,’0 0 4’,’0 0 7’]</p>
-</blockquote>
-<p>需要将这一整个数组根据两个节点个数n1和n2分割，并转换成二叉树的数据结构。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">stringtonumberarr</span>(<span class="params">array</span>)</span>&#123;</span><br><span class="line"> 	<span class="keyword">let</span> newarr=[];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">of</span> array)&#123;</span><br><span class="line">        <span class="keyword">let</span> temparr=i.split(<span class="string">' '</span>);</span><br><span class="line">        <span class="keyword">var</span> newtemp=[];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j <span class="keyword">of</span> temparr)&#123;</span><br><span class="line">            j=<span class="built_in">parseInt</span>(j);</span><br><span class="line">            newtemp.push(j);</span><br><span class="line">        &#125;</span><br><span class="line">        newarr.push(newtemp)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newarr;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> arr1=[];</span><br><span class="line"><span class="keyword">let</span> arr2=[];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;n1;i++)&#123;</span><br><span class="line">    arr1.push(resultArray[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> arrone=stringtonumberarr(arr1);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;n2;i++)&#123;</span><br><span class="line">    arr2.push(resultArray[i+n1]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> arrtwo=stringtonumberarr(arr2);</span><br></pre></td></tr></table></figure>
-<p>经过以上转换，数组元素不再为字符串而是数值型。</p>
-<p>将处理过的数组转换为二叉树。</p>
-<blockquote>
-<p>[ [2 ,3 ,1], [4 ,0 ,3], [0 ,0 ,2], [0 ,0 ,5] ]</p>
-</blockquote>
-<p>我的想法是，假设数组为arr，arr[0][0]如果不为0，则表示该节点有左孩子，同理可知是否有右孩子。<br>将左右标记为true，若为0则为null。<br>然后再将节点连接，通过编号对应数组下标，找到对应的父子节点然后连接。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> inittree = <span class="function"><span class="keyword">function</span> (<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> pRoot=<span class="keyword">new</span> Node(arr[<span class="number">0</span>][<span class="number">2</span>]);</span><br><span class="line">    <span class="comment">// console.log(pRoot)</span></span><br><span class="line">    <span class="keyword">if</span>(arr[<span class="number">0</span>][<span class="number">0</span>]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        pRoot.left=<span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(arr[<span class="number">0</span>][<span class="number">1</span>]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        pRoot.right=<span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> nodearr=[];</span><br><span class="line">    nodearr.push(pRoot);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> node =<span class="keyword">new</span> Node(arr[i][<span class="number">2</span>]);</span><br><span class="line">        <span class="keyword">if</span>(arr[i][<span class="number">0</span>]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            node.left=<span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(arr[i][<span class="number">1</span>]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            node.right=<span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        nodearr.push(node)</span><br><span class="line">    &#125;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; nodearr.length;j++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[j][<span class="number">0</span>]!=<span class="number">0</span>)&#123;</span><br><span class="line">            nodearr[j].left=nodearr[arr[j][<span class="number">0</span>]<span class="number">-1</span>]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(arr[j][<span class="number">1</span>]!=<span class="number">0</span>)&#123;</span><br><span class="line">            nodearr[j].right=nodearr[arr[j][<span class="number">1</span>]<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// console.log(pRoot)</span></span><br><span class="line">    <span class="keyword">return</span> pRoot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>将两个数组转换成二叉树之后，进行二叉树合并，合并二叉树的思想是递归。思路是新建一棵树。</p>
-<ol>
-<li>首先用两个指针同时指向两棵树的树根，然后从看是否都存在，若都存在，新建节点，其值为两个节点权值之和。若只有其中一个节点存在，则直接赋值然后连接。</li>
-<li>结束该节点后再看该节点的左节点，然后再看右节点。</li>
-<li>重复2步骤，进行递归。若到叶子节点则返回null，最外层返回根节点。</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mergetree</span>(<span class="params">pRoot1,pRoot2</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> temp;</span><br><span class="line">    <span class="keyword">if</span>(pRoot1!=<span class="literal">null</span>&amp;&amp;pRoot2!=<span class="literal">null</span>)&#123;</span><br><span class="line">        temp=<span class="keyword">new</span> Node(pRoot1.val+pRoot2.val);</span><br><span class="line">        temp.left=mergetree(pRoot1.left,pRoot2.left);</span><br><span class="line">        temp.right=mergetree(pRoot1.right,pRoot2.right);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(pRoot1==<span class="literal">null</span>&amp;&amp;pRoot2!=<span class="literal">null</span>)&#123;</span><br><span class="line">        temp=pRoot2;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(pRoot1!=<span class="literal">null</span>&amp;&amp;pRoot2==<span class="literal">null</span>)&#123;</span><br><span class="line">        temp=pRoot1;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//console.log(temp)</span></span><br><span class="line">    <span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最后题目要求需要按层遍历输出结果<br>此处用的是非递归实现的按层遍历，需要用一个队列来放入每一层的节点。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">leveltraver</span>(<span class="params">pRoot</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result=[];</span><br><span class="line">    <span class="keyword">var</span> tree=[];</span><br><span class="line">    tree.push(pRoot);</span><br><span class="line">    <span class="keyword">while</span>(tree.length)&#123;</span><br><span class="line">        <span class="keyword">var</span> node=tree.shift();</span><br><span class="line">        result.push(node.val);</span><br><span class="line">        <span class="keyword">if</span>(node.left!=<span class="literal">null</span>)&#123;</span><br><span class="line">            tree.push(node.left);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(node.right!=<span class="literal">null</span>)&#123;</span><br><span class="line">            tree.push(node.right);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最后是完整代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> readline=<span class="built_in">require</span>(<span class="string">'readline'</span>);</span><br><span class="line"><span class="keyword">const</span> r1=readline.createInterface(&#123;</span><br><span class="line">    input:process.stdin,</span><br><span class="line">    output:process.stdout</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">var</span> Node = <span class="function"><span class="keyword">function</span>(<span class="params">val</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.left=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">this</span>.right=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">this</span>.val=val;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mergetree</span>(<span class="params">pRoot1,pRoot2</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> temp;</span><br><span class="line">    <span class="keyword">if</span>(pRoot1!=<span class="literal">null</span>&amp;&amp;pRoot2!=<span class="literal">null</span>)&#123;</span><br><span class="line">        temp=<span class="keyword">new</span> Node(pRoot1.val+pRoot2.val);</span><br><span class="line">        temp.left=mergetree(pRoot1.left,pRoot2.left);</span><br><span class="line">        temp.right=mergetree(pRoot1.right,pRoot2.right);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(pRoot1==<span class="literal">null</span>&amp;&amp;pRoot2!=<span class="literal">null</span>)&#123;</span><br><span class="line">        temp=pRoot2;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(pRoot1!=<span class="literal">null</span>&amp;&amp;pRoot2==<span class="literal">null</span>)&#123;</span><br><span class="line">        temp=pRoot1;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//console.log(temp)</span></span><br><span class="line">    <span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> inittree = <span class="function"><span class="keyword">function</span> (<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> pRoot=<span class="keyword">new</span> Node(arr[<span class="number">0</span>][<span class="number">2</span>]);</span><br><span class="line">    <span class="comment">// console.log(pRoot)</span></span><br><span class="line">    <span class="keyword">if</span>(arr[<span class="number">0</span>][<span class="number">0</span>]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        pRoot.left=<span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(arr[<span class="number">0</span>][<span class="number">1</span>]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        pRoot.right=<span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> nodearr=[];</span><br><span class="line">    nodearr.push(pRoot);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> node =<span class="keyword">new</span> Node(arr[i][<span class="number">2</span>]);</span><br><span class="line">        <span class="keyword">if</span>(arr[i][<span class="number">0</span>]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            node.left=<span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(arr[i][<span class="number">1</span>]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            node.right=<span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        nodearr.push(node)</span><br><span class="line">    &#125;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; nodearr.length;j++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[j][<span class="number">0</span>]!=<span class="number">0</span>)&#123;</span><br><span class="line">            nodearr[j].left=nodearr[arr[j][<span class="number">0</span>]<span class="number">-1</span>]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(arr[j][<span class="number">1</span>]!=<span class="number">0</span>)&#123;</span><br><span class="line">            nodearr[j].right=nodearr[arr[j][<span class="number">1</span>]<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// console.log(pRoot)</span></span><br><span class="line">    <span class="keyword">return</span> pRoot;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">stringtonumberarr</span>(<span class="params">array</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> newarr=[];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">of</span> array)&#123;</span><br><span class="line">        <span class="keyword">let</span> temparr=i.split(<span class="string">' '</span>);</span><br><span class="line">        <span class="keyword">var</span> newtemp=[];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j <span class="keyword">of</span> temparr)&#123;</span><br><span class="line">            j=<span class="built_in">parseInt</span>(j);</span><br><span class="line">            newtemp.push(j);</span><br><span class="line">        &#125;</span><br><span class="line">        newarr.push(newtemp)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newarr;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">leveltraver</span>(<span class="params">pRoot</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result=[];</span><br><span class="line">    <span class="keyword">var</span> tree=[];</span><br><span class="line">    tree.push(pRoot);</span><br><span class="line">    <span class="keyword">while</span>(tree.length)&#123;</span><br><span class="line">        <span class="keyword">var</span> node=tree.shift();</span><br><span class="line">        result.push(node.val);</span><br><span class="line">        <span class="keyword">if</span>(node.left!=<span class="literal">null</span>)&#123;</span><br><span class="line">            tree.push(node.left);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(node.right!=<span class="literal">null</span>)&#123;</span><br><span class="line">            tree.push(node.right);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> linesArray=[];</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> linesArrayIndex=<span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> resultArray=[];</span><br><span class="line"><span class="keyword">var</span> n1,n2;</span><br><span class="line">r1.on(<span class="string">'line'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">line</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">if</span>(linesArrayIndex==<span class="number">0</span>)&#123;</span><br><span class="line">       <span class="keyword">var</span> length=line.split(<span class="string">' '</span>);</span><br><span class="line">       n1=<span class="built_in">parseInt</span>(length[<span class="number">0</span>]);</span><br><span class="line">       n2=<span class="built_in">parseInt</span>(length[<span class="number">1</span>]);</span><br><span class="line">       linesArray[linesArrayIndex]=<span class="built_in">Number</span>(length[<span class="number">0</span>])+<span class="built_in">Number</span>(length[<span class="number">1</span>]);</span><br><span class="line">   &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">       linesArray[linesArrayIndex]=line;</span><br><span class="line">   &#125;</span><br><span class="line">     </span><br><span class="line">    linesArrayIndex++;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> linesArray.slice(<span class="number">1</span>))&#123;</span><br><span class="line">        resultArray[i]=linesArray.slice(<span class="number">1</span>)[i];</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">     <span class="keyword">if</span>(resultArray.length==linesArray[<span class="number">0</span>])&#123;</span><br><span class="line">        <span class="comment">//打印输出整合在数组resultArray中的输入内容</span></span><br><span class="line">        <span class="keyword">let</span> arr1=[];</span><br><span class="line">        <span class="keyword">let</span> arr2=[];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;n1;i++)&#123;</span><br><span class="line">            arr1.push(resultArray[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> arrone=stringtonumberarr(arr1);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;n2;i++)&#123;</span><br><span class="line">            arr2.push(resultArray[i+n1]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> arrtwo=stringtonumberarr(arr2);</span><br><span class="line">                </span><br><span class="line">       <span class="comment">//console.log(arrone)</span></span><br><span class="line">       <span class="comment">//console.log(arrtwo)</span></span><br><span class="line">       <span class="keyword">var</span> pRoot1 = inittree(arrone);</span><br><span class="line">       <span class="keyword">var</span> pRoot2 = inittree(arrtwo);</span><br><span class="line"> </span><br><span class="line">       <span class="keyword">var</span> resroot=mergetree(pRoot1,pRoot2);</span><br><span class="line">       <span class="keyword">var</span> ans=leveltraver(resroot);</span><br><span class="line">       <span class="built_in">console</span>.log(ans.join(<span class="string">' '</span>))</span><br><span class="line">        r1.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-          
+          考点：二叉树遍历，二叉树建立，多行输入，数组。题目描述：已知两颗二叉树，将它们合并成一颗二叉树。合并规则是：都存在的结点，就将结点值加起来，否则空的位置就由另一个树的结点来代替。例如：两颗二叉树是:Tree 1 ：     1    / \   3   2  / 5   
+Tree 2：   2  
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/10/15/%E5%90%88%E5%B9%B6%E4%BA%8C%E5%8F%89%E6%A0%91%20JavaScript%E7%89%88/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -768,43 +733,18 @@
       
         
           
-            <h4 id="关于事件循环"><a href="#关于事件循环" class="headerlink" title="关于事件循环"></a>关于事件循环</h4><blockquote>
-<p>主线程从“任务队列”中读取事件，这个过程是循环不断的，所以整个的这种运行机制，又称为Event Loop （事件循环）。</p>
-</blockquote>
-<h4 id="关于执行栈"><a href="#关于执行栈" class="headerlink" title="关于执行栈"></a>关于执行栈</h4><p>当一个脚本第一次执行的时候，js引擎会解析这段代码，并将其中的同步代码按照执行顺序加入执行栈中，然后从头开始执行。如果当前执行的是一个方法，那么js会向执行栈中添加这个方法的执行环境，然后进入这个执行环境继续执行其中的代码。当这个执行环境中的代码 执行完毕并返回结果后，js会退出这个执行环境并把这个执行环境销毁，回到上一个方法的执行环境。这个过程反复进行，直到执行栈中的代码全部执行完毕。</p>
-<ul>
-<li>当代码执行的时候，同步代码按照执行顺序开始执行</li>
-<li>当代码执行的时候，碰到函数，引擎会在栈里产生这个函数执行栈，也叫执行上下文。</li>
-<li>当代码执行到函数的时候，会进入这个执行环境继续执行其中的代码，反复进行，全部执行完<h4 id="关于任务队列"><a href="#关于任务队列" class="headerlink" title="关于任务队列"></a>关于任务队列</h4></li>
-<li>微任务队列（micro tasks）只会有一个</li>
-<li>宏任务队列（macro tasks）可以有多个</li>
-<li>click ajax 等回调方法都会进入到宏任务队列（macro tasks）中，当然也包括上面的</li>
-<li>宏任务按顺序执行，且浏览器在每个宏任务之间渲染页面</li>
-<li>所有微任务也按顺序执行，且在以下场景会立即执行所有微任务<ul>
-<li>每个回调之后且js执行栈中为空。</li>
-<li>每个宏任务结束后。</li>
-</ul>
-</li>
-</ul>
-<h4 id="关于Nodejs事件循环机制过程"><a href="#关于Nodejs事件循环机制过程" class="headerlink" title="关于Nodejs事件循环机制过程"></a>关于Nodejs事件循环机制过程</h4><p>NodeJs 的运行是这样的：</p>
-<ul>
-<li>初始化 Event Loop</li>
-<li>执行您的主代码。这里同样，遇到异步处理，就会分配给对应的队列。直到主代码执行完毕。</li>
-<li>执行主代码中出现的所有微任务：先执行完所有nextTick()，然后在执行其它所有微任务。</li>
-<li>开始 Event Loop</li>
-<li>当每个阶段执行完毕后，都会执行所有微任务（先 nextTick，后其它），然后再进入下一个阶段。</li>
-</ul>
-<h4 id="自己的小总结"><a href="#自己的小总结" class="headerlink" title="自己的小总结"></a>自己的小总结</h4><ul>
-<li>宏任务-&gt;微任务-&gt;宏任务中的微任务</li>
-</ul>
-<h4 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'b'</span>);</span><br><span class="line">    <span class="keyword">await</span> c();</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'b1'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'c'</span>);</span><br><span class="line">    <span class="keyword">await</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'promise1'</span>);</span><br><span class="line">        resolve();</span><br><span class="line">    &#125;).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'promise1-1'</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'settimeout1'</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'c1'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'promise2'</span>);</span><br><span class="line">    resolve();</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'promise2-1'</span>);</span><br><span class="line">    reject();</span><br><span class="line">&#125;).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'promise2-2'</span>);</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'settimeout2'</span>);</span><br><span class="line">        <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">            resolve();</span><br><span class="line">        &#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'?'</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;).catch(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'promise-reject'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'200'</span>);</span><br><span class="line">b();</span><br></pre></td></tr></table></figure>
-<p>运行结果：</p>
-<blockquote>
-<p>promise2<br>promise2-1<br>200<br>b<br>c<br>promise1<br>promise2-2<br>promise1-1<br>c1<br>b1<br>settimeout2<br>?<br>settimeout1</p>
-</blockquote>
-<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><p><a href="https://www.cnblogs.com/oicb/p/10615592.html" target="_blank" rel="noopener">js 异步、栈、事件循环、任务队列</a><br><a href="https://www.jianshu.com/p/dc7b2650b40d" target="_blank" rel="noopener">微任务、宏任务、立即执行函数（async await）</a><br><a href="https://www.jianshu.com/p/593fe41365e1" target="_blank" rel="noopener">浏览器内核机制、JS事件循环、Promise、Task、事件冒泡、事件委托详解</a><br><a href="https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/?utm_source=html5weekly?_blank" target="_blank" rel="noopener">强推该博客，可以看到整个过程是怎样执行的</a></p>
+          关于事件循环
+主线程从“任务队列”中读取事件，这个过程是循环不断的，所以整个的这种运行机制，又称为Event Loop （事件循环）。
 
-          
+关于执行栈当一个脚本第一次执行的时候，js引擎会解析这段代码，并将其中的同步代码按照执行顺序加入执行栈中，然后从头开始执行。如果当前执行的是一个方法，那么js会向
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/10/14/JavaScript%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E6%9C%BA%E5%88%B6/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -922,265 +862,21 @@
       
         
           
-            <h1 id="求1-2-3-…-n"><a href="#求1-2-3-…-n" class="headerlink" title="求1+2+3+…+n"></a>求1+2+3+…+n</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>求1+2+3+…+n，要求不能使用乘除法、for、while、if、else、switch、case等关键字及条件判断语句（A?B:C）。</p>
-</blockquote>
-<ul>
-<li>递归</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Sum_Solution</span>(<span class="params">n</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> n&amp;&amp;Sum_Solution(n<span class="number">-1</span>)+n</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          求1+2+3+…+n题目描述
+求1+2+3+…+n，要求不能使用乘除法、for、while、if、else、switch、case等关键字及条件判断语句（A?B:C）。
 
 
-          
-        
-      
-    </div>
-    
-    
-    
+递归
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(39)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(39)/" itemprop="url">平衡二叉树</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-13T18:30:22+08:00">
-                2019-10-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>输入一棵二叉树，判断该二叉树是否是平衡二叉树。</p>
-</blockquote>
-<ul>
-<li>平衡二叉树是左右深度差不超过1的二叉树，所以在遍历深度的同时需要判断是否深度差超过1。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">IsBalanced_Solution</span>(<span class="params">pRoot</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> TreeDepth(pRoot)!==<span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">TreeDepth</span>(<span class="params">pRoot</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pRoot==<span class="literal">null</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> leftdep=TreeDepth(pRoot.left);</span><br><span class="line">    <span class="keyword">if</span>(leftdep==<span class="number">-1</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">const</span> rightdep=TreeDepth(pRoot.right);</span><br><span class="line">    <span class="keyword">if</span>(rightdep==<span class="number">-1</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.abs(leftdep-rightdep)&gt;<span class="number">1</span>? <span class="number">-1</span> : <span class="built_in">Math</span>.max(leftdep,rightdep)+<span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/13/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/13/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE/" itemprop="url">时间管理项目</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-13T18:30:22+08:00">
-                2019-10-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://github.com/GoldMinerXun/PullClassFromJW" target="_blank" rel="noopener">时间管理项目完整1.0版</a><br>node.js+express+jQuery<br>基本上没有用任何框架，原生js项目。<br>技术难点主要是爬虫技术。<br>该项目运行在3010端口。</p>
-<hr>
-<p>star一下叭。</p>
-
-          
+12345function Sum_Solution(n)&#123;    // write code here  
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/10/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(47)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1298,21 +994,279 @@
       
         
           
-            <h4 id="用nodejs爬取学校教务在线的课表"><a href="#用nodejs爬取学校教务在线的课表" class="headerlink" title="用nodejs爬取学校教务在线的课表"></a>用nodejs爬取学校教务在线的课表</h4><p>首先要分析爬虫的本质，模拟登陆+获取网页信息<br>如何模拟登陆（手动登陆）。<br>大致讲下思路。</p>
-<ol>
-<li>首先是找到登陆入口，从登陆入口发起登陆请求。</li>
-<li>因为我们学校的登陆是需要验证码验证，所以我先将验证码获取到，也就是获取网页信息，处理后通过fs保存到本地，本地再渲染到前端，用户输入。</li>
-<li>用输入的用户信息和验证码向本地后端发起post请求，用本地后端服务器向教务在线发起post请求。（为什么需要本地后端来做媒介，因为需要处理返回的字符串数据，并且需要保存）</li>
-<li>post请求完成后根据教务返回的成功数据继续请求下一个url，也就是查看成绩的url，需要再控制台的network查看发起的各种请求，分析出到底是哪个请求url发起的查看成绩请求。</li>
-<li>获取到成绩页面的数据后直接返回本地服务器，本地处理返回的网页格式。转成需要的格式后再存入数据库。</li>
-</ol>
-<hr>
-<p>如果是自动登陆，则需要自动识别模块，nodejs有一个自动识别验证码的模块tesseract模块，但是准确率有限，所以需要不停的发起申请并验证。</p>
-<hr>
-<p>值得注意的是，请求时的请求头信息尽量完整，不可缺少的有url，cookie等。<br>cookie一定是上一次请求返回的response里面的setcookie，用这个cookie去请求，所以如果需要继续请求，一定要保存上一个请求的响应cookie</p>
-<p>具体代码不贴了。<br>等我项目完成度一定高以后，将项目放到GitHub上，有问题留言或联系qq178977641。</p>
+          用nodejs爬取学校教务在线的课表首先要分析爬虫的本质，模拟登陆+获取网页信息如何模拟登陆（手动登陆）。大致讲下思路。
+
+首先是找到登陆入口，从登陆入口发起登陆请求。
+因为我们学校的登陆是需要验证码验证，所以我先将验证码获取到，也就是获取网页信息，处理后通过fs保存到本地，本地再渲染到前端，用户输
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/10/13/Node.js%E7%88%AC%E8%99%AB/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(39)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(39)/" itemprop="url">平衡二叉树</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-13T18:30:22+08:00">
+                2019-10-13
+              </time>
+            
+
+            
+
+            
+          </span>
 
           
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          平衡二叉树题目描述
+输入一棵二叉树，判断该二叉树是否是平衡二叉树。
+
+
+平衡二叉树是左右深度差不超过1的二叉树，所以在遍历深度的同时需要判断是否深度差超过1。
+
+12345678910111213function IsBalanced_Solution(pRoot)&#123;    // writ
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/10/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(39)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/13/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/13/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE/" itemprop="url">时间管理项目</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-13T18:30:22+08:00">
+                2019-10-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          时间管理项目完整1.0版node.js+express+jQuery基本上没有用任何框架，原生js项目。技术难点主要是爬虫技术。该项目运行在3010端口。
+
+star一下叭。
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/10/13/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1430,12 +1384,16 @@
       
         
           
-            <p>题目描述：<br>给定n个柱面的高度，表示降雨某地n块区域的海拔高度。<br>计算降雨之后该地最大储水面积。如果低于地平线，也就是小于0，则一定积水。<br><img src="https://img-blog.csdnimg.cn/20190908123755422.png" alt="在这里插入图片描述"><br>输入描述：<br>第一行输入整数n.(1&lt;=n&lt;=10000)<br>第二行输入n个高度整数h。(-10000&lt;=h&lt;=10000)<br>输出描述：<br>积水面积。</p>
-<p>本题思路是，需要找出墙的左边和右边，当出现凹形，则会积水，所以一定要找到墙的左边和右边，如何找到墙的右边呢？<br>根据积水坑的形状，一定是凹型，所以墙的左边一定是非递增，右边一定是非递减。<br>所以需要一个栈来存储左边，然后遇到右边的墙后，开始出栈，出栈后计算宽度和高度，得出面积。<br>由于需要宽度计算，所以入栈的是高度数组下标。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">trap</span>(<span class="params">height</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> cur = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">var</span> n = height.length;</span><br><span class="line">	<span class="keyword">var</span> stack=[];</span><br><span class="line">	stack.push(cur);</span><br><span class="line">	<span class="keyword">var</span> result=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(cur&lt;n)&#123;</span><br><span class="line">		<span class="keyword">while</span>(height[cur]&gt;height[stack[stack.length<span class="number">-1</span>]]&amp;&amp;stack.length!=<span class="number">0</span>)&#123;</span><br><span class="line">			<span class="keyword">var</span> top=stack.pop();</span><br><span class="line">			<span class="keyword">if</span>(stack.length==<span class="number">0</span>)&#123;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">var</span> distance = cur - top;</span><br><span class="line">			<span class="keyword">var</span> tempheight = <span class="built_in">Math</span>.min(height[cur],height[stack[stack.length<span class="number">-1</span>]]) - height[top];</span><br><span class="line">			result+=distance*tempheight;</span><br><span class="line">		&#125;</span><br><span class="line">		stack.push(cur);</span><br><span class="line">		cur++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-          
+          题目描述：给定n个柱面的高度，表示降雨某地n块区域的海拔高度。计算降雨之后该地最大储水面积。如果低于地平线，也就是小于0，则一定积水。输入描述：第一行输入整数n.(1&lt;=n&lt;=10000)第二行输入n个高度整数h。(-10000&lt;=h&lt;=10000)输出描述：积水面积。
+本题
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/10/13/%E9%99%8D%E6%B0%B4%E9%87%8F%E9%97%AE%E9%A2%98%20JavaScript%E7%89%88/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1553,19 +1511,22 @@
       
         
           
-            <h3 id="二叉查找树的后序遍历序列"><a href="#二叉查找树的后序遍历序列" class="headerlink" title="二叉查找树的后序遍历序列"></a>二叉查找树的后序遍历序列</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。如果是则输出Yes,否则输出No。假设输入的数组的任意两个数字都互不相同。</p>
-</blockquote>
-<p>后序遍历是指先左后右最后根，所以序列的最后是根节点。</p>
-<ul>
-<li>由此可推出先找到根节点</li>
-<li>满足左子树小于根节点，右子树大于根节点</li>
-<li>递归比较每一个节点即可</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">VerifySquenceOfBST</span>(<span class="params">sequence</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(!sequence.length)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> judge(sequence,<span class="number">0</span>,sequence.length<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">judge</span>(<span class="params">a,l,r</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &gt;= r) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">     <span class="keyword">let</span> i = r;</span><br><span class="line">     <span class="comment">///找到左子树查找到右子树的位置i</span></span><br><span class="line">    <span class="keyword">while</span> (a[i - <span class="number">1</span>] &gt; a[r] &amp;&amp; i &gt; l) i--;</span><br><span class="line">    <span class="comment">///左子树需要全部小于根节点</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = i - <span class="number">1</span>; j &gt;= l; j--)&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[j]&gt;a[r])<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">///满足根节点后需要继续看第二层的根节点是否也满足以上，也就是递归</span></span><br><span class="line">    <span class="keyword">return</span> judge(a,l,i<span class="number">-1</span>)&amp;&amp;judge(a,i,r<span class="number">-1</span>);</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          二叉查找树的后序遍历序列题目描述
+输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。如果是则输出Yes,否则输出No。假设输入的数组的任意两个数字都互不相同。
 
+后序遍历是指先左后右最后根，所以序列的最后是根节点。
 
-          
+由此可推出先找到根节点
+满足左子树小于根节点，右子树大于根节点
+递归
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/10/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(23)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

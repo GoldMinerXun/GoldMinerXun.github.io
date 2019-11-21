@@ -351,14 +351,19 @@
       
         
           
-            <h3 id="合并两个排序的链表"><a href="#合并两个排序的链表" class="headerlink" title="合并两个排序的链表"></a>合并两个排序的链表</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。</p>
-</blockquote>
-<p>递归做法</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Merge</span>(<span class="params">pHead1, pHead2</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">let</span> pmergehead=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">if</span>(pHead1===<span class="literal">null</span>) <span class="keyword">return</span> pHead2;</span><br><span class="line">    <span class="keyword">if</span>(pHead2===<span class="literal">null</span>) <span class="keyword">return</span> pHead1;</span><br><span class="line">    <span class="keyword">if</span>(pHead1.val&lt;pHead2.val)&#123;</span><br><span class="line">        pmergehead=pHead1;</span><br><span class="line">        pmergehead.next=Merge(pHead1.next,pHead2);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        pmergehead=pHead2;</span><br><span class="line">        pmergehead.next=Merge(pHead1,pHead2.next);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pmergehead;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          合并两个排序的链表题目描述
+输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。
 
-
-          
+递归做法
+123456789101112131415function Merge(pHead1, pHead2)&#123;    // write code here    
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/19/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(16)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -476,17 +481,19 @@
       
         
           
-            <h1 id="删除链表中重复的节点"><a href="#删除链表中重复的节点" class="headerlink" title="删除链表中重复的节点"></a>删除链表中重复的节点</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。 例如，链表1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5 处理后为 1-&gt;2-&gt;5</p>
-</blockquote>
-<ul>
-<li>注意当第一个节点要被删除的时候，需要一个新的头节点指向</li>
-</ul>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ListNode</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.val = x;</span><br><span class="line">    <span class="keyword">this</span>.next = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deleteDuplication</span>(<span class="params">pHead</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> head=<span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">    head.next=pHead;</span><br><span class="line">    <span class="keyword">let</span> left=head;</span><br><span class="line">    <span class="keyword">let</span> right=head.next;</span><br><span class="line">    <span class="keyword">while</span>(right!=<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(right.next!=<span class="literal">null</span>&amp;&amp;right.next.val==right.val)&#123;</span><br><span class="line">            <span class="keyword">while</span>(right.next!=<span class="literal">null</span>&amp;&amp;right.next.val==right.val)&#123;</span><br><span class="line">                right=right.next;</span><br><span class="line">            &#125;</span><br><span class="line">            left.next=right.next;</span><br><span class="line">            right=right.next;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            left=left.next;</span><br><span class="line">            right=right.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> head.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          删除链表中重复的节点题目描述
+在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。 例如，链表1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5 处理后为 1-&gt;2-&gt;5
 
 
-          
+注意当第一个节点要被删除的时候，需要一个新的
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/19/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(56)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -604,10 +611,17 @@
       
         
           
-            <p><a href="https://goldminerxun.github.io/" target="_blank" rel="noopener">我的GitHub博客</a></p>
-<p>太心酸了。。<br>今天添加了一个浏览量新功能。。<br>千万不要手贱删这删那。<br>如果要更新，就直接在终端打开仓库中hexo文件夹，然后运行hexo命令<br>hexo g<br>hexo d<br>hexo clean<br>hexo d -g<br>本地的GitHub桌面版可以直接拉取。。。。<br>千万！<br>不要删删删。。。。</p>
+          我的GitHub博客
+太心酸了。。今天添加了一个浏览量新功能。。千万不要手贱删这删那。如果要更新，就直接在终端打开仓库中hexo文件夹，然后运行hexo命令hexo ghexo dhexo cleanhexo d -g本地的GitHub桌面版可以直接拉取。。。。千万！不要删删删。。。。
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/16/hexo+GitHub%20%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -725,13 +739,18 @@
       
         
           
-            <h3 id="调整数组顺序使奇数位于偶数前面"><a href="#调整数组顺序使奇数位于偶数前面" class="headerlink" title="调整数组顺序使奇数位于偶数前面"></a>调整数组顺序使奇数位于偶数前面</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有的奇数位于数组的前半部分，所有的偶数位于数组的后半部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reOrderArray</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> odd=[]</span><br><span class="line">    <span class="keyword">var</span> even=[]</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(array[i]%<span class="number">2</span>)&#123;</span><br><span class="line">            odd.push(array[i])</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            even.push(array[i])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> res=odd.concat(even)</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          调整数组顺序使奇数位于偶数前面题目描述
+输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有的奇数位于数组的前半部分，所有的偶数位于数组的后半部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变。
 
-
-          
+123456789101112131415function reOrderArray(a
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/15/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(13)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -849,14 +868,19 @@
       
         
           
-            <h3 id="数值的整数次方"><a href="#数值的整数次方" class="headerlink" title="数值的整数次方"></a>数值的整数次方</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>给定一个double类型的浮点数base和int类型的整数exponent。求base的exponent次方。</p>
-</blockquote>
-<p>快速幂原理</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Power</span>(<span class="params">base, exponent</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here </span></span><br><span class="line">    <span class="keyword">let</span> res=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> n=exponent;</span><br><span class="line">    <span class="keyword">if</span>(exponent&lt;<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(base==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'分母不为零！'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        n=-exponent;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(exponent==<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        n=exponent;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n&amp;<span class="number">1</span>)&#123;</span><br><span class="line">            res*=base;</span><br><span class="line">        &#125;</span><br><span class="line">        base*=base;</span><br><span class="line">        n&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> exponent&gt;<span class="number">0</span>?res:<span class="number">1</span>/res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          数值的整数次方题目描述
+给定一个double类型的浮点数base和int类型的整数exponent。求base的exponent次方。
 
-
-          
+快速幂原理
+123456789101112131415161718192021222324function Power(base, exponent)&#123;
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/15/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88(12)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -974,137 +998,18 @@
       
         
           
-            <h3 id="链表中倒数第K个节点"><a href="#链表中倒数第K个节点" class="headerlink" title="链表中倒数第K个节点"></a>链表中倒数第K个节点</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>输入一个链表，输出该链表中倒数第k个结点。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindKthToTail</span>(<span class="params">head, k</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(head===<span class="literal">null</span>||k&lt;<span class="number">0</span>) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">var</span> node1=head;</span><br><span class="line">    <span class="keyword">var</span> node2=head;</span><br><span class="line">    <span class="keyword">while</span>(--k)&#123;</span><br><span class="line">        <span class="keyword">if</span>(node1.next===<span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            node1=node1.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(node1.next!==<span class="literal">null</span>)&#123;</span><br><span class="line">        node1=node1.next;</span><br><span class="line">        node2=node2.next;</span><br><span class="line">    &#125;</span><br><span class="line">   <span class="keyword">return</span> node2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          链表中倒数第K个节点题目描述
+输入一个链表，输出该链表中倒数第k个结点。
 
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(46)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(46)/" itemprop="url">孩子们的游戏</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-13T21:30:22+08:00">
-                2019-08-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="孩子们的游戏"><a href="#孩子们的游戏" class="headerlink" title="孩子们的游戏"></a>孩子们的游戏</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>约瑟夫环问题</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">LastRemaining_Solution</span>(<span class="params">n, m</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> circle=[]</span><br><span class="line">    <span class="keyword">let</span> del=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">0</span>||m&lt;=<span class="number">0</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        circle[i]=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(circle.length<span class="number">-1</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> k=m<span class="number">-1</span>;</span><br><span class="line">        del=(del+k)%circle.length;</span><br><span class="line">        circle.splice(del,<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> circle[<span class="number">0</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-          
+12345678910111213141516171819function FindKthToTail(head, k)&#123;    // write code here    if(head===null||k&lt
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/14/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(14)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1222,13 +1127,147 @@
       
         
           
-            <h1 id="翻转单词顺序列"><a href="#翻转单词顺序列" class="headerlink" title="翻转单词顺序列"></a>翻转单词顺序列</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>输入 “student. a am I”。<br>把句子单词的顺序翻转后输出正确的句子应该是“I am a student.”。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ReverseSentence</span>(<span class="params">str</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> strArr=str.split(<span class="string">" "</span>);</span><br><span class="line">    <span class="keyword">let</span> corstr=<span class="string">''</span>;</span><br><span class="line">    <span class="keyword">if</span>(str==<span class="literal">null</span>)<span class="keyword">return</span> corstr;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=strArr.length<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i==<span class="number">0</span>)&#123;</span><br><span class="line">            corstr+=strArr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            corstr+=strArr[i]+<span class="string">' '</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> corstr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          翻转单词顺序列题目描述
+输入 “student. a am I”。把句子单词的顺序翻转后输出正确的句子应该是“I am a student.”。
 
+1234567891011121314151617function ReverseSentence(str)&#123;    // write cod
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(44)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(46)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(46)/" itemprop="url">孩子们的游戏</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-13T21:30:22+08:00">
+                2019-08-13
+              </time>
+            
+
+            
+
+            
+          </span>
 
           
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          孩子们的游戏题目描述
+约瑟夫环问题
+
+12345678910111213141516function LastRemaining_Solution(n, m)&#123;    // write code here    const circle=[]    let del=0;    if(n==
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(46)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1346,27 +1385,20 @@
       
         
           
-            <p>react更新到16.7之后有了一个新的功能叫hook<br>这个东西是替代了原先的setstate函数</p>
-<blockquote>
-<ul>
-<li>什么是Hook<br>钩子是允许从功能组件(function component)“挂钩”React状态和生命周期功能的功能。钩&gt;子在类内部不起作用 - 它们允许你在没有类的情况下使用React。</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>state hook<br>useState返回一对：当前状态值(count)和允许你更新状态的函数(setCount)。你可以从事件处理程序或其他位置调用此函数。这个函数类似于类中的this.setState，但是它不会将旧状态和新状态合并在一起。<br>useState的唯一参数是初始状态。 在上面的例子中，它是0，因为我们的计数器从零开始。请注意，与this.state不同，此处的状态不必是对象 - 尽管可以是任何你想要的。初始状态参数仅在第一次渲染期间使用。</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>effect hook<br>useEffect函数<br>当你调用useEffect时，你就在告诉react运行你的‘效果’函数当刷新对DOM的更改后(你可以认为是render之后)。<br>Effects还可以通过指定返回函数来清理他们。</li>
-</ul>
-</blockquote>
-<ul>
-<li>只能在顶层调用Hooks。不要在循环，条件或嵌套函数中调用Hook<br>仅从React功能组件调用Hooks。 不要从常规JavaScript函数中调用Hook。</li>
-</ul>
+          react更新到16.7之后有了一个新的功能叫hook这个东西是替代了原先的setstate函数
 
-          
+
+什么是Hook钩子是允许从功能组件(function component)“挂钩”React状态和生命周期功能的功能。钩&gt;子在类内部不起作用 - 它们允许你在没有类的情况下使用React。
+
+
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/13/React%20hook/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1484,14 +1516,19 @@
       
         
           
-            <h3 id="从头到尾打印链表"><a href="#从头到尾打印链表" class="headerlink" title="从头到尾打印链表"></a>从头到尾打印链表</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>输入一个链表，按链表值从尾到头的顺序返回一个ArrayList。</p>
-</blockquote>
-<p>代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ListNode</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.val = x;</span><br><span class="line">    <span class="keyword">this</span>.next = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printListFromTailToHead</span>(<span class="params">head</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> pnode=head;</span><br><span class="line">    <span class="keyword">var</span> res=[]</span><br><span class="line">    <span class="keyword">while</span>(!(pnode==<span class="literal">null</span>))&#123;</span><br><span class="line">        res.unshift(pnode.val);</span><br><span class="line">        pnode=pnode.next;</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          从头到尾打印链表题目描述
+输入一个链表，按链表值从尾到头的顺序返回一个ArrayList。
 
-
-          
+代码
+12345678910111213141516function ListNode(x)&#123;    this.val = x;    this.next = null;&#125;functio
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%EF%BC%883%EF%BC%89/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

@@ -280,138 +280,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(57)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(57)/" itemprop="url">二叉树的下一个节点</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-13T17:30:22+08:00">
-                2019-09-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="二叉树的下一个节点"><a href="#二叉树的下一个节点" class="headerlink" title="二叉树的下一个节点"></a>二叉树的下一个节点</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>给定一个二叉树和其中的一个结点，请找出中序遍历顺序的下一个结点并且返回。注意，树中的结点不仅包含左右子结点，同时包含指向父结点的指针。</p>
-</blockquote>
-<ul>
-<li>该节点有右子树，则其下一个节点为其右子树的最左子节点；</li>
-<li>该节点没有右子树<ul>
-<li>该节点为其父节点的左子节点，则其下一节点为其父节点</li>
-<li>该节点为其父节点的右子节点，则其下一节点为其父节点的左子节点</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GetNext</span>(<span class="params">pNode</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(pNode==<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(pNode.right!=<span class="literal">null</span>)&#123;</span><br><span class="line">        pNode=pNode.right;</span><br><span class="line">        <span class="keyword">while</span>(pNode.left!=<span class="literal">null</span>)&#123;</span><br><span class="line">            pNode=pNode.left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pNode;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(pNode.next!=<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(pNode===pNode.next.left)&#123;</span><br><span class="line">            <span class="keyword">return</span> pNode.next</span><br><span class="line">        &#125;</span><br><span class="line">        pNode=pNode.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/13/%E5%AD%97%E4%B8%B2%E6%A8%A1%E7%B3%8A%E5%8C%B9%E9%85%8D%20JavaScript%E7%89%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -483,26 +351,153 @@
       
         
           
-            <h2 id="子串模糊匹配"><a href="#子串模糊匹配" class="headerlink" title="子串模糊匹配"></a>子串模糊匹配</h2><ul>
-<li><p>从字符串string开始完整匹配子串sub，返回匹配到的字符个数。</p>
-</li>
-<li><p>sub中如果出现’?’表示可以匹配一到三个除’\0’以外的任意字符。<br>如果sub还有找不到匹配的字符，则说明不能完整匹配。</p>
-</li>
-<li><p>如果能完整匹配，返回匹配到的字符个数，如果有多种匹配方式，返回匹配字符数最少的那个，如果不能完整匹配，返回-1</p>
-</li>
-</ul>
-<p>输入</p>
-<blockquote>
-<p>abcdefg<br> a?c</p>
-</blockquote>
-<p>输出</p>
-<blockquote>
-<p>3</p>
-</blockquote>
-<p>本题的坑在于，子串必须从头匹配</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> readline=<span class="built_in">require</span>(<span class="string">'readline'</span>);</span><br><span class="line"><span class="keyword">const</span> r1=readline.createInterface(&#123;</span><br><span class="line">    input:process.stdin,</span><br><span class="line">    output:process.stdout</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">var</span> str1=<span class="string">''</span>;</span><br><span class="line"><span class="keyword">var</span> str2=<span class="string">''</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> time=<span class="number">0</span>;</span><br><span class="line">r1.on(<span class="string">'line'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">line</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//console.log(time)</span></span><br><span class="line">    <span class="keyword">if</span>(time==<span class="number">0</span>)&#123;</span><br><span class="line">        str1+=line;</span><br><span class="line">        time++;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        str2+=line;</span><br><span class="line">        <span class="keyword">var</span> c=str2.split(<span class="string">''</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;c.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(c[i]==<span class="string">'?'</span>)&#123;</span><br><span class="line">            c[i]=<span class="string">'(.)&#123;1,3&#125;'</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        str2=c.join(<span class="string">''</span>);</span><br><span class="line">        <span class="comment">//正则表示不区分大小写(i)的从头(^)匹配</span></span><br><span class="line">        <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"^"</span>+str2+<span class="string">""</span>,<span class="string">"i"</span>)</span><br><span class="line">        <span class="keyword">var</span> d =[];</span><br><span class="line">        <span class="comment">//d中存储匹配的结果，exec匹配结果为满足条件的所有元素的数组集合</span></span><br><span class="line">        d = reg.exec(str1);</span><br><span class="line">        <span class="comment">//test可以返回该父串中是否包含子串</span></span><br><span class="line">        <span class="keyword">if</span>(reg.test(str1))&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(d[<span class="number">0</span>].length)</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="number">-1</span>)</span><br><span class="line">            <span class="comment">//console.log(111)</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+          子串模糊匹配
+从字符串string开始完整匹配子串sub，返回匹配到的字符个数。
+
+sub中如果出现’?’表示可以匹配一到三个除’\0’以外的任意字符。如果sub还有找不到匹配的字符，则说明不能完整匹配。
+
+如果能完整匹配，返回匹配到的字符个数，如果有多种匹配方式，返回匹配字符数最少的那个，如果不能
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/13/%E5%AD%97%E4%B8%B2%E6%A8%A1%E7%B3%8A%E5%8C%B9%E9%85%8D%20JavaScript%E7%89%88/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(57)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(57)/" itemprop="url">二叉树的下一个节点</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-13T17:30:22+08:00">
+                2019-09-13
+              </time>
+            
+
+            
+
+            
+          </span>
 
           
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          二叉树的下一个节点题目描述
+给定一个二叉树和其中的一个结点，请找出中序遍历顺序的下一个结点并且返回。注意，树中的结点不仅包含左右子结点，同时包含指向父结点的指针。
+
+
+该节点有右子树，则其下一个节点为其右子树的最左子节点；
+该节点没有右子树
+该节点为其父节点的左子节点，则其下一节点为其父节点
+该节点
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(57)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -620,13 +615,18 @@
       
         
           
-            <h1 id="和为S的两个数字"><a href="#和为S的两个数字" class="headerlink" title="和为S的两个数字"></a>和为S的两个数字</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>输入一个递增排序的数组和一个数字S，在数组中查找两个数，使得他们的和正好是S，如果有多对数字的和等于S，输出两个数的乘积最小的。对应每个测试案例，输出两个数，小的先输出。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindNumbersWithSum</span>(<span class="params">array, sum</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">let</span> half=sum&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> res=[]</span><br><span class="line">    <span class="keyword">while</span>(half--)&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(array.indexOf(sum-array[i])!=<span class="number">-1</span>&amp;&amp;array.indexOf(sum-array[i])!=i)&#123;</span><br><span class="line">            <span class="keyword">var</span> t=array.indexOf(sum-array[i])</span><br><span class="line">            <span class="keyword">const</span> temp=[];</span><br><span class="line">            temp.push(array[i]);</span><br><span class="line">            temp.push(array[t]);</span><br><span class="line">            res.push(temp)</span><br><span class="line">        &#125;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(res.length==<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> [];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> minproduct=res[<span class="number">0</span>][<span class="number">0</span>]*res[<span class="number">0</span>][<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">let</span> minindex=<span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;res.length;j++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(res[j][<span class="number">0</span>]*res[j][<span class="number">1</span>]&lt;minproduct)&#123;</span><br><span class="line">            minproduct=res[j][<span class="number">0</span>]*res[j][<span class="number">1</span>];</span><br><span class="line">            minindex=j;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">const</span> ans=[]</span><br><span class="line">    </span><br><span class="line">    ans.push(res[minindex][<span class="number">0</span>]);</span><br><span class="line">    ans.push(res[minindex][<span class="number">1</span>]);</span><br><span class="line">    ans.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;<span class="keyword">return</span> a-b&#125;);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          和为S的两个数字题目描述
+输入一个递增排序的数组和一个数字S，在数组中查找两个数，使得他们的和正好是S，如果有多对数字的和等于S，输出两个数的乘积最小的。对应每个测试案例，输出两个数，小的先输出。
 
-
-          
+12345678910111213141516171819202122232425262728293
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(42)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -744,24 +744,22 @@
       
         
           
-            <h1 id="操作系统课程设计"><a href="#操作系统课程设计" class="headerlink" title="操作系统课程设计"></a>操作系统课程设计</h1><h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><blockquote>
-<p>Linux中内存分配的伙伴堆算法模拟。<br>（1）模拟内存实始情况。<br>（2）实现Buddy heap算法。<br>（3）通过键盘输入随机产生的申请和释放操作。<br>（4）每次申请或释放都显示实时的内存分配的对比图。</p>
-</blockquote>
-<hr>
-<p>实现结果：<br><img src="https://img-blog.csdnimg.cn/20190906151125797.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RhbXBfWFVO,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190906151142763.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RhbXBfWFVO,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190906151157847.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RhbXBfWFVO,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190906151210528.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RhbXBfWFVO,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190906151224582.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RhbXBfWFVO,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<hr>
-<p>伙伴算法：</p>
-<p>Linux把空闲的页面按照页块大小分组进行管理。用数组管理各个空闲页块组。当进程提出存储请求时。系统按照Buddy算法。根据请求的 页面数在free_area口对应的空闲页块组中搜索。linux并不是按 照要求的页块的数目去进行分配．而是将大于、等于这个数目的 最小2n个页块分配出去。比如，要求3个页块。就分配2-2=4块；要求16个页块，就分配24=16块．如此等等。因此，系统总是按 照进程所需连续存储块的申请数量。到空闲区队列free 中 能够满足要求的最小空闲区队列里查找。当队列不空时，就把第一个空闲区分配出去。如果该队列为空．那么就继续查找下面的队列(其空闲区的尺寸为上一个队列的2倍)。当它里面有空闲区时，就把该空闲区一分为二：一个分配出去给进程使用；余下的一半．排到它上面的空闲区队列中去。</p>
-<p>在内存页面释放时。系统将做为空闲页面看待。然后检查是否存在与这些页面相邻的其它空闲页块，若存在，则合为一 个连续的空闲区按Buddy算法重新分组。</p>
-<hr>
-<p>利用JavaScript的对象数据类型和数组来存储相应的内容。<br>// 空闲块<br>let free_area = [<br>    {<br>        index: 0,<br>        size: 1024<br>    }<br>]</p>
-<p>// 当前内存使用状况<br>let ram = [<br>    {<br>        state: false,<br>        size: 1024<br>    }<br>]<br>// 剩余空间总和<br>let free_ram = 1024;<br>    其中free_area表示空闲块数组，数组中的每一个对象表示空闲块信息，index对应当前内存ram数组中空闲块的分块的下标，size表示该空闲块大小。<br>    其中ram表示内存使用状态数组，数组中的每一个对象表示分块，state表示该块是否被使用，state为true表示已使用，反之为未使用。<br>    其中free_ram表示当前未使用内存的大小。<br>    后端到前端的渲染均依靠维护这三个变量。</p>
-<hr>
-<p>主要算法代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> free_area = [</span><br><span class="line">    &#123;</span><br><span class="line">        index: <span class="number">0</span>,</span><br><span class="line">        size: <span class="number">1024</span></span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 当前内存使用状况</span></span><br><span class="line"><span class="keyword">let</span> ram = [</span><br><span class="line">    &#123;</span><br><span class="line">        state: <span class="literal">false</span>,</span><br><span class="line">        size: <span class="number">1024</span></span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line"><span class="comment">// 剩余空间总和</span></span><br><span class="line"><span class="keyword">let</span> free_ram = <span class="number">1024</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 快速幂</span></span><br><span class="line"><span class="keyword">var</span> pow = <span class="function"><span class="keyword">function</span> (<span class="params">x, n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        ans *= x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// console.log(pow(2, 10))</span></span><br><span class="line"><span class="comment">// 找到申请内存大小的二次幂 </span></span><br><span class="line"><span class="keyword">var</span> findlistnum = <span class="function"><span class="keyword">function</span> (<span class="params">size</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt;= <span class="number">10</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (size &gt; pow(<span class="number">2</span>, i) &amp;&amp; size &lt; pow(<span class="number">2</span>, i + <span class="number">1</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> i + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (size == pow(<span class="number">2</span>, i)) &#123;</span><br><span class="line">            <span class="comment">// console.log(i)</span></span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 删除指定下标的数组元素并返回新数组</span></span><br><span class="line"><span class="keyword">var</span> deleteArrElement = <span class="function"><span class="keyword">function</span> (<span class="params">index, arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> newarr = &#123;</span><br><span class="line">        deleteele: arr[index],</span><br><span class="line">        arr: arr</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = index; i &lt; arr.length; i++) &#123;</span><br><span class="line">        arr[i] = arr[i + <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    arr.length--;</span><br><span class="line">    newarr.arr = arr;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> newarr;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 查找数组里面某对象的值是否是要找的值</span></span><br><span class="line"><span class="keyword">var</span> indexOfArrObj = <span class="function"><span class="keyword">function</span> (<span class="params">value, arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[i].size === value) &#123;</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 分配内存 </span></span><br><span class="line"><span class="comment">// 参数为二次幂i，返回值为新的内存状态，空闲块状态，空闲内存大小；</span></span><br><span class="line"><span class="keyword">var</span> allocation = <span class="function"><span class="keyword">function</span> (<span class="params">powi</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// if(powi)</span></span><br><span class="line">    <span class="built_in">console</span>.log(powi)</span><br><span class="line">    <span class="keyword">if</span> (powi &lt; <span class="number">6</span>) &#123;</span><br><span class="line">        powi = <span class="number">6</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> nowstate = &#123;</span><br><span class="line">        ram: [],</span><br><span class="line">        free_area: [],</span><br><span class="line">        free_ram: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> blocksize = pow(<span class="number">2</span>, powi)</span><br><span class="line">    <span class="comment">// console.log(free_area)</span></span><br><span class="line">    <span class="keyword">if</span> (free_area.length == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">// 改成返回错误代码</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (free_area[<span class="number">0</span>].size == <span class="number">1024</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> ramsize = <span class="number">1024</span>;</span><br><span class="line">        ram.pop()</span><br><span class="line">        free_area.pop()</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">10</span> - powi; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">            ramsize = ramsize / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">let</span> obj = &#123;</span><br><span class="line">                index: i,</span><br><span class="line">                size: ramsize</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// console.log(ramsize)</span></span><br><span class="line">            free_area.unshift(obj);</span><br><span class="line">            <span class="keyword">let</span> tempusedobj = &#123;</span><br><span class="line">                state: <span class="literal">false</span>,</span><br><span class="line">                size: ramsize</span><br><span class="line">            &#125;</span><br><span class="line">            ram.unshift(tempusedobj)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> usedpbj = &#123;</span><br><span class="line">            state: <span class="literal">true</span>,</span><br><span class="line">            size: ramsize</span><br><span class="line">        &#125;</span><br><span class="line">        ram.unshift(usedpbj)</span><br><span class="line">        free_ram -= ramsize;</span><br><span class="line"></span><br><span class="line">        nowstate.ram = ram;</span><br><span class="line">        nowstate.free_area = free_area;</span><br><span class="line">        nowstate.free_ram = free_ram;</span><br><span class="line">        <span class="comment">// console.log('allocation ans 1' + JSON.stringify(nowstate))</span></span><br><span class="line">        <span class="keyword">return</span> nowstate;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (indexOfArrObj(blocksize, free_area) != <span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="keyword">let</span> i = indexOfArrObj(blocksize, free_area);</span><br><span class="line">            <span class="comment">// console.log(i)</span></span><br><span class="line">            <span class="comment">// free_area.index不变</span></span><br><span class="line">            <span class="keyword">let</span> newfreeare = deleteArrElement(i, free_area);</span><br><span class="line">            free_area = newfreeare.arr;</span><br><span class="line">            <span class="comment">// console.log(free_area)</span></span><br><span class="line">            <span class="keyword">let</span> ramindex = newfreeare.deleteele.index</span><br><span class="line">            ram[ramindex].state = <span class="literal">true</span>;</span><br><span class="line">            free_ram -= newfreeare.deleteele.size;</span><br><span class="line"></span><br><span class="line">            nowstate.ram = ram;</span><br><span class="line">            nowstate.free_area = free_area;</span><br><span class="line">            nowstate.free_ram = free_ram;</span><br><span class="line">            <span class="comment">// console.log('allocation ans 2' + JSON.stringify(nowstate))</span></span><br><span class="line">            <span class="keyword">return</span> nowstate;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> findupsize = blocksize;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; pow(<span class="number">2</span>, i) * blocksize &lt;= free_area[free_area.length - <span class="number">1</span>].size; i++) &#123;</span><br><span class="line">                findupsize *= <span class="number">2</span>;</span><br><span class="line">                <span class="comment">// console.log(findupsize)</span></span><br><span class="line">                <span class="keyword">if</span> (indexOfArrObj(findupsize, free_area) != <span class="number">-1</span>) &#123;</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">let</span> nowindex = indexOfArrObj(findupsize, free_area);</span><br><span class="line">                    <span class="built_in">console</span>.log(nowindex)<span class="comment">//0</span></span><br><span class="line">                    <span class="keyword">let</span> ramindex = free_area[nowindex].index;<span class="comment">//4</span></span><br><span class="line">                    <span class="comment">//5</span></span><br><span class="line">                    <span class="comment">// let sliceindex=ram.length-1-ramindex;//0</span></span><br><span class="line">                    <span class="comment">// ram.pop();</span></span><br><span class="line">                    ram.splice(ramindex, <span class="number">1</span>)</span><br><span class="line">                    <span class="keyword">let</span> times = <span class="number">0</span>;</span><br><span class="line">                    <span class="built_in">console</span>.log(free_area[nowindex])</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">let</span> k = nowindex; free_area[nowindex].size &gt; blocksize; k++) &#123;</span><br><span class="line">                        times++;</span><br><span class="line">                        free_area[nowindex].size /= <span class="number">2</span>;</span><br><span class="line">                        <span class="keyword">var</span> obj = &#123; ...free_area[nowindex] &#125;</span><br><span class="line">                        <span class="keyword">let</span> usedobj = &#123;</span><br><span class="line">                            state: <span class="literal">false</span>,</span><br><span class="line">                            size: free_area[nowindex].size</span><br><span class="line">                        &#125;</span><br><span class="line">                        free_area.unshift(obj)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                        <span class="built_in">console</span>.log(usedobj)</span><br><span class="line">                        ram.splice(ramindex, <span class="number">0</span>, usedobj)</span><br><span class="line"></span><br><span class="line">                    &#125;</span><br><span class="line">                    free_area.splice(<span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">                    <span class="keyword">let</span> tempobj = &#123;</span><br><span class="line">                        state: <span class="literal">true</span>,</span><br><span class="line">                        size: free_area[nowindex].size</span><br><span class="line">                    &#125;</span><br><span class="line">                    ram.splice(ramindex, <span class="number">0</span>, tempobj)</span><br><span class="line">                    <span class="comment">// console.log(ramindex)</span></span><br><span class="line">                    <span class="comment">// ram[ramindex].state = true;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                    <span class="built_in">console</span>.log(times)</span><br><span class="line">                    <span class="keyword">if</span> (times &lt; <span class="number">2</span>) &#123;</span><br><span class="line">                        <span class="comment">// console.log(222)</span></span><br><span class="line">                        <span class="keyword">for</span> (<span class="keyword">let</span> k = nowindex; k &lt; free_area.length; k++) &#123;</span><br><span class="line">                            free_area[k].index++;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (times &gt;= <span class="number">2</span>) &#123;</span><br><span class="line">                        <span class="comment">// console.log(111)</span></span><br><span class="line">                        <span class="keyword">let</span> freenowindex = free_area[nowindex].index;</span><br><span class="line">                        <span class="keyword">for</span> (<span class="keyword">let</span> k = nowindex; k &lt; free_area.length; k++) &#123;</span><br><span class="line">                            <span class="keyword">if</span> (free_area[k].index == freenowindex) &#123;</span><br><span class="line">                                free_area[k].index = freenowindex + (k - nowindex) + <span class="number">1</span>;</span><br><span class="line">                            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                                free_area[k].index += times;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="built_in">console</span>.log(free_area)</span><br><span class="line"></span><br><span class="line">                    free_ram -= free_area[nowindex].size;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                    nowstate.ram = ram;</span><br><span class="line">                    nowstate.free_area = free_area;</span><br><span class="line">                    nowstate.free_ram = free_ram;</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">return</span> nowstate;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 找寻对应的空闲块,如果找到并分配成功返回true;分配失败返回false;</span></span><br><span class="line"><span class="comment">// 参数：申请内存大小</span></span><br><span class="line"><span class="keyword">var</span> findFreeBlock = <span class="function"><span class="keyword">function</span> (<span class="params">size</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> blockpow = findlistnum(size);</span><br><span class="line">    <span class="built_in">console</span>.log(blockpow)</span><br><span class="line">    <span class="keyword">if</span> (blockpow === <span class="literal">false</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> newstate = $.parseJSON(<span class="built_in">JSON</span>.stringify(allocation(blockpow)));</span><br><span class="line">    <span class="comment">// console.log(newstate)</span></span><br><span class="line">    <span class="built_in">console</span>.log(newstate)</span><br><span class="line">    <span class="keyword">if</span> (newstate == <span class="literal">false</span>) &#123;</span><br><span class="line">        <span class="comment">// console.log('findFreeBlock ans 1')</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// console.log(newstate.ram)</span></span><br><span class="line">        ram = newstate.ram;</span><br><span class="line">        free_area = newstate.free_area;</span><br><span class="line">        free_ram = newstate.free_ram;</span><br><span class="line">        <span class="comment">// console.log('findFreeBlock ans 2')</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 渲染内存界面；</span></span><br><span class="line"><span class="keyword">var</span> renderAllocation = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (free_ram == <span class="number">1024</span>) &#123;</span><br><span class="line">        ram = [&#123;</span><br><span class="line">            size: <span class="number">1024</span>,</span><br><span class="line">            state: <span class="literal">false</span></span><br><span class="line">        &#125;]</span><br><span class="line">        free_area = [&#123;</span><br><span class="line">            index: <span class="number">0</span>,</span><br><span class="line">            size: <span class="number">1024</span></span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> sum = <span class="number">1024</span></span><br><span class="line">    <span class="comment">// console.log(bcg.innerHTML)</span></span><br><span class="line">    <span class="keyword">let</span> html = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; ram.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (ram[i].state == <span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="keyword">let</span> width = ram[i].size / sum * <span class="number">100</span> + <span class="string">'%'</span>;</span><br><span class="line">            <span class="keyword">var</span> useddiv = <span class="string">`&lt;div class="used block `</span> + <span class="string">`kb`</span> + ram[i].size + <span class="string">`" style="width:`</span> + width + <span class="string">` "&gt;`</span> + ram[i].size + <span class="string">`KB&lt;/div&gt;`</span></span><br><span class="line">            html += useddiv</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> freewidth = ram[i].size / sum * <span class="number">100</span> + <span class="string">'%'</span>;</span><br><span class="line">            <span class="keyword">var</span> freediv = <span class="string">`&lt;div class="free block"  style="width: `</span> + freewidth + <span class="string">`"&gt;`</span> + ram[i].size + <span class="string">`KB`</span> + <span class="string">`&lt;/div&gt;`</span>;</span><br><span class="line">            html += freediv;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    bcg.innerHTML = html;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">// $('.bcg').append(useddiv);</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">// console.log('renderAllocation ans 1')</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 格式化时间</span></span><br><span class="line"><span class="keyword">var</span> formatDateTime = <span class="function"><span class="keyword">function</span> (<span class="params">date</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// var y = date.getFullYear();  </span></span><br><span class="line">    <span class="comment">// var m = date.getMonth() + 1;  </span></span><br><span class="line">    <span class="comment">// m = m &lt; 10 ? ('0' + m) : m;  </span></span><br><span class="line">    <span class="comment">// var d = date.getDate();  </span></span><br><span class="line">    <span class="comment">// d = d &lt; 10 ? ('0' + d) : d;  </span></span><br><span class="line">    <span class="keyword">var</span> h = date.getHours();</span><br><span class="line">    h = h &lt; <span class="number">10</span> ? (<span class="string">'0'</span> + h) : h;</span><br><span class="line">    <span class="keyword">var</span> minute = date.getMinutes();</span><br><span class="line">    minute = minute &lt; <span class="number">10</span> ? (<span class="string">'0'</span> + minute) : minute;</span><br><span class="line">    <span class="keyword">var</span> second = date.getSeconds();</span><br><span class="line">    second = second &lt; <span class="number">10</span> ? (<span class="string">'0'</span> + second) : second;</span><br><span class="line">    <span class="keyword">return</span> h + <span class="string">':'</span> + minute + <span class="string">':'</span> + second;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//申请内存 参数：申请内存大小</span></span><br><span class="line"><span class="keyword">var</span> applicationram = <span class="function"><span class="keyword">function</span> (<span class="params">size</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> isAllocationOk = findFreeBlock(size);</span><br><span class="line">    <span class="comment">// console.log(isAllocationOk)</span></span><br><span class="line">    <span class="keyword">if</span> (!isAllocationOk) &#123;</span><br><span class="line">        <span class="comment">// console.log('applicationram ans 1')</span></span><br><span class="line">        <span class="built_in">window</span>.alert(<span class="string">'分配失败'</span>);</span><br><span class="line">        <span class="keyword">let</span> messagewrap = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line">        <span class="keyword">let</span> messagediv = <span class="built_in">document</span>.createElement(<span class="string">'span'</span>);</span><br><span class="line">        messagewrap.classList.add(<span class="string">'message-wrap'</span>);</span><br><span class="line">        messagediv.classList.add(<span class="string">'message-text'</span>);</span><br><span class="line">        messagediv.classList.add(<span class="string">'fail'</span>);</span><br><span class="line">        messagediv.classList.add(<span class="string">'applicationtext'</span>)</span><br><span class="line">        <span class="keyword">let</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">        <span class="keyword">var</span> datestr = formatDateTime(date);</span><br><span class="line">        messagediv.innerHTML = datestr + <span class="string">`分配内存`</span> + size + <span class="string">`KB 失败!`</span>;</span><br><span class="line">        messagewrap.appendChild(messagediv);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> leftwrap = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'left-wrap'</span>)[<span class="number">0</span>];</span><br><span class="line">        leftwrap.appendChild(messagewrap);</span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params">param</span>) </span>&#123;</span><br><span class="line">            messagewrap.classList.add(<span class="string">'active'</span>)</span><br><span class="line">        &#125;, <span class="number">1</span>);</span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            messagewrap.classList.add(<span class="string">'disappear'</span>);</span><br><span class="line">        &#125;, <span class="number">5000</span>);</span><br><span class="line">         setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">             messagewrap.style.display=<span class="string">'none'</span></span><br><span class="line">         &#125;,<span class="number">10000</span>);</span><br><span class="line">        renderAllocation()</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// console.log('applicationram ans 2')</span></span><br><span class="line">        <span class="keyword">let</span> messagewrap = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line">        <span class="keyword">let</span> messagediv = <span class="built_in">document</span>.createElement(<span class="string">'span'</span>);</span><br><span class="line">        messagewrap.classList.add(<span class="string">'message-wrap'</span>);</span><br><span class="line">        messagediv.classList.add(<span class="string">'message-text'</span>);</span><br><span class="line">        messagediv.classList.add(<span class="string">'applicationtext'</span>)</span><br><span class="line">        <span class="keyword">let</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">        <span class="keyword">var</span> datestr = formatDateTime(date);</span><br><span class="line">        messagediv.innerHTML = datestr + <span class="string">` 成功分配内存`</span> + size + <span class="string">`KB !`</span>;</span><br><span class="line">        messagewrap.appendChild(messagediv);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> leftwrap = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'left-wrap'</span>)[<span class="number">0</span>];</span><br><span class="line">        leftwrap.appendChild(messagewrap);</span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params">param</span>) </span>&#123;</span><br><span class="line">            messagewrap.classList.add(<span class="string">'active'</span>)</span><br><span class="line">        &#125;, <span class="number">1</span>);</span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            messagewrap.classList.add(<span class="string">'disappear'</span>);</span><br><span class="line">        &#125;, <span class="number">5000</span>);</span><br><span class="line">         setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">             messagewrap.style.display=<span class="string">'none'</span></span><br><span class="line">         &#125;,<span class="number">10000</span>);</span><br><span class="line">        renderAllocation()</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//确定分配内存</span></span><br><span class="line"><span class="keyword">var</span> buddyheap = <span class="function"><span class="keyword">function</span> (<span class="params">state</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (state == <span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> applicationsize = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'input'</span>)[<span class="number">0</span>].value;</span><br><span class="line">        <span class="comment">// 申请内存</span></span><br><span class="line">        applicationram(applicationsize)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// applicationram(70)</span></span><br><span class="line">applicationbtn.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    state = <span class="literal">true</span>;</span><br><span class="line">    <span class="comment">// console.log(state)</span></span><br><span class="line">    buddyheap(state);</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 给已申请成功的内存块加监听事件</span></span><br><span class="line"><span class="keyword">var</span> usedramaddevent = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; blockram.length; i++) &#123;</span><br><span class="line">            <span class="keyword">let</span> index = i;</span><br><span class="line">            blockram[i].addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(index)</span><br><span class="line">                <span class="keyword">var</span> that = <span class="keyword">this</span></span><br><span class="line">                <span class="keyword">if</span> (ram[index].state == <span class="literal">true</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (confirm(<span class="string">'release this block?'</span>)) &#123;</span><br><span class="line">                        resolve(index)</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        resolve(<span class="literal">false</span>)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 释放内存 参数：释放内存大小，释放内存块在内存中的下标</span></span><br><span class="line"><span class="keyword">var</span> releasram = <span class="function"><span class="keyword">function</span> (<span class="params">size, index</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// console.log(ram)</span></span><br><span class="line">    <span class="keyword">let</span> flag = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">let</span> k = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> obj = &#123;</span><br><span class="line">        index: index,</span><br><span class="line">        size: size</span><br><span class="line">    &#125;</span><br><span class="line">    free_area.unshift(obj)</span><br><span class="line">    free_area.sort(<span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a.index - b.index</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="built_in">console</span>.log(free_area)</span><br><span class="line">    <span class="keyword">if</span> (free_area.length == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> ramindex = free_area[k].index;</span><br><span class="line">        ram[ramindex].state=<span class="literal">false</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(ramindex)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">while</span> (flag == <span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(size)</span><br><span class="line">            <span class="keyword">if</span> (k == <span class="number">0</span>) &#123;</span><br><span class="line">                flag = <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 当从头到尾没有伙伴内存的时候，flag=false</span></span><br><span class="line">            <span class="keyword">if</span> (k &gt;= free_area.length - <span class="number">1</span>) &#123;</span><br><span class="line">                k = (k % free_area.length) - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> ((free_area[k].index - free_area[k + <span class="number">1</span>].index == <span class="number">-1</span>) &amp;&amp; (free_area[k].size == free_area[k + <span class="number">1</span>].size)) &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="number">444</span>)</span><br><span class="line">                <span class="keyword">let</span> ramindex = free_area[k].index;</span><br><span class="line">                ram[ramindex].size *= <span class="number">2</span>;</span><br><span class="line">                ram[ramindex].state = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">                ram.splice(ramindex + <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">                free_area[k].size *= <span class="number">2</span>;</span><br><span class="line">                free_area.splice(k + <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">let</span> i = k + <span class="number">1</span>; i &lt; free_area.length; i++) &#123;</span><br><span class="line">                    free_area[i].index--;</span><br><span class="line">                &#125;</span><br><span class="line">                flag = <span class="literal">false</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                flag = <span class="literal">true</span>;</span><br><span class="line">                k++;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> ((k == free_area.length - <span class="number">1</span> &amp;&amp; flag == <span class="literal">true</span>) || free_area.length == <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="number">999</span>)</span><br><span class="line">                flag=<span class="literal">false</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                flag=<span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(free_area)</span><br><span class="line">    <span class="keyword">let</span> s = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; free_area.length; i++) &#123;</span><br><span class="line">        s += free_area[i].size;</span><br><span class="line">    &#125;</span><br><span class="line">    free_ram = s;</span><br><span class="line">    <span class="comment">// console.log(ram)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          操作系统课程设计要求
+Linux中内存分配的伙伴堆算法模拟。（1）模拟内存实始情况。（2）实现Buddy heap算法。（3）通过键盘输入随机产生的申请和释放操作。（4）每次申请或释放都显示实时的内存分配的对比图。
 
 
-          
+实现结果：
+
+伙伴算法：
+Linux把空闲的页面按照页块大小分组进行管理。用数组
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/13/JavaScript%E5%AE%9E%E7%8E%B0linux%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E7%9A%84buddy%E7%AE%97%E6%B3%95/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -879,43 +877,20 @@
       
         
           
-            <p><del>关于二叉树充满血泪的一天</del> </p>
-<blockquote>
-<p>用非递归的方式实现二叉树，真的死了好多脑细胞，可能是我太菜了吧</p>
-</blockquote>
-<p>题目描述：<br>用非递归方式编码对一个二叉树的前、中、后、层次遍历。</p>
-<p>输入描述：<br>第一行一个正整数n(1&lt;=n&lt;=100)，表示二叉树有n个结点。<br>接下来n行，第i行两个整数li,ri (0&lt;=li,ri&lt;=n) ，分别表示第i个结点的左儿子和右儿子，为0代表空。<br>保证根为1，保证输入为合法二叉树。</p>
-<p>输出描述：<br>输出四行<br>第一行为二叉树的前序遍历；<br>第二行为中序遍历；<br>第三行为后序遍历；<br>第四行为层次遍历。<br>每一行输出n个数，代表该方式遍历的结点的顺序，相邻两个数之间用一个空格相隔。</p>
-<p>输入例子：</p>
-<blockquote>
-<p>5<br>3 2<br>0 5<br>0 4<br>0 0<br>0 0</p>
-</blockquote>
-<p>输出例子：</p>
-<blockquote>
-<p>1 3 4 2 5<br>3 4 1 2 5<br>4 3 5 2 1<br>1 3 2 4 5</p>
-</blockquote>
-<hr>
-<p>输入给的例子需要进行一定的处理。<br>处理完成之后得到的是一棵树。</p>
-<p>对这棵树进行遍历。</p>
-<p>以下是记录了这一天和二叉树遍历的爱恨情仇。</p>
-<hr>
-<h4 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h4><p>前序遍历就是先根遍历，先根节点，后左子树，然后右子树。<br>非递归的话，利用栈的结构。<br>1.（先根节点）从根开始先入栈；<br>2.（后左子树）一直向左节点遍历并入栈左节点；<br>3.（再右子树）如果当前节点没有左节点，则出栈，并将当前指针指向栈顶节点，然后指向右节点，开始遍历右子树。<br>PS：只要当前指针指向的节点存在，则表示遍历到此处，即将该节点放入res中，表示遍历顺序。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pretraver=<span class="function"><span class="keyword">function</span>(<span class="params">pRoot</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> res=[];</span><br><span class="line">	<span class="keyword">var</span> pCur=pRoot;</span><br><span class="line">	<span class="keyword">var</span> stack=[];</span><br><span class="line">	stack.push(pRoot);</span><br><span class="line">	<span class="keyword">while</span>(stack.length!=<span class="number">0</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(pCur)&#123;</span><br><span class="line">			res.push(pCur.val);</span><br><span class="line">			stack.push(pCur);</span><br><span class="line">			pCur=pCur.left;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			pCur=stack.pop();</span><br><span class="line">			pCur=pCur.right;</span><br><span class="line">		&#125;	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          关于二叉树充满血泪的一天 
 
-<hr>
-<h4 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h4><p>中序遍历就是中根遍历，即先左子树，后根，最后右子树。<br>非递归，依然使用栈。<br>1.一直向左遍历，入栈所有经过节点。<br>2.当前指针为空，则出栈，指针指向出栈节点，并将该节点放入res中，并将该节点右孩子入栈。指针指向右孩子。<br>3.如果当前指针为空，且栈为空，则表示遍历完了。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> intraver=<span class="function"><span class="keyword">function</span>(<span class="params">pRoot</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> pCur=pRoot;</span><br><span class="line">	<span class="keyword">var</span> res=[];</span><br><span class="line">	<span class="keyword">var</span> stack=[];</span><br><span class="line">	stack.push(pCur);</span><br><span class="line">	<span class="keyword">var</span> done=<span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">while</span>(!done)&#123;</span><br><span class="line">		<span class="keyword">if</span>(pCur)&#123;</span><br><span class="line">			stack.push(pCur);</span><br><span class="line">			pCur=pCur.left;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(stack.length!=<span class="number">0</span>)&#123;</span><br><span class="line">				pCur=stack.pop();</span><br><span class="line">				res.push(pCur.val);</span><br><span class="line">				pCur=pCur.right;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				done=<span class="literal">false</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+用非递归的方式实现二叉树，真的死了好多脑细胞，可能是我太菜了吧
 
-<hr>
-<h4 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h4><p>后序遍历就是后根遍历，先左子树，后右子树，再根节点。<br>非递归实现，需要用到栈。<br>但是后序有一种简单的思路，就是利用与前序遍历的关系。<br>后序遍历就是先右后左的先（前）序遍历。<br>1.先根节点入栈。<br>2.然后左节点入栈。<br>3.最后右节点入栈。<br>PS：每次指向栈顶元素。并出栈。栈顶即为每一轮的右节点。所以即为先右后左。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> lasttraver=<span class="function"><span class="keyword">function</span>(<span class="params">pRoot</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> pCur=pRoot;</span><br><span class="line">	<span class="keyword">var</span> stack=[];</span><br><span class="line">	<span class="keyword">var</span> res=[];</span><br><span class="line">	stack.push(pCur);</span><br><span class="line">	<span class="keyword">while</span>(stack.length!=<span class="number">0</span>)&#123;</span><br><span class="line">		pCur=stack.pop();</span><br><span class="line">		res.push(pCur.val);</span><br><span class="line">		<span class="keyword">if</span>(pCur)&#123;</span><br><span class="line">			pCur=pCur.left;</span><br><span class="line">			stack.push(pCur);</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			pCur=pCur.right;</span><br><span class="line">			stack.push(pCur)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h4 id="按层遍历"><a href="#按层遍历" class="headerlink" title="按层遍历"></a>按层遍历</h4><p>按层遍历特殊一点，需要先进先出，因为是按照从上到下，从左到右的顺序进入存储结构，但是又要从左到右从上到下进行遍历左右节点，所以需要队列，先进先出。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> leveltraver=<span class="function"><span class="keyword">function</span>(<span class="params">pRoot</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> pCur=pRoot;</span><br><span class="line">	<span class="keyword">var</span> queue=[];</span><br><span class="line">	queue.push(pCur);</span><br><span class="line">	<span class="keyword">var</span> res=[];</span><br><span class="line">	<span class="keyword">while</span>(queue.length!=<span class="number">0</span>)&#123;</span><br><span class="line">		res.push(queue.shift().val);</span><br><span class="line">		<span class="keyword">if</span>(pCur.left)&#123;</span><br><span class="line">			queue.push(pCur.left);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(pCur.right)&#123;</span><br><span class="line">			queue.push(pCur.right);</span><br><span class="line">		&#125;</span><br><span class="line">		pCur=queue[queue.length<span class="number">-1</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>ps：如果有人有需要数据处理部分的代码的，请留言噢。有需要的话我再贴。</p>
-
-          
+题目描述：用非递归方式编码对一个二叉树的前、中、后、层次遍历。
+输入描述：第一行一个正整数n(1&lt;=n&lt;=100)，表示二叉树有n个结点。接下来n行，第i行两个整数li,ri (0&lt;=l
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/11/%E9%9D%9E%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86%20JavaScript%E7%89%88/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1033,13 +1008,18 @@
       
         
           
-            <h3 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0）。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fibonacci</span>(<span class="params">n</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> curr=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> last=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(n--)&#123;</span><br><span class="line">        curr+=last;</span><br><span class="line">        last=curr-last;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> curr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          斐波那契数列题目描述
+大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0）。
 
-
-          
+1234567891011function Fibonacci(n)&#123;    // write code here    var curr=0;    var l
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/10/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(7)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1157,16 +1137,16 @@
       
         
           
-            <h1 id="数据流中的中位数"><a href="#数据流中的中位数" class="headerlink" title="数据流中的中位数"></a>数据流中的中位数</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中间的数值。如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。我们使用Insert()方法读取数据流，使用GetMedian()方法获取当前读取数据的中位数。</p>
-</blockquote>
-<ul>
-<li>一边排序，一边返回中位数</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr=[]</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Insert</span>(<span class="params">num</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    arr.push(num)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=arr.length<span class="number">-2</span>;arr[i]&gt;num;i--)</span><br><span class="line">        [arr[i],arr[i+<span class="number">1</span>]]=[arr[i+<span class="number">1</span>],arr[i]]</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GetMedian</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(arr.length&amp;<span class="number">1</span>==<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> arr[(arr.length<span class="number">-1</span>)/<span class="number">2</span>]&#125;</span><br><span class="line">    <span class="keyword">return</span> (arr[(arr.length)/<span class="number">2</span><span class="number">-1</span>]+arr[(arr.length)/<span class="number">2</span>])/<span class="number">2</span></span><br><span class="line">   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-          
+          数据流中的中位数题目描述
+何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中间的数值。如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。我们使用Insert()方法读取数据流，使用GetMedian()方法获取当前读取数据的中
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/10/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(63)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1284,18 +1264,16 @@
       
         
           
-            <h1 id="滑动窗口的最大值"><a href="#滑动窗口的最大值" class="headerlink" title="滑动窗口的最大值"></a>滑动窗口的最大值</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>给定一个数组和滑动窗口的大小，找出所有滑动窗口里数值的最大值。例如，如果输入数组{2,3,4,2,6,2,5,1}及滑动窗口的大小3，那么一共存在6个滑动窗口，他们的最大值分别为{4,4,6,6,6,5}； 针对数组{2,3,4,2,6,2,5,1}的滑动窗口有以下6个： {[2,3,4],2,6,2,5,1}， {2,[3,4,2],6,2,5,1}， {2,3,[4,2,6],2,5,1}， {2,3,4,[2,6,2],5,1}， {2,3,4,2,[6,2,5],1}， {2,3,4,2,6,[2,5,1]}。</p>
-</blockquote>
-<ul>
-<li>每次找到窗口中的最大值放进res中</li>
-<li>一次移动一格</li>
-<li>i对应的是窗口尾部对应的数组下标</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">maxInWindows</span>(<span class="params">num, size</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">const</span> res=[]</span><br><span class="line">    <span class="keyword">const</span> queue=[]</span><br><span class="line">    <span class="keyword">let</span> max=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">let</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(num.length==<span class="number">0</span>||size&lt;<span class="number">1</span>||size&gt;num.length)<span class="keyword">return</span> res;</span><br><span class="line">    <span class="keyword">while</span>(size--)&#123;</span><br><span class="line">        queue.push(num[i])</span><br><span class="line">        <span class="keyword">if</span>(max&lt;=num[i]) max=num[i]</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    res.push(max)</span><br><span class="line">    <span class="keyword">while</span>(i&lt;num.length)&#123;</span><br><span class="line">        <span class="keyword">let</span> m=queue.shift()</span><br><span class="line">        <span class="keyword">if</span>(m==max)&#123;</span><br><span class="line">            max=getMax(queue)</span><br><span class="line">        &#125;</span><br><span class="line">        queue.push(num[i])</span><br><span class="line">        <span class="keyword">if</span>(num[i]&gt;=max) max=num[i]</span><br><span class="line">        res.push(max)</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getMax</span>(<span class="params">q</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> max=<span class="number">-1</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">0</span>;j&lt;q.length;j++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(q[j]&gt;max)&#123;</span><br><span class="line">            max=q[j]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-          
+          滑动窗口的最大值题目描述
+给定一个数组和滑动窗口的大小，找出所有滑动窗口里数值的最大值。例如，如果输入数组{2,3,4,2,6,2,5,1}及滑动窗口的大小3，那么一共存在6个滑动窗口，他们的最大值分别为{4,4,6,6,6,5}； 针对数组{2,3,4,2,6,2,5,1}的滑动窗口有以下6个： 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/03/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(64)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1413,15 +1391,18 @@
       
         
           
-            <h3 id="顺时针打印矩阵"><a href="#顺时针打印矩阵" class="headerlink" title="顺时针打印矩阵"></a>顺时针打印矩阵</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字，例如，如果输入如下4 X 4矩阵： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 则依次打印出数字1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10.</p>
-</blockquote>
-<p>tips：此处注意concat不改变原数组，结果需要保存起来</p>
-<p>本题用的使模拟魔方旋转矩阵</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// [</span></span><br><span class="line"><span class="comment">//  [1,2,3,4],</span></span><br><span class="line"><span class="comment">//  [5,6,7,8],</span></span><br><span class="line"><span class="comment">//  [9,10,11,12],</span></span><br><span class="line"><span class="comment">//  [13,14,15,16]</span></span><br><span class="line"><span class="comment">// ]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printMatrix</span>(<span class="params">matrix</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(!matrix)<span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">var</span> res=[];</span><br><span class="line">    res=res.concat(matrix.shift());</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(matrix.length)&#123;</span><br><span class="line">        matrix=nizhi(matrix);</span><br><span class="line">        res=res.concat(matrix.shift());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          顺时针打印矩阵题目描述
+输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字，例如，如果输入如下4 X 4矩阵： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 则依次打印出数字1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10.
 
-
-          
+t
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/03/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(19)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1539,28 +1520,16 @@
       
         
           
-            <h3 id="动态划分的典型问题"><a href="#动态划分的典型问题" class="headerlink" title="动态划分的典型问题"></a>动态划分的典型问题</h3><ol>
-<li><p>一般背包问题<br> 假设有m个物品，每个物品质量为 W[ i ]，每个物品的价值为 V[ i ]。<br> 背包容量为N。<br> 求能够带走的最大价值为多少。<br> 每个物品，带走或者不带走，即其标记为1或0；<br> 假设每次装该物品数量为num[ i ]<br> 限制条件是，Σ( num[ i ] * W[ i ] ) &lt;=N ，即拿走的物品质量不能超过背包容量。<br>  dp[j] 表示当背包内容量为j时，其装的最大价值的东西质量为dp[j]。</p>
-<hr>
-<p>  举个例子：<br>  假设有一个背包容量为10kg，有三个物品，一个为1kg，一个为5kg，一个为7kg，三个价值分别为10,20,15。<br>  那么容量为1kg，dp[1]=max(10)；2kg，dp[2]=max(10)；3kg…..；5kg，dp[5]=max(v[1]+dp[5-w[0]],dp[4])=max(20,10)=20；以此类推，所以随着j的增长，dp[j]并不是线性增长的，限制条件即为最少需要j&gt;=w[i]，至少取一件物品。</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bagpro=<span class="function"><span class="keyword">function</span>(<span class="params">w,v,n</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> dp=<span class="keyword">new</span> <span class="built_in">Array</span>(n+<span class="number">1</span>);</span><br><span class="line">	dp.fill(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;w.length;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">let</span> j=n;j&gt;=w[i];j--)&#123;</span><br><span class="line">			dp[j]=<span class="built_in">Math</span>.max(v[j]+dp[j-w[i]],dp[j]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> dp[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>完全背包问题<br> 假设每个物品质量为 W[ i ]，每个物品价值为 V[ i ]，物品数量无限。<br> 背包容量为N，求能够带走的最大价值为多少？<br> 限制条件是Σ (num[i]*w[i])&lt;=N，此时num[i]取值是非负数即可，因为物品数量不限。</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> completebagpro=<span class="function"><span class="keyword">function</span>(<span class="params">w,v,n</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> dp=<span class="keyword">new</span> <span class="built_in">Array</span>(n+<span class="number">1</span>);</span><br><span class="line">	dp.fill(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;w.length;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">let</span> j=w[i];j&lt;n;j++)&#123;</span><br><span class="line">			dp[j]=<span class="built_in">Math</span>.max(v[i]+dp[j-w[i]],dp[j]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<hr>
-<p>解决动态划分问题最重要的是找到对应的状态转移方程。</p>
-<p>例1：零钱问题<br>给定不同面额的硬币 coins 和一个总金额 amount。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回 -1。<br>dp[j]表示组成金额为j的最少硬币数为dp[j]<br>状态转移方程为：dp[j]=math.min(dp[j-coins[i]]+1,dp[j])</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">countcoins</span>(<span class="params">coins,amount</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> dp=<span class="keyword">new</span> <span class="built_in">Array</span>(amount+<span class="number">1</span>);</span><br><span class="line">	dp.fill(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;coins.length;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">let</span> j=coins[i];j&lt;amount;j++)&#123;</span><br><span class="line">			dp[j]=<span class="built_in">Math</span>.min(<span class="number">1</span>+dp[j-coins[i]],dp[j]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(dp[amount]==<span class="number">0</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> dp[amount];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>例2：硬币划分<br>有1分，2分，5分，10分四种硬币，每种硬币数量无限，给定n分钱(n &lt;= 100000)，有多少中组合可以组成n分钱？<br>dp[j]表示组成j分钱有dp[j]种方法。<br>状态转移方程为：dp[j]=dp[j-coins[0]]+dp[j-coins[1]]+dp[j-coins[2]]+dp[j-coins[3]];<br>比如说要组成13分，那么去掉一个1分硬币，就是组成12分硬币的种数；去掉一个2分硬币，就是组成11分硬币的种数；以此类推，以上分解情况的和就是组成13分的组合数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">coinsCombination</span>(<span class="params">coins,n</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> dp=<span class="keyword">new</span> <span class="built_in">Array</span>(n+<span class="number">1</span>).fill(<span class="number">0</span>);</span><br><span class="line">	dp[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;coins.length;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">let</span> j=coins[i];j&lt;n;j++)&#123;</span><br><span class="line">			dp[j]+=dp[j-coins[i]];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> dp[n]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-          
+          动态划分的典型问题
+一般背包问题 假设有m个物品，每个物品质量为 W[ i ]，每个物品的价值为 V[ i ]。 背包容量为N。 求能够带走的最大价值为多少。 每个物品，带走或者不带走，即其标记为1或0； 假设每次装该物品数量为num[ i ] 限制条件是，Σ( num[ i ] * W[ i ] 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/03/%E5%8A%A8%E6%80%81%E5%88%92%E5%88%86%20JavaScript%E7%89%88%E8%AF%A6%E8%A7%A3/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

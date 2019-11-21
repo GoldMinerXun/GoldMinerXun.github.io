@@ -351,18 +351,23 @@
       
         
           
-            <h3 id="最小的K个数"><a href="#最小的K个数" class="headerlink" title="最小的K个数"></a>最小的K个数</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>输入n个整数，找出其中最小的K个数。</p>
-</blockquote>
-<ul>
-<li>基于快排思想的寻找第K大的数。</li>
-<li>快排每一趟可以将a[0]在数组中的位置找到，且其位置左侧均为小于a[0]的数，右侧均为大于a[0]的数</li>
-<li>所以只要找到第K大的数，其左侧则为最小的K个数。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GetLeastNumbers_Solution</span>(<span class="params">input, k</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">const</span> left=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> right=input.length<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">if</span>(k&lt;<span class="number">1</span>||input.length===<span class="number">0</span>||k&gt;input.length) <span class="keyword">return</span> [];</span><br><span class="line">    <span class="keyword">let</span> key=partition(input,left,right);</span><br><span class="line">    <span class="keyword">while</span>(key !== k - <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(key &gt; k- <span class="number">1</span>)&#123;</span><br><span class="line">            key=partition(input,left,key<span class="number">-1</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            key=partition(input,key+<span class="number">1</span>,right);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> res=input.slice(<span class="number">0</span>,key+<span class="number">1</span>);</span><br><span class="line">    res.sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>a-b);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">partition</span>(<span class="params">arr,left,right</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> key=arr[left];</span><br><span class="line">    <span class="keyword">while</span>(left&lt;right)&#123;</span><br><span class="line">        <span class="keyword">while</span>(key&lt;=arr[right]&amp;&amp;left&lt;right)&#123;</span><br><span class="line">            right--;</span><br><span class="line">        &#125;</span><br><span class="line">        [arr[left],arr[right]]=[arr[right],arr[left]];</span><br><span class="line">        <span class="keyword">while</span>(key&gt;=arr[left]&amp;&amp;left&lt;right)&#123;</span><br><span class="line">            left++;</span><br><span class="line">        &#125;</span><br><span class="line">        [arr[left],arr[right]]=[arr[right],arr[left]];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          最小的K个数题目描述
+输入n个整数，找出其中最小的K个数。
 
 
-          
+基于快排思想的寻找第K大的数。
+快排每一趟可以将a[0]在数组中的位置找到，且其位置左侧均为小于a[0]的数，右侧均为大于a[0]的数
+所以只要找到第K大的数，其左侧则为最小的K个数。
+
+123456789101112131415161
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(29)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -480,17 +485,17 @@
       
         
           
-            <ul>
-<li><p>在react中使用map函数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">const</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">const</span> listItems = numbers.map(<span class="function">(<span class="params">numbers</span>) =&gt;</span></span><br><span class="line">  &lt;li&gt;&#123;numbers&#125;&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">);</span></span><br><span class="line"><span class="regexp"> </span></span><br><span class="line"><span class="regexp">ReactDOM.render(</span></span><br><span class="line"><span class="regexp">  &lt;ul&gt;&#123;listItems&#125;&lt;/u</span>l&gt;,</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'example'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-
-
-
-</li>
-</ul>
-
           
+在react中使用map函数
+123456789 const numbers = [1, 2, 3, 4, 5];const listItems = numbers.map((numbers) =&gt;  &lt;li&gt;&#123;numbers&#125;&lt;/li&gt;); Re
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/13/React%20Tips/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -608,148 +613,22 @@
       
         
           
-            <h1 id="序列化二叉树"><a href="#序列化二叉树" class="headerlink" title="序列化二叉树"></a>序列化二叉树</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>请实现两个函数，分别用来序列化和反序列化二叉树</p>
-</blockquote>
-<ul>
-<li>利用数组实现序列化结果，重建过程相当于建树，用前序结果建树。</li>
-<li>递归</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">TreeNode</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.val = x;</span><br><span class="line">    <span class="keyword">this</span>.left = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">this</span>.right = <span class="literal">null</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">const</span> arr=[]</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Serialize</span>(<span class="params">pRoot</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(pRoot==<span class="literal">null</span>)&#123;</span><br><span class="line">        arr.push(<span class="string">'#'</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        arr.push(pRoot.val)</span><br><span class="line">        Serialize(pRoot.left)</span><br><span class="line">        Serialize(pRoot.right)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Deserialize</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">let</span> node=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">if</span>(arr.length&lt;<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> number=arr.shift()</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span>(number)==<span class="string">'number'</span>)&#123;</span><br><span class="line">        node=<span class="keyword">new</span> TreeNode(number)</span><br><span class="line">        node.left=Deserialize();</span><br><span class="line">        node.right=Deserialize()</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">return</span> node;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          序列化二叉树题目描述
+请实现两个函数，分别用来序列化和反序列化二叉树
 
 
-          
-        
-      
-    </div>
-    
-    
-    
+利用数组实现序列化结果，重建过程相当于建树，用前序结果建树。
+递归
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(27)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(27)/" itemprop="url">字符串的排列</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-13T11:30:22+08:00">
-                2019-08-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="字符串的排列"><a href="#字符串的排列" class="headerlink" title="字符串的排列"></a>字符串的排列</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>按字典序输出一个字符串的全排列<br>输入一个字符串,长度不超过9(可能有字符重复),字符只包括大小写字母。</p>
-</blockquote>
-<p>要深入理解递归，自身调用自身，分而治之。</p>
-<ul>
-<li>本篇采用的递归全排列方法</li>
-<li>递归首先应该想到，当字符串长度为1 时，其全排列就是其自身。</li>
-<li>字符串长度大于1时，将字符串分割成第一个字符和剩余字符，剩余字符全排列后，再将第一个字符与后面的字符逐个交换。</li>
-<li>值得注意的地方是，每次交换后都应将第一个字符换回原来的位置，以便下一次交换。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Permutation</span>(<span class="params">str</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">let</span> res=[];</span><br><span class="line">    <span class="keyword">if</span>(str.length&lt;=<span class="number">0</span>)<span class="keyword">return</span> res;</span><br><span class="line">    <span class="keyword">var</span> arr=str.split(<span class="string">''</span>);</span><br><span class="line">    res=permutation(arr,<span class="number">0</span>,res);</span><br><span class="line">    res=[...new <span class="built_in">Set</span>(res)];</span><br><span class="line">    res.sort();</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">permutation</span>(<span class="params">arr,index,res</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(arr.length===index)&#123;</span><br><span class="line">        <span class="keyword">var</span> s=<span class="string">''</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">            s+=arr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        res.push(s);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=index;i&lt;arr.length;i++)&#123;</span><br><span class="line">        [arr[index],arr[i]]=[arr[i],arr[index]];</span><br><span class="line">        permutation(arr,index+<span class="number">1</span>,res);</span><br><span class="line">        [arr[index],arr[i]]=[arr[i],arr[index]];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-          
+123456789101112131415161718192021222324252627282930313233function TreeNode(x) 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(61)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -867,16 +746,21 @@
       
         
           
-            <h1 id="数组中只出现一次的数字"><a href="#数组中只出现一次的数字" class="headerlink" title="数组中只出现一次的数字"></a>数组中只出现一次的数字</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>一个整型数组里除了两个数字之外，其他的数字都出现了两次。请写程序找出这两个只出现一次的数字。</p>
-</blockquote>
-<ul>
-<li>先排序，排序后再遍历一遍数组，如果前一个和后一个元素不等，则为出现一次的，注意相等时遍历下标的变化。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindNumsAppearOnce</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="comment">// return list, 比如[a,b]，其中ab是出现一次的两个数字</span></span><br><span class="line">    <span class="keyword">const</span> list=[];</span><br><span class="line">    array.sort();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(array[i]!=array[i+<span class="number">1</span>])&#123;</span><br><span class="line">            list.push(array[i])</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          数组中只出现一次的数字题目描述
+一个整型数组里除了两个数字之外，其他的数字都出现了两次。请写程序找出这两个只出现一次的数字。
 
 
-          
+先排序，排序后再遍历一遍数组，如果前一个和后一个元素不等，则为出现一次的，注意相等时遍历下标的变化。
+
+123456789101112131415function Fin
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(40)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -994,19 +878,157 @@
       
         
           
-            <h1 id="把二叉树打印成多行"><a href="#把二叉树打印成多行" class="headerlink" title="把二叉树打印成多行"></a>把二叉树打印成多行</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>从上层到下层从左到右按层输出二叉树</p>
-</blockquote>
-<ul>
-<li>用队列先进先出的性质，从左到右先遍历下层节点，到下层输出的时候，也可以从左到右输出。</li>
-<li>需要记录下层节点的个数</li>
-<li>需要记录当前层打印节点的个数</li>
-</ul>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Print</span>(<span class="params">pRoot</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> queue=[]</span><br><span class="line">    <span class="keyword">const</span> res=[]</span><br><span class="line">    <span class="keyword">if</span>(pRoot==<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> nextlevel=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> curlevel=<span class="number">1</span>;</span><br><span class="line">    queue.push(pRoot);</span><br><span class="line">    <span class="keyword">let</span> list=[]</span><br><span class="line">    <span class="keyword">while</span>(queue.length!=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> pNode=queue.shift();</span><br><span class="line">        list.push(pNode.val)</span><br><span class="line">        <span class="keyword">if</span>(pNode.left!=<span class="literal">null</span>)&#123;</span><br><span class="line">            nextlevel++;</span><br><span class="line">            queue.push(pNode.left)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(pNode.right!=<span class="literal">null</span>)&#123;</span><br><span class="line">            nextlevel++;</span><br><span class="line">            queue.push(pNode.right)</span><br><span class="line">        &#125;</span><br><span class="line">        curlevel--;</span><br><span class="line">        <span class="keyword">if</span>(curlevel==<span class="number">0</span>)&#123;</span><br><span class="line">            res.push(list)</span><br><span class="line">            curlevel=nextlevel;</span><br><span class="line">            nextlevel=<span class="number">0</span>;</span><br><span class="line">            list=[];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          把二叉树打印成多行题目描述
+从上层到下层从左到右按层输出二叉树
 
+
+用队列先进先出的性质，从左到右先遍历下层节点，到下层输出的时候，也可以从左到右输出。
+需要记录下层节点的个数
+需要记录当前层打印节点的个数
+
+
+12345678910111213141516171819202122232425262
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(60)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(27)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(27)/" itemprop="url">字符串的排列</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-13T11:30:22+08:00">
+                2019-08-13
+              </time>
+            
+
+            
+
+            
+          </span>
 
           
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          字符串的排列题目描述
+按字典序输出一个字符串的全排列输入一个字符串,长度不超过9(可能有字符重复),字符只包括大小写字母。
+
+要深入理解递归，自身调用自身，分而治之。
+
+本篇采用的递归全排列方法
+递归首先应该想到，当字符串长度为1 时，其全排列就是其自身。
+字符串长度大于1时，将字符串分割成第一个字
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(27)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1124,14 +1146,19 @@
       
         
           
-            <h3 id="矩形覆盖"><a href="#矩形覆盖" class="headerlink" title="矩形覆盖"></a>矩形覆盖</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>我们可以用2<em>1的小矩形横着或者竖着去覆盖更大的矩形。请问用n个2</em>1的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？</p>
-</blockquote>
-<p>找规律发现其原理和斐波那契数列相符</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">rectCover</span>(<span class="params">number</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> g=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> f=<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(number==<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">while</span>(--number)&#123;</span><br><span class="line">            f+=g;</span><br><span class="line">            g=f-g;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> g;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          矩形覆盖题目描述
+我们可以用21的小矩形横着或者竖着去覆盖更大的矩形。请问用n个21的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？
 
-
-          
+找规律发现其原理和斐波那契数列相符
+12345678910111213141516function rectCover(number)&#123;    
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/12/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(10)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1249,14 +1276,19 @@
       
         
           
-            <h3 id="替换空格"><a href="#替换空格" class="headerlink" title="替换空格"></a>替换空格</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。</p>
-</blockquote>
-<p>代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 替换空格</span></span><br><span class="line"><span class="comment">// 请实现一个函数，将一个字符串中的每个空格替换成“%20”。</span></span><br><span class="line"><span class="comment">// 例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">replaceSpace</span>(<span class="params">string</span>) </span>&#123; </span><br><span class="line">    <span class="keyword">var</span> result=string.replace(<span class="regexp">/ /g</span>,<span class="string">'%20'</span>)</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(replaceSpace(<span class="string">'we are happy'</span>))</span><br></pre></td></tr></table></figure>
+          替换空格题目描述
+请实现一个函数，将一个字符串中的每个空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。
 
-
-          
+代码
+12345678910// 替换空格// 请实现一个函数，将一个字符串中的每个空格替换成“%20”。// 例如，当
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/11/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%EF%BC%882%EF%BC%89/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1374,16 +1406,21 @@
       
         
           
-            <h1 id="二叉树的深度"><a href="#二叉树的深度" class="headerlink" title="二叉树的深度"></a>二叉树的深度</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>输入一棵二叉树，求该树的深度。从根结点到叶结点依次经过的结点（含根、叶结点）形成树的一条路径，最长路径的长度为树的深度。</p>
-</blockquote>
-<ul>
-<li>每次都需要比较左子树和右子数的深度，采用递归方法。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">TreeDepth</span>(<span class="params">pRoot</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(pRoot==<span class="literal">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> leftDepth=TreeDepth(pRoot.left);</span><br><span class="line">    <span class="keyword">const</span> rightDepth=TreeDepth(pRoot.right);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.max(leftDepth,rightDepth)+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          二叉树的深度题目描述
+输入一棵二叉树，求该树的深度。从根结点到叶结点依次经过的结点（含根、叶结点）形成树的一条路径，最长路径的长度为树的深度。
 
 
-          
+每次都需要比较左子树和右子数的深度，采用递归方法。
+
+12345678function TreeDepth(pRoot)&#123;    // wri
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/11/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(38)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1501,17 +1538,19 @@
       
         
           
-            <h3 id="数组中出现次数超过一半的数字"><a href="#数组中出现次数超过一半的数字" class="headerlink" title="数组中出现次数超过一半的数字"></a>数组中出现次数超过一半的数字</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。例如输入一个长度为9的数组{1,2,3,2,2,2,5,4,2}。由于数字2在数组中出现了5次，超过数组长度的一半，因此输出2。如果不存在则输出0。</p>
-</blockquote>
-<ul>
-<li>数组中只有两种情况，是这个数字，不是这个数字，且若数字存在，则一定比其余数字出现次数的和大1或者更多，所以设置一个变量times初值为1，除了这个数字以外，其他数字一定会将times减到0，最终这个数字一定会出现。（如果存在的话）</li>
-<li>找到这个出现次数最多的数字，不一定是超过数组长度一半的数字，所以需要再统计该数字出现的次数。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MoreThanHalfNum_Solution</span>(<span class="params">numbers</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">let</span> res=numbers[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">let</span> times=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;numbers.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(times===<span class="number">0</span>)&#123;</span><br><span class="line">            res=numbers[i]</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(numbers[i]===res)&#123;</span><br><span class="line">            times++;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            times--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!countword(numbers,res))&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">       &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">countword</span>(<span class="params">number,res</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> time=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;number.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(number[i]===res)</span><br><span class="line">            &#123;</span><br><span class="line">                time++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">if</span>(time*<span class="number">2</span>&lt;=number.length)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          数组中出现次数超过一半的数字题目描述
+数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。例如输入一个长度为9的数组{1,2,3,2,2,2,5,4,2}。由于数字2在数组中出现了5次，超过数组长度的一半，因此输出2。如果不存在则输出0。
 
 
-          
+数组中只有两种情况，是这个数字，不是这个数字，
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/10/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%EF%BC%8828%EF%BC%89/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
