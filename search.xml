@@ -144,6 +144,17 @@
       </tags>
   </entry>
   <entry>
+    <title>时间管理项目</title>
+    <url>/2019/10/13/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<p><a href="https://github.com/GoldMinerXun/PullClassFromJW" target="_blank" rel="noopener">时间管理项目完整1.0版</a><br>node.js+express+jQuery<br>基本上没有用任何框架，原生js项目。<br>技术难点主要是爬虫技术。<br>该项目运行在3010端口。</p>
+<hr>
+<p>star一下叭。</p>
+]]></content>
+      <tags>
+        <tag>项目</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>平衡二叉树</title>
     <url>/2019/10/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(39)/</url>
     <content><![CDATA[<h1 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
@@ -157,17 +168,6 @@
 ]]></content>
       <tags>
         <tag>剑指offer</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>时间管理项目</title>
-    <url>/2019/10/13/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE/</url>
-    <content><![CDATA[<p><a href="https://github.com/GoldMinerXun/PullClassFromJW" target="_blank" rel="noopener">时间管理项目完整1.0版</a><br>node.js+express+jQuery<br>基本上没有用任何框架，原生js项目。<br>技术难点主要是爬虫技术。<br>该项目运行在3010端口。</p>
-<hr>
-<p>star一下叭。</p>
-]]></content>
-      <tags>
-        <tag>项目</tag>
       </tags>
   </entry>
   <entry>
@@ -807,13 +807,12 @@
       </tags>
   </entry>
   <entry>
-    <title>二叉树的镜像</title>
-    <url>/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(18)/</url>
-    <content><![CDATA[<h3 id="二叉树的镜像"><a href="#二叉树的镜像" class="headerlink" title="二叉树的镜像"></a>二叉树的镜像</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>操作给定的二叉树，将其变换为源二叉树的镜像。</p>
+    <title>包含min函数的栈</title>
+    <url>/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(20)/</url>
+    <content><![CDATA[<h3 id="包含min函数的栈"><a href="#包含min函数的栈" class="headerlink" title="包含min函数的栈"></a>包含min函数的栈</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+<p>定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。</p>
 </blockquote>
-<p>递归。。。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Mirror</span>(<span class="params">root</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(root===<span class="literal">null</span>)<span class="keyword">return</span>;</span><br><span class="line">    Mirror(root.left);</span><br><span class="line">    Mirror(root.right);</span><br><span class="line">    [root.left,root.right]=[root.right,root.left];</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> stack=[];</span><br><span class="line"><span class="keyword">var</span> minstack=[];</span><br><span class="line"><span class="keyword">var</span> minele=<span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">push</span>(<span class="params">node</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(minele!==<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(node&lt;minele)&#123;</span><br><span class="line">            minele=node;</span><br><span class="line">        &#125;</span><br><span class="line">        stack.push(node);</span><br><span class="line">        minstack.push(minele);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        minele=node;</span><br><span class="line">        stack.push(node);</span><br><span class="line">        minstack.push(minele);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pop</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    stack.pop();</span><br><span class="line">    minstack.pop();</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">top</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> stack[stack.length<span class="number">-1</span>];</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">min</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> minstack[minstack.length<span class="number">-1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
@@ -821,12 +820,13 @@
       </tags>
   </entry>
   <entry>
-    <title>包含min函数的栈</title>
-    <url>/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(20)/</url>
-    <content><![CDATA[<h3 id="包含min函数的栈"><a href="#包含min函数的栈" class="headerlink" title="包含min函数的栈"></a>包含min函数的栈</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。</p>
+    <title>二叉树的镜像</title>
+    <url>/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(18)/</url>
+    <content><![CDATA[<h3 id="二叉树的镜像"><a href="#二叉树的镜像" class="headerlink" title="二叉树的镜像"></a>二叉树的镜像</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+<p>操作给定的二叉树，将其变换为源二叉树的镜像。</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> stack=[];</span><br><span class="line"><span class="keyword">var</span> minstack=[];</span><br><span class="line"><span class="keyword">var</span> minele=<span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">push</span>(<span class="params">node</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(minele!==<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(node&lt;minele)&#123;</span><br><span class="line">            minele=node;</span><br><span class="line">        &#125;</span><br><span class="line">        stack.push(node);</span><br><span class="line">        minstack.push(minele);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        minele=node;</span><br><span class="line">        stack.push(node);</span><br><span class="line">        minstack.push(minele);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pop</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    stack.pop();</span><br><span class="line">    minstack.pop();</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">top</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> stack[stack.length<span class="number">-1</span>];</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">min</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> minstack[minstack.length<span class="number">-1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>递归。。。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Mirror</span>(<span class="params">root</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(root===<span class="literal">null</span>)<span class="keyword">return</span>;</span><br><span class="line">    Mirror(root.left);</span><br><span class="line">    Mirror(root.right);</span><br><span class="line">    [root.left,root.right]=[root.right,root.left];</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
@@ -865,23 +865,6 @@
       </tags>
   </entry>
   <entry>
-    <title>字符流中第一个只出现一次的字符</title>
-    <url>/2019/08/22/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(54)/</url>
-    <content><![CDATA[<h1 id="字符流中第一个只出现一次的字符"><a href="#字符流中第一个只出现一次的字符" class="headerlink" title="字符流中第一个只出现一次的字符"></a>字符流中第一个只出现一次的字符</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>请实现一个函数用来找出字符流中第一个只出现一次的字符。例如，当从字符流中只读出前两个字符”go”时，第一个只出现一次的字符是”g”。当从该字符流中读出前六个字符“google”时，第一个只出现一次的字符是”l”。</p>
-</blockquote>
-<ul>
-<li>用对象实现哈希表存值</li>
-</ul>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Init module if you need</span></span><br><span class="line"><span class="keyword">let</span> map=&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Init</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    map=&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Insert one char from stringstream</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Insert</span>(<span class="params">ch</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(map[ch])&#123;</span><br><span class="line">        map[ch]+=<span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        map[ch]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//return the first appearence once char in current stringstream</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FirstAppearingOnce</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">const</span> i <span class="keyword">in</span> map)&#123;</span><br><span class="line">        <span class="keyword">if</span>(map[i]===<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> i</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'#'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>剑指offer</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JavaScript权威指南阅读笔记</title>
     <url>/2019/08/22/JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h5 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h5><ol>
@@ -905,6 +888,23 @@
 ]]></content>
       <tags>
         <tag>JavaScript语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>字符流中第一个只出现一次的字符</title>
+    <url>/2019/08/22/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(54)/</url>
+    <content><![CDATA[<h1 id="字符流中第一个只出现一次的字符"><a href="#字符流中第一个只出现一次的字符" class="headerlink" title="字符流中第一个只出现一次的字符"></a>字符流中第一个只出现一次的字符</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>请实现一个函数用来找出字符流中第一个只出现一次的字符。例如，当从字符流中只读出前两个字符”go”时，第一个只出现一次的字符是”g”。当从该字符流中读出前六个字符“google”时，第一个只出现一次的字符是”l”。</p>
+</blockquote>
+<ul>
+<li>用对象实现哈希表存值</li>
+</ul>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Init module if you need</span></span><br><span class="line"><span class="keyword">let</span> map=&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Init</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    map=&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Insert one char from stringstream</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Insert</span>(<span class="params">ch</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(map[ch])&#123;</span><br><span class="line">        map[ch]+=<span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        map[ch]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//return the first appearence once char in current stringstream</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FirstAppearingOnce</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">const</span> i <span class="keyword">in</span> map)&#123;</span><br><span class="line">        <span class="keyword">if</span>(map[i]===<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> i</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'#'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>剑指offer</tag>
       </tags>
   </entry>
   <entry>
@@ -1019,12 +1019,12 @@
       </tags>
   </entry>
   <entry>
-    <title>翻转单词顺序列</title>
-    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(44)/</url>
-    <content><![CDATA[<h1 id="翻转单词顺序列"><a href="#翻转单词顺序列" class="headerlink" title="翻转单词顺序列"></a>翻转单词顺序列</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>输入 “student. a am I”。<br>把句子单词的顺序翻转后输出正确的句子应该是“I am a student.”。</p>
+    <title>孩子们的游戏</title>
+    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(46)/</url>
+    <content><![CDATA[<h1 id="孩子们的游戏"><a href="#孩子们的游戏" class="headerlink" title="孩子们的游戏"></a>孩子们的游戏</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>约瑟夫环问题</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ReverseSentence</span>(<span class="params">str</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> strArr=str.split(<span class="string">" "</span>);</span><br><span class="line">    <span class="keyword">let</span> corstr=<span class="string">''</span>;</span><br><span class="line">    <span class="keyword">if</span>(str==<span class="literal">null</span>)<span class="keyword">return</span> corstr;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=strArr.length<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i==<span class="number">0</span>)&#123;</span><br><span class="line">            corstr+=strArr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            corstr+=strArr[i]+<span class="string">' '</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> corstr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">LastRemaining_Solution</span>(<span class="params">n, m</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> circle=[]</span><br><span class="line">    <span class="keyword">let</span> del=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">0</span>||m&lt;=<span class="number">0</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        circle[i]=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(circle.length<span class="number">-1</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> k=m<span class="number">-1</span>;</span><br><span class="line">        del=(del+k)%circle.length;</span><br><span class="line">        circle.splice(del,<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> circle[<span class="number">0</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
@@ -1032,12 +1032,12 @@
       </tags>
   </entry>
   <entry>
-    <title>孩子们的游戏</title>
-    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(46)/</url>
-    <content><![CDATA[<h1 id="孩子们的游戏"><a href="#孩子们的游戏" class="headerlink" title="孩子们的游戏"></a>孩子们的游戏</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>约瑟夫环问题</p>
+    <title>翻转单词顺序列</title>
+    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(44)/</url>
+    <content><![CDATA[<h1 id="翻转单词顺序列"><a href="#翻转单词顺序列" class="headerlink" title="翻转单词顺序列"></a>翻转单词顺序列</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>输入 “student. a am I”。<br>把句子单词的顺序翻转后输出正确的句子应该是“I am a student.”。</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">LastRemaining_Solution</span>(<span class="params">n, m</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> circle=[]</span><br><span class="line">    <span class="keyword">let</span> del=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">0</span>||m&lt;=<span class="number">0</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        circle[i]=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(circle.length<span class="number">-1</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> k=m<span class="number">-1</span>;</span><br><span class="line">        del=(del+k)%circle.length;</span><br><span class="line">        circle.splice(del,<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> circle[<span class="number">0</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ReverseSentence</span>(<span class="params">str</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> strArr=str.split(<span class="string">" "</span>);</span><br><span class="line">    <span class="keyword">let</span> corstr=<span class="string">''</span>;</span><br><span class="line">    <span class="keyword">if</span>(str==<span class="literal">null</span>)<span class="keyword">return</span> corstr;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=strArr.length<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i==<span class="number">0</span>)&#123;</span><br><span class="line">            corstr+=strArr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            corstr+=strArr[i]+<span class="string">' '</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> corstr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
@@ -1088,23 +1088,6 @@
       </tags>
   </entry>
   <entry>
-    <title>构建乘积数组</title>
-    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(51)/</url>
-    <content><![CDATA[<h1 id="构建乘积数组"><a href="#构建乘积数组" class="headerlink" title="构建乘积数组"></a>构建乘积数组</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>给定一个数组A[0,1,…,n-1],请构建一个数组B[0,1,…,n-1],其中B中的元素B[i]=A[0]<em>A[1]</em>…<em>A[i-1]*A[i+1]</em>…*A[n-1]。不能使用除法。</p>
-</blockquote>
-<ul>
-<li>将数组B元素分隔成前i-1项和后i+1项的乘积</li>
-<li>先算i-1项，后算i+1项</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> B=[];</span><br><span class="line">    B[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> tmp=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        B[i]=B[i<span class="number">-1</span>]*array[i<span class="number">-1</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=array.length<span class="number">-2</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        tmp*=array[i+<span class="number">1</span>];</span><br><span class="line">        B[i]*=tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> B;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>剑指offer</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>连续子数组的最大和</title>
     <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(30)/</url>
     <content><![CDATA[<h3 id="连续子数组的最大和"><a href="#连续子数组的最大和" class="headerlink" title="连续子数组的最大和"></a>连续子数组的最大和</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
@@ -1127,6 +1110,23 @@
 <p>一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jumpFloor</span>(<span class="params">number</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> n1=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> n2=<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span>(--number)&#123;</span><br><span class="line">        n2+=n1;</span><br><span class="line">        n1=n2-n1;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> n1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>构建乘积数组</title>
+    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(51)/</url>
+    <content><![CDATA[<h1 id="构建乘积数组"><a href="#构建乘积数组" class="headerlink" title="构建乘积数组"></a>构建乘积数组</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>给定一个数组A[0,1,…,n-1],请构建一个数组B[0,1,…,n-1],其中B中的元素B[i]=A[0]<em>A[1]</em>…<em>A[i-1]*A[i+1]</em>…*A[n-1]。不能使用除法。</p>
+</blockquote>
+<ul>
+<li>将数组B元素分隔成前i-1项和后i+1项的乘积</li>
+<li>先算i-1项，后算i+1项</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> B=[];</span><br><span class="line">    B[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> tmp=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        B[i]=B[i<span class="number">-1</span>]*array[i<span class="number">-1</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=array.length<span class="number">-2</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        tmp*=array[i+<span class="number">1</span>];</span><br><span class="line">        B[i]*=tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> B;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
@@ -1262,25 +1262,6 @@
       </tags>
   </entry>
   <entry>
-    <title>把二叉树打印成多行</title>
-    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(60)/</url>
-    <content><![CDATA[<h1 id="把二叉树打印成多行"><a href="#把二叉树打印成多行" class="headerlink" title="把二叉树打印成多行"></a>把二叉树打印成多行</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>从上层到下层从左到右按层输出二叉树</p>
-</blockquote>
-<ul>
-<li>用队列先进先出的性质，从左到右先遍历下层节点，到下层输出的时候，也可以从左到右输出。</li>
-<li>需要记录下层节点的个数</li>
-<li>需要记录当前层打印节点的个数</li>
-</ul>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Print</span>(<span class="params">pRoot</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> queue=[]</span><br><span class="line">    <span class="keyword">const</span> res=[]</span><br><span class="line">    <span class="keyword">if</span>(pRoot==<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> nextlevel=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> curlevel=<span class="number">1</span>;</span><br><span class="line">    queue.push(pRoot);</span><br><span class="line">    <span class="keyword">let</span> list=[]</span><br><span class="line">    <span class="keyword">while</span>(queue.length!=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> pNode=queue.shift();</span><br><span class="line">        list.push(pNode.val)</span><br><span class="line">        <span class="keyword">if</span>(pNode.left!=<span class="literal">null</span>)&#123;</span><br><span class="line">            nextlevel++;</span><br><span class="line">            queue.push(pNode.left)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(pNode.right!=<span class="literal">null</span>)&#123;</span><br><span class="line">            nextlevel++;</span><br><span class="line">            queue.push(pNode.right)</span><br><span class="line">        &#125;</span><br><span class="line">        curlevel--;</span><br><span class="line">        <span class="keyword">if</span>(curlevel==<span class="number">0</span>)&#123;</span><br><span class="line">            res.push(list)</span><br><span class="line">            curlevel=nextlevel;</span><br><span class="line">            nextlevel=<span class="number">0</span>;</span><br><span class="line">            list=[];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>剑指offer</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>字符串的排列</title>
     <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(27)/</url>
     <content><![CDATA[<h3 id="字符串的排列"><a href="#字符串的排列" class="headerlink" title="字符串的排列"></a>字符串的排列</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
@@ -1310,6 +1291,25 @@
 <li>先排序，排序后再遍历一遍数组，如果前一个和后一个元素不等，则为出现一次的，注意相等时遍历下标的变化。</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindNumsAppearOnce</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="comment">// return list, 比如[a,b]，其中ab是出现一次的两个数字</span></span><br><span class="line">    <span class="keyword">const</span> list=[];</span><br><span class="line">    array.sort();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(array[i]!=array[i+<span class="number">1</span>])&#123;</span><br><span class="line">            list.push(array[i])</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>把二叉树打印成多行</title>
+    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(60)/</url>
+    <content><![CDATA[<h1 id="把二叉树打印成多行"><a href="#把二叉树打印成多行" class="headerlink" title="把二叉树打印成多行"></a>把二叉树打印成多行</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>从上层到下层从左到右按层输出二叉树</p>
+</blockquote>
+<ul>
+<li>用队列先进先出的性质，从左到右先遍历下层节点，到下层输出的时候，也可以从左到右输出。</li>
+<li>需要记录下层节点的个数</li>
+<li>需要记录当前层打印节点的个数</li>
+</ul>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Print</span>(<span class="params">pRoot</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> queue=[]</span><br><span class="line">    <span class="keyword">const</span> res=[]</span><br><span class="line">    <span class="keyword">if</span>(pRoot==<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> nextlevel=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> curlevel=<span class="number">1</span>;</span><br><span class="line">    queue.push(pRoot);</span><br><span class="line">    <span class="keyword">let</span> list=[]</span><br><span class="line">    <span class="keyword">while</span>(queue.length!=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> pNode=queue.shift();</span><br><span class="line">        list.push(pNode.val)</span><br><span class="line">        <span class="keyword">if</span>(pNode.left!=<span class="literal">null</span>)&#123;</span><br><span class="line">            nextlevel++;</span><br><span class="line">            queue.push(pNode.left)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(pNode.right!=<span class="literal">null</span>)&#123;</span><br><span class="line">            nextlevel++;</span><br><span class="line">            queue.push(pNode.right)</span><br><span class="line">        &#125;</span><br><span class="line">        curlevel--;</span><br><span class="line">        <span class="keyword">if</span>(curlevel==<span class="number">0</span>)&#123;</span><br><span class="line">            res.push(list)</span><br><span class="line">            curlevel=nextlevel;</span><br><span class="line">            nextlevel=<span class="number">0</span>;</span><br><span class="line">            list=[];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
