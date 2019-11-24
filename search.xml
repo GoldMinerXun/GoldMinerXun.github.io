@@ -10,8 +10,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindPath</span>(<span class="params">root, expectNumber</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> list=[],listAll=[];</span><br><span class="line">    <span class="keyword">return</span> find(root,expectNumber,list,listAll);</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">find</span>(<span class="params">root,expectNumber,list,listAll</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root==<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> listAll;</span><br><span class="line">    &#125;</span><br><span class="line">    list.push(root.val);</span><br><span class="line">    <span class="keyword">const</span> x=expectNumber-root.val;</span><br><span class="line">    <span class="keyword">if</span>(root.left==<span class="literal">null</span>&amp;&amp;root.right==<span class="literal">null</span>&amp;&amp;x==<span class="number">0</span>)&#123;</span><br><span class="line">        listAll.push(<span class="built_in">Array</span>.of(...list));</span><br><span class="line">    &#125;</span><br><span class="line">    find(root.left,x,list,listAll);</span><br><span class="line">    find(root.right,x,list,listAll);</span><br><span class="line">    list.pop();</span><br><span class="line">    <span class="keyword">return</span> listAll;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -59,8 +62,12 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> readline=<span class="built_in">require</span>(<span class="string">'readline'</span>);</span><br><span class="line"><span class="keyword">const</span> r1=readline.createInterface(&#123;</span><br><span class="line">    input:process.stdin,</span><br><span class="line">    output:process.stdout</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">var</span> Node = <span class="function"><span class="keyword">function</span>(<span class="params">val</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.left=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">this</span>.right=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">this</span>.val=val;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mergetree</span>(<span class="params">pRoot1,pRoot2</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> temp;</span><br><span class="line">    <span class="keyword">if</span>(pRoot1!=<span class="literal">null</span>&amp;&amp;pRoot2!=<span class="literal">null</span>)&#123;</span><br><span class="line">        temp=<span class="keyword">new</span> Node(pRoot1.val+pRoot2.val);</span><br><span class="line">        temp.left=mergetree(pRoot1.left,pRoot2.left);</span><br><span class="line">        temp.right=mergetree(pRoot1.right,pRoot2.right);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(pRoot1==<span class="literal">null</span>&amp;&amp;pRoot2!=<span class="literal">null</span>)&#123;</span><br><span class="line">        temp=pRoot2;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(pRoot1!=<span class="literal">null</span>&amp;&amp;pRoot2==<span class="literal">null</span>)&#123;</span><br><span class="line">        temp=pRoot1;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//console.log(temp)</span></span><br><span class="line">    <span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> inittree = <span class="function"><span class="keyword">function</span> (<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> pRoot=<span class="keyword">new</span> Node(arr[<span class="number">0</span>][<span class="number">2</span>]);</span><br><span class="line">    <span class="comment">// console.log(pRoot)</span></span><br><span class="line">    <span class="keyword">if</span>(arr[<span class="number">0</span>][<span class="number">0</span>]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        pRoot.left=<span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(arr[<span class="number">0</span>][<span class="number">1</span>]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        pRoot.right=<span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> nodearr=[];</span><br><span class="line">    nodearr.push(pRoot);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> node =<span class="keyword">new</span> Node(arr[i][<span class="number">2</span>]);</span><br><span class="line">        <span class="keyword">if</span>(arr[i][<span class="number">0</span>]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            node.left=<span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(arr[i][<span class="number">1</span>]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            node.right=<span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        nodearr.push(node)</span><br><span class="line">    &#125;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; nodearr.length;j++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[j][<span class="number">0</span>]!=<span class="number">0</span>)&#123;</span><br><span class="line">            nodearr[j].left=nodearr[arr[j][<span class="number">0</span>]<span class="number">-1</span>]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(arr[j][<span class="number">1</span>]!=<span class="number">0</span>)&#123;</span><br><span class="line">            nodearr[j].right=nodearr[arr[j][<span class="number">1</span>]<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// console.log(pRoot)</span></span><br><span class="line">    <span class="keyword">return</span> pRoot;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">stringtonumberarr</span>(<span class="params">array</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> newarr=[];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">of</span> array)&#123;</span><br><span class="line">        <span class="keyword">let</span> temparr=i.split(<span class="string">' '</span>);</span><br><span class="line">        <span class="keyword">var</span> newtemp=[];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j <span class="keyword">of</span> temparr)&#123;</span><br><span class="line">            j=<span class="built_in">parseInt</span>(j);</span><br><span class="line">            newtemp.push(j);</span><br><span class="line">        &#125;</span><br><span class="line">        newarr.push(newtemp)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newarr;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">leveltraver</span>(<span class="params">pRoot</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result=[];</span><br><span class="line">    <span class="keyword">var</span> tree=[];</span><br><span class="line">    tree.push(pRoot);</span><br><span class="line">    <span class="keyword">while</span>(tree.length)&#123;</span><br><span class="line">        <span class="keyword">var</span> node=tree.shift();</span><br><span class="line">        result.push(node.val);</span><br><span class="line">        <span class="keyword">if</span>(node.left!=<span class="literal">null</span>)&#123;</span><br><span class="line">            tree.push(node.left);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(node.right!=<span class="literal">null</span>)&#123;</span><br><span class="line">            tree.push(node.right);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> linesArray=[];</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> linesArrayIndex=<span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> resultArray=[];</span><br><span class="line"><span class="keyword">var</span> n1,n2;</span><br><span class="line">r1.on(<span class="string">'line'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">line</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">if</span>(linesArrayIndex==<span class="number">0</span>)&#123;</span><br><span class="line">       <span class="keyword">var</span> length=line.split(<span class="string">' '</span>);</span><br><span class="line">       n1=<span class="built_in">parseInt</span>(length[<span class="number">0</span>]);</span><br><span class="line">       n2=<span class="built_in">parseInt</span>(length[<span class="number">1</span>]);</span><br><span class="line">       linesArray[linesArrayIndex]=<span class="built_in">Number</span>(length[<span class="number">0</span>])+<span class="built_in">Number</span>(length[<span class="number">1</span>]);</span><br><span class="line">   &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">       linesArray[linesArrayIndex]=line;</span><br><span class="line">   &#125;</span><br><span class="line">     </span><br><span class="line">    linesArrayIndex++;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> linesArray.slice(<span class="number">1</span>))&#123;</span><br><span class="line">        resultArray[i]=linesArray.slice(<span class="number">1</span>)[i];</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">     <span class="keyword">if</span>(resultArray.length==linesArray[<span class="number">0</span>])&#123;</span><br><span class="line">        <span class="comment">//打印输出整合在数组resultArray中的输入内容</span></span><br><span class="line">        <span class="keyword">let</span> arr1=[];</span><br><span class="line">        <span class="keyword">let</span> arr2=[];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;n1;i++)&#123;</span><br><span class="line">            arr1.push(resultArray[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> arrone=stringtonumberarr(arr1);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;n2;i++)&#123;</span><br><span class="line">            arr2.push(resultArray[i+n1]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> arrtwo=stringtonumberarr(arr2);</span><br><span class="line">                </span><br><span class="line">       <span class="comment">//console.log(arrone)</span></span><br><span class="line">       <span class="comment">//console.log(arrtwo)</span></span><br><span class="line">       <span class="keyword">var</span> pRoot1 = inittree(arrone);</span><br><span class="line">       <span class="keyword">var</span> pRoot2 = inittree(arrtwo);</span><br><span class="line"> </span><br><span class="line">       <span class="keyword">var</span> resroot=mergetree(pRoot1,pRoot2);</span><br><span class="line">       <span class="keyword">var</span> ans=leveltraver(resroot);</span><br><span class="line">       <span class="built_in">console</span>.log(ans.join(<span class="string">' '</span>))</span><br><span class="line">        r1.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
       <tags>
         <tag>数据结构与算法</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -166,8 +173,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">IsBalanced_Solution</span>(<span class="params">pRoot</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> TreeDepth(pRoot)!==<span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">TreeDepth</span>(<span class="params">pRoot</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pRoot==<span class="literal">null</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> leftdep=TreeDepth(pRoot.left);</span><br><span class="line">    <span class="keyword">if</span>(leftdep==<span class="number">-1</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">const</span> rightdep=TreeDepth(pRoot.right);</span><br><span class="line">    <span class="keyword">if</span>(rightdep==<span class="number">-1</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.abs(leftdep-rightdep)&gt;<span class="number">1</span>? <span class="number">-1</span> : <span class="built_in">Math</span>.max(leftdep,rightdep)+<span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -197,8 +207,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">VerifySquenceOfBST</span>(<span class="params">sequence</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(!sequence.length)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> judge(sequence,<span class="number">0</span>,sequence.length<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">judge</span>(<span class="params">a,l,r</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &gt;= r) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">     <span class="keyword">let</span> i = r;</span><br><span class="line">     <span class="comment">///找到左子树查找到右子树的位置i</span></span><br><span class="line">    <span class="keyword">while</span> (a[i - <span class="number">1</span>] &gt; a[r] &amp;&amp; i &gt; l) i--;</span><br><span class="line">    <span class="comment">///左子树需要全部小于根节点</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = i - <span class="number">1</span>; j &gt;= l; j--)&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[j]&gt;a[r])<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">///满足根节点后需要继续看第二层的根节点是否也满足以上，也就是递归</span></span><br><span class="line">    <span class="keyword">return</span> judge(a,l,i<span class="number">-1</span>)&amp;&amp;judge(a,i,r<span class="number">-1</span>);</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -222,8 +235,12 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> node = <span class="function"><span class="keyword">function</span> (<span class="params">val</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.parent = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">this</span>.left = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">this</span>.right = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">this</span>.val = val;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr = [[<span class="number">3</span>, <span class="number">2</span>], [<span class="number">0</span>, <span class="number">5</span>], [<span class="number">0</span>, <span class="number">4</span>], [<span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>]];</span><br><span class="line"><span class="keyword">var</span> initTree2 = <span class="function"><span class="keyword">function</span> (<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> pRoot = <span class="keyword">new</span> node(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">var</span> queue = [];</span><br><span class="line">    queue.push(pRoot);</span><br><span class="line">    <span class="keyword">while</span> (queue.length != <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> pCur = queue.shift();</span><br><span class="line">        <span class="built_in">console</span>.log(pCur.val)</span><br><span class="line">        <span class="keyword">var</span> i = pCur.val - <span class="number">1</span>;</span><br><span class="line">        pCur.left =<span class="keyword">new</span> node(arr[i][<span class="number">0</span>]);</span><br><span class="line">        pCur.left.parent=pCur;</span><br><span class="line">        pCur.right = <span class="keyword">new</span> node(arr[i][<span class="number">1</span>]);</span><br><span class="line">        pCur.right.parent=pCur;</span><br><span class="line">        <span class="keyword">if</span> (pCur.left.val != <span class="number">0</span>) &#123;</span><br><span class="line">           </span><br><span class="line">            queue.push(pCur.left)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (pCur.right.val != <span class="number">0</span>) &#123;</span><br><span class="line">            </span><br><span class="line">            queue.push(pCur.right);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pRoot;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> pRoot2=initTree2(arr);</span><br><span class="line"><span class="built_in">console</span>.log(pRoot2)</span><br><span class="line"><span class="keyword">var</span> postOrder = <span class="function"><span class="keyword">function</span> (<span class="params">pRoot</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> pCur=pRoot;</span><br><span class="line">    <span class="keyword">var</span> pLast=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">while</span>(pCur)&#123;</span><br><span class="line">    <span class="comment">//    console.log(1)</span></span><br><span class="line">       <span class="keyword">if</span>(pCur.left==pLast)&#123;</span><br><span class="line">            <span class="keyword">if</span>(pCur.right.val!=<span class="number">0</span>)&#123;</span><br><span class="line">                pCur=pCur.right;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                pLast=pCur;</span><br><span class="line">                <span class="built_in">console</span>.log(pCur.val);</span><br><span class="line">                pCur=pCur.parent;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">       &#125;<span class="keyword">else</span> <span class="keyword">if</span>(pCur.right==pLast)&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(pCur.val)</span><br><span class="line">            pLast=pCur;</span><br><span class="line">            pCur=pCur.parent;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">while</span>(pCur.left!=<span class="literal">null</span>)&#123;</span><br><span class="line">           pCur=pCur.left</span><br><span class="line">       &#125;</span><br><span class="line">       pLast=pCur;</span><br><span class="line">       pCur=pCur.parent;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">postOrder(pRoot2);</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
       <tags>
         <tag>数据结构与算法</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -240,8 +257,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">HasSubtree</span>(<span class="params">pRoot1, pRoot2</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">let</span> res=<span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(pRoot1===<span class="literal">null</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(pRoot2===<span class="literal">null</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(pRoot1.val==pRoot2.val) res=tree1hastree2(pRoot1,pRoot2)</span><br><span class="line">    <span class="keyword">if</span>(!res)res=HasSubtree(pRoot1.left,pRoot2)</span><br><span class="line">    <span class="keyword">if</span>(!res)res=HasSubtree(pRoot1.right,pRoot2)</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tree1hastree2</span>(<span class="params">pRoot1,pRoot2</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pRoot2===<span class="literal">null</span>)<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(pRoot1===<span class="literal">null</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(pRoot1.val!==pRoot2.val)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> tree1hastree2(pRoot1.left,pRoot2.left)&amp;&amp;tree1hastree2(pRoot1.right,pRoot2.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>树</tag>
       </tags>
   </entry>
   <entry>
@@ -255,8 +275,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jumpFloorII</span>(<span class="params">number</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> i=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(--number)&#123;</span><br><span class="line">        i*=<span class="number">2</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -268,8 +291,11 @@
 </li>
 </ul>
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>链表</tag>
       </tags>
   </entry>
   <entry>
@@ -486,8 +512,13 @@
 <hr>
 <p>ps：如果有人有需要数据处理部分的代码的，请留言噢。有需要的话我再贴。</p>
 ]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
       <tags>
         <tag>数据结构与算法</tag>
+        <tag>二叉树</tag>
+        <tag>递归</tag>
       </tags>
   </entry>
   <entry>
@@ -499,8 +530,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fibonacci</span>(<span class="params">n</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> curr=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> last=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(n--)&#123;</span><br><span class="line">        curr+=last;</span><br><span class="line">        last=curr-last;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> curr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -548,8 +582,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// [</span></span><br><span class="line"><span class="comment">//  [1,2,3,4],</span></span><br><span class="line"><span class="comment">//  [5,6,7,8],</span></span><br><span class="line"><span class="comment">//  [9,10,11,12],</span></span><br><span class="line"><span class="comment">//  [13,14,15,16]</span></span><br><span class="line"><span class="comment">// ]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printMatrix</span>(<span class="params">matrix</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(!matrix)<span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">var</span> res=[];</span><br><span class="line">    res=res.concat(matrix.shift());</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(matrix.length)&#123;</span><br><span class="line">        matrix=nizhi(matrix);</span><br><span class="line">        res=res.concat(matrix.shift());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -576,8 +613,12 @@
 
 
 ]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
       <tags>
         <tag>数据结构与算法</tag>
+        <tag>动态划分</tag>
       </tags>
   </entry>
   <entry>
@@ -592,6 +633,9 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">PrintMinNumber</span>(<span class="params">numbers</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    numbers.sort(<span class="function"><span class="keyword">function</span>(<span class="params">s1,s2</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">const</span> n1=<span class="string">`<span class="subst">$&#123;s1&#125;</span><span class="subst">$&#123;s2&#125;</span>`</span></span><br><span class="line">        <span class="keyword">const</span> n2=<span class="string">`<span class="subst">$&#123;s2&#125;</span><span class="subst">$&#123;s1&#125;</span>`</span></span><br><span class="line">        <span class="keyword">return</span> n1&gt;n2</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">let</span> min=<span class="string">''</span></span><br><span class="line">    numbers.forEach(<span class="function">(<span class="params">i</span>)=&gt;</span>min+=i);</span><br><span class="line">    <span class="keyword">return</span> min;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
         <tag>剑指offer</tag>
       </tags>
@@ -623,8 +667,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ReverseList</span>(<span class="params">pHead</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> pNode=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">var</span> pNext=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">while</span>(pHead!==<span class="literal">null</span>)&#123;</span><br><span class="line">        pNext=pHead.next;</span><br><span class="line">        pHead.next=pNode;</span><br><span class="line">        pNode=pHead;</span><br><span class="line">        pHead=pNext;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pNode;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -651,8 +698,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FirstNotRepeatingChar</span>(<span class="params">str</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">   <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> strarr = str.split(<span class="string">''</span>);</span><br><span class="line">    <span class="keyword">var</span> curletter = strarr[<span class="number">0</span>];</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; strarr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> flag = <span class="literal">false</span>;</span><br><span class="line">        curletter = strarr[i];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; strarr.length; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (j !== i &amp;&amp; strarr[j] === curletter) &#123;</span><br><span class="line">                flag = <span class="literal">true</span>;</span><br><span class="line">                <span class="built_in">console</span>.log(curletter, i, flag)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">     </span><br><span class="line">        <span class="built_in">console</span>.log(i, flag)</span><br><span class="line">        <span class="keyword">if</span> (flag === <span class="literal">false</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (flag === <span class="literal">true</span>||str===<span class="string">''</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>字符串</tag>
       </tags>
   </entry>
   <entry>
@@ -667,6 +717,9 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GetUglyNumber_Solution</span>(<span class="params">index</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code her</span></span><br><span class="line">    <span class="keyword">const</span> res=[]</span><br><span class="line">    <span class="keyword">if</span>(index&lt;<span class="number">7</span>) <span class="keyword">return</span> index;<span class="comment">//1,2,3,4,5,6都是丑数</span></span><br><span class="line">    res[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> two=<span class="number">0</span>,three=<span class="number">0</span>,five=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;index;i++)&#123;</span><br><span class="line">        res[i]=<span class="built_in">Math</span>.min(res[two]*<span class="number">2</span>,res[three]*<span class="number">3</span>,res[five]*<span class="number">5</span>);</span><br><span class="line">        <span class="keyword">if</span>(res[i]===res[two]*<span class="number">2</span>) two++;</span><br><span class="line">        <span class="keyword">if</span>(res[i]===res[three]*<span class="number">3</span>) three++;</span><br><span class="line">        <span class="keyword">if</span>(res[i]===res[five]*<span class="number">5</span>) five++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res[index<span class="number">-1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
         <tag>剑指offer</tag>
       </tags>
@@ -683,6 +736,9 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Add</span>(<span class="params">num1, num2</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">while</span>(num2!=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> tmp=num1^num2;</span><br><span class="line">        num2=(num1&amp;num2)&lt;&lt;<span class="number">1</span>;</span><br><span class="line">        num1=tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> num1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
         <tag>剑指offer</tag>
       </tags>
@@ -698,6 +754,9 @@
 
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
         <tag>剑指offer</tag>
       </tags>
@@ -775,8 +834,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GetNumberOfK</span>(<span class="params">data, k</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>( getBegin(data,k) == <span class="number">-1</span> &amp;&amp; getEnd(data,k) == <span class="number">-1</span> )<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> getEnd(data,k)-getBegin(data,k)+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getBegin</span>(<span class="params">data,k</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> left=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> right=data.length<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">let</span> mid=right+left&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(left&lt;=right)&#123;</span><br><span class="line">        <span class="keyword">if</span>(data[mid]&lt;k)&#123;</span><br><span class="line">            left=mid+<span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(data[mid]&gt;k)&#123;</span><br><span class="line">            right=mid<span class="number">-1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(data[mid<span class="number">-1</span>]===k&amp;&amp;mid<span class="number">-1</span>&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">           right=mid<span class="number">-1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">        &#125;</span><br><span class="line">        mid=right+left&gt;&gt;<span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getEnd</span>(<span class="params">data,k</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> left =<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> right=data.length<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">let</span> mid=right+left&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(left&lt;=right)&#123;</span><br><span class="line">        <span class="keyword">if</span>(data[mid]&lt;k)&#123;</span><br><span class="line">            left=mid+<span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(data[mid]&gt;k)&#123;</span><br><span class="line">            right=mid<span class="number">-1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(data[mid+<span class="number">1</span>]==k&amp;&amp;mid+<span class="number">1</span>&lt;=data.length)&#123;</span><br><span class="line">            left=mid+<span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">        &#125;</span><br><span class="line">        mid=right+left&gt;&gt;<span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>数组</tag>
       </tags>
   </entry>
   <entry>
@@ -789,8 +851,12 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> inStack = []</span><br><span class="line"><span class="keyword">const</span> outStack = []</span><br><span class="line"><span class="comment">//123456</span></span><br><span class="line"><span class="comment">//入栈【123456】先出6，先入1</span></span><br><span class="line"><span class="comment">//入队【123456】先出1，后出6</span></span><br><span class="line"><span class="comment">//用栈模拟队列，那么出队列相当于用入的栈一个一个出栈进入出的栈，</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">push</span>(<span class="params">node</span>) </span>&#123;</span><br><span class="line">    inStack.push(node)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pop</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!outStack.length)&#123;</span><br><span class="line">        <span class="keyword">while</span>(inStack.length)&#123;</span><br><span class="line">            outStack.push(inStack.pop())</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> outStack.pop()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>数据结构</tag>
+        <tag>栈</tag>
       </tags>
   </entry>
   <entry>
@@ -802,8 +868,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findminnumber</span>(<span class="params">rotateArray</span>) </span>&#123;  </span><br><span class="line">    <span class="keyword">if</span>(rotateArray[<span class="number">0</span>]==<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;rotateArray.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(rotateArray[i]&gt;rotateArray[i+<span class="number">1</span>])</span><br><span class="line">            <span class="keyword">return</span> rotateArray[i+<span class="number">1</span>]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> rotateArray[<span class="number">0</span>]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>数组</tag>
       </tags>
   </entry>
   <entry>
@@ -815,8 +884,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> stack=[];</span><br><span class="line"><span class="keyword">var</span> minstack=[];</span><br><span class="line"><span class="keyword">var</span> minele=<span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">push</span>(<span class="params">node</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(minele!==<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(node&lt;minele)&#123;</span><br><span class="line">            minele=node;</span><br><span class="line">        &#125;</span><br><span class="line">        stack.push(node);</span><br><span class="line">        minstack.push(minele);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        minele=node;</span><br><span class="line">        stack.push(node);</span><br><span class="line">        minstack.push(minele);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pop</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    stack.pop();</span><br><span class="line">    minstack.pop();</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">top</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> stack[stack.length<span class="number">-1</span>];</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">min</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> minstack[minstack.length<span class="number">-1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>栈</tag>
       </tags>
   </entry>
   <entry>
@@ -829,8 +901,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Mirror</span>(<span class="params">root</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(root===<span class="literal">null</span>)<span class="keyword">return</span>;</span><br><span class="line">    Mirror(root.left);</span><br><span class="line">    Mirror(root.right);</span><br><span class="line">    [root.left,root.right]=[root.right,root.left];</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -916,8 +991,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">NumberOf1Between1AndN_Solution</span>(<span class="params">n</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> time=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        <span class="keyword">let</span> tmp=n;</span><br><span class="line">        <span class="keyword">while</span>(tmp)&#123;</span><br><span class="line">            <span class="keyword">if</span>(tmp%<span class="number">10</span>==<span class="number">1</span>)&#123;</span><br><span class="line">                time++;</span><br><span class="line">            &#125;</span><br><span class="line">            tmp=<span class="built_in">parseInt</span>(tmp/<span class="number">10</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        n--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> time;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>数组</tag>
       </tags>
   </entry>
   <entry>
@@ -933,8 +1011,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">InversePairs</span>(<span class="params">data</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(!data||data.length&lt;<span class="number">2</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> copy=data.slice();</span><br><span class="line">    <span class="keyword">let</span> count=<span class="number">0</span>;</span><br><span class="line">    count=MergeCount(data,copy,<span class="number">0</span>,data.length<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">return</span> count%<span class="number">1000000007</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MergeCount</span>(<span class="params">data,copy,start,end</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(start==end)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> mid=end-start&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> left=MergeCount(copy,data,start,start+mid);</span><br><span class="line">    <span class="keyword">let</span> right=MergeCount(copy,data,start+mid+<span class="number">1</span>,end);</span><br><span class="line">    <span class="keyword">let</span> [p,q,count, copyindex]=[start+mid,end,<span class="number">0</span>,end];</span><br><span class="line">    <span class="keyword">while</span>(p&gt;=start&amp;&amp;q&gt;=start+mid+<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(data[p]&gt;data[q])&#123;</span><br><span class="line">            copy[copyindex--]=data[p--]</span><br><span class="line">            count=count+q-start-mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            copy[copyindex--]=data[q--];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(p&gt;=start)&#123;</span><br><span class="line">        copy[copyindex--]=data[p--]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(q&gt;=start+mid+<span class="number">1</span>)&#123;</span><br><span class="line">        copy[copyindex--]=data[q--]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count+left+right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>数组</tag>
       </tags>
   </entry>
   <entry>
@@ -947,8 +1028,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Merge</span>(<span class="params">pHead1, pHead2</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">let</span> pmergehead=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">if</span>(pHead1===<span class="literal">null</span>) <span class="keyword">return</span> pHead2;</span><br><span class="line">    <span class="keyword">if</span>(pHead2===<span class="literal">null</span>) <span class="keyword">return</span> pHead1;</span><br><span class="line">    <span class="keyword">if</span>(pHead1.val&lt;pHead2.val)&#123;</span><br><span class="line">        pmergehead=pHead1;</span><br><span class="line">        pmergehead.next=Merge(pHead1.next,pHead2);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        pmergehead=pHead2;</span><br><span class="line">        pmergehead.next=Merge(pHead1,pHead2.next);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pmergehead;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>链表</tag>
       </tags>
   </entry>
   <entry>
@@ -987,8 +1071,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reOrderArray</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> odd=[]</span><br><span class="line">    <span class="keyword">var</span> even=[]</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(array[i]%<span class="number">2</span>)&#123;</span><br><span class="line">            odd.push(array[i])</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            even.push(array[i])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> res=odd.concat(even)</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>数组</tag>
       </tags>
   </entry>
   <entry>
@@ -1014,8 +1101,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindKthToTail</span>(<span class="params">head, k</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(head===<span class="literal">null</span>||k&lt;<span class="number">0</span>) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">var</span> node1=head;</span><br><span class="line">    <span class="keyword">var</span> node2=head;</span><br><span class="line">    <span class="keyword">while</span>(--k)&#123;</span><br><span class="line">        <span class="keyword">if</span>(node1.next===<span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            node1=node1.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(node1.next!==<span class="literal">null</span>)&#123;</span><br><span class="line">        node1=node1.next;</span><br><span class="line">        node2=node2.next;</span><br><span class="line">    &#125;</span><br><span class="line">   <span class="keyword">return</span> node2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -1083,6 +1173,9 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* function TreeNode(x) &#123;</span></span><br><span class="line"><span class="comment">    this.val = x;</span></span><br><span class="line"><span class="comment">    this.left = null;</span></span><br><span class="line"><span class="comment">    this.right = null;</span></span><br><span class="line"><span class="comment">&#125; */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reConstructBinaryTree</span>(<span class="params">pre, vin</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(pre.length==<span class="number">0</span>|| vin.length==<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">    <span class="keyword">var</span> index = vin.indexOf(pre[<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">var</span> left = vin.slice(<span class="number">0</span>,index);</span><br><span class="line">    <span class="keyword">var</span> right=vin.slice(index+<span class="number">1</span>,pre.length);</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        val:pre[<span class="number">0</span>],</span><br><span class="line">        left:reConstructBinaryTree(pre.slice(<span class="number">1</span>,index+<span class="number">1</span>),left),</span><br><span class="line">        right:reConstructBinaryTree(pre.slice(index+<span class="number">1</span>),right)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
         <tag>剑指offer</tag>
       </tags>
@@ -1099,8 +1192,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindGreatestSumOfSubArray</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> currsum=array[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">var</span> maxsum=currsum;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(currsum&lt;<span class="number">0</span>)&#123;</span><br><span class="line">            currsum=array[i]</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            currsum+=array[i]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(currsum&gt;maxsum)&#123;</span><br><span class="line">            maxsum=currsum;</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">     <span class="keyword">return</span> maxsum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>数组</tag>
       </tags>
   </entry>
   <entry>
@@ -1112,6 +1208,9 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jumpFloor</span>(<span class="params">number</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> n1=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> n2=<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span>(--number)&#123;</span><br><span class="line">        n2+=n1;</span><br><span class="line">        n1=n2-n1;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> n1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
         <tag>剑指offer</tag>
       </tags>
@@ -1145,8 +1244,12 @@
 </li>
 </ul>
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>二叉树</tag>
+        <tag>链表</tag>
       </tags>
   </entry>
   <entry>
@@ -1187,8 +1290,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">IsPopOrder</span>(<span class="params">pushV, popV</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> res=[]</span><br><span class="line">    <span class="keyword">var</span> flag=<span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">while</span>(pushV.length)&#123;</span><br><span class="line">        res.push(pushV.pop())</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(res.length)&#123;</span><br><span class="line">        <span class="keyword">var</span> resv=res.shift();</span><br><span class="line">        <span class="keyword">var</span> popv=popV.shift();</span><br><span class="line">        <span class="keyword">if</span>(resv==popv)&#123;</span><br><span class="line">            flag=<span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>栈</tag>
       </tags>
   </entry>
   <entry>
@@ -1223,8 +1329,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GetLeastNumbers_Solution</span>(<span class="params">input, k</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">const</span> left=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> right=input.length<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">if</span>(k&lt;<span class="number">1</span>||input.length===<span class="number">0</span>||k&gt;input.length) <span class="keyword">return</span> [];</span><br><span class="line">    <span class="keyword">let</span> key=partition(input,left,right);</span><br><span class="line">    <span class="keyword">while</span>(key !== k - <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(key &gt; k- <span class="number">1</span>)&#123;</span><br><span class="line">            key=partition(input,left,key<span class="number">-1</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            key=partition(input,key+<span class="number">1</span>,right);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> res=input.slice(<span class="number">0</span>,key+<span class="number">1</span>);</span><br><span class="line">    res.sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>a-b);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">partition</span>(<span class="params">arr,left,right</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> key=arr[left];</span><br><span class="line">    <span class="keyword">while</span>(left&lt;right)&#123;</span><br><span class="line">        <span class="keyword">while</span>(key&lt;=arr[right]&amp;&amp;left&lt;right)&#123;</span><br><span class="line">            right--;</span><br><span class="line">        &#125;</span><br><span class="line">        [arr[left],arr[right]]=[arr[right],arr[left]];</span><br><span class="line">        <span class="keyword">while</span>(key&gt;=arr[left]&amp;&amp;left&lt;right)&#123;</span><br><span class="line">            left++;</span><br><span class="line">        &#125;</span><br><span class="line">        [arr[left],arr[right]]=[arr[right],arr[left]];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>数组</tag>
       </tags>
   </entry>
   <entry>
@@ -1277,8 +1386,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Permutation</span>(<span class="params">str</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">let</span> res=[];</span><br><span class="line">    <span class="keyword">if</span>(str.length&lt;=<span class="number">0</span>)<span class="keyword">return</span> res;</span><br><span class="line">    <span class="keyword">var</span> arr=str.split(<span class="string">''</span>);</span><br><span class="line">    res=permutation(arr,<span class="number">0</span>,res);</span><br><span class="line">    res=[...new <span class="built_in">Set</span>(res)];</span><br><span class="line">    res.sort();</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">permutation</span>(<span class="params">arr,index,res</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(arr.length===index)&#123;</span><br><span class="line">        <span class="keyword">var</span> s=<span class="string">''</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">            s+=arr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        res.push(s);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=index;i&lt;arr.length;i++)&#123;</span><br><span class="line">        [arr[index],arr[i]]=[arr[i],arr[index]];</span><br><span class="line">        permutation(arr,index+<span class="number">1</span>,res);</span><br><span class="line">        [arr[index],arr[i]]=[arr[i],arr[index]];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>字符串</tag>
       </tags>
   </entry>
   <entry>
@@ -1293,8 +1405,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindNumsAppearOnce</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="comment">// return list, 比如[a,b]，其中ab是出现一次的两个数字</span></span><br><span class="line">    <span class="keyword">const</span> list=[];</span><br><span class="line">    array.sort();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(array[i]!=array[i+<span class="number">1</span>])&#123;</span><br><span class="line">            list.push(array[i])</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>数组</tag>
       </tags>
   </entry>
   <entry>
@@ -1326,8 +1441,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">rectCover</span>(<span class="params">number</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> g=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> f=<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(number==<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">while</span>(--number)&#123;</span><br><span class="line">            f+=g;</span><br><span class="line">            g=f-g;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> g;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -1356,8 +1474,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">TreeDepth</span>(<span class="params">pRoot</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(pRoot==<span class="literal">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> leftDepth=TreeDepth(pRoot.left);</span><br><span class="line">    <span class="keyword">const</span> rightDepth=TreeDepth(pRoot.right);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.max(leftDepth,rightDepth)+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -1389,8 +1510,11 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindFirstCommonNode</span>(<span class="params">pHead1, pHead2</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> len1=getLen(pHead1);</span><br><span class="line">    <span class="keyword">let</span> len2=getLen(pHead2);</span><br><span class="line">    <span class="keyword">let</span> len,pLong,pShort;</span><br><span class="line">    <span class="keyword">if</span>(len1&gt;len2)&#123;</span><br><span class="line">         len=len1-len2;</span><br><span class="line">         pLong=pHead1;</span><br><span class="line">         pShort=pHead2;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">         len=len2-len1;</span><br><span class="line">         pLong=pHead2;</span><br><span class="line">         pShort=pHead1;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(len--)&#123;</span><br><span class="line">        pLong=pLong.next</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(pLong!==<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(pLong.val==pShort.val)&#123;</span><br><span class="line">            <span class="keyword">return</span> pLong;</span><br><span class="line">        &#125;</span><br><span class="line">        pLong=pLong.next;</span><br><span class="line">        pShort=pShort.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLen</span>(<span class="params">pHead</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> length=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(pHead!==<span class="literal">null</span>)&#123;</span><br><span class="line">        pHead=pHead.next;</span><br><span class="line">        length++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>链表</tag>
       </tags>
   </entry>
   <entry>
