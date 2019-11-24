@@ -130,6 +130,25 @@
       </tags>
   </entry>
   <entry>
+    <title>平衡二叉树</title>
+    <url>/2019/10/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(39)/</url>
+    <content><![CDATA[<h1 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>输入一棵二叉树，判断该二叉树是否是平衡二叉树。</p>
+</blockquote>
+<ul>
+<li>平衡二叉树是左右深度差不超过1的二叉树，所以在遍历深度的同时需要判断是否深度差超过1。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">IsBalanced_Solution</span>(<span class="params">pRoot</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> TreeDepth(pRoot)!==<span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">TreeDepth</span>(<span class="params">pRoot</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pRoot==<span class="literal">null</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> leftdep=TreeDepth(pRoot.left);</span><br><span class="line">    <span class="keyword">if</span>(leftdep==<span class="number">-1</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">const</span> rightdep=TreeDepth(pRoot.right);</span><br><span class="line">    <span class="keyword">if</span>(rightdep==<span class="number">-1</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.abs(leftdep-rightdep)&gt;<span class="number">1</span>? <span class="number">-1</span> : <span class="built_in">Math</span>.max(leftdep,rightdep)+<span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>二叉树</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Node.js爬虫</title>
     <url>/2019/10/13/Node.js%E7%88%AC%E8%99%AB/</url>
     <content><![CDATA[<h4 id="用nodejs爬取学校教务在线的课表"><a href="#用nodejs爬取学校教务在线的课表" class="headerlink" title="用nodejs爬取学校教务在线的课表"></a>用nodejs爬取学校教务在线的课表</h4><p>首先要分析爬虫的本质，模拟登陆+获取网页信息<br>如何模拟登陆（手动登陆）。<br>大致讲下思路。</p>
@@ -159,25 +178,6 @@
 ]]></content>
       <tags>
         <tag>项目</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>平衡二叉树</title>
-    <url>/2019/10/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(39)/</url>
-    <content><![CDATA[<h1 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>输入一棵二叉树，判断该二叉树是否是平衡二叉树。</p>
-</blockquote>
-<ul>
-<li>平衡二叉树是左右深度差不超过1的二叉树，所以在遍历深度的同时需要判断是否深度差超过1。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">IsBalanced_Solution</span>(<span class="params">pRoot</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> TreeDepth(pRoot)!==<span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">TreeDepth</span>(<span class="params">pRoot</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pRoot==<span class="literal">null</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> leftdep=TreeDepth(pRoot.left);</span><br><span class="line">    <span class="keyword">if</span>(leftdep==<span class="number">-1</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">const</span> rightdep=TreeDepth(pRoot.right);</span><br><span class="line">    <span class="keyword">if</span>(rightdep==<span class="number">-1</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.abs(leftdep-rightdep)&gt;<span class="number">1</span>? <span class="number">-1</span> : <span class="built_in">Math</span>.max(leftdep,rightdep)+<span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>剑指offer</category>
-      </categories>
-      <tags>
-        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -299,24 +299,12 @@
       </tags>
   </entry>
   <entry>
-    <title>正则表达式匹配</title>
-    <url>/2019/09/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(52)/</url>
-    <content><![CDATA[<h1 id="正则表达式匹配"><a href="#正则表达式匹配" class="headerlink" title="正则表达式匹配"></a>正则表达式匹配</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>请实现一个函数用来匹配包括’.’和’<em>‘的正则表达式。模式中的字符’.’表示任意一个字符，而’</em>‘表示它前面的字符可以出现任意次（包含0次）。 在本题中，匹配是指字符串的所有字符匹配整个模式。例如，字符串”aaa”与模式”a.a”和”ab<em>ac</em>a”匹配，但是与”aa.a”和”ab*a”均不匹配</p>
+    <title>扑克牌顺子</title>
+    <url>/2019/09/13/%E5%89%91%E6%8C%87offerJavaScript%E7%89%88%20(45)/</url>
+    <content><![CDATA[<h1 id="扑克牌顺子"><a href="#扑克牌顺子" class="headerlink" title="扑克牌顺子"></a>扑克牌顺子</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>红心A,黑桃3,小王,大王,方片5”,“Oh My God!”不是顺子…..LL不高兴了,他想了想,决定大\小 王可以看成任何数字,并且A看作1,J为11,Q为12,K为13。上面的5张牌就可以变成“1,2,3,4,5”(大小王分别看作2和4),“So Lucky!”。LL决定去买体育彩票啦。 现在,要求你使用这幅牌模拟上面的过程,然后告诉我们LL的运气如何， 如果牌能组成顺子就输出true，否则就输出false。</p>
 </blockquote>
-<ul>
-<li>第二个字符为”*”<ul>
-<li>第一个字符为”.”或为等于s此时的字符</li>
-<li>第一个字符不为”.”且第一个字符也不匹配s此时的字符</li>
-</ul>
-</li>
-<li>第二个字符不为”*”<ul>
-<li>第一个字符为”.”或第一个字符匹配s此时的字符</li>
-</ul>
-</li>
-</ul>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">match</span>(<span class="params">s, pattern</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(s==<span class="literal">null</span>||pattern==<span class="literal">null</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> matchrecursive(s,<span class="number">0</span>,pattern,<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">matchrecursive</span>(<span class="params">str,istr,pattern,ipattern</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(str.length==istr&amp;&amp;pattern.length==ipattern)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(str.length!=istr&amp;&amp;pattern.length==ipattern)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(pattern[ipattern+<span class="number">1</span>]==<span class="string">'*'</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(pattern[ipattern]==<span class="string">'.'</span>&amp;&amp;istr!=str.length||pattern[ipattern]==str[istr])&#123;</span><br><span class="line">            <span class="keyword">return</span> (</span><br><span class="line">                matchrecursive(str,istr+<span class="number">1</span>,pattern,ipattern+<span class="number">2</span>)||</span><br><span class="line">                matchrecursive(str,istr+<span class="number">1</span>,pattern,ipattern)||</span><br><span class="line">                matchrecursive(str,istr,pattern,ipattern+<span class="number">2</span>)</span><br><span class="line">            )</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> matchrecursive(str,istr,pattern,ipattern+<span class="number">2</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(pattern[ipattern]==<span class="string">'.'</span>&amp;&amp;istr!=str.length||pattern[ipattern]==str[istr])&#123;</span><br><span class="line">        <span class="keyword">return</span> matchrecursive(str,istr+<span class="number">1</span>,pattern,ipattern+<span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">IsContinuous</span>(<span class="params">numbers</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(numbers.length==<span class="number">0</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    numbers.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;<span class="keyword">return</span> a-b&#125;);</span><br><span class="line">    <span class="keyword">let</span> interval=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> zero=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;numbers.length<span class="number">-1</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(numbers[i]!=<span class="number">0</span>)&#123;</span><br><span class="line">            interval+=(numbers[i+<span class="number">1</span>]-numbers[i]<span class="number">-1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(numbers[i]==<span class="number">0</span>)&#123;</span><br><span class="line">            zero++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(interval&gt;zero||interval&lt;<span class="number">0</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
@@ -340,12 +328,24 @@
       </tags>
   </entry>
   <entry>
-    <title>扑克牌顺子</title>
-    <url>/2019/09/13/%E5%89%91%E6%8C%87offerJavaScript%E7%89%88%20(45)/</url>
-    <content><![CDATA[<h1 id="扑克牌顺子"><a href="#扑克牌顺子" class="headerlink" title="扑克牌顺子"></a>扑克牌顺子</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>红心A,黑桃3,小王,大王,方片5”,“Oh My God!”不是顺子…..LL不高兴了,他想了想,决定大\小 王可以看成任何数字,并且A看作1,J为11,Q为12,K为13。上面的5张牌就可以变成“1,2,3,4,5”(大小王分别看作2和4),“So Lucky!”。LL决定去买体育彩票啦。 现在,要求你使用这幅牌模拟上面的过程,然后告诉我们LL的运气如何， 如果牌能组成顺子就输出true，否则就输出false。</p>
+    <title>正则表达式匹配</title>
+    <url>/2019/09/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(52)/</url>
+    <content><![CDATA[<h1 id="正则表达式匹配"><a href="#正则表达式匹配" class="headerlink" title="正则表达式匹配"></a>正则表达式匹配</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>请实现一个函数用来匹配包括’.’和’<em>‘的正则表达式。模式中的字符’.’表示任意一个字符，而’</em>‘表示它前面的字符可以出现任意次（包含0次）。 在本题中，匹配是指字符串的所有字符匹配整个模式。例如，字符串”aaa”与模式”a.a”和”ab<em>ac</em>a”匹配，但是与”aa.a”和”ab*a”均不匹配</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">IsContinuous</span>(<span class="params">numbers</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(numbers.length==<span class="number">0</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    numbers.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;<span class="keyword">return</span> a-b&#125;);</span><br><span class="line">    <span class="keyword">let</span> interval=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> zero=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;numbers.length<span class="number">-1</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(numbers[i]!=<span class="number">0</span>)&#123;</span><br><span class="line">            interval+=(numbers[i+<span class="number">1</span>]-numbers[i]<span class="number">-1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(numbers[i]==<span class="number">0</span>)&#123;</span><br><span class="line">            zero++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(interval&gt;zero||interval&lt;<span class="number">0</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第二个字符为”*”<ul>
+<li>第一个字符为”.”或为等于s此时的字符</li>
+<li>第一个字符不为”.”且第一个字符也不匹配s此时的字符</li>
+</ul>
+</li>
+<li>第二个字符不为”*”<ul>
+<li>第一个字符为”.”或第一个字符匹配s此时的字符</li>
+</ul>
+</li>
+</ul>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">match</span>(<span class="params">s, pattern</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(s==<span class="literal">null</span>||pattern==<span class="literal">null</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> matchrecursive(s,<span class="number">0</span>,pattern,<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">matchrecursive</span>(<span class="params">str,istr,pattern,ipattern</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(str.length==istr&amp;&amp;pattern.length==ipattern)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(str.length!=istr&amp;&amp;pattern.length==ipattern)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(pattern[ipattern+<span class="number">1</span>]==<span class="string">'*'</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(pattern[ipattern]==<span class="string">'.'</span>&amp;&amp;istr!=str.length||pattern[ipattern]==str[istr])&#123;</span><br><span class="line">            <span class="keyword">return</span> (</span><br><span class="line">                matchrecursive(str,istr+<span class="number">1</span>,pattern,ipattern+<span class="number">2</span>)||</span><br><span class="line">                matchrecursive(str,istr+<span class="number">1</span>,pattern,ipattern)||</span><br><span class="line">                matchrecursive(str,istr,pattern,ipattern+<span class="number">2</span>)</span><br><span class="line">            )</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> matchrecursive(str,istr,pattern,ipattern+<span class="number">2</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(pattern[ipattern]==<span class="string">'.'</span>&amp;&amp;istr!=str.length||pattern[ipattern]==str[istr])&#123;</span><br><span class="line">        <span class="keyword">return</span> matchrecursive(str,istr+<span class="number">1</span>,pattern,ipattern+<span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
@@ -876,22 +876,6 @@
       </tags>
   </entry>
   <entry>
-    <title>包含min函数的栈</title>
-    <url>/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(20)/</url>
-    <content><![CDATA[<h3 id="包含min函数的栈"><a href="#包含min函数的栈" class="headerlink" title="包含min函数的栈"></a>包含min函数的栈</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> stack=[];</span><br><span class="line"><span class="keyword">var</span> minstack=[];</span><br><span class="line"><span class="keyword">var</span> minele=<span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">push</span>(<span class="params">node</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(minele!==<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(node&lt;minele)&#123;</span><br><span class="line">            minele=node;</span><br><span class="line">        &#125;</span><br><span class="line">        stack.push(node);</span><br><span class="line">        minstack.push(minele);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        minele=node;</span><br><span class="line">        stack.push(node);</span><br><span class="line">        minstack.push(minele);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pop</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    stack.pop();</span><br><span class="line">    minstack.pop();</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">top</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> stack[stack.length<span class="number">-1</span>];</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">min</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> minstack[minstack.length<span class="number">-1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>剑指offer</category>
-      </categories>
-      <tags>
-        <tag>栈</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>二叉树的镜像</title>
     <url>/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(18)/</url>
     <content><![CDATA[<h3 id="二叉树的镜像"><a href="#二叉树的镜像" class="headerlink" title="二叉树的镜像"></a>二叉树的镜像</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
@@ -906,6 +890,22 @@
       </categories>
       <tags>
         <tag>二叉树</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>包含min函数的栈</title>
+    <url>/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(20)/</url>
+    <content><![CDATA[<h3 id="包含min函数的栈"><a href="#包含min函数的栈" class="headerlink" title="包含min函数的栈"></a>包含min函数的栈</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+<p>定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> stack=[];</span><br><span class="line"><span class="keyword">var</span> minstack=[];</span><br><span class="line"><span class="keyword">var</span> minele=<span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">push</span>(<span class="params">node</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(minele!==<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(node&lt;minele)&#123;</span><br><span class="line">            minele=node;</span><br><span class="line">        &#125;</span><br><span class="line">        stack.push(node);</span><br><span class="line">        minstack.push(minele);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        minele=node;</span><br><span class="line">        stack.push(node);</span><br><span class="line">        minstack.push(minele);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pop</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    stack.pop();</span><br><span class="line">    minstack.pop();</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">top</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> stack[stack.length<span class="number">-1</span>];</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">min</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> minstack[minstack.length<span class="number">-1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>栈</tag>
       </tags>
   </entry>
   <entry>
@@ -1181,6 +1181,22 @@
       </tags>
   </entry>
   <entry>
+    <title>跳台阶</title>
+    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(8)/</url>
+    <content><![CDATA[<h3 id="跳台阶"><a href="#跳台阶" class="headerlink" title="跳台阶"></a>跳台阶</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+<p>一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jumpFloor</span>(<span class="params">number</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> n1=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> n2=<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span>(--number)&#123;</span><br><span class="line">        n2+=n1;</span><br><span class="line">        n1=n2-n1;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> n1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>连续子数组的最大和</title>
     <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(30)/</url>
     <content><![CDATA[<h3 id="连续子数组的最大和"><a href="#连续子数组的最大和" class="headerlink" title="连续子数组的最大和"></a>连续子数组的最大和</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
@@ -1200,22 +1216,6 @@
       </tags>
   </entry>
   <entry>
-    <title>跳台阶</title>
-    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(8)/</url>
-    <content><![CDATA[<h3 id="跳台阶"><a href="#跳台阶" class="headerlink" title="跳台阶"></a>跳台阶</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jumpFloor</span>(<span class="params">number</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> n1=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> n2=<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span>(--number)&#123;</span><br><span class="line">        n2+=n1;</span><br><span class="line">        n1=n2-n1;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> n1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>剑指offer</category>
-      </categories>
-      <tags>
-        <tag>剑指offer</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>构建乘积数组</title>
     <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(51)/</url>
     <content><![CDATA[<h1 id="构建乘积数组"><a href="#构建乘积数组" class="headerlink" title="构建乘积数组"></a>构建乘积数组</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
@@ -1226,6 +1226,22 @@
 <li>先算i-1项，后算i+1项</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> B=[];</span><br><span class="line">    B[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> tmp=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        B[i]=B[i<span class="number">-1</span>]*array[i<span class="number">-1</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=array.length<span class="number">-2</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        tmp*=array[i+<span class="number">1</span>];</span><br><span class="line">        B[i]*=tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> B;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>矩阵中的路径</title>
+    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(65)/</url>
+    <content><![CDATA[<h1 id="矩阵中的路径"><a href="#矩阵中的路径" class="headerlink" title="矩阵中的路径"></a>矩阵中的路径</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一个格子开始，每一步可以在矩阵中向左，向右，向上，向下移动一个格子。如果一条路径经过了矩阵中的某一个格子，则该路径不能再进入该格子。 例如 a b c e s f c s a d e e 矩阵中包含一条字符串”bccced”的路径，但是矩阵中不包含”abcb”路径，因为字符串的第一个字符b占据了矩阵中的第一行第二个格子之后，路径不能再次进入该格子。</p>
+</blockquote>
+<ul>
+<li>每次都根据一个点，从该点开始遍历是否已遍历的点是否符合被包含字符串，如果不包含则返回上一步并标记该点不符合要求，若回溯到第一点后不符合，则继续从下一点开始。该过程可用递归表示</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hasPath</span>(<span class="params">matrix, rows, cols, path</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> pathLength=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> visited=<span class="keyword">new</span> <span class="built_in">Array</span>(rows*cols);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> row=<span class="number">0</span>;row&lt;rows;row++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> col=<span class="number">0</span>;col&lt;cols;col++)&#123;</span><br><span class="line">            <span class="keyword">if</span>( findPath(matrix,rows,cols,row,col,pathLength,visited,path))&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findPath</span>(<span class="params">matrix,rows,cols,row,col,pathLength,visited,path</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> haspath=<span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(path.length===pathLength)<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(row&lt;rows&amp;&amp;</span><br><span class="line">      col&lt;cols&amp;&amp;</span><br><span class="line">      row&gt;=<span class="number">0</span>&amp;&amp;</span><br><span class="line">      col&gt;=<span class="number">0</span>&amp;&amp;</span><br><span class="line">     ( matrix[row*cols+col]===path[pathLength])&amp;&amp;</span><br><span class="line">       !visited[row*cols+col])&#123;</span><br><span class="line">        pathLength++;</span><br><span class="line">        visited[row*cols+col]=<span class="literal">true</span></span><br><span class="line">        haspath=</span><br><span class="line">        findPath(matrix,rows,cols,row+<span class="number">1</span>,col,pathLength,visited,path)||</span><br><span class="line">        findPath(matrix,rows,cols,row<span class="number">-1</span>,col,pathLength,visited,path)||</span><br><span class="line">        findPath(matrix,rows,cols,row,col+<span class="number">1</span>,pathLength,visited,path)||</span><br><span class="line">        findPath(matrix,rows,cols,row,col<span class="number">-1</span>,pathLength,visited,path)</span><br><span class="line">        <span class="keyword">if</span>(!haspath)&#123;</span><br><span class="line">            pathLength--;</span><br><span class="line">            visited[row*cols+col]=<span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">     <span class="keyword">return</span> haspath</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
@@ -1250,22 +1266,6 @@
       <tags>
         <tag>二叉树</tag>
         <tag>链表</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>矩阵中的路径</title>
-    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(65)/</url>
-    <content><![CDATA[<h1 id="矩阵中的路径"><a href="#矩阵中的路径" class="headerlink" title="矩阵中的路径"></a>矩阵中的路径</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一个格子开始，每一步可以在矩阵中向左，向右，向上，向下移动一个格子。如果一条路径经过了矩阵中的某一个格子，则该路径不能再进入该格子。 例如 a b c e s f c s a d e e 矩阵中包含一条字符串”bccced”的路径，但是矩阵中不包含”abcb”路径，因为字符串的第一个字符b占据了矩阵中的第一行第二个格子之后，路径不能再次进入该格子。</p>
-</blockquote>
-<ul>
-<li>每次都根据一个点，从该点开始遍历是否已遍历的点是否符合被包含字符串，如果不包含则返回上一步并标记该点不符合要求，若回溯到第一点后不符合，则继续从下一点开始。该过程可用递归表示</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hasPath</span>(<span class="params">matrix, rows, cols, path</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> pathLength=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> visited=<span class="keyword">new</span> <span class="built_in">Array</span>(rows*cols);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> row=<span class="number">0</span>;row&lt;rows;row++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> col=<span class="number">0</span>;col&lt;cols;col++)&#123;</span><br><span class="line">            <span class="keyword">if</span>( findPath(matrix,rows,cols,row,col,pathLength,visited,path))&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findPath</span>(<span class="params">matrix,rows,cols,row,col,pathLength,visited,path</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> haspath=<span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(path.length===pathLength)<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(row&lt;rows&amp;&amp;</span><br><span class="line">      col&lt;cols&amp;&amp;</span><br><span class="line">      row&gt;=<span class="number">0</span>&amp;&amp;</span><br><span class="line">      col&gt;=<span class="number">0</span>&amp;&amp;</span><br><span class="line">     ( matrix[row*cols+col]===path[pathLength])&amp;&amp;</span><br><span class="line">       !visited[row*cols+col])&#123;</span><br><span class="line">        pathLength++;</span><br><span class="line">        visited[row*cols+col]=<span class="literal">true</span></span><br><span class="line">        haspath=</span><br><span class="line">        findPath(matrix,rows,cols,row+<span class="number">1</span>,col,pathLength,visited,path)||</span><br><span class="line">        findPath(matrix,rows,cols,row<span class="number">-1</span>,col,pathLength,visited,path)||</span><br><span class="line">        findPath(matrix,rows,cols,row,col+<span class="number">1</span>,pathLength,visited,path)||</span><br><span class="line">        findPath(matrix,rows,cols,row,col<span class="number">-1</span>,pathLength,visited,path)</span><br><span class="line">        <span class="keyword">if</span>(!haspath)&#123;</span><br><span class="line">            pathLength--;</span><br><span class="line">            visited[row*cols+col]=<span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">     <span class="keyword">return</span> haspath</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>剑指offer</tag>
       </tags>
   </entry>
   <entry>
@@ -1371,6 +1371,25 @@
       </tags>
   </entry>
   <entry>
+    <title>数组中只出现一次的数字</title>
+    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(40)/</url>
+    <content><![CDATA[<h1 id="数组中只出现一次的数字"><a href="#数组中只出现一次的数字" class="headerlink" title="数组中只出现一次的数字"></a>数组中只出现一次的数字</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>一个整型数组里除了两个数字之外，其他的数字都出现了两次。请写程序找出这两个只出现一次的数字。</p>
+</blockquote>
+<ul>
+<li>先排序，排序后再遍历一遍数组，如果前一个和后一个元素不等，则为出现一次的，注意相等时遍历下标的变化。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindNumsAppearOnce</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="comment">// return list, 比如[a,b]，其中ab是出现一次的两个数字</span></span><br><span class="line">    <span class="keyword">const</span> list=[];</span><br><span class="line">    array.sort();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(array[i]!=array[i+<span class="number">1</span>])&#123;</span><br><span class="line">            list.push(array[i])</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>数组</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>字符串的排列</title>
     <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(27)/</url>
     <content><![CDATA[<h3 id="字符串的排列"><a href="#字符串的排列" class="headerlink" title="字符串的排列"></a>字符串的排列</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
@@ -1391,25 +1410,6 @@
       </categories>
       <tags>
         <tag>字符串</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数组中只出现一次的数字</title>
-    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(40)/</url>
-    <content><![CDATA[<h1 id="数组中只出现一次的数字"><a href="#数组中只出现一次的数字" class="headerlink" title="数组中只出现一次的数字"></a>数组中只出现一次的数字</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>一个整型数组里除了两个数字之外，其他的数字都出现了两次。请写程序找出这两个只出现一次的数字。</p>
-</blockquote>
-<ul>
-<li>先排序，排序后再遍历一遍数组，如果前一个和后一个元素不等，则为出现一次的，注意相等时遍历下标的变化。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindNumsAppearOnce</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="comment">// return list, 比如[a,b]，其中ab是出现一次的两个数字</span></span><br><span class="line">    <span class="keyword">const</span> list=[];</span><br><span class="line">    array.sort();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(array[i]!=array[i+<span class="number">1</span>])&#123;</span><br><span class="line">            list.push(array[i])</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>剑指offer</category>
-      </categories>
-      <tags>
-        <tag>数组</tag>
       </tags>
   </entry>
   <entry>
