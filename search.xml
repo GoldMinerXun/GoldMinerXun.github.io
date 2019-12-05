@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>css浮动</title>
+    <url>/2019/12/05/css%E6%B5%AE%E5%8A%A8/</url>
+    <content><![CDATA[<h3 id="CSS浮动"><a href="#CSS浮动" class="headerlink" title="CSS浮动"></a>CSS浮动</h3><p>刷面经的时候看到的问题，为什么使用浮动？<br>最近一直在用flex布局，如果想要内部元素横向排列用flex就解决了，所以有点忘记关于float的知识。<br>回顾一下~</p>
+<p>比较喜欢追根溯源</p>
+<h4 id="首先"><a href="#首先" class="headerlink" title="首先"></a>首先</h4><h5 id="什么是文档流？"><a href="#什么是文档流？" class="headerlink" title="什么是文档流？"></a>什么是文档流？</h5><p>文档流是文档元素正常排列的规则。<br>块级元素是从上到下排列，内联元素是从左到右排列。</p>
+<p><strong><em>Q：如果想要你的块级元素从左到右排，怎么办呢？</em></strong><br><strong><em>A：使用display:inline-block;</em></strong></p>
+<p><strong><em>Q：如果希望你的元素相对自己本身的位置定位到别的地方呢？</em></strong><br><strong><em>A：使用position:relative;</em></strong></p>
+<p><strong><em>Q：如果希望你的元素相对别的元素定位呢？</em></strong><br><strong><em>A：向上给某个父级以上的元素使用position:relative；自身使用position:absolute;</em></strong></p>
+<p><strong><em>Q：那么你又想你的元素从右到左排列呢？</em></strong><br><strong><em>A：就需要用到float。</em></strong></p>
+<p>这里就需要了解一个相对的概念，脱离文档流。<br>当元素脱离文档流后，元素将不再对父级元素产生布局影响，不会影响父级元素的宽高。<br><strong><em>举个栗子：如果子元素高度100px，父元素未设置高度，父元素高度完全依靠子元素撑开，如果子元素脱离文档流，则父元素高度为0；</em></strong></p>
+<p>那么当你想要元素从右到左排列，但是又不想脱离文档流，就需要用到清除浮动了~</p>
+<h5 id="如何清除浮动？"><a href="#如何清除浮动？" class="headerlink" title="如何清除浮动？"></a>如何清除浮动？</h5><ol>
+<li><p>添加额外的同级元素div使用clear:both<br>原理：清除了元素附近所有的浮动。<br>缺点：添加无意义标签</p>
+</li>
+<li><p>对父元素设置overflow:hidden<br>原理：使用BFC原理，对子元素进行约束，根据BFC，盒子内部元素不影响外部布局<br>缺点：overflow:hidden本身语义是超出部分隐藏，对于不确定父元素高度的情况，很难进行合适的布局。</p>
+</li>
+</ol>
+<p><strong><em>以下方法推荐使用</em></strong><br>3. 使用伪类进行清除浮动（分为普通浏览器和ie浏览器）</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*伪元素是行内元素 正常浏览器清除浮动*/</span></span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">clear</span>:both;</span><br><span class="line">    <span class="attribute">visibility</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*只有IE6-IE7执行，其他浏览器不执行*/</span></span><br><span class="line"><span class="selector-class">.clearfix</span>&#123;</span><br><span class="line">    *zoom: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>双伪类清除浮动<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>,<span class="selector-class">.clearfix</span><span class="selector-pseudo">:before</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">    <span class="attribute">display</span>: table;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span>&#123;</span><br><span class="line">    *zoom: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<hr>
+<h4 id="相关知识："><a href="#相关知识：" class="headerlink" title="相关知识："></a>相关知识：</h4><p>BFC形成条件：（只要元素满足下面任一条件即可触发BFC特性）</p>
+<ul>
+<li>body 根元素</li>
+<li>浮动元素：float 除 none 以外的值</li>
+<li>绝对定位元素：position (absolute、fixed)</li>
+<li>display 为 inline-block、table-cells、flex</li>
+<li>overflow 除了 visible 以外的值 (hidden、auto、scroll)</li>
+</ul>
+<h4 id="相关问题"><a href="#相关问题" class="headerlink" title="相关问题"></a>相关问题</h4><p>Q：如何解决margin坍塌？<br>A：<br>兄弟元素：<br>可以直接改变其中一个的外边距的值，使之达到想要的效果。(推荐使用)</p>
+<p>BFC解决办法：将兄弟元素分别作为子元素放在块级元素内，然后将其父级元素的渲染规则该为BFC。(不推荐使用,会破坏HTML文档结构)</p>
+<p>父子元素：<br>使用margin时，会出现另一个bug，这里称为margin塌陷（就是垂直方向的margin不但会合并; 当父元素没有设置内边距或边框,以及触发BFC时,如果子元素的值大于父元素时，它会带着父元素一起偏移,此时子元素是相对除了它父级之外的离它最近的元素偏移的）。<br>可以通过给父元素添加边框或内边距.(不建议使用,会破坏布局)</p>
+<p>使用BFC解决: 将父元素的渲染模式改为BFC渲染模式.</p>
+<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><p><a href="https://blog.csdn.net/h_qingyi/article/details/81269667" target="_blank" rel="noopener">清除浮动的最常用的四种方法，以及优缺点</a><br><a href="https://blog.csdn.net/shi_1204/article/details/80180224" target="_blank" rel="noopener">如何解决margin塌陷以及margin合并</a><br><a href="https://blog.csdn.net/qq_39309348/article/details/97884900" target="_blank" rel="noopener">zoom:1的原理和作用</a></p>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>浮动</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>函数科里化(Curring)</title>
     <url>/2019/12/05/%E5%87%BD%E6%95%B0%E7%A7%91%E9%87%8C%E5%8C%96/</url>
     <content><![CDATA[<h4 id="函数科里化"><a href="#函数科里化" class="headerlink" title="函数科里化"></a>函数科里化</h4><h5 id="什么是函数科里化？"><a href="#什么是函数科里化？" class="headerlink" title="什么是函数科里化？"></a>什么是函数科里化？</h5><blockquote>
@@ -248,6 +296,24 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
+    <title>时间管理项目</title>
+    <url>/2019/10/13/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<p><a href="https://github.com/GoldMinerXun/PullClassFromJW" target="_blank" rel="noopener">时间管理项目完整1.0版</a><br>node.js+express+jQuery<br>基本上没有用任何框架，原生js项目。<br>技术难点主要是爬虫技术。<br>该项目运行在3010端口。</p>
+<hr>
+<p>star一下叭。</p>
+]]></content>
+      <categories>
+        <category>node</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>项目</tag>
+        <tag>mongodb</tag>
+        <tag>express</tag>
+        <tag>node</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Node.js爬虫</title>
     <url>/2019/10/13/Node.js%E7%88%AC%E8%99%AB/</url>
     <content><![CDATA[<h4 id="用nodejs爬取学校教务在线的课表"><a href="#用nodejs爬取学校教务在线的课表" class="headerlink" title="用nodejs爬取学校教务在线的课表"></a>用nodejs爬取学校教务在线的课表</h4><p>首先要分析爬虫的本质，模拟登陆+获取网页信息<br>如何模拟登陆（手动登陆）。<br>大致讲下思路。</p>
@@ -270,24 +336,6 @@ null, undefined无法使用constructor属性。
       <tags>
         <tag>nodejs</tag>
         <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>时间管理项目</title>
-    <url>/2019/10/13/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE/</url>
-    <content><![CDATA[<p><a href="https://github.com/GoldMinerXun/PullClassFromJW" target="_blank" rel="noopener">时间管理项目完整1.0版</a><br>node.js+express+jQuery<br>基本上没有用任何框架，原生js项目。<br>技术难点主要是爬虫技术。<br>该项目运行在3010端口。</p>
-<hr>
-<p>star一下叭。</p>
-]]></content>
-      <categories>
-        <category>node</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>项目</tag>
-        <tag>mongodb</tag>
-        <tag>express</tag>
-        <tag>node</tag>
       </tags>
   </entry>
   <entry>
@@ -432,16 +480,45 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>扑克牌顺子</title>
-    <url>/2019/09/13/%E5%89%91%E6%8C%87offerJavaScript%E7%89%88%20(45)/</url>
-    <content><![CDATA[<h1 id="扑克牌顺子"><a href="#扑克牌顺子" class="headerlink" title="扑克牌顺子"></a>扑克牌顺子</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>红心A,黑桃3,小王,大王,方片5”,“Oh My God!”不是顺子…..LL不高兴了,他想了想,决定大\小 王可以看成任何数字,并且A看作1,J为11,Q为12,K为13。上面的5张牌就可以变成“1,2,3,4,5”(大小王分别看作2和4),“So Lucky!”。LL决定去买体育彩票啦。 现在,要求你使用这幅牌模拟上面的过程,然后告诉我们LL的运气如何， 如果牌能组成顺子就输出true，否则就输出false。</p>
+    <title>Hexo + GitHub Pages + NexT在win10个人博客</title>
+    <url>/2019/09/13/github+hexo+next%20%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</url>
+    <content><![CDATA[<ul>
+<li>踩了很多坑，找到一个大佬写的教程，但是还是有坑。</li>
+<li>要注意目录，千万别乱npm</li>
+<li>在仓库里面添加ssh时要记得给写权限 ，allow write access</li>
+<li>注意在yml文件里面改配置，还有仓库的地址是:不是/</li>
+<li>每次修改完任何文件，需要以下操作才能发布到GitHub上<blockquote>
+<p>hexo g<br>hexo d<br>hexo clean<br>hexo d -g</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">IsContinuous</span>(<span class="params">numbers</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(numbers.length==<span class="number">0</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    numbers.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;<span class="keyword">return</span> a-b&#125;);</span><br><span class="line">    <span class="keyword">let</span> interval=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> zero=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;numbers.length<span class="number">-1</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(numbers[i]!=<span class="number">0</span>)&#123;</span><br><span class="line">            interval+=(numbers[i+<span class="number">1</span>]-numbers[i]<span class="number">-1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(numbers[i]==<span class="number">0</span>)&#123;</span><br><span class="line">            zero++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(interval&gt;zero||interval&lt;<span class="number">0</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+</li>
+</ul>
+<p>分享大佬链接，按照大佬的顺序来，别踩坑，踩就是一小时<br><a href="https://blog.csdn.net/qq_34229391/article/details/82251852" target="_blank" rel="noopener">Hexo + GitHub Pages + NexT在win10上搭建个性化个人博客</a></p>
 ]]></content>
+      <categories>
+        <category>配置</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript原型链</title>
+    <url>/2019/09/13/JavaScript%E5%8E%9F%E5%9E%8B%E9%93%BE/</url>
+    <content><![CDATA[<h3 id="什么是原型链"><a href="#什么是原型链" class="headerlink" title="什么是原型链"></a>什么是原型链</h3><p>在js中，只有一种结构，对象。</p>
+<p>每个实例对象都有自己的私有属性：__ proto __，这个属性是只有实例可以访问得到的，这个属性指向它的构造函数的原型对象，这个原型对象还有它的原型对象，直至其原型对象为null，null没有原型对象，这个链式关系就终止了。这就是原型链。</p>
+<h3 id="Prototype和proto"><a href="#Prototype和proto" class="headerlink" title="Prototype和proto"></a>Prototype和<strong>proto</strong></h3><p>通过prototype定义的属性，会向上定义。定义到它的原型对象上去。<br>通过<strong>proto</strong>定义的属性，会变成其私有属性，不被原型读取；</p>
+<p>当查看某个对象是否有某属性时，需要通过原型链逐级向上读取。</p>
+<h3 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h3><p>构造器就是指向这个实例对象的构造函数。</p>
+<blockquote>
+<p>constructor 和 instanceof<br>两者在于一个时找构造器，一个是判断构造函数的prototype属性是否出现在某个对象的原型链上</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>原型链</tag>
       </tags>
   </entry>
   <entry>
@@ -470,45 +547,16 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>JavaScript原型链</title>
-    <url>/2019/09/13/JavaScript%E5%8E%9F%E5%9E%8B%E9%93%BE/</url>
-    <content><![CDATA[<h3 id="什么是原型链"><a href="#什么是原型链" class="headerlink" title="什么是原型链"></a>什么是原型链</h3><p>在js中，只有一种结构，对象。</p>
-<p>每个实例对象都有自己的私有属性：__ proto __，这个属性是只有实例可以访问得到的，这个属性指向它的构造函数的原型对象，这个原型对象还有它的原型对象，直至其原型对象为null，null没有原型对象，这个链式关系就终止了。这就是原型链。</p>
-<h3 id="Prototype和proto"><a href="#Prototype和proto" class="headerlink" title="Prototype和proto"></a>Prototype和<strong>proto</strong></h3><p>通过prototype定义的属性，会向上定义。定义到它的原型对象上去。<br>通过<strong>proto</strong>定义的属性，会变成其私有属性，不被原型读取；</p>
-<p>当查看某个对象是否有某属性时，需要通过原型链逐级向上读取。</p>
-<h3 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h3><p>构造器就是指向这个实例对象的构造函数。</p>
-<blockquote>
-<p>constructor 和 instanceof<br>两者在于一个时找构造器，一个是判断构造函数的prototype属性是否出现在某个对象的原型链上</p>
+    <title>扑克牌顺子</title>
+    <url>/2019/09/13/%E5%89%91%E6%8C%87offerJavaScript%E7%89%88%20(45)/</url>
+    <content><![CDATA[<h1 id="扑克牌顺子"><a href="#扑克牌顺子" class="headerlink" title="扑克牌顺子"></a>扑克牌顺子</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>红心A,黑桃3,小王,大王,方片5”,“Oh My God!”不是顺子…..LL不高兴了,他想了想,决定大\小 王可以看成任何数字,并且A看作1,J为11,Q为12,K为13。上面的5张牌就可以变成“1,2,3,4,5”(大小王分别看作2和4),“So Lucky!”。LL决定去买体育彩票啦。 现在,要求你使用这幅牌模拟上面的过程,然后告诉我们LL的运气如何， 如果牌能组成顺子就输出true，否则就输出false。</p>
 </blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">IsContinuous</span>(<span class="params">numbers</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(numbers.length==<span class="number">0</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    numbers.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;<span class="keyword">return</span> a-b&#125;);</span><br><span class="line">    <span class="keyword">let</span> interval=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> zero=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;numbers.length<span class="number">-1</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(numbers[i]!=<span class="number">0</span>)&#123;</span><br><span class="line">            interval+=(numbers[i+<span class="number">1</span>]-numbers[i]<span class="number">-1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(numbers[i]==<span class="number">0</span>)&#123;</span><br><span class="line">            zero++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(interval&gt;zero||interval&lt;<span class="number">0</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 ]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
       <tags>
-        <tag>JavaScript</tag>
-        <tag>原型链</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo + GitHub Pages + NexT在win10个人博客</title>
-    <url>/2019/09/13/github+hexo+next%20%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</url>
-    <content><![CDATA[<ul>
-<li>踩了很多坑，找到一个大佬写的教程，但是还是有坑。</li>
-<li>要注意目录，千万别乱npm</li>
-<li>在仓库里面添加ssh时要记得给写权限 ，allow write access</li>
-<li>注意在yml文件里面改配置，还有仓库的地址是:不是/</li>
-<li>每次修改完任何文件，需要以下操作才能发布到GitHub上<blockquote>
-<p>hexo g<br>hexo d<br>hexo clean<br>hexo d -g</p>
-</blockquote>
-</li>
-</ul>
-<p>分享大佬链接，按照大佬的顺序来，别踩坑，踩就是一小时<br><a href="https://blog.csdn.net/qq_34229391/article/details/82251852" target="_blank" rel="noopener">Hexo + GitHub Pages + NexT在win10上搭建个性化个人博客</a></p>
-]]></content>
-      <categories>
-        <category>配置</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
+        <tag>剑指offer</tag>
       </tags>
   </entry>
   <entry>
@@ -1027,20 +1075,20 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>把字符串转换成整数</title>
-    <url>/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(49)/</url>
-    <content><![CDATA[<h1 id="把字符串转换成整数"><a href="#把字符串转换成整数" class="headerlink" title="把字符串转换成整数"></a>把字符串转换成整数</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>将一个字符串转换成一个整数(实现Integer.valueOf(string)的功能，但是string不符合数字要求时返回0)，要求不能使用字符串转换整数的库函数。 数值为0或者字符串不是一个合法的数值则返回0。</p>
+    <title>二叉树的镜像</title>
+    <url>/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(18)/</url>
+    <content><![CDATA[<h3 id="二叉树的镜像"><a href="#二叉树的镜像" class="headerlink" title="二叉树的镜像"></a>二叉树的镜像</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+<p>操作给定的二叉树，将其变换为源二叉树的镜像。</p>
 </blockquote>
-<ul>
-<li>重点在于每次需要移位，移位对应十进制是10，对应二进制是1010，所以移一位，再移三位。</li>
-<li>注意还需要判断符号</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">StrToInt</span>(<span class="params">str</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">let</span> res=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> flag=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> n=str.length;</span><br><span class="line">    <span class="keyword">if</span>(!n)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(str[<span class="number">0</span>]==<span class="string">'-'</span>)&#123;</span><br><span class="line">        flag=<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i= str[<span class="number">0</span>]==<span class="string">'-'</span>||str[<span class="number">0</span>]==<span class="string">'+'</span>?<span class="number">1</span>:<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(str[i]&lt;=<span class="string">'0'</span>||str[i]&gt;=<span class="string">'9'</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        res=(res&lt;&lt;<span class="number">1</span>)+(res&lt;&lt;<span class="number">3</span>)+(str[i]-<span class="string">'0'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res*flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>递归。。。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Mirror</span>(<span class="params">root</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(root===<span class="literal">null</span>)<span class="keyword">return</span>;</span><br><span class="line">    Mirror(root.left);</span><br><span class="line">    Mirror(root.right);</span><br><span class="line">    [root.left,root.right]=[root.right,root.left];</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -1060,20 +1108,20 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>二叉树的镜像</title>
-    <url>/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(18)/</url>
-    <content><![CDATA[<h3 id="二叉树的镜像"><a href="#二叉树的镜像" class="headerlink" title="二叉树的镜像"></a>二叉树的镜像</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>操作给定的二叉树，将其变换为源二叉树的镜像。</p>
+    <title>把字符串转换成整数</title>
+    <url>/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(49)/</url>
+    <content><![CDATA[<h1 id="把字符串转换成整数"><a href="#把字符串转换成整数" class="headerlink" title="把字符串转换成整数"></a>把字符串转换成整数</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>将一个字符串转换成一个整数(实现Integer.valueOf(string)的功能，但是string不符合数字要求时返回0)，要求不能使用字符串转换整数的库函数。 数值为0或者字符串不是一个合法的数值则返回0。</p>
 </blockquote>
-<p>递归。。。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Mirror</span>(<span class="params">root</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(root===<span class="literal">null</span>)<span class="keyword">return</span>;</span><br><span class="line">    Mirror(root.left);</span><br><span class="line">    Mirror(root.right);</span><br><span class="line">    [root.left,root.right]=[root.right,root.left];</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>重点在于每次需要移位，移位对应十进制是10，对应二进制是1010，所以移一位，再移三位。</li>
+<li>注意还需要判断符号</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">StrToInt</span>(<span class="params">str</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">let</span> res=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> flag=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> n=str.length;</span><br><span class="line">    <span class="keyword">if</span>(!n)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(str[<span class="number">0</span>]==<span class="string">'-'</span>)&#123;</span><br><span class="line">        flag=<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i= str[<span class="number">0</span>]==<span class="string">'-'</span>||str[<span class="number">0</span>]==<span class="string">'+'</span>?<span class="number">1</span>:<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(str[i]&lt;=<span class="string">'0'</span>||str[i]&gt;=<span class="string">'9'</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        res=(res&lt;&lt;<span class="number">1</span>)+(res&lt;&lt;<span class="number">3</span>)+(str[i]-<span class="string">'0'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res*flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
-      <categories>
-        <category>剑指offer</category>
-      </categories>
       <tags>
-        <tag>二叉树</tag>
+        <tag>剑指offer</tag>
       </tags>
   </entry>
   <entry>
@@ -1356,6 +1404,22 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
+    <title>跳台阶</title>
+    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(8)/</url>
+    <content><![CDATA[<h3 id="跳台阶"><a href="#跳台阶" class="headerlink" title="跳台阶"></a>跳台阶</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+<p>一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jumpFloor</span>(<span class="params">number</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> n1=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> n2=<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span>(--number)&#123;</span><br><span class="line">        n2+=n1;</span><br><span class="line">        n1=n2-n1;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> n1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>构建乘积数组</title>
     <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(51)/</url>
     <content><![CDATA[<h1 id="构建乘积数组"><a href="#构建乘积数组" class="headerlink" title="构建乘积数组"></a>构建乘积数组</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
@@ -1368,22 +1432,6 @@ null, undefined无法使用constructor属性。
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> B=[];</span><br><span class="line">    B[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> tmp=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        B[i]=B[i<span class="number">-1</span>]*array[i<span class="number">-1</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=array.length<span class="number">-2</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        tmp*=array[i+<span class="number">1</span>];</span><br><span class="line">        B[i]*=tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> B;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
-      <tags>
-        <tag>剑指offer</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>跳台阶</title>
-    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(8)/</url>
-    <content><![CDATA[<h3 id="跳台阶"><a href="#跳台阶" class="headerlink" title="跳台阶"></a>跳台阶</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jumpFloor</span>(<span class="params">number</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> n1=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> n2=<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span>(--number)&#123;</span><br><span class="line">        n2+=n1;</span><br><span class="line">        n1=n2-n1;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> n1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>剑指offer</category>
-      </categories>
       <tags>
         <tag>剑指offer</tag>
       </tags>
@@ -1527,6 +1575,25 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
+    <title>数组中只出现一次的数字</title>
+    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(40)/</url>
+    <content><![CDATA[<h1 id="数组中只出现一次的数字"><a href="#数组中只出现一次的数字" class="headerlink" title="数组中只出现一次的数字"></a>数组中只出现一次的数字</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>一个整型数组里除了两个数字之外，其他的数字都出现了两次。请写程序找出这两个只出现一次的数字。</p>
+</blockquote>
+<ul>
+<li>先排序，排序后再遍历一遍数组，如果前一个和后一个元素不等，则为出现一次的，注意相等时遍历下标的变化。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindNumsAppearOnce</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="comment">// return list, 比如[a,b]，其中ab是出现一次的两个数字</span></span><br><span class="line">    <span class="keyword">const</span> list=[];</span><br><span class="line">    array.sort();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(array[i]!=array[i+<span class="number">1</span>])&#123;</span><br><span class="line">            list.push(array[i])</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>数组</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>字符串的排列</title>
     <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(27)/</url>
     <content><![CDATA[<h3 id="字符串的排列"><a href="#字符串的排列" class="headerlink" title="字符串的排列"></a>字符串的排列</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
@@ -1566,25 +1633,6 @@ null, undefined无法使用constructor属性。
 ]]></content>
       <tags>
         <tag>剑指offer</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数组中只出现一次的数字</title>
-    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(40)/</url>
-    <content><![CDATA[<h1 id="数组中只出现一次的数字"><a href="#数组中只出现一次的数字" class="headerlink" title="数组中只出现一次的数字"></a>数组中只出现一次的数字</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>一个整型数组里除了两个数字之外，其他的数字都出现了两次。请写程序找出这两个只出现一次的数字。</p>
-</blockquote>
-<ul>
-<li>先排序，排序后再遍历一遍数组，如果前一个和后一个元素不等，则为出现一次的，注意相等时遍历下标的变化。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindNumsAppearOnce</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="comment">// return list, 比如[a,b]，其中ab是出现一次的两个数字</span></span><br><span class="line">    <span class="keyword">const</span> list=[];</span><br><span class="line">    array.sort();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(array[i]!=array[i+<span class="number">1</span>])&#123;</span><br><span class="line">            list.push(array[i])</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>剑指offer</category>
-      </categories>
-      <tags>
-        <tag>数组</tag>
       </tags>
   </entry>
   <entry>
