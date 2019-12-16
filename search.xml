@@ -314,6 +314,25 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
+    <title>平衡二叉树</title>
+    <url>/2019/10/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(39)/</url>
+    <content><![CDATA[<h1 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>输入一棵二叉树，判断该二叉树是否是平衡二叉树。</p>
+</blockquote>
+<ul>
+<li>平衡二叉树是左右深度差不超过1的二叉树，所以在遍历深度的同时需要判断是否深度差超过1。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">IsBalanced_Solution</span>(<span class="params">pRoot</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> TreeDepth(pRoot)!==<span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">TreeDepth</span>(<span class="params">pRoot</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pRoot==<span class="literal">null</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> leftdep=TreeDepth(pRoot.left);</span><br><span class="line">    <span class="keyword">if</span>(leftdep==<span class="number">-1</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">const</span> rightdep=TreeDepth(pRoot.right);</span><br><span class="line">    <span class="keyword">if</span>(rightdep==<span class="number">-1</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.abs(leftdep-rightdep)&gt;<span class="number">1</span>? <span class="number">-1</span> : <span class="built_in">Math</span>.max(leftdep,rightdep)+<span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>二叉树</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Node.js爬虫</title>
     <url>/2019/10/13/Node.js%E7%88%AC%E8%99%AB/</url>
     <content><![CDATA[<h4 id="用nodejs爬取学校教务在线的课表"><a href="#用nodejs爬取学校教务在线的课表" class="headerlink" title="用nodejs爬取学校教务在线的课表"></a>用nodejs爬取学校教务在线的课表</h4><p>首先要分析爬虫的本质，模拟登陆+获取网页信息<br>如何模拟登陆（手动登陆）。<br>大致讲下思路。</p>
@@ -336,25 +355,6 @@ null, undefined无法使用constructor属性。
       <tags>
         <tag>nodejs</tag>
         <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>平衡二叉树</title>
-    <url>/2019/10/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(39)/</url>
-    <content><![CDATA[<h1 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>输入一棵二叉树，判断该二叉树是否是平衡二叉树。</p>
-</blockquote>
-<ul>
-<li>平衡二叉树是左右深度差不超过1的二叉树，所以在遍历深度的同时需要判断是否深度差超过1。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">IsBalanced_Solution</span>(<span class="params">pRoot</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> TreeDepth(pRoot)!==<span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">TreeDepth</span>(<span class="params">pRoot</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pRoot==<span class="literal">null</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> leftdep=TreeDepth(pRoot.left);</span><br><span class="line">    <span class="keyword">if</span>(leftdep==<span class="number">-1</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">const</span> rightdep=TreeDepth(pRoot.right);</span><br><span class="line">    <span class="keyword">if</span>(rightdep==<span class="number">-1</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.abs(leftdep-rightdep)&gt;<span class="number">1</span>? <span class="number">-1</span> : <span class="built_in">Math</span>.max(leftdep,rightdep)+<span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>剑指offer</category>
-      </categories>
-      <tags>
-        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -505,23 +505,16 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>JavaScript原型链</title>
-    <url>/2019/09/13/JavaScript%E5%8E%9F%E5%9E%8B%E9%93%BE/</url>
-    <content><![CDATA[<h3 id="什么是原型链"><a href="#什么是原型链" class="headerlink" title="什么是原型链"></a>什么是原型链</h3><p>在js中，只有一种结构，对象。</p>
-<p>每个实例对象都有自己的私有属性：__ proto __，这个属性是只有实例可以访问得到的，这个属性指向它的构造函数的原型对象，这个原型对象还有它的原型对象，直至其原型对象为null，null没有原型对象，这个链式关系就终止了。这就是原型链。</p>
-<h3 id="Prototype和proto"><a href="#Prototype和proto" class="headerlink" title="Prototype和proto"></a>Prototype和<strong>proto</strong></h3><p>通过prototype定义的属性，会向上定义。定义到它的原型对象上去。<br>通过<strong>proto</strong>定义的属性，会变成其私有属性，不被原型读取；</p>
-<p>当查看某个对象是否有某属性时，需要通过原型链逐级向上读取。</p>
-<h3 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h3><p>构造器就是指向这个实例对象的构造函数。</p>
-<blockquote>
-<p>constructor 和 instanceof<br>两者在于一个时找构造器，一个是判断构造函数的prototype属性是否出现在某个对象的原型链上</p>
+    <title>扑克牌顺子</title>
+    <url>/2019/09/13/%E5%89%91%E6%8C%87offerJavaScript%E7%89%88%20(45)/</url>
+    <content><![CDATA[<h1 id="扑克牌顺子"><a href="#扑克牌顺子" class="headerlink" title="扑克牌顺子"></a>扑克牌顺子</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>红心A,黑桃3,小王,大王,方片5”,“Oh My God!”不是顺子…..LL不高兴了,他想了想,决定大\小 王可以看成任何数字,并且A看作1,J为11,Q为12,K为13。上面的5张牌就可以变成“1,2,3,4,5”(大小王分别看作2和4),“So Lucky!”。LL决定去买体育彩票啦。 现在,要求你使用这幅牌模拟上面的过程,然后告诉我们LL的运气如何， 如果牌能组成顺子就输出true，否则就输出false。</p>
 </blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">IsContinuous</span>(<span class="params">numbers</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(numbers.length==<span class="number">0</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    numbers.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;<span class="keyword">return</span> a-b&#125;);</span><br><span class="line">    <span class="keyword">let</span> interval=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> zero=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;numbers.length<span class="number">-1</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(numbers[i]!=<span class="number">0</span>)&#123;</span><br><span class="line">            interval+=(numbers[i+<span class="number">1</span>]-numbers[i]<span class="number">-1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(numbers[i]==<span class="number">0</span>)&#123;</span><br><span class="line">            zero++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(interval&gt;zero||interval&lt;<span class="number">0</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 ]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
       <tags>
-        <tag>JavaScript</tag>
-        <tag>原型链</tag>
+        <tag>剑指offer</tag>
       </tags>
   </entry>
   <entry>
@@ -547,16 +540,23 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>扑克牌顺子</title>
-    <url>/2019/09/13/%E5%89%91%E6%8C%87offerJavaScript%E7%89%88%20(45)/</url>
-    <content><![CDATA[<h1 id="扑克牌顺子"><a href="#扑克牌顺子" class="headerlink" title="扑克牌顺子"></a>扑克牌顺子</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>红心A,黑桃3,小王,大王,方片5”,“Oh My God!”不是顺子…..LL不高兴了,他想了想,决定大\小 王可以看成任何数字,并且A看作1,J为11,Q为12,K为13。上面的5张牌就可以变成“1,2,3,4,5”(大小王分别看作2和4),“So Lucky!”。LL决定去买体育彩票啦。 现在,要求你使用这幅牌模拟上面的过程,然后告诉我们LL的运气如何， 如果牌能组成顺子就输出true，否则就输出false。</p>
+    <title>JavaScript原型链</title>
+    <url>/2019/09/13/JavaScript%E5%8E%9F%E5%9E%8B%E9%93%BE/</url>
+    <content><![CDATA[<h3 id="什么是原型链"><a href="#什么是原型链" class="headerlink" title="什么是原型链"></a>什么是原型链</h3><p>在js中，只有一种结构，对象。</p>
+<p>每个实例对象都有自己的私有属性：__ proto __，这个属性是只有实例可以访问得到的，这个属性指向它的构造函数的原型对象，这个原型对象还有它的原型对象，直至其原型对象为null，null没有原型对象，这个链式关系就终止了。这就是原型链。</p>
+<h3 id="Prototype和proto"><a href="#Prototype和proto" class="headerlink" title="Prototype和proto"></a>Prototype和<strong>proto</strong></h3><p>通过prototype定义的属性，会向上定义。定义到它的原型对象上去。<br>通过<strong>proto</strong>定义的属性，会变成其私有属性，不被原型读取；</p>
+<p>当查看某个对象是否有某属性时，需要通过原型链逐级向上读取。</p>
+<h3 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h3><p>构造器就是指向这个实例对象的构造函数。</p>
+<blockquote>
+<p>constructor 和 instanceof<br>两者在于一个时找构造器，一个是判断构造函数的prototype属性是否出现在某个对象的原型链上</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">IsContinuous</span>(<span class="params">numbers</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(numbers.length==<span class="number">0</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    numbers.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;<span class="keyword">return</span> a-b&#125;);</span><br><span class="line">    <span class="keyword">let</span> interval=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> zero=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;numbers.length<span class="number">-1</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(numbers[i]!=<span class="number">0</span>)&#123;</span><br><span class="line">            interval+=(numbers[i+<span class="number">1</span>]-numbers[i]<span class="number">-1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(numbers[i]==<span class="number">0</span>)&#123;</span><br><span class="line">            zero++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(interval&gt;zero||interval&lt;<span class="number">0</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 ]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>JavaScript</tag>
+        <tag>原型链</tag>
       </tags>
   </entry>
   <entry>
@@ -1075,23 +1075,6 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>二叉树的镜像</title>
-    <url>/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(18)/</url>
-    <content><![CDATA[<h3 id="二叉树的镜像"><a href="#二叉树的镜像" class="headerlink" title="二叉树的镜像"></a>二叉树的镜像</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>操作给定的二叉树，将其变换为源二叉树的镜像。</p>
-</blockquote>
-<p>递归。。。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Mirror</span>(<span class="params">root</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(root===<span class="literal">null</span>)<span class="keyword">return</span>;</span><br><span class="line">    Mirror(root.left);</span><br><span class="line">    Mirror(root.right);</span><br><span class="line">    [root.left,root.right]=[root.right,root.left];</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>剑指offer</category>
-      </categories>
-      <tags>
-        <tag>二叉树</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>把字符串转换成整数</title>
     <url>/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(49)/</url>
     <content><![CDATA[<h1 id="把字符串转换成整数"><a href="#把字符串转换成整数" class="headerlink" title="把字符串转换成整数"></a>把字符串转换成整数</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
@@ -1106,6 +1089,23 @@ null, undefined无法使用constructor属性。
 ]]></content>
       <tags>
         <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>二叉树的镜像</title>
+    <url>/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(18)/</url>
+    <content><![CDATA[<h3 id="二叉树的镜像"><a href="#二叉树的镜像" class="headerlink" title="二叉树的镜像"></a>二叉树的镜像</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+<p>操作给定的二叉树，将其变换为源二叉树的镜像。</p>
+</blockquote>
+<p>递归。。。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Mirror</span>(<span class="params">root</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(root===<span class="literal">null</span>)<span class="keyword">return</span>;</span><br><span class="line">    Mirror(root.left);</span><br><span class="line">    Mirror(root.right);</span><br><span class="line">    [root.left,root.right]=[root.right,root.left];</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -1139,6 +1139,23 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
+    <title>字符流中第一个只出现一次的字符</title>
+    <url>/2019/08/22/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(54)/</url>
+    <content><![CDATA[<h1 id="字符流中第一个只出现一次的字符"><a href="#字符流中第一个只出现一次的字符" class="headerlink" title="字符流中第一个只出现一次的字符"></a>字符流中第一个只出现一次的字符</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>请实现一个函数用来找出字符流中第一个只出现一次的字符。例如，当从字符流中只读出前两个字符”go”时，第一个只出现一次的字符是”g”。当从该字符流中读出前六个字符“google”时，第一个只出现一次的字符是”l”。</p>
+</blockquote>
+<ul>
+<li>用对象实现哈希表存值</li>
+</ul>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Init module if you need</span></span><br><span class="line"><span class="keyword">let</span> map=&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Init</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    map=&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Insert one char from stringstream</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Insert</span>(<span class="params">ch</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(map[ch])&#123;</span><br><span class="line">        map[ch]+=<span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        map[ch]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//return the first appearence once char in current stringstream</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FirstAppearingOnce</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">const</span> i <span class="keyword">in</span> map)&#123;</span><br><span class="line">        <span class="keyword">if</span>(map[i]===<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> i</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'#'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaScript权威指南阅读笔记</title>
     <url>/2019/08/22/JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h5 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h5><ol>
@@ -1164,23 +1181,6 @@ null, undefined无法使用constructor属性。
       </categories>
       <tags>
         <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>字符流中第一个只出现一次的字符</title>
-    <url>/2019/08/22/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(54)/</url>
-    <content><![CDATA[<h1 id="字符流中第一个只出现一次的字符"><a href="#字符流中第一个只出现一次的字符" class="headerlink" title="字符流中第一个只出现一次的字符"></a>字符流中第一个只出现一次的字符</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>请实现一个函数用来找出字符流中第一个只出现一次的字符。例如，当从字符流中只读出前两个字符”go”时，第一个只出现一次的字符是”g”。当从该字符流中读出前六个字符“google”时，第一个只出现一次的字符是”l”。</p>
-</blockquote>
-<ul>
-<li>用对象实现哈希表存值</li>
-</ul>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Init module if you need</span></span><br><span class="line"><span class="keyword">let</span> map=&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Init</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    map=&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Insert one char from stringstream</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Insert</span>(<span class="params">ch</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(map[ch])&#123;</span><br><span class="line">        map[ch]+=<span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        map[ch]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//return the first appearence once char in current stringstream</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FirstAppearingOnce</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">const</span> i <span class="keyword">in</span> map)&#123;</span><br><span class="line">        <span class="keyword">if</span>(map[i]===<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> i</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'#'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>剑指offer</tag>
       </tags>
   </entry>
   <entry>
@@ -1313,12 +1313,12 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>孩子们的游戏</title>
-    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(46)/</url>
-    <content><![CDATA[<h1 id="孩子们的游戏"><a href="#孩子们的游戏" class="headerlink" title="孩子们的游戏"></a>孩子们的游戏</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>约瑟夫环问题</p>
+    <title>翻转单词顺序列</title>
+    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(44)/</url>
+    <content><![CDATA[<h1 id="翻转单词顺序列"><a href="#翻转单词顺序列" class="headerlink" title="翻转单词顺序列"></a>翻转单词顺序列</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>输入 “student. a am I”。<br>把句子单词的顺序翻转后输出正确的句子应该是“I am a student.”。</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">LastRemaining_Solution</span>(<span class="params">n, m</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> circle=[]</span><br><span class="line">    <span class="keyword">let</span> del=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">0</span>||m&lt;=<span class="number">0</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        circle[i]=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(circle.length<span class="number">-1</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> k=m<span class="number">-1</span>;</span><br><span class="line">        del=(del+k)%circle.length;</span><br><span class="line">        circle.splice(del,<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> circle[<span class="number">0</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ReverseSentence</span>(<span class="params">str</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> strArr=str.split(<span class="string">" "</span>);</span><br><span class="line">    <span class="keyword">let</span> corstr=<span class="string">''</span>;</span><br><span class="line">    <span class="keyword">if</span>(str==<span class="literal">null</span>)<span class="keyword">return</span> corstr;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=strArr.length<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i==<span class="number">0</span>)&#123;</span><br><span class="line">            corstr+=strArr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            corstr+=strArr[i]+<span class="string">' '</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> corstr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
@@ -1326,12 +1326,12 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>翻转单词顺序列</title>
-    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(44)/</url>
-    <content><![CDATA[<h1 id="翻转单词顺序列"><a href="#翻转单词顺序列" class="headerlink" title="翻转单词顺序列"></a>翻转单词顺序列</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>输入 “student. a am I”。<br>把句子单词的顺序翻转后输出正确的句子应该是“I am a student.”。</p>
+    <title>孩子们的游戏</title>
+    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(46)/</url>
+    <content><![CDATA[<h1 id="孩子们的游戏"><a href="#孩子们的游戏" class="headerlink" title="孩子们的游戏"></a>孩子们的游戏</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>约瑟夫环问题</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ReverseSentence</span>(<span class="params">str</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> strArr=str.split(<span class="string">" "</span>);</span><br><span class="line">    <span class="keyword">let</span> corstr=<span class="string">''</span>;</span><br><span class="line">    <span class="keyword">if</span>(str==<span class="literal">null</span>)<span class="keyword">return</span> corstr;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=strArr.length<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i==<span class="number">0</span>)&#123;</span><br><span class="line">            corstr+=strArr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            corstr+=strArr[i]+<span class="string">' '</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> corstr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">LastRemaining_Solution</span>(<span class="params">n, m</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> circle=[]</span><br><span class="line">    <span class="keyword">let</span> del=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">0</span>||m&lt;=<span class="number">0</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        circle[i]=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(circle.length<span class="number">-1</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> k=m<span class="number">-1</span>;</span><br><span class="line">        del=(del+k)%circle.length;</span><br><span class="line">        circle.splice(del,<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> circle[<span class="number">0</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
@@ -1385,18 +1385,17 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>构建乘积数组</title>
-    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(51)/</url>
-    <content><![CDATA[<h1 id="构建乘积数组"><a href="#构建乘积数组" class="headerlink" title="构建乘积数组"></a>构建乘积数组</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>给定一个数组A[0,1,…,n-1],请构建一个数组B[0,1,…,n-1],其中B中的元素B[i]=A[0]<em>A[1]</em>…<em>A[i-1]*A[i+1]</em>…*A[n-1]。不能使用除法。</p>
+    <title>跳台阶</title>
+    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(8)/</url>
+    <content><![CDATA[<h3 id="跳台阶"><a href="#跳台阶" class="headerlink" title="跳台阶"></a>跳台阶</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+<p>一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
 </blockquote>
-<ul>
-<li>将数组B元素分隔成前i-1项和后i+1项的乘积</li>
-<li>先算i-1项，后算i+1项</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> B=[];</span><br><span class="line">    B[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> tmp=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        B[i]=B[i<span class="number">-1</span>]*array[i<span class="number">-1</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=array.length<span class="number">-2</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        tmp*=array[i+<span class="number">1</span>];</span><br><span class="line">        B[i]*=tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> B;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jumpFloor</span>(<span class="params">number</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> n1=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> n2=<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span>(--number)&#123;</span><br><span class="line">        n2+=n1;</span><br><span class="line">        n1=n2-n1;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> n1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
         <tag>剑指offer</tag>
       </tags>
@@ -1421,17 +1420,18 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>跳台阶</title>
-    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(8)/</url>
-    <content><![CDATA[<h3 id="跳台阶"><a href="#跳台阶" class="headerlink" title="跳台阶"></a>跳台阶</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
+    <title>构建乘积数组</title>
+    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(51)/</url>
+    <content><![CDATA[<h1 id="构建乘积数组"><a href="#构建乘积数组" class="headerlink" title="构建乘积数组"></a>构建乘积数组</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>给定一个数组A[0,1,…,n-1],请构建一个数组B[0,1,…,n-1],其中B中的元素B[i]=A[0]<em>A[1]</em>…<em>A[i-1]*A[i+1]</em>…*A[n-1]。不能使用除法。</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jumpFloor</span>(<span class="params">number</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> n1=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> n2=<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">while</span>(--number)&#123;</span><br><span class="line">        n2+=n1;</span><br><span class="line">        n1=n2-n1;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> n1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>将数组B元素分隔成前i-1项和后i+1项的乘积</li>
+<li>先算i-1项，后算i+1项</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> B=[];</span><br><span class="line">    B[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> tmp=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        B[i]=B[i<span class="number">-1</span>]*array[i<span class="number">-1</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=array.length<span class="number">-2</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        tmp*=array[i+<span class="number">1</span>];</span><br><span class="line">        B[i]*=tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> B;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
-      <categories>
-        <category>剑指offer</category>
-      </categories>
       <tags>
         <tag>剑指offer</tag>
       </tags>
