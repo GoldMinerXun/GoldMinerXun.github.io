@@ -296,6 +296,25 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
+    <title>平衡二叉树</title>
+    <url>/2019/10/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(39)/</url>
+    <content><![CDATA[<h1 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>输入一棵二叉树，判断该二叉树是否是平衡二叉树。</p>
+</blockquote>
+<ul>
+<li>平衡二叉树是左右深度差不超过1的二叉树，所以在遍历深度的同时需要判断是否深度差超过1。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">IsBalanced_Solution</span>(<span class="params">pRoot</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> TreeDepth(pRoot)!==<span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">TreeDepth</span>(<span class="params">pRoot</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pRoot==<span class="literal">null</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> leftdep=TreeDepth(pRoot.left);</span><br><span class="line">    <span class="keyword">if</span>(leftdep==<span class="number">-1</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">const</span> rightdep=TreeDepth(pRoot.right);</span><br><span class="line">    <span class="keyword">if</span>(rightdep==<span class="number">-1</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.abs(leftdep-rightdep)&gt;<span class="number">1</span>? <span class="number">-1</span> : <span class="built_in">Math</span>.max(leftdep,rightdep)+<span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>二叉树</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>时间管理项目</title>
     <url>/2019/10/13/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE/</url>
     <content><![CDATA[<p><a href="https://github.com/GoldMinerXun/PullClassFromJW" target="_blank" rel="noopener">时间管理项目完整1.0版</a><br>node.js+express+jQuery<br>基本上没有用任何框架，原生js项目。<br>技术难点主要是爬虫技术。<br>该项目运行在3010端口。</p>
@@ -336,25 +355,6 @@ null, undefined无法使用constructor属性。
       <tags>
         <tag>nodejs</tag>
         <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>平衡二叉树</title>
-    <url>/2019/10/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(39)/</url>
-    <content><![CDATA[<h1 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>输入一棵二叉树，判断该二叉树是否是平衡二叉树。</p>
-</blockquote>
-<ul>
-<li>平衡二叉树是左右深度差不超过1的二叉树，所以在遍历深度的同时需要判断是否深度差超过1。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">IsBalanced_Solution</span>(<span class="params">pRoot</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> TreeDepth(pRoot)!==<span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">TreeDepth</span>(<span class="params">pRoot</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pRoot==<span class="literal">null</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> leftdep=TreeDepth(pRoot.left);</span><br><span class="line">    <span class="keyword">if</span>(leftdep==<span class="number">-1</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">const</span> rightdep=TreeDepth(pRoot.right);</span><br><span class="line">    <span class="keyword">if</span>(rightdep==<span class="number">-1</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.abs(leftdep-rightdep)&gt;<span class="number">1</span>? <span class="number">-1</span> : <span class="built_in">Math</span>.max(leftdep,rightdep)+<span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>剑指offer</category>
-      </categories>
-      <tags>
-        <tag>二叉树</tag>
       </tags>
   </entry>
   <entry>
@@ -480,6 +480,41 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
+    <title>Hexo + GitHub Pages + NexT在win10个人博客</title>
+    <url>/2019/09/13/github+hexo+next%20%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</url>
+    <content><![CDATA[<ul>
+<li>踩了很多坑，找到一个大佬写的教程，但是还是有坑。</li>
+<li>要注意目录，千万别乱npm</li>
+<li>在仓库里面添加ssh时要记得给写权限 ，allow write access</li>
+<li>注意在yml文件里面改配置，还有仓库的地址是:不是/</li>
+<li>每次修改完任何文件，需要以下操作才能发布到GitHub上<blockquote>
+<p>hexo g<br>hexo d<br>hexo clean<br>hexo d -g</p>
+</blockquote>
+</li>
+</ul>
+<p>分享大佬链接，按照大佬的顺序来，别踩坑，踩就是一小时<br><a href="https://blog.csdn.net/qq_34229391/article/details/82251852" target="_blank" rel="noopener">Hexo + GitHub Pages + NexT在win10上搭建个性化个人博客</a></p>
+]]></content>
+      <categories>
+        <category>配置</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>扑克牌顺子</title>
+    <url>/2019/09/13/%E5%89%91%E6%8C%87offerJavaScript%E7%89%88%20(45)/</url>
+    <content><![CDATA[<h1 id="扑克牌顺子"><a href="#扑克牌顺子" class="headerlink" title="扑克牌顺子"></a>扑克牌顺子</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>红心A,黑桃3,小王,大王,方片5”,“Oh My God!”不是顺子…..LL不高兴了,他想了想,决定大\小 王可以看成任何数字,并且A看作1,J为11,Q为12,K为13。上面的5张牌就可以变成“1,2,3,4,5”(大小王分别看作2和4),“So Lucky!”。LL决定去买体育彩票啦。 现在,要求你使用这幅牌模拟上面的过程,然后告诉我们LL的运气如何， 如果牌能组成顺子就输出true，否则就输出false。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">IsContinuous</span>(<span class="params">numbers</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(numbers.length==<span class="number">0</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    numbers.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;<span class="keyword">return</span> a-b&#125;);</span><br><span class="line">    <span class="keyword">let</span> interval=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> zero=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;numbers.length<span class="number">-1</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(numbers[i]!=<span class="number">0</span>)&#123;</span><br><span class="line">            interval+=(numbers[i+<span class="number">1</span>]-numbers[i]<span class="number">-1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(numbers[i]==<span class="number">0</span>)&#123;</span><br><span class="line">            zero++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(interval&gt;zero||interval&lt;<span class="number">0</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>正则表达式匹配</title>
     <url>/2019/09/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(52)/</url>
     <content><![CDATA[<h1 id="正则表达式匹配"><a href="#正则表达式匹配" class="headerlink" title="正则表达式匹配"></a>正则表达式匹配</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
@@ -505,28 +540,6 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>Hexo + GitHub Pages + NexT在win10个人博客</title>
-    <url>/2019/09/13/github+hexo+next%20%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</url>
-    <content><![CDATA[<ul>
-<li>踩了很多坑，找到一个大佬写的教程，但是还是有坑。</li>
-<li>要注意目录，千万别乱npm</li>
-<li>在仓库里面添加ssh时要记得给写权限 ，allow write access</li>
-<li>注意在yml文件里面改配置，还有仓库的地址是:不是/</li>
-<li>每次修改完任何文件，需要以下操作才能发布到GitHub上<blockquote>
-<p>hexo g<br>hexo d<br>hexo clean<br>hexo d -g</p>
-</blockquote>
-</li>
-</ul>
-<p>分享大佬链接，按照大佬的顺序来，别踩坑，踩就是一小时<br><a href="https://blog.csdn.net/qq_34229391/article/details/82251852" target="_blank" rel="noopener">Hexo + GitHub Pages + NexT在win10上搭建个性化个人博客</a></p>
-]]></content>
-      <categories>
-        <category>配置</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JavaScript原型链</title>
     <url>/2019/09/13/JavaScript%E5%8E%9F%E5%9E%8B%E9%93%BE/</url>
     <content><![CDATA[<h3 id="什么是原型链"><a href="#什么是原型链" class="headerlink" title="什么是原型链"></a>什么是原型链</h3><p>在js中，只有一种结构，对象。</p>
@@ -544,19 +557,6 @@ null, undefined无法使用constructor属性。
       <tags>
         <tag>JavaScript</tag>
         <tag>原型链</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>扑克牌顺子</title>
-    <url>/2019/09/13/%E5%89%91%E6%8C%87offerJavaScript%E7%89%88%20(45)/</url>
-    <content><![CDATA[<h1 id="扑克牌顺子"><a href="#扑克牌顺子" class="headerlink" title="扑克牌顺子"></a>扑克牌顺子</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>红心A,黑桃3,小王,大王,方片5”,“Oh My God!”不是顺子…..LL不高兴了,他想了想,决定大\小 王可以看成任何数字,并且A看作1,J为11,Q为12,K为13。上面的5张牌就可以变成“1,2,3,4,5”(大小王分别看作2和4),“So Lucky!”。LL决定去买体育彩票啦。 现在,要求你使用这幅牌模拟上面的过程,然后告诉我们LL的运气如何， 如果牌能组成顺子就输出true，否则就输出false。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">IsContinuous</span>(<span class="params">numbers</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(numbers.length==<span class="number">0</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    numbers.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;<span class="keyword">return</span> a-b&#125;);</span><br><span class="line">    <span class="keyword">let</span> interval=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> zero=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;numbers.length<span class="number">-1</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(numbers[i]!=<span class="number">0</span>)&#123;</span><br><span class="line">            interval+=(numbers[i+<span class="number">1</span>]-numbers[i]<span class="number">-1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(numbers[i]==<span class="number">0</span>)&#123;</span><br><span class="line">            zero++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(interval&gt;zero||interval&lt;<span class="number">0</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>剑指offer</tag>
       </tags>
   </entry>
   <entry>
@@ -1075,22 +1075,6 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>包含min函数的栈</title>
-    <url>/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(20)/</url>
-    <content><![CDATA[<h3 id="包含min函数的栈"><a href="#包含min函数的栈" class="headerlink" title="包含min函数的栈"></a>包含min函数的栈</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> stack=[];</span><br><span class="line"><span class="keyword">var</span> minstack=[];</span><br><span class="line"><span class="keyword">var</span> minele=<span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">push</span>(<span class="params">node</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(minele!==<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(node&lt;minele)&#123;</span><br><span class="line">            minele=node;</span><br><span class="line">        &#125;</span><br><span class="line">        stack.push(node);</span><br><span class="line">        minstack.push(minele);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        minele=node;</span><br><span class="line">        stack.push(node);</span><br><span class="line">        minstack.push(minele);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pop</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    stack.pop();</span><br><span class="line">    minstack.pop();</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">top</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> stack[stack.length<span class="number">-1</span>];</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">min</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> minstack[minstack.length<span class="number">-1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>剑指offer</category>
-      </categories>
-      <tags>
-        <tag>栈</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>二叉树的镜像</title>
     <url>/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(18)/</url>
     <content><![CDATA[<h3 id="二叉树的镜像"><a href="#二叉树的镜像" class="headerlink" title="二叉树的镜像"></a>二叉树的镜像</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
@@ -1122,6 +1106,22 @@ null, undefined无法使用constructor属性。
 ]]></content>
       <tags>
         <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>包含min函数的栈</title>
+    <url>/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(20)/</url>
+    <content><![CDATA[<h3 id="包含min函数的栈"><a href="#包含min函数的栈" class="headerlink" title="包含min函数的栈"></a>包含min函数的栈</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+<p>定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> stack=[];</span><br><span class="line"><span class="keyword">var</span> minstack=[];</span><br><span class="line"><span class="keyword">var</span> minele=<span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">push</span>(<span class="params">node</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(minele!==<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(node&lt;minele)&#123;</span><br><span class="line">            minele=node;</span><br><span class="line">        &#125;</span><br><span class="line">        stack.push(node);</span><br><span class="line">        minstack.push(minele);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        minele=node;</span><br><span class="line">        stack.push(node);</span><br><span class="line">        minstack.push(minele);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pop</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    stack.pop();</span><br><span class="line">    minstack.pop();</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">top</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> stack[stack.length<span class="number">-1</span>];</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">min</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> minstack[minstack.length<span class="number">-1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>栈</tag>
       </tags>
   </entry>
   <entry>
@@ -1313,12 +1313,12 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>翻转单词顺序列</title>
-    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(44)/</url>
-    <content><![CDATA[<h1 id="翻转单词顺序列"><a href="#翻转单词顺序列" class="headerlink" title="翻转单词顺序列"></a>翻转单词顺序列</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>输入 “student. a am I”。<br>把句子单词的顺序翻转后输出正确的句子应该是“I am a student.”。</p>
+    <title>孩子们的游戏</title>
+    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(46)/</url>
+    <content><![CDATA[<h1 id="孩子们的游戏"><a href="#孩子们的游戏" class="headerlink" title="孩子们的游戏"></a>孩子们的游戏</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>约瑟夫环问题</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ReverseSentence</span>(<span class="params">str</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> strArr=str.split(<span class="string">" "</span>);</span><br><span class="line">    <span class="keyword">let</span> corstr=<span class="string">''</span>;</span><br><span class="line">    <span class="keyword">if</span>(str==<span class="literal">null</span>)<span class="keyword">return</span> corstr;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=strArr.length<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i==<span class="number">0</span>)&#123;</span><br><span class="line">            corstr+=strArr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            corstr+=strArr[i]+<span class="string">' '</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> corstr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">LastRemaining_Solution</span>(<span class="params">n, m</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> circle=[]</span><br><span class="line">    <span class="keyword">let</span> del=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">0</span>||m&lt;=<span class="number">0</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        circle[i]=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(circle.length<span class="number">-1</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> k=m<span class="number">-1</span>;</span><br><span class="line">        del=(del+k)%circle.length;</span><br><span class="line">        circle.splice(del,<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> circle[<span class="number">0</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
@@ -1326,12 +1326,12 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>孩子们的游戏</title>
-    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(46)/</url>
-    <content><![CDATA[<h1 id="孩子们的游戏"><a href="#孩子们的游戏" class="headerlink" title="孩子们的游戏"></a>孩子们的游戏</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>约瑟夫环问题</p>
+    <title>翻转单词顺序列</title>
+    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(44)/</url>
+    <content><![CDATA[<h1 id="翻转单词顺序列"><a href="#翻转单词顺序列" class="headerlink" title="翻转单词顺序列"></a>翻转单词顺序列</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>输入 “student. a am I”。<br>把句子单词的顺序翻转后输出正确的句子应该是“I am a student.”。</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">LastRemaining_Solution</span>(<span class="params">n, m</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> circle=[]</span><br><span class="line">    <span class="keyword">let</span> del=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">0</span>||m&lt;=<span class="number">0</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        circle[i]=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(circle.length<span class="number">-1</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> k=m<span class="number">-1</span>;</span><br><span class="line">        del=(del+k)%circle.length;</span><br><span class="line">        circle.splice(del,<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> circle[<span class="number">0</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ReverseSentence</span>(<span class="params">str</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> strArr=str.split(<span class="string">" "</span>);</span><br><span class="line">    <span class="keyword">let</span> corstr=<span class="string">''</span>;</span><br><span class="line">    <span class="keyword">if</span>(str==<span class="literal">null</span>)<span class="keyword">return</span> corstr;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=strArr.length<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i==<span class="number">0</span>)&#123;</span><br><span class="line">            corstr+=strArr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            corstr+=strArr[i]+<span class="string">' '</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> corstr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
@@ -1385,20 +1385,22 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>构建乘积数组</title>
-    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(51)/</url>
-    <content><![CDATA[<h1 id="构建乘积数组"><a href="#构建乘积数组" class="headerlink" title="构建乘积数组"></a>构建乘积数组</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>给定一个数组A[0,1,…,n-1],请构建一个数组B[0,1,…,n-1],其中B中的元素B[i]=A[0]<em>A[1]</em>…<em>A[i-1]*A[i+1]</em>…*A[n-1]。不能使用除法。</p>
+    <title>连续子数组的最大和</title>
+    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(30)/</url>
+    <content><![CDATA[<h3 id="连续子数组的最大和"><a href="#连续子数组的最大和" class="headerlink" title="连续子数组的最大和"></a>连续子数组的最大和</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+<p>{6,-3,-2,7,-15,1,2,2},连续子向量的最大和为8(从第0个开始,到第3个为止)。给一个数组，返回它的最大连续子序列的和，你会不会被他忽悠住？(子向量的长度至少是1)</p>
 </blockquote>
 <ul>
-<li>将数组B元素分隔成前i-1项和后i+1项的乘积</li>
-<li>先算i-1项，后算i+1项</li>
+<li>根据一个序列的特点，若前n个数的和小于0，则重新开始一个序列计算和，若大于等于0 ，则继续累加。</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> B=[];</span><br><span class="line">    B[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> tmp=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        B[i]=B[i<span class="number">-1</span>]*array[i<span class="number">-1</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=array.length<span class="number">-2</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        tmp*=array[i+<span class="number">1</span>];</span><br><span class="line">        B[i]*=tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> B;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindGreatestSumOfSubArray</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> currsum=array[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">var</span> maxsum=currsum;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(currsum&lt;<span class="number">0</span>)&#123;</span><br><span class="line">            currsum=array[i]</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            currsum+=array[i]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(currsum&gt;maxsum)&#123;</span><br><span class="line">            maxsum=currsum;</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">     <span class="keyword">return</span> maxsum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
       <tags>
-        <tag>剑指offer</tag>
+        <tag>数组</tag>
       </tags>
   </entry>
   <entry>
@@ -1418,22 +1420,20 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>连续子数组的最大和</title>
-    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(30)/</url>
-    <content><![CDATA[<h3 id="连续子数组的最大和"><a href="#连续子数组的最大和" class="headerlink" title="连续子数组的最大和"></a>连续子数组的最大和</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>{6,-3,-2,7,-15,1,2,2},连续子向量的最大和为8(从第0个开始,到第3个为止)。给一个数组，返回它的最大连续子序列的和，你会不会被他忽悠住？(子向量的长度至少是1)</p>
+    <title>构建乘积数组</title>
+    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(51)/</url>
+    <content><![CDATA[<h1 id="构建乘积数组"><a href="#构建乘积数组" class="headerlink" title="构建乘积数组"></a>构建乘积数组</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>给定一个数组A[0,1,…,n-1],请构建一个数组B[0,1,…,n-1],其中B中的元素B[i]=A[0]<em>A[1]</em>…<em>A[i-1]*A[i+1]</em>…*A[n-1]。不能使用除法。</p>
 </blockquote>
 <ul>
-<li>根据一个序列的特点，若前n个数的和小于0，则重新开始一个序列计算和，若大于等于0 ，则继续累加。</li>
+<li>将数组B元素分隔成前i-1项和后i+1项的乘积</li>
+<li>先算i-1项，后算i+1项</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindGreatestSumOfSubArray</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> currsum=array[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">var</span> maxsum=currsum;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(currsum&lt;<span class="number">0</span>)&#123;</span><br><span class="line">            currsum=array[i]</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            currsum+=array[i]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(currsum&gt;maxsum)&#123;</span><br><span class="line">            maxsum=currsum;</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">     <span class="keyword">return</span> maxsum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> B=[];</span><br><span class="line">    B[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> tmp=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        B[i]=B[i<span class="number">-1</span>]*array[i<span class="number">-1</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=array.length<span class="number">-2</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        tmp*=array[i+<span class="number">1</span>];</span><br><span class="line">        B[i]*=tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> B;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
-      <categories>
-        <category>剑指offer</category>
-      </categories>
       <tags>
-        <tag>数组</tag>
+        <tag>剑指offer</tag>
       </tags>
   </entry>
   <entry>
@@ -1575,29 +1575,6 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>字符串的排列</title>
-    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(27)/</url>
-    <content><![CDATA[<h3 id="字符串的排列"><a href="#字符串的排列" class="headerlink" title="字符串的排列"></a>字符串的排列</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>按字典序输出一个字符串的全排列<br>输入一个字符串,长度不超过9(可能有字符重复),字符只包括大小写字母。</p>
-</blockquote>
-<p>要深入理解递归，自身调用自身，分而治之。</p>
-<ul>
-<li>本篇采用的递归全排列方法</li>
-<li>递归首先应该想到，当字符串长度为1 时，其全排列就是其自身。</li>
-<li>字符串长度大于1时，将字符串分割成第一个字符和剩余字符，剩余字符全排列后，再将第一个字符与后面的字符逐个交换。</li>
-<li>值得注意的地方是，每次交换后都应将第一个字符换回原来的位置，以便下一次交换。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Permutation</span>(<span class="params">str</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">let</span> res=[];</span><br><span class="line">    <span class="keyword">if</span>(str.length&lt;=<span class="number">0</span>)<span class="keyword">return</span> res;</span><br><span class="line">    <span class="keyword">var</span> arr=str.split(<span class="string">''</span>);</span><br><span class="line">    res=permutation(arr,<span class="number">0</span>,res);</span><br><span class="line">    res=[...new <span class="built_in">Set</span>(res)];</span><br><span class="line">    res.sort();</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">permutation</span>(<span class="params">arr,index,res</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(arr.length===index)&#123;</span><br><span class="line">        <span class="keyword">var</span> s=<span class="string">''</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">            s+=arr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        res.push(s);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=index;i&lt;arr.length;i++)&#123;</span><br><span class="line">        [arr[index],arr[i]]=[arr[i],arr[index]];</span><br><span class="line">        permutation(arr,index+<span class="number">1</span>,res);</span><br><span class="line">        [arr[index],arr[i]]=[arr[i],arr[index]];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>剑指offer</category>
-      </categories>
-      <tags>
-        <tag>字符串</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>把二叉树打印成多行</title>
     <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(60)/</url>
     <content><![CDATA[<h1 id="把二叉树打印成多行"><a href="#把二叉树打印成多行" class="headerlink" title="把二叉树打印成多行"></a>把二叉树打印成多行</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
@@ -1633,6 +1610,29 @@ null, undefined无法使用constructor属性。
       </categories>
       <tags>
         <tag>数组</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>字符串的排列</title>
+    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(27)/</url>
+    <content><![CDATA[<h3 id="字符串的排列"><a href="#字符串的排列" class="headerlink" title="字符串的排列"></a>字符串的排列</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+<p>按字典序输出一个字符串的全排列<br>输入一个字符串,长度不超过9(可能有字符重复),字符只包括大小写字母。</p>
+</blockquote>
+<p>要深入理解递归，自身调用自身，分而治之。</p>
+<ul>
+<li>本篇采用的递归全排列方法</li>
+<li>递归首先应该想到，当字符串长度为1 时，其全排列就是其自身。</li>
+<li>字符串长度大于1时，将字符串分割成第一个字符和剩余字符，剩余字符全排列后，再将第一个字符与后面的字符逐个交换。</li>
+<li>值得注意的地方是，每次交换后都应将第一个字符换回原来的位置，以便下一次交换。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Permutation</span>(<span class="params">str</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">let</span> res=[];</span><br><span class="line">    <span class="keyword">if</span>(str.length&lt;=<span class="number">0</span>)<span class="keyword">return</span> res;</span><br><span class="line">    <span class="keyword">var</span> arr=str.split(<span class="string">''</span>);</span><br><span class="line">    res=permutation(arr,<span class="number">0</span>,res);</span><br><span class="line">    res=[...new <span class="built_in">Set</span>(res)];</span><br><span class="line">    res.sort();</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">permutation</span>(<span class="params">arr,index,res</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(arr.length===index)&#123;</span><br><span class="line">        <span class="keyword">var</span> s=<span class="string">''</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">            s+=arr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        res.push(s);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=index;i&lt;arr.length;i++)&#123;</span><br><span class="line">        [arr[index],arr[i]]=[arr[i],arr[index]];</span><br><span class="line">        permutation(arr,index+<span class="number">1</span>,res);</span><br><span class="line">        [arr[index],arr[i]]=[arr[i],arr[index]];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>字符串</tag>
       </tags>
   </entry>
   <entry>
