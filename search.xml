@@ -1,6 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>前端模块化</title>
+    <url>/2019/12/19/%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96/</url>
+    <content><![CDATA[<h3 id="关于模块化"><a href="#关于模块化" class="headerlink" title="关于模块化"></a>关于模块化</h3><ol>
+<li><p>模块化是什么？</p>
+<blockquote>
+<p>模块化是指将一个复杂的系统分解成多个独立的模块的代码组织方式。</p>
+</blockquote>
+</li>
+<li><p>基于node的模块化<br>node作为后端语言，有自己的模块化方式，制定了一套规则，作为模块规范化的规则————CommandJs</p>
+<p> 什么是CommandJs？<br> CommandJs规定了如何规范的实现模块化。<br> 分为三个阶段：<br> 模块定义、模块标识、模块引用。</p>
+<ul>
+<li><p>模块定义&amp;模块标识<br>exports定义单个模块，一个单独的文件就是一个模块<br>exports是module.exports的一个引用，相当于一个指针，只能使用下面这种方式进行定义</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">exports.funname=funtion()&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>举个栗子：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">exports.add=<span class="function"><span class="keyword">function</span> (<span class="params">a,b</span>) </span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(a+b);</span><br><span class="line"><span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>导出多个模块：module代表模块自身，模块里面的方法通过module的exports属性导出<br>commandjs.js</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// module.exports = &#123;</span></span><br><span class="line"><span class="comment">//     add: function (a, b) &#123;</span></span><br><span class="line"><span class="comment">//         console.log(a + b);</span></span><br><span class="line"><span class="comment">//         return a + b;</span></span><br><span class="line"><span class="comment">//     &#125;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 再次抽象简洁：</span></span><br><span class="line"><span class="keyword">var</span> add = <span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a + b);</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    add: add</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>模块引用<br>main.js</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> commandjs=<span class="built_in">require</span>(<span class="string">'./commandjs.js'</span>);</span><br><span class="line"><span class="keyword">const</span> add=<span class="function"><span class="keyword">function</span> (<span class="params">a,b</span>) </span>&#123;</span><br><span class="line"><span class="keyword">return</span>  commandjs.add(a,b);</span><br><span class="line">&#125;</span><br><span class="line">add(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<p>运行 node main.js就能正确引用模块。</p>
+<h5 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h5><p>定义在服务端node的模块化规范————command.js</p>
+</li>
+<li><p>Command.js不存在变量污染<br>在被引用模块中定义的变量不会在引用中产生影响<br>require()方法模块引入<br>module.exports/exports.funname模块定义</p>
+</li>
+<li><p>解决了依赖问题</p>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code>##### 缺点：
+- command.js采用同步方式加载模块，不适合浏览器端的读取。
+
+- node 在不借助任何框架库的情况下只支持commandjs，也就是module.exports或者exports导出模块，require引入模块
+在服务器端，这样是没有问题的，但是对于前端浏览器来说，是同步加载，会影响响应时间。
+
+- 目前最新的chrome版本已经支持import引入模块，但是需要在script标签的type中标明module属性，表示以模块方式引用</code></pre><ol start="3">
+<li><p>继续回忆，在前端，如果写了js函数，通过什么方式引入呢？<br> 最容易想到的，就是，script硬核引入。。。<br> 很多浏览器是不支持import，require的。<br> 最新版本的chrome浏览器支持ES6语法中的import，需要在使用import的js文件script标签上注明属性type=”module”。</p>
+ <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"module"</span> <span class="attr">src</span>=<span class="string">"import.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p> 但是，很多浏览器，不支持这个type，怎么办？</p>
+<p> 于是，requirejs推出了AMD~<br> AMD！异步模块定义方式</p>
+<p> 如何使用requireJs呢？<br> <a href="https://www.runoob.com/w3cnote/requirejs-tutorial-1.html" target="_blank" rel="noopener">require.js基本使用</a><br> <a href="https://www.runoob.com/w3cnote/requirejs-tutorial-2.html" target="_blank" rel="noopener">require.js配置，解决引用第三方模块/插件</a><br> <a href="https://requirejs.org/docs/release/2.3.6/minified/require.js" target="_blank" rel="noopener">require.js下载，另存为保存即可</a></p>
+<p> requirejs使用define定义模块，require引入模块，根据其require函数的特点，传入依赖模块名，回调函数使用依赖模块：<br> require()函数在加载依赖的函数的时候是异步加载的，这样浏览器不会失去响应，它指定的回调函数，只有前面的模块都加载成功后，才会运行，解决了依赖性的问题。</p>
+<ul>
+<li>AMD在加载完成定义（define）好的模块就会立即执行，所有执行完成后，遇到require才会执行主逻辑。（提前加载）</li>
+</ul>
+</li>
+<li><p>AMD是提前加载的机制，还有另一种机制（延迟加载）的规范——CMD<br>Common Module Definition<br> CMD的使用方法：<br> <a href="https://www.cnblogs.com/xjchenhao/p/4021775.html" target="_blank" rel="noopener">CMD对应的SeaJs</a></p>
+<ul>
+<li>CMD在加载完成定义（define）好的模块，仅仅是下载不执行，在遇到require才会执行对应的模块。（按需加载）</li>
+</ul>
+</li>
+<li><p>对比<br>AMD用户体验好，因为没有延迟，CMD性能好，因为只有用户需要的时候才执行。</p>
+</li>
+<li><p>ES6</p>
+<ul>
+<li>ES6 模块不是对象，而是通过export命令显式指定输出的代码，再通过import命令输入。<br>ES6 模块是编译时加载，使得静态分析成为可能。- 有了它，就能进一步拓宽 JavaScript 的语法，比如引入宏（macro）和类型检验（type system）这些只能靠静态分析实现的功能。</li>
+</ul>
+</li>
+</ol>
+<ol start="7">
+<li>webpack</li>
+</ol>
+<p><a href="https://baijiahao.baidu.com/s?id=1592059347606531539&wfr=spider&for=pc" target="_blank" rel="noopener">前端模块化</a></p>
+<blockquote>
+<p>为了实现模块化，出现了用于JavaScript模块管理的两大流行规范：CommonJS和AMD。前者定义的是模块的同步加载，主要用于Node.js。同步加载在前端会导致整个页面等待，对前端并不适用，便出现了AMD。AMD采用异步加载方式，通过RequireJS等工具适用于前端。以RequireJS为例，这是一种在线“编译”模块的方案，相当于在浏览器中先加载一个AMD解释器，使浏览器认识define、exports、module等相关命令，来实现模块化。后来ES 6提供了对模块的原生支持，它的目标是创建一种CommonJS和AMD使用者都愿意接受的方式，既拥有简洁的语法，又支持异步加载和配置模块加载。</p>
+</blockquote>
+<blockquote>
+<p>而目前更通用的是browserify、webpack等技术，是一个预编译模块的方案。这个方案更加智能，因为它是在发布前预编译好的，不需要在浏览器中加载解释器。另外，直接写AMD或ES 6的模块化代码，它都能编译成浏览器识别的JavaScript代码。甚至CommonJS规范的模块化，browserify、webpack也可以转换成浏览器使用的形式。</p>
+</blockquote>
+<blockquote>
+<p>webpack是一个供浏览器环境使用的模块打包工具。webpack将项目中用到的一切静态资源都视为模块，模块之间可以互相依赖，webpack对它们进行统一的管理及打包发布。</p>
+</blockquote>
+<hr>
+<p>如何使用webpack？</p>
+<h5 id="利用webpack编译支持import引入的模块"><a href="#利用webpack编译支持import引入的模块" class="headerlink" title="利用webpack编译支持import引入的模块"></a>利用webpack编译支持import引入的模块</h5><ol>
+<li>npm init -y 生成默认脚手架文件 package.json</li>
+<li>npm i webpack –save –dev</li>
+<li>npm i jquery –save –dev</li>
+<li>新建index.js</li>
+<li>直接通过index.html引入index.js</li>
+<li>浏览器打开index.html import模块失败</li>
+<li>创建./src文件，在其中创建index.js</li>
+<li>使用webpack npx webpack，在./dist中将编译结果保存为main.js，在index.html中引入main.js</li>
+</ol>
+<p>./dist              为最终打包编译结果<br>./src               编写的源文件<br>./node_modules      引入包<br>./package.json      脚手架</p>
+<h5 id="css引入"><a href="#css引入" class="headerlink" title="css引入"></a>css引入</h5><ol>
+<li>webpack module配置项，配置其他文件的引入<br> 使用test正则匹配相应文件的文件名<br> 使用use数组加载相应文件需要的插件</li>
+<li>npm i css-loader style-loader less-loader less –save-dev</li>
+</ol>
+<h5 id="img引入"><a href="#img引入" class="headerlink" title="img引入"></a>img引入</h5><ol>
+<li>file-loader加载器</li>
+<li>import imgname from ‘./a.jpg’</li>
+</ol>
+<h5 id="配置webpack-webpack-config-js"><a href="#配置webpack-webpack-config-js" class="headerlink" title="配置webpack    webpack.config.js"></a>配置webpack    webpack.config.js</h5><p>利用node模块定义文件配置commandjs</p>
+<ol>
+<li>package.json 配置命令简化<br> scripts属性：build, start…</li>
+<li>module定义文件加载规则</li>
+<li>devtool ‘inline-source-map’ 找到错误源头，定位错误位置，不再是定位到bundle.js</li>
+</ol>
+<h5 id="多文件入口，出口（多页面）"><a href="#多文件入口，出口（多页面）" class="headerlink" title="多文件入口，出口（多页面）"></a>多文件入口，出口（多页面）</h5><ol>
+<li>entry设置为对象，属性名为入口名，属性值为入口文件路径</li>
+<li>出口filename设置为[name].bundle.js</li>
+<li>dist文件内容很多，导致文件混乱<br> 使用插件cleanwebpackplugin,htmlwebpackplugin<br> 清除出口目录dist乱七八糟的HTML文件，新建入口html文件<br> 插件可配置</li>
+<li>开发服务器<br> 浏览器自动刷新</li>
+<li>webpack按需加载</li>
+</ol>
+<p>最重要的两大配置文件：<br>package.json<br>webpack.config.js</p>
+<p>package.json中最重要的是scripts配置</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">   "watch": "npx webpack --watch",</span><br><span class="line">   "build": "npx webpack",</span><br><span class="line">   "test": "echo \"Error: no test specified\" &amp;&amp; exit 1",</span><br><span class="line">   "start":"npx webpack-dev-server --open"</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>webpack.config.js</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 处理路径</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">var</span> HtmlWebpackPlugin=<span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>)</span><br><span class="line"><span class="keyword">var</span> CleanWebpackPlugin=<span class="built_in">require</span>(<span class="string">'clean-webpack-plugin'</span>).CleanWebpackPlugin</span><br><span class="line"><span class="comment">// entry:入口文件</span></span><br><span class="line"><span class="comment">// output:出口文件</span></span><br><span class="line"><span class="comment">// modules:其他类型文件的处理</span></span><br><span class="line"><span class="comment">//    --rules:规定相应文件的处理规则</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry:&#123;</span><br><span class="line">        app: path.resolve(__dirname, <span class="string">'./src/index.js'</span>),</span><br><span class="line">        print:path.resolve(__dirname,<span class="string">'./src/print.js'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: <span class="string">"[name].bundle.js"</span>,</span><br><span class="line">        path: path.resolve(__dirname, <span class="string">'./dist'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    devtool:<span class="string">'inline-source-map'</span>,</span><br><span class="line">    <span class="built_in">module</span>: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">            &#123;</span><br><span class="line">                test:<span class="regexp">/\.css$/</span>,</span><br><span class="line">                use:[</span><br><span class="line">                    <span class="string">'style-loader'</span>,</span><br><span class="line">                    <span class="string">'css-loader'</span></span><br><span class="line">                ]</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.less$/</span>,</span><br><span class="line">                use: [</span><br><span class="line">                    <span class="string">'style-loader'</span>,</span><br><span class="line">                    <span class="string">'css-loader'</span>,</span><br><span class="line">                    <span class="string">'less-loader'</span></span><br><span class="line">                ]</span><br><span class="line">            &#125;,&#123;</span><br><span class="line">                test:<span class="regexp">/\.(png|jpg|gif|svg)$/</span>,</span><br><span class="line">                use:[</span><br><span class="line">                    <span class="string">'file-loader'</span></span><br><span class="line">                ]</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins:[</span><br><span class="line">        <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">            title:<span class="string">'myapp'</span>,</span><br><span class="line">            template:<span class="string">'./public/index.html'</span></span><br><span class="line">        &#125;),</span><br><span class="line">        <span class="keyword">new</span> CleanWebpackPlugin()</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<p>参考资料：<br><a href="https://www.jianshu.com/p/890c83fbcf50" target="_blank" rel="noopener">模块化AMD,CMD</a><br><a href="https://www.jianshu.com/p/e355aaa9ebce" target="_blank" rel="noopener">Require.js</a><br><a href="https://www.cnblogs.com/xjchenhao/p/4021775.html" target="_blank" rel="noopener">Sea.js</a><br><a href="http://caibaojian.com/es6/module.html" target="_blank" rel="noopener">es6,module</a><br><a href="https://www.cnblogs.com/scq000/p/10647128.html" target="_blank" rel="noopener">前端模块化</a></p>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>ES6</tag>
+        <tag>模块化</tag>
+        <tag>CommandJs</tag>
+        <tag>AMD</tag>
+        <tag>CMD</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>node实现即时消息通知</title>
     <url>/2019/12/16/node%E5%AE%9E%E7%8E%B0%E5%8D%B3%E6%97%B6%E6%B6%88%E6%81%AF%E9%80%9A%E7%9F%A5/</url>
     <content><![CDATA[<blockquote>
@@ -335,28 +469,21 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>Node.js爬虫</title>
-    <url>/2019/10/13/Node.js%E7%88%AC%E8%99%AB/</url>
-    <content><![CDATA[<h4 id="用nodejs爬取学校教务在线的课表"><a href="#用nodejs爬取学校教务在线的课表" class="headerlink" title="用nodejs爬取学校教务在线的课表"></a>用nodejs爬取学校教务在线的课表</h4><p>首先要分析爬虫的本质，模拟登陆+获取网页信息<br>如何模拟登陆（手动登陆）。<br>大致讲下思路。</p>
-<ol>
-<li>首先是找到登陆入口，从登陆入口发起登陆请求。</li>
-<li>因为我们学校的登陆是需要验证码验证，所以我先将验证码获取到，也就是获取网页信息，处理后通过fs保存到本地，本地再渲染到前端，用户输入。</li>
-<li>用输入的用户信息和验证码向本地后端发起post请求，用本地后端服务器向教务在线发起post请求。（为什么需要本地后端来做媒介，因为需要处理返回的字符串数据，并且需要保存）</li>
-<li>post请求完成后根据教务返回的成功数据继续请求下一个url，也就是查看成绩的url，需要再控制台的network查看发起的各种请求，分析出到底是哪个请求url发起的查看成绩请求。</li>
-<li>获取到成绩页面的数据后直接返回本地服务器，本地处理返回的网页格式。转成需要的格式后再存入数据库。</li>
-</ol>
+    <title>时间管理项目</title>
+    <url>/2019/10/13/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<p><a href="https://github.com/GoldMinerXun/PullClassFromJW" target="_blank" rel="noopener">时间管理项目完整1.0版</a><br>node.js+express+jQuery<br>基本上没有用任何框架，原生js项目。<br>技术难点主要是爬虫技术。<br>该项目运行在3010端口。</p>
 <hr>
-<p>如果是自动登陆，则需要自动识别模块，nodejs有一个自动识别验证码的模块tesseract模块，但是准确率有限，所以需要不停的发起申请并验证。</p>
-<hr>
-<p>值得注意的是，请求时的请求头信息尽量完整，不可缺少的有url，cookie等。<br>cookie一定是上一次请求返回的response里面的setcookie，用这个cookie去请求，所以如果需要继续请求，一定要保存上一个请求的响应cookie</p>
-<p>具体代码不贴了。<br>等我项目完成度一定高以后，将项目放到GitHub上，有问题留言或联系qq178977641。</p>
+<p>star一下叭。</p>
 ]]></content>
       <categories>
         <category>node</category>
       </categories>
       <tags>
-        <tag>nodejs</tag>
-        <tag>爬虫</tag>
+        <tag>JavaScript</tag>
+        <tag>项目</tag>
+        <tag>mongodb</tag>
+        <tag>express</tag>
+        <tag>node</tag>
       </tags>
   </entry>
   <entry>
@@ -379,21 +506,28 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>时间管理项目</title>
-    <url>/2019/10/13/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE/</url>
-    <content><![CDATA[<p><a href="https://github.com/GoldMinerXun/PullClassFromJW" target="_blank" rel="noopener">时间管理项目完整1.0版</a><br>node.js+express+jQuery<br>基本上没有用任何框架，原生js项目。<br>技术难点主要是爬虫技术。<br>该项目运行在3010端口。</p>
+    <title>Node.js爬虫</title>
+    <url>/2019/10/13/Node.js%E7%88%AC%E8%99%AB/</url>
+    <content><![CDATA[<h4 id="用nodejs爬取学校教务在线的课表"><a href="#用nodejs爬取学校教务在线的课表" class="headerlink" title="用nodejs爬取学校教务在线的课表"></a>用nodejs爬取学校教务在线的课表</h4><p>首先要分析爬虫的本质，模拟登陆+获取网页信息<br>如何模拟登陆（手动登陆）。<br>大致讲下思路。</p>
+<ol>
+<li>首先是找到登陆入口，从登陆入口发起登陆请求。</li>
+<li>因为我们学校的登陆是需要验证码验证，所以我先将验证码获取到，也就是获取网页信息，处理后通过fs保存到本地，本地再渲染到前端，用户输入。</li>
+<li>用输入的用户信息和验证码向本地后端发起post请求，用本地后端服务器向教务在线发起post请求。（为什么需要本地后端来做媒介，因为需要处理返回的字符串数据，并且需要保存）</li>
+<li>post请求完成后根据教务返回的成功数据继续请求下一个url，也就是查看成绩的url，需要再控制台的network查看发起的各种请求，分析出到底是哪个请求url发起的查看成绩请求。</li>
+<li>获取到成绩页面的数据后直接返回本地服务器，本地处理返回的网页格式。转成需要的格式后再存入数据库。</li>
+</ol>
 <hr>
-<p>star一下叭。</p>
+<p>如果是自动登陆，则需要自动识别模块，nodejs有一个自动识别验证码的模块tesseract模块，但是准确率有限，所以需要不停的发起申请并验证。</p>
+<hr>
+<p>值得注意的是，请求时的请求头信息尽量完整，不可缺少的有url，cookie等。<br>cookie一定是上一次请求返回的response里面的setcookie，用这个cookie去请求，所以如果需要继续请求，一定要保存上一个请求的响应cookie</p>
+<p>具体代码不贴了。<br>等我项目完成度一定高以后，将项目放到GitHub上，有问题留言或联系qq178977641。</p>
 ]]></content>
       <categories>
         <category>node</category>
       </categories>
       <tags>
-        <tag>JavaScript</tag>
-        <tag>项目</tag>
-        <tag>mongodb</tag>
-        <tag>express</tag>
-        <tag>node</tag>
+        <tag>nodejs</tag>
+        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
@@ -519,6 +653,31 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
+    <title>正则表达式匹配</title>
+    <url>/2019/09/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(52)/</url>
+    <content><![CDATA[<h1 id="正则表达式匹配"><a href="#正则表达式匹配" class="headerlink" title="正则表达式匹配"></a>正则表达式匹配</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>请实现一个函数用来匹配包括’.’和’<em>‘的正则表达式。模式中的字符’.’表示任意一个字符，而’</em>‘表示它前面的字符可以出现任意次（包含0次）。 在本题中，匹配是指字符串的所有字符匹配整个模式。例如，字符串”aaa”与模式”a.a”和”ab<em>ac</em>a”匹配，但是与”aa.a”和”ab*a”均不匹配</p>
+</blockquote>
+<ul>
+<li>第二个字符为”*”<ul>
+<li>第一个字符为”.”或为等于s此时的字符</li>
+<li>第一个字符不为”.”且第一个字符也不匹配s此时的字符</li>
+</ul>
+</li>
+<li>第二个字符不为”*”<ul>
+<li>第一个字符为”.”或第一个字符匹配s此时的字符</li>
+</ul>
+</li>
+</ul>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">match</span>(<span class="params">s, pattern</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(s==<span class="literal">null</span>||pattern==<span class="literal">null</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> matchrecursive(s,<span class="number">0</span>,pattern,<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">matchrecursive</span>(<span class="params">str,istr,pattern,ipattern</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(str.length==istr&amp;&amp;pattern.length==ipattern)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(str.length!=istr&amp;&amp;pattern.length==ipattern)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(pattern[ipattern+<span class="number">1</span>]==<span class="string">'*'</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(pattern[ipattern]==<span class="string">'.'</span>&amp;&amp;istr!=str.length||pattern[ipattern]==str[istr])&#123;</span><br><span class="line">            <span class="keyword">return</span> (</span><br><span class="line">                matchrecursive(str,istr+<span class="number">1</span>,pattern,ipattern+<span class="number">2</span>)||</span><br><span class="line">                matchrecursive(str,istr+<span class="number">1</span>,pattern,ipattern)||</span><br><span class="line">                matchrecursive(str,istr,pattern,ipattern+<span class="number">2</span>)</span><br><span class="line">            )</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> matchrecursive(str,istr,pattern,ipattern+<span class="number">2</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(pattern[ipattern]==<span class="string">'.'</span>&amp;&amp;istr!=str.length||pattern[ipattern]==str[istr])&#123;</span><br><span class="line">        <span class="keyword">return</span> matchrecursive(str,istr+<span class="number">1</span>,pattern,ipattern+<span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>扑克牌顺子</title>
     <url>/2019/09/13/%E5%89%91%E6%8C%87offerJavaScript%E7%89%88%20(45)/</url>
     <content><![CDATA[<h1 id="扑克牌顺子"><a href="#扑克牌顺子" class="headerlink" title="扑克牌顺子"></a>扑克牌顺子</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
@@ -574,31 +733,6 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>正则表达式匹配</title>
-    <url>/2019/09/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(52)/</url>
-    <content><![CDATA[<h1 id="正则表达式匹配"><a href="#正则表达式匹配" class="headerlink" title="正则表达式匹配"></a>正则表达式匹配</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>请实现一个函数用来匹配包括’.’和’<em>‘的正则表达式。模式中的字符’.’表示任意一个字符，而’</em>‘表示它前面的字符可以出现任意次（包含0次）。 在本题中，匹配是指字符串的所有字符匹配整个模式。例如，字符串”aaa”与模式”a.a”和”ab<em>ac</em>a”匹配，但是与”aa.a”和”ab*a”均不匹配</p>
-</blockquote>
-<ul>
-<li>第二个字符为”*”<ul>
-<li>第一个字符为”.”或为等于s此时的字符</li>
-<li>第一个字符不为”.”且第一个字符也不匹配s此时的字符</li>
-</ul>
-</li>
-<li>第二个字符不为”*”<ul>
-<li>第一个字符为”.”或第一个字符匹配s此时的字符</li>
-</ul>
-</li>
-</ul>
-<hr>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">match</span>(<span class="params">s, pattern</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(s==<span class="literal">null</span>||pattern==<span class="literal">null</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> matchrecursive(s,<span class="number">0</span>,pattern,<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">matchrecursive</span>(<span class="params">str,istr,pattern,ipattern</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(str.length==istr&amp;&amp;pattern.length==ipattern)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(str.length!=istr&amp;&amp;pattern.length==ipattern)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(pattern[ipattern+<span class="number">1</span>]==<span class="string">'*'</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(pattern[ipattern]==<span class="string">'.'</span>&amp;&amp;istr!=str.length||pattern[ipattern]==str[istr])&#123;</span><br><span class="line">            <span class="keyword">return</span> (</span><br><span class="line">                matchrecursive(str,istr+<span class="number">1</span>,pattern,ipattern+<span class="number">2</span>)||</span><br><span class="line">                matchrecursive(str,istr+<span class="number">1</span>,pattern,ipattern)||</span><br><span class="line">                matchrecursive(str,istr,pattern,ipattern+<span class="number">2</span>)</span><br><span class="line">            )</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> matchrecursive(str,istr,pattern,ipattern+<span class="number">2</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(pattern[ipattern]==<span class="string">'.'</span>&amp;&amp;istr!=str.length||pattern[ipattern]==str[istr])&#123;</span><br><span class="line">        <span class="keyword">return</span> matchrecursive(str,istr+<span class="number">1</span>,pattern,ipattern+<span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>剑指offer</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>和为S的连续正整数序列</title>
     <url>/2019/09/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(41)/</url>
     <content><![CDATA[<h1 id="和为S的连续正整数序列"><a href="#和为S的连续正整数序列" class="headerlink" title="和为S的连续正整数序列"></a>和为S的连续正整数序列</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><ul>
@@ -610,27 +744,6 @@ null, undefined无法使用constructor属性。
 </li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindContinuousSequence</span>(<span class="params">sum</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="comment">//(i+1)*(2*a+i)=2*sum;</span></span><br><span class="line">    <span class="keyword">let</span> i=<span class="number">1</span>,a=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> res=[];</span><br><span class="line">    <span class="keyword">let</span> half=sum&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(half--)&#123;</span><br><span class="line">        a++;</span><br><span class="line">        i=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>((i+<span class="number">1</span>)*(<span class="number">2</span>*a+i)&lt;<span class="number">2</span>*sum)&#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>((i+<span class="number">1</span>)*(<span class="number">2</span>*a+i)==<span class="number">2</span>*sum)&#123;</span><br><span class="line">            <span class="keyword">const</span> tmp=[]</span><br><span class="line">            tmp.push(i);</span><br><span class="line">            tmp.push(a);</span><br><span class="line">            res.push(tmp);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> reslist=[]</span><br><span class="line">    <span class="keyword">let</span> temp=[]</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt; res.length;j++)&#123;</span><br><span class="line">        <span class="keyword">var</span> a1=res[j][<span class="number">1</span>]</span><br><span class="line">        temp=[]</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> k=<span class="number">0</span>;k&lt;=res[j][<span class="number">0</span>];k++)&#123;</span><br><span class="line">            temp.push(a1);</span><br><span class="line">            a1++;</span><br><span class="line">        &#125;</span><br><span class="line">        reslist.push(temp)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> reslist</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>剑指offer</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>二叉树的下一个节点</title>
-    <url>/2019/09/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(57)/</url>
-    <content><![CDATA[<h1 id="二叉树的下一个节点"><a href="#二叉树的下一个节点" class="headerlink" title="二叉树的下一个节点"></a>二叉树的下一个节点</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>给定一个二叉树和其中的一个结点，请找出中序遍历顺序的下一个结点并且返回。注意，树中的结点不仅包含左右子结点，同时包含指向父结点的指针。</p>
-</blockquote>
-<ul>
-<li>该节点有右子树，则其下一个节点为其右子树的最左子节点；</li>
-<li>该节点没有右子树<ul>
-<li>该节点为其父节点的左子节点，则其下一节点为其父节点</li>
-<li>该节点为其父节点的右子节点，则其下一节点为其父节点的左子节点</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GetNext</span>(<span class="params">pNode</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(pNode==<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(pNode.right!=<span class="literal">null</span>)&#123;</span><br><span class="line">        pNode=pNode.right;</span><br><span class="line">        <span class="keyword">while</span>(pNode.left!=<span class="literal">null</span>)&#123;</span><br><span class="line">            pNode=pNode.left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pNode;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(pNode.next!=<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(pNode===pNode.next.left)&#123;</span><br><span class="line">            <span class="keyword">return</span> pNode.next</span><br><span class="line">        &#125;</span><br><span class="line">        pNode=pNode.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
@@ -664,6 +777,27 @@ null, undefined无法使用constructor属性。
       </categories>
       <tags>
         <tag>正则表达式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>二叉树的下一个节点</title>
+    <url>/2019/09/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(57)/</url>
+    <content><![CDATA[<h1 id="二叉树的下一个节点"><a href="#二叉树的下一个节点" class="headerlink" title="二叉树的下一个节点"></a>二叉树的下一个节点</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>给定一个二叉树和其中的一个结点，请找出中序遍历顺序的下一个结点并且返回。注意，树中的结点不仅包含左右子结点，同时包含指向父结点的指针。</p>
+</blockquote>
+<ul>
+<li>该节点有右子树，则其下一个节点为其右子树的最左子节点；</li>
+<li>该节点没有右子树<ul>
+<li>该节点为其父节点的左子节点，则其下一节点为其父节点</li>
+<li>该节点为其父节点的右子节点，则其下一节点为其父节点的左子节点</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GetNext</span>(<span class="params">pNode</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(pNode==<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(pNode.right!=<span class="literal">null</span>)&#123;</span><br><span class="line">        pNode=pNode.right;</span><br><span class="line">        <span class="keyword">while</span>(pNode.left!=<span class="literal">null</span>)&#123;</span><br><span class="line">            pNode=pNode.left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pNode;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(pNode.next!=<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(pNode===pNode.next.left)&#123;</span><br><span class="line">            <span class="keyword">return</span> pNode.next</span><br><span class="line">        &#125;</span><br><span class="line">        pNode=pNode.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>剑指offer</tag>
       </tags>
   </entry>
   <entry>
@@ -1114,23 +1248,6 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>把字符串转换成整数</title>
-    <url>/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(49)/</url>
-    <content><![CDATA[<h1 id="把字符串转换成整数"><a href="#把字符串转换成整数" class="headerlink" title="把字符串转换成整数"></a>把字符串转换成整数</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>将一个字符串转换成一个整数(实现Integer.valueOf(string)的功能，但是string不符合数字要求时返回0)，要求不能使用字符串转换整数的库函数。 数值为0或者字符串不是一个合法的数值则返回0。</p>
-</blockquote>
-<ul>
-<li>重点在于每次需要移位，移位对应十进制是10，对应二进制是1010，所以移一位，再移三位。</li>
-<li>注意还需要判断符号</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">StrToInt</span>(<span class="params">str</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">let</span> res=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> flag=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> n=str.length;</span><br><span class="line">    <span class="keyword">if</span>(!n)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(str[<span class="number">0</span>]==<span class="string">'-'</span>)&#123;</span><br><span class="line">        flag=<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i= str[<span class="number">0</span>]==<span class="string">'-'</span>||str[<span class="number">0</span>]==<span class="string">'+'</span>?<span class="number">1</span>:<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(str[i]&lt;=<span class="string">'0'</span>||str[i]&gt;=<span class="string">'9'</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        res=(res&lt;&lt;<span class="number">1</span>)+(res&lt;&lt;<span class="number">3</span>)+(str[i]-<span class="string">'0'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res*flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>剑指offer</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>二叉树的镜像</title>
     <url>/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(18)/</url>
     <content><![CDATA[<h3 id="二叉树的镜像"><a href="#二叉树的镜像" class="headerlink" title="二叉树的镜像"></a>二叉树的镜像</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
@@ -1161,6 +1278,23 @@ null, undefined无法使用constructor属性。
       </categories>
       <tags>
         <tag>栈</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>把字符串转换成整数</title>
+    <url>/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(49)/</url>
+    <content><![CDATA[<h1 id="把字符串转换成整数"><a href="#把字符串转换成整数" class="headerlink" title="把字符串转换成整数"></a>把字符串转换成整数</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>将一个字符串转换成一个整数(实现Integer.valueOf(string)的功能，但是string不符合数字要求时返回0)，要求不能使用字符串转换整数的库函数。 数值为0或者字符串不是一个合法的数值则返回0。</p>
+</blockquote>
+<ul>
+<li>重点在于每次需要移位，移位对应十进制是10，对应二进制是1010，所以移一位，再移三位。</li>
+<li>注意还需要判断符号</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">StrToInt</span>(<span class="params">str</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">let</span> res=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> flag=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> n=str.length;</span><br><span class="line">    <span class="keyword">if</span>(!n)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(str[<span class="number">0</span>]==<span class="string">'-'</span>)&#123;</span><br><span class="line">        flag=<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i= str[<span class="number">0</span>]==<span class="string">'-'</span>||str[<span class="number">0</span>]==<span class="string">'+'</span>?<span class="number">1</span>:<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(str[i]&lt;=<span class="string">'0'</span>||str[i]&gt;=<span class="string">'9'</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        res=(res&lt;&lt;<span class="number">1</span>)+(res&lt;&lt;<span class="number">3</span>)+(str[i]-<span class="string">'0'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res*flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>剑指offer</tag>
       </tags>
   </entry>
   <entry>
@@ -1352,12 +1486,12 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>翻转单词顺序列</title>
-    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(44)/</url>
-    <content><![CDATA[<h1 id="翻转单词顺序列"><a href="#翻转单词顺序列" class="headerlink" title="翻转单词顺序列"></a>翻转单词顺序列</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>输入 “student. a am I”。<br>把句子单词的顺序翻转后输出正确的句子应该是“I am a student.”。</p>
+    <title>孩子们的游戏</title>
+    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(46)/</url>
+    <content><![CDATA[<h1 id="孩子们的游戏"><a href="#孩子们的游戏" class="headerlink" title="孩子们的游戏"></a>孩子们的游戏</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>约瑟夫环问题</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ReverseSentence</span>(<span class="params">str</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> strArr=str.split(<span class="string">" "</span>);</span><br><span class="line">    <span class="keyword">let</span> corstr=<span class="string">''</span>;</span><br><span class="line">    <span class="keyword">if</span>(str==<span class="literal">null</span>)<span class="keyword">return</span> corstr;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=strArr.length<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i==<span class="number">0</span>)&#123;</span><br><span class="line">            corstr+=strArr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            corstr+=strArr[i]+<span class="string">' '</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> corstr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">LastRemaining_Solution</span>(<span class="params">n, m</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> circle=[]</span><br><span class="line">    <span class="keyword">let</span> del=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">0</span>||m&lt;=<span class="number">0</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        circle[i]=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(circle.length<span class="number">-1</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> k=m<span class="number">-1</span>;</span><br><span class="line">        del=(del+k)%circle.length;</span><br><span class="line">        circle.splice(del,<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> circle[<span class="number">0</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
@@ -1365,12 +1499,12 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>孩子们的游戏</title>
-    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(46)/</url>
-    <content><![CDATA[<h1 id="孩子们的游戏"><a href="#孩子们的游戏" class="headerlink" title="孩子们的游戏"></a>孩子们的游戏</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>约瑟夫环问题</p>
+    <title>翻转单词顺序列</title>
+    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(44)/</url>
+    <content><![CDATA[<h1 id="翻转单词顺序列"><a href="#翻转单词顺序列" class="headerlink" title="翻转单词顺序列"></a>翻转单词顺序列</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>输入 “student. a am I”。<br>把句子单词的顺序翻转后输出正确的句子应该是“I am a student.”。</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">LastRemaining_Solution</span>(<span class="params">n, m</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> circle=[]</span><br><span class="line">    <span class="keyword">let</span> del=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">0</span>||m&lt;=<span class="number">0</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        circle[i]=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(circle.length<span class="number">-1</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> k=m<span class="number">-1</span>;</span><br><span class="line">        del=(del+k)%circle.length;</span><br><span class="line">        circle.splice(del,<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> circle[<span class="number">0</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ReverseSentence</span>(<span class="params">str</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> strArr=str.split(<span class="string">" "</span>);</span><br><span class="line">    <span class="keyword">let</span> corstr=<span class="string">''</span>;</span><br><span class="line">    <span class="keyword">if</span>(str==<span class="literal">null</span>)<span class="keyword">return</span> corstr;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=strArr.length<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i==<span class="number">0</span>)&#123;</span><br><span class="line">            corstr+=strArr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            corstr+=strArr[i]+<span class="string">' '</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> corstr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
@@ -1424,25 +1558,6 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>连续子数组的最大和</title>
-    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(30)/</url>
-    <content><![CDATA[<h3 id="连续子数组的最大和"><a href="#连续子数组的最大和" class="headerlink" title="连续子数组的最大和"></a>连续子数组的最大和</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
-<p>{6,-3,-2,7,-15,1,2,2},连续子向量的最大和为8(从第0个开始,到第3个为止)。给一个数组，返回它的最大连续子序列的和，你会不会被他忽悠住？(子向量的长度至少是1)</p>
-</blockquote>
-<ul>
-<li>根据一个序列的特点，若前n个数的和小于0，则重新开始一个序列计算和，若大于等于0 ，则继续累加。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindGreatestSumOfSubArray</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> currsum=array[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">var</span> maxsum=currsum;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(currsum&lt;<span class="number">0</span>)&#123;</span><br><span class="line">            currsum=array[i]</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            currsum+=array[i]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(currsum&gt;maxsum)&#123;</span><br><span class="line">            maxsum=currsum;</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">     <span class="keyword">return</span> maxsum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>剑指offer</category>
-      </categories>
-      <tags>
-        <tag>数组</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>构建乘积数组</title>
     <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(51)/</url>
     <content><![CDATA[<h1 id="构建乘积数组"><a href="#构建乘积数组" class="headerlink" title="构建乘积数组"></a>构建乘积数组</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
@@ -1473,6 +1588,25 @@ null, undefined无法使用constructor属性。
       </categories>
       <tags>
         <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>连续子数组的最大和</title>
+    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(30)/</url>
+    <content><![CDATA[<h3 id="连续子数组的最大和"><a href="#连续子数组的最大和" class="headerlink" title="连续子数组的最大和"></a>连续子数组的最大和</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote>
+<p>{6,-3,-2,7,-15,1,2,2},连续子向量的最大和为8(从第0个开始,到第3个为止)。给一个数组，返回它的最大连续子序列的和，你会不会被他忽悠住？(子向量的长度至少是1)</p>
+</blockquote>
+<ul>
+<li>根据一个序列的特点，若前n个数的和小于0，则重新开始一个序列计算和，若大于等于0 ，则继续累加。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindGreatestSumOfSubArray</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> currsum=array[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">var</span> maxsum=currsum;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(currsum&lt;<span class="number">0</span>)&#123;</span><br><span class="line">            currsum=array[i]</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            currsum+=array[i]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(currsum&gt;maxsum)&#123;</span><br><span class="line">            maxsum=currsum;</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">     <span class="keyword">return</span> maxsum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>数组</tag>
       </tags>
   </entry>
   <entry>
@@ -1637,25 +1771,6 @@ null, undefined无法使用constructor属性。
       </tags>
   </entry>
   <entry>
-    <title>数组中只出现一次的数字</title>
-    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(40)/</url>
-    <content><![CDATA[<h1 id="数组中只出现一次的数字"><a href="#数组中只出现一次的数字" class="headerlink" title="数组中只出现一次的数字"></a>数组中只出现一次的数字</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>一个整型数组里除了两个数字之外，其他的数字都出现了两次。请写程序找出这两个只出现一次的数字。</p>
-</blockquote>
-<ul>
-<li>先排序，排序后再遍历一遍数组，如果前一个和后一个元素不等，则为出现一次的，注意相等时遍历下标的变化。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindNumsAppearOnce</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="comment">// return list, 比如[a,b]，其中ab是出现一次的两个数字</span></span><br><span class="line">    <span class="keyword">const</span> list=[];</span><br><span class="line">    array.sort();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(array[i]!=array[i+<span class="number">1</span>])&#123;</span><br><span class="line">            list.push(array[i])</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>剑指offer</category>
-      </categories>
-      <tags>
-        <tag>数组</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>把二叉树打印成多行</title>
     <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(60)/</url>
     <content><![CDATA[<h1 id="把二叉树打印成多行"><a href="#把二叉树打印成多行" class="headerlink" title="把二叉树打印成多行"></a>把二叉树打印成多行</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
@@ -1672,6 +1787,25 @@ null, undefined无法使用constructor属性。
 ]]></content>
       <tags>
         <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数组中只出现一次的数字</title>
+    <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(40)/</url>
+    <content><![CDATA[<h1 id="数组中只出现一次的数字"><a href="#数组中只出现一次的数字" class="headerlink" title="数组中只出现一次的数字"></a>数组中只出现一次的数字</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>一个整型数组里除了两个数字之外，其他的数字都出现了两次。请写程序找出这两个只出现一次的数字。</p>
+</blockquote>
+<ul>
+<li>先排序，排序后再遍历一遍数组，如果前一个和后一个元素不等，则为出现一次的，注意相等时遍历下标的变化。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindNumsAppearOnce</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="comment">// return list, 比如[a,b]，其中ab是出现一次的两个数字</span></span><br><span class="line">    <span class="keyword">const</span> list=[];</span><br><span class="line">    array.sort();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(array[i]!=array[i+<span class="number">1</span>])&#123;</span><br><span class="line">            list.push(array[i])</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>剑指offer</category>
+      </categories>
+      <tags>
+        <tag>数组</tag>
       </tags>
   </entry>
   <entry>
