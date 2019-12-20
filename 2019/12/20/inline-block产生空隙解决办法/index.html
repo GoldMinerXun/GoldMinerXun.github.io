@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="inline-block元素之间会产生空隙，原因是空格或换行符，空隙大小为fontsize倍数。解决办法：  去掉换行或空格 对父容器设置fontsize为0 对父容器设置display:table; word-spacing:-1em; float:left，副作用margin坍塌 对子元素设置margin为负值">
+<meta name="description" content="inline-block元素之间会产生空隙，原因是空格或换行符，空隙大小为fontsize倍数。解决办法：  去掉换行或空格 对父容器设置fontsize为0 对父容器设置display:table; word-spacing:-1em; float:left，副作用margin坍塌 对子元素设置margin为负值  子元素inline-block与父元素之间产生空隙  对子元素设置vertica">
 <meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="inline-block产生空隙解决办法">
 <meta property="og:url" content="https:&#x2F;&#x2F;goldminerxun.github.io&#x2F;2019&#x2F;12&#x2F;20&#x2F;inline-block%E4%BA%A7%E7%94%9F%E7%A9%BA%E9%9A%99%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95&#x2F;index.html">
 <meta property="og:site_name" content="XUN&#39;S BLOG">
-<meta property="og:description" content="inline-block元素之间会产生空隙，原因是空格或换行符，空隙大小为fontsize倍数。解决办法：  去掉换行或空格 对父容器设置fontsize为0 对父容器设置display:table; word-spacing:-1em; float:left，副作用margin坍塌 对子元素设置margin为负值">
+<meta property="og:description" content="inline-block元素之间会产生空隙，原因是空格或换行符，空隙大小为fontsize倍数。解决办法：  去掉换行或空格 对父容器设置fontsize为0 对父容器设置display:table; word-spacing:-1em; float:left，副作用margin坍塌 对子元素设置margin为负值  子元素inline-block与父元素之间产生空隙  对子元素设置vertica">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-20T05:03:25.666Z">
+<meta property="og:updated_time" content="2019-12-20T08:48:23.383Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -416,6 +416,11 @@
 <li>对父容器设置display:table; word-spacing:-1em;</li>
 <li>float:left，副作用margin坍塌</li>
 <li>对子元素设置margin为负值</li>
+</ol>
+<p>子元素inline-block与父元素之间产生空隙</p>
+<ol>
+<li>对子元素设置vertical-align，如果父元素没有定宽高，则自动撑开，没有缝隙<br> vertical-align指的是行内元素对其，设置为top/middle都可以（父元素无宽高的状况下）</li>
+<li>font-size为0（扩展性较差，不建议使用）</li>
 </ol>
 
       

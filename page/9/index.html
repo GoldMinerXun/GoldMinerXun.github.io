@@ -302,7 +302,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://goldminerxun.github.io/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(40)/">
+    <link itemprop="mainEntityOfPage" href="https://goldminerxun.github.io/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(27)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="GoldMiner Xun">
@@ -321,7 +321,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(40)/" itemprop="url">数组中只出现一次的数字</a></h2>
+                <a class="post-title-link" href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(27)/" itemprop="url">字符串的排列</a></h2>
         
 
         <div class="post-meta">
@@ -374,8 +374,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(40)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(40)/" itemprop="commentCount"></span>
+                <a href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(27)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(27)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -405,17 +405,18 @@
       
         
           
-          数组中只出现一次的数字题目描述
-一个整型数组里除了两个数字之外，其他的数字都出现了两次。请写程序找出这两个只出现一次的数字。
+          字符串的排列题目描述
+按字典序输出一个字符串的全排列输入一个字符串,长度不超过9(可能有字符重复),字符只包括大小写字母。
 
+要深入理解递归，自身调用自身，分而治之。
 
-先排序，排序后再遍历一遍数组，如果前一个和后一个元素不等，则为出现一次的，注意相等时遍历下标的变化。
-
-123456789101112131415function Fin
+本篇采用的递归全排列方法
+递归首先应该想到，当字符串长度为1 时，其全排列就是其自身。
+字符串长度大于1时，将字符串分割成第一个字
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(40)/" rel="contents">
+            <a class="btn" href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(27)/" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -611,7 +612,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://goldminerxun.github.io/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(27)/">
+    <link itemprop="mainEntityOfPage" href="https://goldminerxun.github.io/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(40)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="GoldMiner Xun">
@@ -630,7 +631,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(27)/" itemprop="url">字符串的排列</a></h2>
+                <a class="post-title-link" href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(40)/" itemprop="url">数组中只出现一次的数字</a></h2>
         
 
         <div class="post-meta">
@@ -683,8 +684,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(27)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(27)/" itemprop="commentCount"></span>
+                <a href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(40)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(40)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -714,18 +715,17 @@
       
         
           
-          字符串的排列题目描述
-按字典序输出一个字符串的全排列输入一个字符串,长度不超过9(可能有字符重复),字符只包括大小写字母。
+          数组中只出现一次的数字题目描述
+一个整型数组里除了两个数字之外，其他的数字都出现了两次。请写程序找出这两个只出现一次的数字。
 
-要深入理解递归，自身调用自身，分而治之。
 
-本篇采用的递归全排列方法
-递归首先应该想到，当字符串长度为1 时，其全排列就是其自身。
-字符串长度大于1时，将字符串分割成第一个字
+先排序，排序后再遍历一遍数组，如果前一个和后一个元素不等，则为出现一次的，注意相等时遍历下标的变化。
+
+123456789101112131415function Fin
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(27)/" rel="contents">
+            <a class="btn" href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(40)/" rel="contents">
               Read more &raquo;
             </a>
           </div>
