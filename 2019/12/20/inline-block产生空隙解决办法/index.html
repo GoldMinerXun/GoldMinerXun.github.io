@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="数据结构与算法,动态划分," />
+  <meta name="keywords" content="CSS," />
 
 
 
@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="动态划分的典型问题 一般背包问题 假设有m个物品，每个物品质量为 W[ i ]，每个物品的价值为 V[ i ]。 背包容量为N。 求能够带走的最大价值为多少。 每个物品，带走或者不带走，即其标记为1或0； 假设每次装该物品数量为num[ i ] 限制条件是，Σ( num[ i ] * W[ i ] ) &amp;lt;=N ，即拿走的物品质量不能超过背包容量。  dp[j] 表示当背包内容量为j时，其装的">
-<meta name="keywords" content="数据结构与算法,动态划分">
+<meta name="description" content="inline-block元素之间会产生空隙，原因是空格或换行符，空隙大小为fontsize倍数。解决办法：  去掉换行或空格 对父容器设置fontsize为0 对父容器设置display:table; word-spacing:-1em; float:left，副作用margin坍塌 对子元素设置margin为负值">
+<meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="动态划分的典型问题">
-<meta property="og:url" content="https:&#x2F;&#x2F;goldminerxun.github.io&#x2F;2019&#x2F;09&#x2F;03&#x2F;%E5%8A%A8%E6%80%81%E5%88%92%E5%88%86%20JavaScript%E7%89%88%E8%AF%A6%E8%A7%A3&#x2F;index.html">
+<meta property="og:title" content="inline-block产生空隙解决办法">
+<meta property="og:url" content="https:&#x2F;&#x2F;goldminerxun.github.io&#x2F;2019&#x2F;12&#x2F;20&#x2F;inline-block%E4%BA%A7%E7%94%9F%E7%A9%BA%E9%9A%99%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95&#x2F;index.html">
 <meta property="og:site_name" content="XUN&#39;S BLOG">
-<meta property="og:description" content="动态划分的典型问题 一般背包问题 假设有m个物品，每个物品质量为 W[ i ]，每个物品的价值为 V[ i ]。 背包容量为N。 求能够带走的最大价值为多少。 每个物品，带走或者不带走，即其标记为1或0； 假设每次装该物品数量为num[ i ] 限制条件是，Σ( num[ i ] * W[ i ] ) &amp;lt;=N ，即拿走的物品质量不能超过背包容量。  dp[j] 表示当背包内容量为j时，其装的">
+<meta property="og:description" content="inline-block元素之间会产生空隙，原因是空格或换行符，空隙大小为fontsize倍数。解决办法：  去掉换行或空格 对父容器设置fontsize为0 对父容器设置display:table; word-spacing:-1em; float:left，副作用margin坍塌 对子元素设置margin为负值">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-24T12:23:01.352Z">
+<meta property="og:updated_time" content="2019-12-20T05:03:25.666Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="https://goldminerxun.github.io/2019/09/03/动态划分 JavaScript版详解/"/>
+  <link rel="canonical" href="https://goldminerxun.github.io/2019/12/20/inline-block产生空隙解决办法/"/>
 
 
 
 
 
-  <title>动态划分的典型问题 | XUN'S BLOG</title>
+  <title>inline-block产生空隙解决办法 | XUN'S BLOG</title>
   
 
 
@@ -305,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://goldminerxun.github.io/2019/09/03/%E5%8A%A8%E6%80%81%E5%88%92%E5%88%86%20JavaScript%E7%89%88%E8%AF%A6%E8%A7%A3/">
+    <link itemprop="mainEntityOfPage" href="https://goldminerxun.github.io/2019/12/20/inline-block%E4%BA%A7%E7%94%9F%E7%A9%BA%E9%9A%99%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="GoldMiner Xun">
@@ -322,7 +322,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">动态划分的典型问题</h2>
+          <h2 class="post-title" itemprop="name headline">inline-block产生空隙解决办法</h2>
         
 
         <div class="post-meta">
@@ -334,8 +334,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-03T10:30:22+08:00">
-                2019-09-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-20T12:33:50+08:00">
+                2019-12-20
               </time>
             
 
@@ -357,8 +357,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
                   </a>
                 </span>
 
@@ -375,8 +375,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/09/03/%E5%8A%A8%E6%80%81%E5%88%92%E5%88%86%20JavaScript%E7%89%88%E8%AF%A6%E8%A7%A3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/03/%E5%8A%A8%E6%80%81%E5%88%92%E5%88%86%20JavaScript%E7%89%88%E8%AF%A6%E8%A7%A3/" itemprop="commentCount"></span>
+                <a href="/2019/12/20/inline-block%E4%BA%A7%E7%94%9F%E7%A9%BA%E9%9A%99%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/12/20/inline-block%E4%BA%A7%E7%94%9F%E7%A9%BA%E9%9A%99%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -409,26 +409,14 @@
       
 
       
-        <h3 id="动态划分的典型问题"><a href="#动态划分的典型问题" class="headerlink" title="动态划分的典型问题"></a>动态划分的典型问题</h3><ol>
-<li><p>一般背包问题<br> 假设有m个物品，每个物品质量为 W[ i ]，每个物品的价值为 V[ i ]。<br> 背包容量为N。<br> 求能够带走的最大价值为多少。<br> 每个物品，带走或者不带走，即其标记为1或0；<br> 假设每次装该物品数量为num[ i ]<br> 限制条件是，Σ( num[ i ] * W[ i ] ) &lt;=N ，即拿走的物品质量不能超过背包容量。<br>  dp[j] 表示当背包内容量为j时，其装的最大价值的东西质量为dp[j]。</p>
-<hr>
-<p>  举个例子：<br>  假设有一个背包容量为10kg，有三个物品，一个为1kg，一个为5kg，一个为7kg，三个价值分别为10,20,15。<br>  那么容量为1kg，dp[1]=max(10)；2kg，dp[2]=max(10)；3kg…..；5kg，dp[5]=max(v[1]+dp[5-w[0]],dp[4])=max(20,10)=20；以此类推，所以随着j的增长，dp[j]并不是线性增长的，限制条件即为最少需要j&gt;=w[i]，至少取一件物品。</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bagpro=<span class="function"><span class="keyword">function</span>(<span class="params">w,v,n</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> dp=<span class="keyword">new</span> <span class="built_in">Array</span>(n+<span class="number">1</span>);</span><br><span class="line">	dp.fill(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;w.length;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">let</span> j=n;j&gt;=w[i];j--)&#123;</span><br><span class="line">			dp[j]=<span class="built_in">Math</span>.max(v[j]+dp[j-w[i]],dp[j]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> dp[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>完全背包问题<br> 假设每个物品质量为 W[ i ]，每个物品价值为 V[ i ]，物品数量无限。<br> 背包容量为N，求能够带走的最大价值为多少？<br> 限制条件是Σ (num[i]*w[i])&lt;=N，此时num[i]取值是非负数即可，因为物品数量不限。</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> completebagpro=<span class="function"><span class="keyword">function</span>(<span class="params">w,v,n</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> dp=<span class="keyword">new</span> <span class="built_in">Array</span>(n+<span class="number">1</span>);</span><br><span class="line">	dp.fill(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;w.length;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">let</span> j=w[i];j&lt;n;j++)&#123;</span><br><span class="line">			dp[j]=<span class="built_in">Math</span>.max(v[i]+dp[j-w[i]],dp[j]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
+        <p>inline-block元素之间会产生空隙，原因是空格或换行符，空隙大小为fontsize倍数。<br>解决办法：</p>
+<ol>
+<li>去掉换行或空格</li>
+<li>对父容器设置fontsize为0</li>
+<li>对父容器设置display:table; word-spacing:-1em;</li>
+<li>float:left，副作用margin坍塌</li>
+<li>对子元素设置margin为负值</li>
 </ol>
-<hr>
-<p>解决动态划分问题最重要的是找到对应的状态转移方程。</p>
-<p>例1：零钱问题<br>给定不同面额的硬币 coins 和一个总金额 amount。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回 -1。<br>dp[j]表示组成金额为j的最少硬币数为dp[j]<br>状态转移方程为：dp[j]=math.min(dp[j-coins[i]]+1,dp[j])</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">countcoins</span>(<span class="params">coins,amount</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> dp=<span class="keyword">new</span> <span class="built_in">Array</span>(amount+<span class="number">1</span>);</span><br><span class="line">	dp.fill(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;coins.length;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">let</span> j=coins[i];j&lt;amount;j++)&#123;</span><br><span class="line">			dp[j]=<span class="built_in">Math</span>.min(<span class="number">1</span>+dp[j-coins[i]],dp[j]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(dp[amount]==<span class="number">0</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> dp[amount];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>例2：硬币划分<br>有1分，2分，5分，10分四种硬币，每种硬币数量无限，给定n分钱(n &lt;= 100000)，有多少中组合可以组成n分钱？<br>dp[j]表示组成j分钱有dp[j]种方法。<br>状态转移方程为：dp[j]=dp[j-coins[0]]+dp[j-coins[1]]+dp[j-coins[2]]+dp[j-coins[3]];<br>比如说要组成13分，那么去掉一个1分硬币，就是组成12分硬币的种数；去掉一个2分硬币，就是组成11分硬币的种数；以此类推，以上分解情况的和就是组成13分的组合数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">coinsCombination</span>(<span class="params">coins,n</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> dp=<span class="keyword">new</span> <span class="built_in">Array</span>(n+<span class="number">1</span>).fill(<span class="number">0</span>);</span><br><span class="line">	dp[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;coins.length;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">let</span> j=coins[i];j&lt;n;j++)&#123;</span><br><span class="line">			dp[j]+=dp[j-coins[i]];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> dp[n]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 
       
     </div>
@@ -449,7 +437,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="https://goldminerxun.github.io/2019/09/03/%E5%8A%A8%E6%80%81%E5%88%92%E5%88%86%20JavaScript%E7%89%88%E8%AF%A6%E8%A7%A3/" title="动态划分的典型问题">https://goldminerxun.github.io/2019/09/03/%E5%8A%A8%E6%80%81%E5%88%92%E5%88%86%20JavaScript%E7%89%88%E8%AF%A6%E8%A7%A3/</a>
+    <a href="https://goldminerxun.github.io/2019/12/20/inline-block%E4%BA%A7%E7%94%9F%E7%A9%BA%E9%9A%99%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" title="inline-block产生空隙解决办法">https://goldminerxun.github.io/2019/12/20/inline-block%E4%BA%A7%E7%94%9F%E7%A9%BA%E9%9A%99%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -464,9 +452,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="tag"># 数据结构与算法</a>
-          
-            <a href="/tags/%E5%8A%A8%E6%80%81%E5%88%92%E5%88%86/" rel="tag"># 动态划分</a>
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
           
         </div>
       
@@ -479,8 +465,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/31/%E5%89%91%E6%8C%87offer%20JavaScript%20%E7%89%88(32)/" rel="next" title="把数组排成最小的数">
-                <i class="fa fa-chevron-left"></i> 把数组排成最小的数
+              <a href="/2019/12/19/%E8%AE%A1%E6%95%B0%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0/" rel="next" title="计数函数实现">
+                <i class="fa fa-chevron-left"></i> 计数函数实现
               </a>
             
           </div>
@@ -488,10 +474,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/03/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(19)/" rel="prev" title="顺时针打印矩阵">
-                顺时针打印矩阵 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -546,17 +528,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -666,22 +639,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#动态划分的典型问题"><span class="nav-number">1.</span> <span class="nav-text">动态划分的典型问题</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
