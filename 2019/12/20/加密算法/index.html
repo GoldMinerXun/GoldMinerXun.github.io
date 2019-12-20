@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="XUN&#39;S BLOG">
 <meta property="og:description" content="对称加密只有一个密钥PSK通过psk可以加密&#x2F;解密数据缺点：psk通过什么才能安全的让双方都掌握？ 非对称加密算法私钥加密公钥解公钥加密私钥解RSA&#x2F;AES加密算法生成一对密钥（公钥，私钥）数据通过公钥加密，通过私钥解密。产生问题：公钥传递可以被窃取公钥，伪造数据。 如何解决被伪造，被修改，被监听问题 向对方请求公钥 公钥加密psk通知对方使用对称加密算法 用对称算法加密解密数据  鉴权！！信任机">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-20T08:31:51.754Z">
+<meta property="og:updated_time" content="2019-12-20T08:34:02.344Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -397,7 +397,7 @@
 <ol>
 <li>公共信任机构用私钥加密数据。</li>
 <li>双方用公共机构提供的公钥解密。</li>
-<li>通过签名校验。</li>
+<li>通过签名校验。<br>信任机构：CA机构。通过信任机构确认网站是否安全。</li>
 </ol>
 
       
