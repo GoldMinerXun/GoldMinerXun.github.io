@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>http与https协议</title>
+      <link href="/2020/01/08/http%E4%B8%8Ehttps%E5%8D%8F%E8%AE%AE/"/>
+      <url>/2020/01/08/http%E4%B8%8Ehttps%E5%8D%8F%E8%AE%AE/</url>
+      
+        <content type="html"><![CDATA[<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><p>http是超文本传输协议，是一种无状态的协议。http是基于tcp的，因为tcp是可靠的数据传输。<br>一次完整的http传输包含三次握手与四次挥手，三次握手表示建立连接，四次挥手表示断开连接。</p><h4 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h4><ol><li>客户端发送SYN，自身状态为SYN-SENT，等待服务器端确认，表示客户端可以向服务器端发送数据。SYN:同步序列编号。</li><li>服务器端收到SYN包，确认后向客户端发送SYN+ACK，自身状态为SYN-RECV，表示服务器端可以接收到客户端的数据，并告知客户端。</li><li>客户端发送确认包ACK，告诉服务器端自己可以接收到来自服务器的返回信息。</li></ol><p><em>客户端服务器端均进入ESTABLISHED状态。连接建立成功。</em></p><hr><p>三次握手完成，正式发送数据。</p><hr><h4 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h4><p><em>由于tcp是全双工通信（同时进行信号的双向传输），需要两方都确认关闭连接。所以一方结束后发送FIN表示确认关闭。首先发起关闭的一方为主动关闭，另一方为被动关闭。</em></p><ol><li>客户端发起关闭连接，发送FIN。</li><li>服务器端收到客户端的FIN，发送确认号ACK为收到序列号+1。</li><li>服务器端被动关闭连接，向客户端发送FIN，告知客户端此方向也要关闭连接了。</li><li>客户端收到FIN，发送确认ACK。</li></ol><h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2><p>https是http+ssl/tls协议<br>SSL协议是安全套接协议，TLS是安全传输协议。在https中都是用来加密传输内容的协议。</p><h3 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h3><p>使用一对公钥进行加密。<br>明文+公钥+加密算法 =&gt; 密文<br>密文+公钥+加密算法 =&gt; 明文<br>即通信双方有公钥就能对传输数据进行加密和解密，这在效率上是很高，安全性也好，但是问题在于公钥一旦被获取，则没有安全性可言。</p><h3 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h3><p>使用一对密钥，分别为公钥，私钥。双方有各自不同的私钥，一对双方统一的公钥。<br><strong>私钥加密公钥解，公钥加密私钥解</strong><br>明文+公钥+加密算法 =&gt; 密文<br>密文+私钥+加密算法 =&gt; 明文<br>或者<br>明文+私钥+加密算法 =&gt; 密文<br>密文+公钥+加密算法 =&gt; 明文</p><p>这个方法看上去很妙，传输上是很安全的，因为公钥加密过的内容只有双方能解开。但是问题在于，如果公钥泄露，有坏人就可以伪造数据，发送给对方。</p><h3 id="https全过程"><a href="#https全过程" class="headerlink" title="https全过程"></a>https全过程</h3><p>https是结合了对称加密与非对称加密算法。<br>服务器使用非对称加密，生成一对公钥，私钥。<br>客户端使用对称加密，随机生成一对密钥。</p><p><strong>https发送两次http请求</strong></p><p>第一次http</p><ol><li>客户端向服务端发起请求，建立连接。</li><li>服务器端将自己的公钥发送给客户端。</li><li>客户端检查公钥是否合法。</li></ol><p>第二次http</p><ol><li>合法后用公钥加密客户端的对称密钥，将加密后的密钥发送给服务器端。</li><li>服务器收到公钥加密的对称密钥，用私钥解密客户端密钥，用客户端密钥对数据进行加密。</li><li>服务器端将加密后的密文发送给客户端，客户端用对称密钥解密，收到数据。</li></ol><p>这个过程中，由于公钥加密的数据只能私钥解，对客户端的密钥进行了保护，杜绝了过程中被盗取对称密钥 的可能。服务器返回数据由于外界没有该对称密钥，所以无法解密数据。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面经 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 计算机网络 </tag>
+            
+            <tag> http </tag>
+            
+            <tag> https </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>串行发起http请求</title>
       <link href="/2020/01/07/%E4%B8%B2%E8%A1%8C%E5%8F%91%E8%B5%B7http%E8%AF%B7%E6%B1%82/"/>
       <url>/2020/01/07/%E4%B8%B2%E8%A1%8C%E5%8F%91%E8%B5%B7http%E8%AF%B7%E6%B1%82/</url>
@@ -503,6 +532,31 @@
     
     
     <entry>
+      <title>平衡二叉树</title>
+      <link href="/2019/10/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(39)/"/>
+      <url>/2019/10/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(39)/</url>
+      
+        <content type="html"><![CDATA[<h1 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote><p>输入一棵二叉树，判断该二叉树是否是平衡二叉树。</p></blockquote><ul><li>平衡二叉树是左右深度差不超过1的二叉树，所以在遍历深度的同时需要判断是否深度差超过1。</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">IsBalanced_Solution</span>(<span class="params">pRoot</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> TreeDepth(pRoot)!==<span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">TreeDepth</span>(<span class="params">pRoot</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pRoot==<span class="literal">null</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> leftdep=TreeDepth(pRoot.left);</span><br><span class="line">    <span class="keyword">if</span>(leftdep==<span class="number">-1</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">const</span> rightdep=TreeDepth(pRoot.right);</span><br><span class="line">    <span class="keyword">if</span>(rightdep==<span class="number">-1</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.abs(leftdep-rightdep)&gt;<span class="number">1</span>? <span class="number">-1</span> : <span class="built_in">Math</span>.max(leftdep,rightdep)+<span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指offer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 二叉树 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Node.js爬虫</title>
       <link href="/2019/10/13/Node.js%E7%88%AC%E8%99%AB/"/>
       <url>/2019/10/13/Node.js%E7%88%AC%E8%99%AB/</url>
@@ -555,31 +609,6 @@
             <tag> express </tag>
             
             <tag> node </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>平衡二叉树</title>
-      <link href="/2019/10/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(39)/"/>
-      <url>/2019/10/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(39)/</url>
-      
-        <content type="html"><![CDATA[<h1 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote><p>输入一棵二叉树，判断该二叉树是否是平衡二叉树。</p></blockquote><ul><li>平衡二叉树是左右深度差不超过1的二叉树，所以在遍历深度的同时需要判断是否深度差超过1。</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">IsBalanced_Solution</span>(<span class="params">pRoot</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">return</span> TreeDepth(pRoot)!==<span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">TreeDepth</span>(<span class="params">pRoot</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pRoot==<span class="literal">null</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> leftdep=TreeDepth(pRoot.left);</span><br><span class="line">    <span class="keyword">if</span>(leftdep==<span class="number">-1</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">const</span> rightdep=TreeDepth(pRoot.right);</span><br><span class="line">    <span class="keyword">if</span>(rightdep==<span class="number">-1</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.abs(leftdep-rightdep)&gt;<span class="number">1</span>? <span class="number">-1</span> : <span class="built_in">Math</span>.max(leftdep,rightdep)+<span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> 剑指offer </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 二叉树 </tag>
             
         </tags>
       
@@ -767,6 +796,33 @@
     
     
     <entry>
+      <title>JavaScript原型链</title>
+      <link href="/2019/09/13/JavaScript%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
+      <url>/2019/09/13/JavaScript%E5%8E%9F%E5%9E%8B%E9%93%BE/</url>
+      
+        <content type="html"><![CDATA[<h3 id="什么是原型链"><a href="#什么是原型链" class="headerlink" title="什么是原型链"></a>什么是原型链</h3><p>在js中，只有一种结构，对象。</p><p>每个实例对象都有自己的私有属性：__ proto __，这个属性是只有实例可以访问得到的，这个属性指向它的构造函数的原型对象，这个原型对象还有它的原型对象，直至其原型对象为null，null没有原型对象，这个链式关系就终止了。这就是原型链。</p><h3 id="Prototype和proto"><a href="#Prototype和proto" class="headerlink" title="Prototype和proto"></a>Prototype和<strong>proto</strong></h3><p>通过prototype定义的属性，会向上定义。定义到它的原型对象上去。<br>通过<strong>proto</strong>定义的属性，会变成其私有属性，不被原型读取；</p><p>当查看某个对象是否有某属性时，需要通过原型链逐级向上读取。</p><h3 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h3><p>构造器就是指向这个实例对象的构造函数。</p><blockquote><p>constructor 和 instanceof<br>两者在于一个时找构造器，一个是判断构造函数的prototype属性是否出现在某个对象的原型链上</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> 原型链 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>扑克牌顺子</title>
       <link href="/2019/09/13/%E5%89%91%E6%8C%87offerJavaScript%E7%89%88%20(45)/"/>
       <url>/2019/09/13/%E5%89%91%E6%8C%87offerJavaScript%E7%89%88%20(45)/</url>
@@ -797,33 +853,6 @@
         <tags>
             
             <tag> 剑指offer </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>JavaScript原型链</title>
-      <link href="/2019/09/13/JavaScript%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
-      <url>/2019/09/13/JavaScript%E5%8E%9F%E5%9E%8B%E9%93%BE/</url>
-      
-        <content type="html"><![CDATA[<h3 id="什么是原型链"><a href="#什么是原型链" class="headerlink" title="什么是原型链"></a>什么是原型链</h3><p>在js中，只有一种结构，对象。</p><p>每个实例对象都有自己的私有属性：__ proto __，这个属性是只有实例可以访问得到的，这个属性指向它的构造函数的原型对象，这个原型对象还有它的原型对象，直至其原型对象为null，null没有原型对象，这个链式关系就终止了。这就是原型链。</p><h3 id="Prototype和proto"><a href="#Prototype和proto" class="headerlink" title="Prototype和proto"></a>Prototype和<strong>proto</strong></h3><p>通过prototype定义的属性，会向上定义。定义到它的原型对象上去。<br>通过<strong>proto</strong>定义的属性，会变成其私有属性，不被原型读取；</p><p>当查看某个对象是否有某属性时，需要通过原型链逐级向上读取。</p><h3 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h3><p>构造器就是指向这个实例对象的构造函数。</p><blockquote><p>constructor 和 instanceof<br>两者在于一个时找构造器，一个是判断构造函数的prototype属性是否出现在某个对象的原型链上</p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> JavaScript </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-            <tag> 原型链 </tag>
             
         </tags>
       
@@ -1465,25 +1494,6 @@
     
     
     <entry>
-      <title>字符流中第一个只出现一次的字符</title>
-      <link href="/2019/08/22/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(54)/"/>
-      <url>/2019/08/22/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(54)/</url>
-      
-        <content type="html"><![CDATA[<h1 id="字符流中第一个只出现一次的字符"><a href="#字符流中第一个只出现一次的字符" class="headerlink" title="字符流中第一个只出现一次的字符"></a>字符流中第一个只出现一次的字符</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote><p>请实现一个函数用来找出字符流中第一个只出现一次的字符。例如，当从字符流中只读出前两个字符”go”时，第一个只出现一次的字符是”g”。当从该字符流中读出前六个字符“google”时，第一个只出现一次的字符是”l”。</p></blockquote><ul><li>用对象实现哈希表存值</li></ul><hr><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Init module if you need</span></span><br><span class="line"><span class="keyword">let</span> map=&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Init</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    map=&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Insert one char from stringstream</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Insert</span>(<span class="params">ch</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(map[ch])&#123;</span><br><span class="line">        map[ch]+=<span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        map[ch]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//return the first appearence once char in current stringstream</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FirstAppearingOnce</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">const</span> i <span class="keyword">in</span> map)&#123;</span><br><span class="line">        <span class="keyword">if</span>(map[i]===<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> i</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'#'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 剑指offer </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>JavaScript权威指南阅读笔记</title>
       <link href="/2019/08/22/JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"/>
       <url>/2019/08/22/JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</url>
@@ -1501,6 +1511,25 @@
         <tags>
             
             <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>字符流中第一个只出现一次的字符</title>
+      <link href="/2019/08/22/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(54)/"/>
+      <url>/2019/08/22/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(54)/</url>
+      
+        <content type="html"><![CDATA[<h1 id="字符流中第一个只出现一次的字符"><a href="#字符流中第一个只出现一次的字符" class="headerlink" title="字符流中第一个只出现一次的字符"></a>字符流中第一个只出现一次的字符</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote><p>请实现一个函数用来找出字符流中第一个只出现一次的字符。例如，当从字符流中只读出前两个字符”go”时，第一个只出现一次的字符是”g”。当从该字符流中读出前六个字符“google”时，第一个只出现一次的字符是”l”。</p></blockquote><ul><li>用对象实现哈希表存值</li></ul><hr><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Init module if you need</span></span><br><span class="line"><span class="keyword">let</span> map=&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Init</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    map=&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Insert one char from stringstream</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Insert</span>(<span class="params">ch</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">if</span>(map[ch])&#123;</span><br><span class="line">        map[ch]+=<span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        map[ch]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//return the first appearence once char in current stringstream</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FirstAppearingOnce</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">const</span> i <span class="keyword">in</span> map)&#123;</span><br><span class="line">        <span class="keyword">if</span>(map[i]===<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> i</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'#'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 剑指offer </tag>
             
         </tags>
       
@@ -1697,11 +1726,11 @@
     
     
     <entry>
-      <title>孩子们的游戏</title>
-      <link href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(46)/"/>
-      <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(46)/</url>
+      <title>翻转单词顺序列</title>
+      <link href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(44)/"/>
+      <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(44)/</url>
       
-        <content type="html"><![CDATA[<h1 id="孩子们的游戏"><a href="#孩子们的游戏" class="headerlink" title="孩子们的游戏"></a>孩子们的游戏</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote><p>约瑟夫环问题</p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">LastRemaining_Solution</span>(<span class="params">n, m</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> circle=[]</span><br><span class="line">    <span class="keyword">let</span> del=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">0</span>||m&lt;=<span class="number">0</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        circle[i]=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(circle.length<span class="number">-1</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> k=m<span class="number">-1</span>;</span><br><span class="line">        del=(del+k)%circle.length;</span><br><span class="line">        circle.splice(del,<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> circle[<span class="number">0</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="翻转单词顺序列"><a href="#翻转单词顺序列" class="headerlink" title="翻转单词顺序列"></a>翻转单词顺序列</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote><p>输入 “student. a am I”。<br>把句子单词的顺序翻转后输出正确的句子应该是“I am a student.”。</p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ReverseSentence</span>(<span class="params">str</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> strArr=str.split(<span class="string">" "</span>);</span><br><span class="line">    <span class="keyword">let</span> corstr=<span class="string">''</span>;</span><br><span class="line">    <span class="keyword">if</span>(str==<span class="literal">null</span>)<span class="keyword">return</span> corstr;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=strArr.length<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i==<span class="number">0</span>)&#123;</span><br><span class="line">            corstr+=strArr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            corstr+=strArr[i]+<span class="string">' '</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> corstr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       
       
       
@@ -1716,11 +1745,11 @@
     
     
     <entry>
-      <title>翻转单词顺序列</title>
-      <link href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(44)/"/>
-      <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(44)/</url>
+      <title>孩子们的游戏</title>
+      <link href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(46)/"/>
+      <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(46)/</url>
       
-        <content type="html"><![CDATA[<h1 id="翻转单词顺序列"><a href="#翻转单词顺序列" class="headerlink" title="翻转单词顺序列"></a>翻转单词顺序列</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote><p>输入 “student. a am I”。<br>把句子单词的顺序翻转后输出正确的句子应该是“I am a student.”。</p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ReverseSentence</span>(<span class="params">str</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> strArr=str.split(<span class="string">" "</span>);</span><br><span class="line">    <span class="keyword">let</span> corstr=<span class="string">''</span>;</span><br><span class="line">    <span class="keyword">if</span>(str==<span class="literal">null</span>)<span class="keyword">return</span> corstr;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=strArr.length<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i==<span class="number">0</span>)&#123;</span><br><span class="line">            corstr+=strArr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            corstr+=strArr[i]+<span class="string">' '</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> corstr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="孩子们的游戏"><a href="#孩子们的游戏" class="headerlink" title="孩子们的游戏"></a>孩子们的游戏</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote><p>约瑟夫环问题</p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">LastRemaining_Solution</span>(<span class="params">n, m</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> circle=[]</span><br><span class="line">    <span class="keyword">let</span> del=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">0</span>||m&lt;=<span class="number">0</span>)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        circle[i]=i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(circle.length<span class="number">-1</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> k=m<span class="number">-1</span>;</span><br><span class="line">        del=(del+k)%circle.length;</span><br><span class="line">        circle.splice(del,<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> circle[<span class="number">0</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       
       
       
@@ -1798,23 +1827,17 @@
     
     
     <entry>
-      <title>连续子数组的最大和</title>
-      <link href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(30)/"/>
-      <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(30)/</url>
+      <title>构建乘积数组</title>
+      <link href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(51)/"/>
+      <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(51)/</url>
       
-        <content type="html"><![CDATA[<h3 id="连续子数组的最大和"><a href="#连续子数组的最大和" class="headerlink" title="连续子数组的最大和"></a>连续子数组的最大和</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote><p>{6,-3,-2,7,-15,1,2,2},连续子向量的最大和为8(从第0个开始,到第3个为止)。给一个数组，返回它的最大连续子序列的和，你会不会被他忽悠住？(子向量的长度至少是1)</p></blockquote><ul><li>根据一个序列的特点，若前n个数的和小于0，则重新开始一个序列计算和，若大于等于0 ，则继续累加。</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindGreatestSumOfSubArray</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> currsum=array[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">var</span> maxsum=currsum;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(currsum&lt;<span class="number">0</span>)&#123;</span><br><span class="line">            currsum=array[i]</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            currsum+=array[i]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(currsum&gt;maxsum)&#123;</span><br><span class="line">            maxsum=currsum;</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">     <span class="keyword">return</span> maxsum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="构建乘积数组"><a href="#构建乘积数组" class="headerlink" title="构建乘积数组"></a>构建乘积数组</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote><p>给定一个数组A[0,1,…,n-1],请构建一个数组B[0,1,…,n-1],其中B中的元素B[i]=A[0]<em>A[1]</em>…<em>A[i-1]*A[i+1]</em>…*A[n-1]。不能使用除法。</p></blockquote><ul><li>将数组B元素分隔成前i-1项和后i+1项的乘积</li><li>先算i-1项，后算i+1项</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> B=[];</span><br><span class="line">    B[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> tmp=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        B[i]=B[i<span class="number">-1</span>]*array[i<span class="number">-1</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=array.length<span class="number">-2</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        tmp*=array[i+<span class="number">1</span>];</span><br><span class="line">        B[i]*=tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> B;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       
-      
-      <categories>
-          
-          <category> 剑指offer </category>
-          
-      </categories>
       
       
         <tags>
             
-            <tag> 数组 </tag>
+            <tag> 剑指offer </tag>
             
         </tags>
       
@@ -1848,11 +1871,36 @@
     
     
     <entry>
-      <title>构建乘积数组</title>
-      <link href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(51)/"/>
-      <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(51)/</url>
+      <title>连续子数组的最大和</title>
+      <link href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(30)/"/>
+      <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(30)/</url>
       
-        <content type="html"><![CDATA[<h1 id="构建乘积数组"><a href="#构建乘积数组" class="headerlink" title="构建乘积数组"></a>构建乘积数组</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote><p>给定一个数组A[0,1,…,n-1],请构建一个数组B[0,1,…,n-1],其中B中的元素B[i]=A[0]<em>A[1]</em>…<em>A[i-1]*A[i+1]</em>…*A[n-1]。不能使用除法。</p></blockquote><ul><li>将数组B元素分隔成前i-1项和后i+1项的乘积</li><li>先算i-1项，后算i+1项</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> B=[];</span><br><span class="line">    B[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> tmp=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        B[i]=B[i<span class="number">-1</span>]*array[i<span class="number">-1</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=array.length<span class="number">-2</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        tmp*=array[i+<span class="number">1</span>];</span><br><span class="line">        B[i]*=tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> B;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h3 id="连续子数组的最大和"><a href="#连续子数组的最大和" class="headerlink" title="连续子数组的最大和"></a>连续子数组的最大和</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><blockquote><p>{6,-3,-2,7,-15,1,2,2},连续子向量的最大和为8(从第0个开始,到第3个为止)。给一个数组，返回它的最大连续子序列的和，你会不会被他忽悠住？(子向量的长度至少是1)</p></blockquote><ul><li>根据一个序列的特点，若前n个数的和小于0，则重新开始一个序列计算和，若大于等于0 ，则继续累加。</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindGreatestSumOfSubArray</span>(<span class="params">array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">var</span> currsum=array[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">var</span> maxsum=currsum;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(currsum&lt;<span class="number">0</span>)&#123;</span><br><span class="line">            currsum=array[i]</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            currsum+=array[i]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(currsum&gt;maxsum)&#123;</span><br><span class="line">            maxsum=currsum;</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">     <span class="keyword">return</span> maxsum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指offer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数组 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>矩阵中的路径</title>
+      <link href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(65)/"/>
+      <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(65)/</url>
+      
+        <content type="html"><![CDATA[<h1 id="矩阵中的路径"><a href="#矩阵中的路径" class="headerlink" title="矩阵中的路径"></a>矩阵中的路径</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote><p>请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一个格子开始，每一步可以在矩阵中向左，向右，向上，向下移动一个格子。如果一条路径经过了矩阵中的某一个格子，则该路径不能再进入该格子。 例如 a b c e s f c s a d e e 矩阵中包含一条字符串”bccced”的路径，但是矩阵中不包含”abcb”路径，因为字符串的第一个字符b占据了矩阵中的第一行第二个格子之后，路径不能再次进入该格子。</p></blockquote><ul><li>每次都根据一个点，从该点开始遍历是否已遍历的点是否符合被包含字符串，如果不包含则返回上一步并标记该点不符合要求，若回溯到第一点后不符合，则继续从下一点开始。该过程可用递归表示</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hasPath</span>(<span class="params">matrix, rows, cols, path</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> pathLength=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> visited=<span class="keyword">new</span> <span class="built_in">Array</span>(rows*cols);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> row=<span class="number">0</span>;row&lt;rows;row++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> col=<span class="number">0</span>;col&lt;cols;col++)&#123;</span><br><span class="line">            <span class="keyword">if</span>( findPath(matrix,rows,cols,row,col,pathLength,visited,path))&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findPath</span>(<span class="params">matrix,rows,cols,row,col,pathLength,visited,path</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> haspath=<span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(path.length===pathLength)<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(row&lt;rows&amp;&amp;</span><br><span class="line">      col&lt;cols&amp;&amp;</span><br><span class="line">      row&gt;=<span class="number">0</span>&amp;&amp;</span><br><span class="line">      col&gt;=<span class="number">0</span>&amp;&amp;</span><br><span class="line">     ( matrix[row*cols+col]===path[pathLength])&amp;&amp;</span><br><span class="line">       !visited[row*cols+col])&#123;</span><br><span class="line">        pathLength++;</span><br><span class="line">        visited[row*cols+col]=<span class="literal">true</span></span><br><span class="line">        haspath=</span><br><span class="line">        findPath(matrix,rows,cols,row+<span class="number">1</span>,col,pathLength,visited,path)||</span><br><span class="line">        findPath(matrix,rows,cols,row<span class="number">-1</span>,col,pathLength,visited,path)||</span><br><span class="line">        findPath(matrix,rows,cols,row,col+<span class="number">1</span>,pathLength,visited,path)||</span><br><span class="line">        findPath(matrix,rows,cols,row,col<span class="number">-1</span>,pathLength,visited,path)</span><br><span class="line">        <span class="keyword">if</span>(!haspath)&#123;</span><br><span class="line">            pathLength--;</span><br><span class="line">            visited[row*cols+col]=<span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">     <span class="keyword">return</span> haspath</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       
       
       
@@ -1886,25 +1934,6 @@
             <tag> 二叉树 </tag>
             
             <tag> 链表 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>矩阵中的路径</title>
-      <link href="/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(65)/"/>
-      <url>/2019/08/13/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(65)/</url>
-      
-        <content type="html"><![CDATA[<h1 id="矩阵中的路径"><a href="#矩阵中的路径" class="headerlink" title="矩阵中的路径"></a>矩阵中的路径</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote><p>请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。路径可以从矩阵中的任意一个格子开始，每一步可以在矩阵中向左，向右，向上，向下移动一个格子。如果一条路径经过了矩阵中的某一个格子，则该路径不能再进入该格子。 例如 a b c e s f c s a d e e 矩阵中包含一条字符串”bccced”的路径，但是矩阵中不包含”abcb”路径，因为字符串的第一个字符b占据了矩阵中的第一行第二个格子之后，路径不能再次进入该格子。</p></blockquote><ul><li>每次都根据一个点，从该点开始遍历是否已遍历的点是否符合被包含字符串，如果不包含则返回上一步并标记该点不符合要求，若回溯到第一点后不符合，则继续从下一点开始。该过程可用递归表示</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hasPath</span>(<span class="params">matrix, rows, cols, path</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// write code here</span></span><br><span class="line">    <span class="keyword">const</span> pathLength=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> visited=<span class="keyword">new</span> <span class="built_in">Array</span>(rows*cols);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> row=<span class="number">0</span>;row&lt;rows;row++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> col=<span class="number">0</span>;col&lt;cols;col++)&#123;</span><br><span class="line">            <span class="keyword">if</span>( findPath(matrix,rows,cols,row,col,pathLength,visited,path))&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findPath</span>(<span class="params">matrix,rows,cols,row,col,pathLength,visited,path</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> haspath=<span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(path.length===pathLength)<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(row&lt;rows&amp;&amp;</span><br><span class="line">      col&lt;cols&amp;&amp;</span><br><span class="line">      row&gt;=<span class="number">0</span>&amp;&amp;</span><br><span class="line">      col&gt;=<span class="number">0</span>&amp;&amp;</span><br><span class="line">     ( matrix[row*cols+col]===path[pathLength])&amp;&amp;</span><br><span class="line">       !visited[row*cols+col])&#123;</span><br><span class="line">        pathLength++;</span><br><span class="line">        visited[row*cols+col]=<span class="literal">true</span></span><br><span class="line">        haspath=</span><br><span class="line">        findPath(matrix,rows,cols,row+<span class="number">1</span>,col,pathLength,visited,path)||</span><br><span class="line">        findPath(matrix,rows,cols,row<span class="number">-1</span>,col,pathLength,visited,path)||</span><br><span class="line">        findPath(matrix,rows,cols,row,col+<span class="number">1</span>,pathLength,visited,path)||</span><br><span class="line">        findPath(matrix,rows,cols,row,col<span class="number">-1</span>,pathLength,visited,path)</span><br><span class="line">        <span class="keyword">if</span>(!haspath)&#123;</span><br><span class="line">            pathLength--;</span><br><span class="line">            visited[row*cols+col]=<span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">     <span class="keyword">return</span> haspath</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 剑指offer </tag>
             
         </tags>
       
