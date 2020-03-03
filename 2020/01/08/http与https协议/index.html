@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="XUN&#39;S BLOG">
 <meta property="og:description" content="HTTPhttp是超文本传输协议，是一种无状态的协议。http是基于tcp的，因为tcp是可靠的数据传输。一次完整的http传输包含三次握手与四次挥手，三次握手表示建立连接，四次挥手表示断开连接。 三次握手 客户端发送SYN，自身状态为SYN-SENT，等待服务器端确认，表示客户端可以向服务器端发送数据。SYN:同步序列编号。 服务器端收到SYN包，确认后向客户端发送SYN+ACK，自身状态为SY">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-08T07:29:05.729Z">
+<meta property="og:updated_time" content="2020-01-12T13:48:31.667Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -445,6 +445,21 @@
 <li>服务器端将加密后的密文发送给客户端，客户端用对称密钥解密，收到数据。</li>
 </ol>
 <p>这个过程中，由于公钥加密的数据只能私钥解，对客户端的密钥进行了保护，杜绝了过程中被盗取对称密钥 的可能。服务器返回数据由于外界没有该对称密钥，所以无法解密数据。</p>
+<hr>
+<p>以上是关于https如何建立安全连接的过程，如何通过安全连接发送数据。而在https的过程中，通过TSL/SSL进行数据加密，TSL/SSL的握手过程又是怎样的呢，如何通过TSL/SSL达成密钥一致？</p>
+<h3 id="TLS握手协议"><a href="#TLS握手协议" class="headerlink" title="TLS握手协议"></a>TLS握手协议</h3><p>在TLS连接建立之前需要进行的握手过程，根据需要验证的身份信息不同，握手的步骤也会有一些不同。</p>
+<h4 id="不需要验证的客户端与需要验证身份的服务器端"><a href="#不需要验证的客户端与需要验证身份的服务器端" class="headerlink" title="不需要验证的客户端与需要验证身份的服务器端"></a>不需要验证的客户端与需要验证身份的服务器端</h4><ol>
+<li>客户端向服务器端发送自身支持的功能与首选项。</li>
+<li>服务器端选择连接参数。</li>
+<li>服务器端发送证书（验证身份）。</li>
+<li>服务器端发送生成主密钥的额外信息。</li>
+<li>服务器通知客户端完成协商过程。</li>
+<li>客户端发送生成主密钥的额外信息。</li>
+<li>客户端切换加密方式并通知服务器。</li>
+<li>客户端计算发送和接收到的握手消息的MAC并发送。</li>
+<li>服务器切换加密方式并通知客户端。</li>
+<li>服务器切换计算发送和接收到的握手消息的MAC并发送。</li>
+</ol>
 
       
     </div>
@@ -506,6 +521,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/01/12/JavaScript%E6%B7%B1%E6%8B%B7%E8%B4%9D/" rel="prev" title="JavaScript深拷贝">
+                JavaScript深拷贝 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -589,7 +608,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">95</span>
+                  <span class="site-state-item-count">101</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -611,7 +630,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">55</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -690,7 +709,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP"><span class="nav-number">1.</span> <span class="nav-text">HTTP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三次握手"><span class="nav-number">1.0.1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四次挥手"><span class="nav-number">1.0.2.</span> <span class="nav-text">四次挥手</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTPS"><span class="nav-number">2.</span> <span class="nav-text">HTTPS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对称加密"><span class="nav-number">2.1.</span> <span class="nav-text">对称加密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非对称加密"><span class="nav-number">2.2.</span> <span class="nav-text">非对称加密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#https全过程"><span class="nav-number">2.3.</span> <span class="nav-text">https全过程</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP"><span class="nav-number">1.</span> <span class="nav-text">HTTP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三次握手"><span class="nav-number">1.0.1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四次挥手"><span class="nav-number">1.0.2.</span> <span class="nav-text">四次挥手</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTPS"><span class="nav-number">2.</span> <span class="nav-text">HTTPS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对称加密"><span class="nav-number">2.1.</span> <span class="nav-text">对称加密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非对称加密"><span class="nav-number">2.2.</span> <span class="nav-text">非对称加密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#https全过程"><span class="nav-number">2.3.</span> <span class="nav-text">https全过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TLS握手协议"><span class="nav-number">2.4.</span> <span class="nav-text">TLS握手协议</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#不需要验证的客户端与需要验证身份的服务器端"><span class="nav-number">2.4.1.</span> <span class="nav-text">不需要验证的客户端与需要验证身份的服务器端</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

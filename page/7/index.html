@@ -302,7 +302,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://goldminerxun.github.io/2019/08/22/JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="https://goldminerxun.github.io/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(5)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="GoldMiner Xun">
@@ -321,7 +321,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/22/JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" itemprop="url">JavaScript权威指南阅读笔记</a></h2>
+                <a class="post-title-link" href="/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(5)/" itemprop="url">用两个栈实现队列</a></h2>
         
 
         <div class="post-meta">
@@ -333,8 +333,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-22T18:30:22+08:00">
-                2019-08-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-23T15:30:24+08:00">
+                2019-08-23
               </time>
             
 
@@ -356,8 +356,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">笔记</span>
+                  <a href="/categories/%E5%89%91%E6%8C%87offer/" itemprop="url" rel="index">
+                    <span itemprop="name">剑指offer</span>
                   </a>
                 </span>
 
@@ -374,8 +374,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/08/22/JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/22/JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
+                <a href="/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(5)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(5)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -405,13 +405,777 @@
       
         
           
-          第一章
-script标签属性值
-type，定义了脚本属性，其值有text/jscript：基于JScript方式，微软在IE种实现ECMAScript语言的变种。text/javascript：text/ecmascripttext/vbscript、text/vbs：微软基于VBScript的处理
+          用两个栈实现队列题目描述
+用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。
+
+代码
+1234567891011121314151617const inStack = []const outStack = []//123456//入栈【123456】先出6，先入1/
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/08/22/JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" rel="contents">
+            <a class="btn" href="/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(5)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://goldminerxun.github.io/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(6)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GoldMiner Xun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XUN'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(6)/" itemprop="url">旋转数组最小的数字</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-23T13:30:22+08:00">
+                2019-08-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%91%E6%8C%87offer/" itemprop="url" rel="index">
+                    <span itemprop="name">剑指offer</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(6)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(6)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          旋转数组最小的数字题目描述
+把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。 输入一个非减排序的数组的一个旋转，输出旋转数组的最小元素。 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。 NOTE：给出的所有元素都大于0，若数组大小为0，请返回
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(6)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://goldminerxun.github.io/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(49)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GoldMiner Xun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XUN'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(49)/" itemprop="url">把字符串转换成整数</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-23T12:30:22+08:00">
+                2019-08-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(49)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(49)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          把字符串转换成整数题目描述
+将一个字符串转换成一个整数(实现Integer.valueOf(string)的功能，但是string不符合数字要求时返回0)，要求不能使用字符串转换整数的库函数。 数值为0或者字符串不是一个合法的数值则返回0。
+
+
+重点在于每次需要移位，移位对应十进制是10，对应二进制
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(49)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://goldminerxun.github.io/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(18)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GoldMiner Xun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XUN'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(18)/" itemprop="url">二叉树的镜像</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-23T12:30:22+08:00">
+                2019-08-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%91%E6%8C%87offer/" itemprop="url" rel="index">
+                    <span itemprop="name">剑指offer</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(18)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(18)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          二叉树的镜像题目描述
+操作给定的二叉树，将其变换为源二叉树的镜像。
+
+递归。。。
+123456789function Mirror(root)&#123;    // write code here    if(root===null)return;    Mirror(root.left);   
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(18)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://goldminerxun.github.io/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(20)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GoldMiner Xun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XUN'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(20)/" itemprop="url">包含min函数的栈</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-23T12:30:22+08:00">
+                2019-08-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%91%E6%8C%87offer/" itemprop="url" rel="index">
+                    <span itemprop="name">剑指offer</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(20)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(20)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          包含min函数的栈题目描述
+定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。
+
+12345678910111213141516171819202122232425262728293031323334353637var stack=[];var m
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(20)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://goldminerxun.github.io/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(58)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GoldMiner Xun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XUN'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(58)/" itemprop="url">对称的二叉树</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-23T10:30:22+08:00">
+                2019-08-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(58)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(58)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          对称的二叉树题目描述
+请实现一个函数，用来判断一颗二叉树是不是对称的。注意，如果一个二叉树同此二叉树的镜像是同样的，定义其为对称的。
+
+
+1234567891011121314151617181920function isSymmetrical(pRoot)&#123;    // write co
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/23/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(58)/" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -555,6 +1319,166 @@ type，定义了脚本属性，其值有text/jscript：基于JScript方式，微
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/08/22/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(54)/" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://goldminerxun.github.io/2019/08/22/JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GoldMiner Xun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XUN'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/22/JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" itemprop="url">JavaScript权威指南阅读笔记</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-22T18:30:22+08:00">
+                2019-08-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/22/JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/22/JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          第一章
+script标签属性值
+type，定义了脚本属性，其值有text/jscript：基于JScript方式，微软在IE种实现ECMAScript语言的变种。text/javascript：text/ecmascripttext/vbscript、text/vbs：微软基于VBScript的处理
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/22/JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -916,935 +1840,11 @@ type，定义了脚本属性，其值有text/jscript：基于JScript方式，微
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://goldminerxun.github.io/2019/08/19/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(16)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="GoldMiner Xun">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XUN'S BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/19/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(16)/" itemprop="url">合并两个排序的链表</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-19T16:30:22+08:00">
-                2019-08-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%91%E6%8C%87offer/" itemprop="url" rel="index">
-                    <span itemprop="name">剑指offer</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/08/19/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(16)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/19/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(16)/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          合并两个排序的链表题目描述
-输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。
-
-递归做法
-123456789101112131415function Merge(pHead1, pHead2)&#123;    // write code here    
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/19/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(16)/" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://goldminerxun.github.io/2019/08/19/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(56)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="GoldMiner Xun">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XUN'S BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/19/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(56)/" itemprop="url">删除链表中重复的节点</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-19T10:30:22+08:00">
-                2019-08-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/08/19/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(56)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/19/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(56)/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          删除链表中重复的节点题目描述
-在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。 例如，链表1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5 处理后为 1-&gt;2-&gt;5
-
-
-注意当第一个节点要被删除的时候，需要一个新的
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/19/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(56)/" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://goldminerxun.github.io/2019/08/16/hexo+GitHub%20%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="GoldMiner Xun">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XUN'S BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/16/hexo+GitHub%20%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0/" itemprop="url">hexo+github 博客更新</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-16T18:30:22+08:00">
-                2019-08-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index">
-                    <span itemprop="name">配置</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/08/16/hexo+GitHub%20%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/16/hexo+GitHub%20%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          我的GitHub博客
-太心酸了。。今天添加了一个浏览量新功能。。千万不要手贱删这删那。如果要更新，就直接在终端打开仓库中hexo文件夹，然后运行hexo命令hexo ghexo dhexo cleanhexo d -g本地的GitHub桌面版可以直接拉取。。。。千万！不要删删删。。。。
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/16/hexo+GitHub%20%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0/" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://goldminerxun.github.io/2019/08/15/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(13)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="GoldMiner Xun">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XUN'S BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/15/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(13)/" itemprop="url">调整数组顺序使奇数位于偶数前面</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-15T18:40:22+08:00">
-                2019-08-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%91%E6%8C%87offer/" itemprop="url" rel="index">
-                    <span itemprop="name">剑指offer</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/08/15/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(13)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/15/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(13)/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          调整数组顺序使奇数位于偶数前面题目描述
-输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有的奇数位于数组的前半部分，所有的偶数位于数组的后半部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变。
-
-123456789101112131415function reOrderArray(a
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/15/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(13)/" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://goldminerxun.github.io/2019/08/15/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88(12)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="GoldMiner Xun">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XUN'S BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/15/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88(12)/" itemprop="url">数值的整数次方</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-15T18:30:22+08:00">
-                2019-08-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/08/15/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88(12)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/15/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88(12)/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          数值的整数次方题目描述
-给定一个double类型的浮点数base和int类型的整数exponent。求base的exponent次方。
-
-快速幂原理
-123456789101112131415161718192021222324function Power(base, exponent)&#123;
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/15/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88(12)/" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://goldminerxun.github.io/2019/08/14/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(14)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="GoldMiner Xun">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XUN'S BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/14/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(14)/" itemprop="url">链表中倒数第K个节点</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-14T12:30:22+08:00">
-                2019-08-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%89%91%E6%8C%87offer/" itemprop="url" rel="index">
-                    <span itemprop="name">剑指offer</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/08/14/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(14)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/14/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(14)/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          链表中倒数第K个节点题目描述
-输入一个链表，输出该链表中倒数第k个结点。
-
-12345678910111213141516171819function FindKthToTail(head, k)&#123;    // write code here    if(head===null||k&lt
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/14/%E5%89%91%E6%8C%87offer%20JavaScript%E7%89%88%20(14)/" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/8/">&gt;</a>
+    <a class="extend prev" rel="prev" href="/page/6/">&lt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/8/">&gt;</a>
   </nav>
 
 
@@ -1894,7 +1894,7 @@ type，定义了脚本属性，其值有text/jscript：基于JScript方式，微
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">95</span>
+                  <span class="site-state-item-count">101</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1916,7 +1916,7 @@ type，定义了脚本属性，其值有text/jscript：基于JScript方式，微
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">55</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
